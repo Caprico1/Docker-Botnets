@@ -1,0 +1,12 @@
+
+:1
+sh-4.2# cat start.sh
+./xmr-stak --currency cryptonight_r -o xmr.pool.minergate.com:45700 -u 202gmfa4f888ypp -p x
+
+:2
+sh-4.2# cat start.sh
+./xmr-stak --currency cryptonight_r -o xmr.pool.minergate.com:45700 -u 202gmfa4f888ypp -p x
+
+:3
+[root@98a8577e42dd /]# cat start.sh
+./xmr-stak --currency cryptonight_r -o xmr.pool.minergate.com:45700 -u gfbxatfjcrg8cr2 -p x

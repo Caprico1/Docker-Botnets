@@ -1,0 +1,54 @@
+strace:
+execve("./a.out", ["./a.out"], 0x7ffdb1845540 /* 31 vars */) = 0
+brk(NULL)                               = 0x55e74c4dd000
+openat(AT_FDCWD, "mallocng-draft/libmallocng.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\21\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=40648, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0040fb6000
+getcwd("/tmp", 128)                     = 5
+mmap(NULL, 25632, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0040faf000
+mmap(0x7f0040fb0000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f0040fb0000
+mmap(0x7f0040fb3000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f0040fb3000
+mmap(0x7f0040fb4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f0040fb4000
+close(3)                                = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=105167, ...}) = 0
+mmap(NULL, 105167, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0040f95000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0o\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=18395656, ...}) = 0
+mmap(NULL, 1844152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0040dd2000
+mprotect(0x7f0040df7000, 1654784, PROT_NONE) = 0
+mmap(0x7f0040df7000, 1347584, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f0040df7000
+mmap(0x7f0040f40000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16e000) = 0x7f0040f40000
+mmap(0x7f0040f8b000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b8000) = 0x7f0040f8b000
+mmap(0x7f0040f91000, 13240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0040f91000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0040dcf000
+arch_prctl(ARCH_SET_FS, 0x7f0040dcf740) = 0
+mprotect(0x7f0040f8b000, 12288, PROT_READ) = 0
+mprotect(0x7f0040fb4000, 4096, PROT_READ) = 0
+mprotect(0x55e74b2c9000, 4096, PROT_READ) = 0
+mprotect(0x7f0040fe0000, 4096, PROT_READ) = 0
+munmap(0x7f0040f95000, 105167)          = 0
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0x7fff37875ee0} ---
++++ killed by SIGSEGV (core dumped) +++
+Memory fault
+
+backtrace:
+#0  _dl_runtime_resolve_fxsave () at ../sysdeps/x86_64/dl-trampoline.h:93
+#1  0x00007f16d8330279 in rdlock () at malloc.c:49
+#2  0x00007f16d8331336 in malloc (n=70) at malloc.c:443
+#3  0x00007f16d834d581 in __GI__dl_exception_create_format (exception=exception@entry=0x7ffee8874230, objname=0x7f16d8362c80 "mallocng-draft/libmallocng.so",
+    fmt=fmt@entry=0x7f16d8358580 "undefined symbol: %s%s%s") at dl-exception.c:146
+#4  0x00007f16d834245d in _dl_lookup_symbol_x (undef_name=0x7f16d832f535 "pthread_rwlock_rdlock", undef_map=0x7f16d8336000, ref=ref@entry=0x7ffee88742a8,
+    symbol_scope=0x7f16d8336360, version=0x0, type_class=type_class@entry=1, flags=1, skip_map=0x0) at dl-lookup.c:826
+#5  0x00007f16d8346973 in _dl_fixup (l=<optimized out>, reloc_arg=<optimized out>) at ../elf/dl-runtime.c:112
+#6  0x00007f16d834d1a3 in _dl_runtime_resolve_fxsave () at ../sysdeps/x86_64/dl-trampoline.h:126
+#7  0x00007f16d8330279 in rdlock () at malloc.c:49
+#8  0x00007f16d8331336 in malloc (n=70) at malloc.c:443
+#9  0x00007f16d834d581 in __GI__dl_exception_create_format (exception=exception@entry=0x7ffee8874690, objname=0x7f16d8362c80 "mallocng-draft/libmallocng.so",
+    fmt=fmt@entry=0x7f16d8358580 "undefined symbol: %s%s%s") at dl-exception.c:146
+#loop indefinitely

@@ -1,0 +1,17 @@
+
+
+# install service and run
+sudo apt-get -y install libhwloc4
+sudo ./mservice -user_id 2 -reg_device 
+sudo  ./mservice -service install
+sudo service YiluzhuanqianSer start
+sudo pidof mservice || service YiluzhuanqianSer start
+
+
+# or run
+./mservice -user_id 2
+
+
+curl -v localhost:1992/api/stats
+curl -v localhost:1993
+

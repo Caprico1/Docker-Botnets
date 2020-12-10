@@ -1,0 +1,61 @@
+# cat config.json
+{
+    "api": {
+        "id": null,
+        "worker-id": null
+    },
+    "http": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 0,
+        "access-token": null,
+        "restricted": true
+    },
+    "autosave": true,
+    "background": false,
+    "colors": true,
+    "randomx": {
+        "init": -1,
+        "numa": true
+    },
+    "cpu": {
+        "enabled": true,
+        "huge-pages": true,
+        "hw-aes": null,
+        "priority": null,
+        "asm": true,
+        "cn": [-1],
+        "cn-heavy": [-1],
+        "cn-lite": [-1],
+        "cn-pico": [-1],
+        "cn/gpu": [-1],
+        "rx": [-1],
+        "rx/wow": [-1],
+        "cn/0": false,
+        "cn-lite/0": false
+    },
+    "donate-level": 0,
+    "donate-over-proxy": 0,
+    "log-file": null,
+    "pools": [
+        {
+            "algo": null,
+            "url": "mine.c3pool.com:13333",
+            "user": "4453uAxM3ej4p4DWJBV8v1QpdA9vZB7j1cocTXcbjpoSaxXdBC5SxDrgxU6JmV8ePhL95kwHTtZwcP5zENXNSJwUHN5hFza",
+            "pass": "x:admin@noauth.fail",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null,
+            "daemon": false
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "syslog": false,
+    "user-agent": null,
+    "watch": true
+}

@@ -1,0 +1,71 @@
+{
+    "algo": "cryptonight",  // cryptonight (default) or cryptonight-lite
+    "av": 0,                // algorithm variation, 0 auto select
+    "background": true,    // true to run the miner in the background
+    "colors": true,         // false to disable colored output
+    "cpu-affinity": null,   // set process affinity to CPU core(s), mask "0x3" for cores 0 and 1
+    "cpu-priority": 5,   // set process priority (0 idle, 2 normal to 5 highest)
+    "donate-level": 1,      // donate level, mininum 1%
+    "log-file": null,       // log all output to a file, example: "c:/some/path/xmrig.log"
+    "max-cpu-usage": 100,    // maximum CPU usage for automatic mode, usually limiting factor is CPU cache not this option.
+    "print-time": 30,       // print hashrate report every N seconds
+    "retries": 3,           // number of times to retry before switch to backup server
+    "retry-pause": 10,      // time to pause between retries
+    "safe": false,          // true to safe adjust threads and av settings for current CPU
+    "threads": null,        // number of miner threads
+    "pools": [
+        {
+            "url": "104.140.201.42:5555",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "woohoo",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null
+        },
+{
+            "url": "104.140.201.62:5555",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "woohoo2",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null
+        },
+{
+            "url": "104.140.201.102:5555",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "woohoo3",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null
+        },
+{
+            "url": "104.140.201.58:5555",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "woohoo4",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "worker-id": null
+    }
+}

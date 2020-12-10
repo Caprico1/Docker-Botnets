@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Error 404 Page Not Found</title>
+
+		<meta name="description" content="Бесплатный файлообменник с прямыми ссылками и без регистрации. Передавайте файлы без рекламы и ожидания.">
+		<meta name="keywords" content="файлообменник, файлхостинг, файловый хостинг, файл, обменник, хостинг, file, sharing, поделиться, передать, фото, бесплатный, без регистрации">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="GOload">
+		<meta name="theme-color" content="#5d80a6">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#5d80a6">
+		<meta name="msapplication-tilecolor" content="#5d80a6">
+		<meta name="msapplication-tileimage" content="https://goload.ru/assets/img/tablo_logo.png">
+
+		<link rel="manifest" href="/manifest.json">
+		<link rel="canonical" href="https://goload.ru/files/goload_7344_1575323757.jpg">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="shortcut icon" href="/assets/img/favicon.png">
+		<link rel="apple-touch-icon" href="/assets/img/app-icon.png">
+		<link rel="yandex-tableau-widget" href="/assets/other/tableau.json">
+		<link rel="icon" sizes="256x256" href="/assets/img/icons/icon_256.png">
+		<link rel="alternate" type="application/rss+xml" href="/assets/other/rss.php">
+
+		<meta property="og:description" content="Бесплатный файлообменник с прямыми ссылками и без регистрации. Передавайте файлы без рекламы и ожидания.">
+		<meta property="og:image" content="https://goload.ru/assets/img/app-icon-cover.png">
+		<meta property="og:url" content="https://goload.ru/files/goload_7344_1575323757.jpg">
+		<meta property="og:title" content="Error 404 Page Not Found">
+		<meta property="og:type" content="website">
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:title" content="Error 404 Page Not Found">
+
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"url": "https://goload.ru/files/goload_7344_1575323757.jpg",
+				"name": "GOload Файлообменник",
+				"image": "https://goload.ru/assets/img/app-icon-cover.png",
+				"logo": "https://goload.ru/assets/img/app-icon.png",
+				"sameAs": [
+					"https://twitter.com/goload_official",
+					"https://behance.net/xrystalll"
+				]
+			}
+		</script>
+
+		<link rel="stylesheet" href="/assets/style_dark.css" type="text/css">
+
+		<script type="text/javascript" src="/assets/js/jquery.js"></script>
+
+		<!-- A nyan cat is here somewhere. Enter the "cat" on the keyboard))0) -->
+
+	</head>
+	<body style="padding-top: 0;">
+		<div class="spec" style="padding-top: 64px;">
+
+		<header class="hide">
+			<div class="head-container">
+				<div class="l_bar nav_main">
+					<span title="открыть меню">
+						<img src="/assets/img/menu.svg" alt="menu">
+					</span>
+				</div>
+
+				<div class="c_bar">
+					<h1 id="main_name" class="site_name">
+						<a href="/">GOload</a>
+					</h1>
+				</div>
+				<div class="r_bar">
+					<a href="/sign_in" title="вход в аккаунт"><img src="/assets/img/login.svg" alt="login"></a>
+				</div>
+				<div class="r_bar">
+					<a href="/add_file" title="добавить файл"><img src="/assets/img/load.svg" alt="add"></a>
+				</div>
+				<div class="r_bar">
+					<a href="/search" title="поиск"><img src="/assets/img/search.svg" alt="search"></a>
+				</div>
+			</div>
+		</header>
+
+		<nav>
+			<div class="drawer">
+				<div class="nav-head">
+					<div class="head-cont">
+						<img class="avatar" src="/assets/img/icons/icon_128.png" alt="main-logo">
+						<div class="tit">
+							<span class="name">GOload</span>
+							<span>Файлообменник</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="nav-cont">
+					<a class="nav-link" href="/add_file">Добавить файл</a>
+					<a class="nav-link" href="/file">Все файлы</a>
+					<a class="nav-link" href="/rules">Правила</a>
+					<a class="nav-link" href="/api/">API</a>
+					<a class="nav-link" href="https://www.donationalerts.ru/r/xrystalll" target="_blank">Донат</a>
+				</div>
+			</div>
+			<script type="text/javascript" src="/assets/js/menu.js"></script>
+		</nav>
+
+		</div>
+		<section class="spec">
+
+		<div class="error">
+
+			<div class="error-logo"></div>
+
+			<div class="error-text">
+				<div class="error-title">404</div>
+				<div class="error-message">Страница не найдена</div>
+
+				<div style="line-height: 1.8;">
+					<a href="/">Вернуться на главную</a>
+					<br>или<br>
+					<span class="btn play">поиграем?</span>
+				</div>
+			</div>
+
+		</div>
+
+		</section>
+
+		<div class="spec c" style="background: #001277;display: none;">
+			<div id="screen" style="margin: 0 auto;position: relative;">
+				<span id="go-full" class="full qwe"><i class="material-icons" style="cursor: pointer;position: absolute;width: 48px;height: 48px;line-height: 48px;text-align: center;color: #fff;">fullscreen</i></span>
+				<span id="exit-full" class="full qwe" style="display:none;"><i class="material-icons" style="cursor: pointer;position: absolute;width: 48px;height: 48px;line-height: 48px;text-align: center;color: #fff;">fullscreen_exit</i></span>
+				<span class="play"><i class="material-icons" style="cursor: pointer;position: absolute;right: 0;width: 48px;height: 48px;line-height: 48px;text-align: center;color: #fff;">close</i></span>
+			</div>
+			<script src="https://goload.ru/modules/errors/js/phaser.min.js"></script>
+			<script src="https://goload.ru/modules/errors/js/index.js"></script>
+		</div>
+
+		<script>
+			$(document).ready(() => {
+				$(".play").on("click", () => {
+					$(".spec").toggle();
+				}),
+				$(".full").on("click", () => {
+					$(".qwe").toggle();
+				})
+			});
+		</script>
+
+	</body>
+</html>

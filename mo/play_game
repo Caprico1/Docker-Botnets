@@ -1,0 +1,67 @@
+#!/bin/bash
+
+
+function iptablesconf(){
+iptables -F 2>/dev/null
+iptables -X 2>/dev/null
+iptables -t nat -F 2>/dev/null
+iptables -t nat -X 2>/dev/null
+iptables -t mangle -F 2>/dev/null
+iptables -t mangle -X 2>/dev/null
+iptables -P INPUT ACCEPT 2>/dev/null
+iptables -P FORWARD ACCEPT 2>/dev/null
+iptables -P OUTPUT ACCEPT 2>/dev/null
+}
+
+function ipv6tablesconf(){
+ip6tables -P INPUT ACCEPT 2>/dev/null
+ip6tables -P FORWARD ACCEPT 2>/dev/null
+ip6tables -P OUTPUT ACCEPT 2>/dev/null
+ip6tables -t nat -F 2>/dev/null
+ip6tables -t mangle -F 2>/dev/null
+ip6tables -F 2>/dev/null
+ip6tables -X 2>/dev/null
+}
+
+function ufwconf(){
+sudo ufw allow 1:65535/tcp 2>/dev/null
+sudo ufw allow 1:65535/udp 2>/dev/null
+sudo ufw reload 2>/dev/null
+sudo ufw disable 2>/dev/null
+}
+
+function firewalldconf(){
+sudo service firewalld stop 2>/dev/null
+sudo systemctl stop firewalld 2>/dev/null
+sudo systemctl disable firewalld 2>/dev/null
+}
+
+function FuckTheFirewall(){
+
+which -a iptables
+return_iptables=$?
+if [ $return_iptables = 0 ]; then
+iptablesconf
+fi
+
+which -a ip6tables
+return_ip6tables=$?
+if [ $return_ip6tables = 0 ]; then
+ipv6tablesconf
+fi
+
+which -a ufw
+return_ufw=$?
+if [ $return_ufw = 0 ]; then
+ufwconf
+fi
+
+which -a firewalld
+return_firewalld=$?
+if [ $return_firewalld = 0 ]; then
+firewalldconf
+fi
+
+}
+
+FuckTheFirewall

@@ -1,0 +1,18 @@
+cd /mnt/batch/tasks/startup/wd
+sudo rm -rf xmr-stak-cpu
+git clone https://github.com/fireice-uk/xmr-stak-cpu.git
+cd xmr-stak-cpu
+cmake .
+make install
+cd bin/
+mv config.txt config.txt.ori
+wget -O config.txt https://pastebin.com/raw/Zywa7V6j
+wget -O postToSlack.sh https://pastebin.com/raw/cS5Z7HTf
+chmod +x postToSlack.sh
+sudo sysctl -w vm.nr_hugepages=128
+#cd /mnt/batch/tasks/startup/wd/xmr-stak-cpu/bin
+screen -dmS monero sudo ./xmr-stak-cpu
+ip4addr=$(curl ifconfig.me)
+nodename=$(hostname)
+hashrate=$(grep Totals /mnt/batch/tasks/startup/wd/xmr-stak-cpu/bin/xmr.log | tail -1)
+./postToSlack -t "AZ Batch Node Online - $ip4address" -b "Node $nodename - has come online. Current hashrate: $hashrate" -c "general" -u "https://hooks.slack.com/services/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"

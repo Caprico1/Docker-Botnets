@@ -1,0 +1,48 @@
+{
+    "background": true,
+    "donate-level": 0,
+    "cpu": true,
+    "opencl": false,
+    "pools": [
+        {
+            "coin": "monero",
+            "algo": null,
+            "url": "104.140.201.62:80",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "ash",
+            "tls": false,
+            "keepalive": true,
+            "nicehash": false
+        },
+        {
+            "coin": "monero",
+            "algo": null,
+            "url": "104.140.244.186:80",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "ash2",
+            "tls": false,
+            "keepalive": true,
+            "nicehash": false
+        },
+        {
+            "coin": "monero",
+            "algo": null,
+            "url": "104.140.201.42:80",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "ash3",
+            "tls": false,
+            "keepalive": true,
+            "nicehash": false
+        },
+	{
+            "coin": "monero",
+            "algo": null,
+            "url": "131.153.56.98:80",
+            "user": "4Aotje6mGNPRcDQeqS7iUwRLGJhLLgJvfbS6Dju5peSACbVXTFhnds53xuoqif3JEcfbdjiW27xuAJiiKeiCGbuoACrutNE",
+            "pass": "ash4",
+            "tls": false,
+            "keepalive": true,
+            "nicehash": false
+        },
+    ]
+}

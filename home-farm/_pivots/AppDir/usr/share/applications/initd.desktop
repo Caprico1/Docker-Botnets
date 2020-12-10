@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=initd
+Comment=initd
+Exec=initd
+Icon=initd
+Categories=Office;
