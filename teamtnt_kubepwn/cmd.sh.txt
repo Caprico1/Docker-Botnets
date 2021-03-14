@@ -1,0 +1,31 @@
+#!/bin/bash
+clear
+echo ''
+echo ''
+theip=$1
+namespace=$2
+podname=$3
+containername=$4
+
+if [ -z "$theip" ]; then 
+read -p "IP: " theip
+curl -sk https://$theip:10250/runningpods/ | jq . | grep 'namespace\|name'
+fi
+
+if [ -z "$namespace" ]; then read -p "namespace: " namespace ; fi
+if [ -z "$podname" ]; then read -p "podname: " podname ; fi
+if [ -z "$containername" ]; then read -p "containername: " containername ; fi
+
+for (( ; ; ))
+do
+read -p "# " mycmd
+curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="$mycmd"
+done
+
+
+exit
+
+
+
+
+

