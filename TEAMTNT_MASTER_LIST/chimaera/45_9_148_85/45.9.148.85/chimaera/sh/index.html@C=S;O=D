@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /chimaera/sh</title>
+ </head>
+ <body>
+<h1>Index of /chimaera/sh</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/chimaera/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="kube.lateral.sh">kube.lateral.sh</a></td><td align="right">2021-02-23 23:17  </td><td align="right"> 71K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_ssh.sh">spread_ssh.sh</a></td><td align="right">2021-02-22 02:00  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="first_touch.sh">first_touch.sh</a></td><td align="right">2021-02-22 07:06  </td><td align="right">8.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_crontab.sh">clean_crontab.sh</a></td><td align="right">2021-02-21 20:31  </td><td align="right">1.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_docker.sh">clean_docker.sh</a></td><td align="right">2021-02-21 20:02  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_xmr.sh">setup_xmr.sh</a></td><td align="right">2021-02-24 10:35  </td><td align="right">1.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_jupyter_tmp.sh">spread_jupyter_tmp.sh</a></td><td align="right">2021-02-22 03:04  </td><td align="right">349 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_tmp.sh">clean_tmp.sh</a></td><td align="right">2021-02-21 20:30  </td><td align="right">334 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_unhide.sh">setup_unhide.sh</a></td><td align="right">2021-02-21 20:09  </td><td align="right">327 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_zmap_zgrab_jq_masscan.sh">setup_zmap_zgrab_jq_masscan.sh</a></td><td align="right">2021-02-23 02:14  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_pei.sh">setup_pei.sh</a></td><td align="right">2021-02-21 22:25  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.29 (Ubuntu) Server at 45.9.148.85 Port 80</address>
+</body></html>

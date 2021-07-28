@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /chimaera/sh</title>
+ </head>
+ <body>
+<h1>Index of /chimaera/sh</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/chimaera/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_xmr.sh">setup_xmr.sh</a></td><td align="right">2021-03-04 21:04  </td><td align="right">1.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_bot.sh">setup_bot.sh</a></td><td align="right">2021-03-03 06:12  </td><td align="right">298 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_kube_local.sh">spread_kube_local.sh</a></td><td align="right">2021-03-02 19:45  </td><td align="right"> 71K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup.sh">setup.sh</a></td><td align="right">2021-03-02 13:16  </td><td align="right">956 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_mo.sh">setup_mo.sh</a></td><td align="right">2021-03-02 08:32  </td><td align="right"> 13K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="search.sh">search.sh</a></td><td align="right">2021-03-02 08:17  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_hide.sh">setup_hide.sh</a></td><td align="right">2021-03-02 07:52  </td><td align="right">6.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean.sh">clean.sh</a></td><td align="right">2021-03-02 07:00  </td><td align="right">4.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="init.sh">init.sh</a></td><td align="right">2021-03-02 06:34  </td><td align="right">2.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="xmr.sh.sh">xmr.sh.sh</a></td><td align="right">2021-02-28 07:16  </td><td align="right">1.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_docker_loop.sh">spread_docker_loop.sh</a></td><td align="right">2021-02-28 03:28  </td><td align="right">4.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_tmate.sh">setup_tmate.sh</a></td><td align="right">2021-02-28 02:59  </td><td align="right">575 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_docker_local.sh">spread_docker_local.sh</a></td><td align="right">2021-02-28 01:39  </td><td align="right">4.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="bd_aws.sh">bd_aws.sh</a></td><td align="right">2021-02-27 17:07  </td><td align="right">1.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_v2.sh">clean_v2.sh</a></td><td align="right">2021-02-27 14:41  </td><td align="right">5.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_ssh.sh">spread_ssh.sh</a></td><td align="right">2021-02-27 03:17  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="grab_aws-data.sh">grab_aws-data.sh</a></td><td align="right">2021-02-27 00:54  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="aarch64.sh">aarch64.sh</a></td><td align="right">2021-02-26 15:43  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="x86_64.sh">x86_64.sh</a></td><td align="right">2021-02-26 15:43  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_kube_loop.sh">spread_kube_loop.sh</a></td><td align="right">2021-02-26 10:42  </td><td align="right">3.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_scope.sh">setup_scope.sh</a></td><td align="right">2021-02-25 23:39  </td><td align="right"> 16K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="lateral/">lateral/</a></td><td align="right">2021-02-25 23:20  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_crontab.sh">setup_crontab.sh</a></td><td align="right">2021-02-25 20:13  </td><td align="right">252 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="kube.lateral.sh">kube.lateral.sh</a></td><td align="right">2021-02-23 23:17  </td><td align="right"> 71K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_zmap_zgrab_jq_masscan.sh">setup_zmap_zgrab_jq_masscan.sh</a></td><td align="right">2021-02-23 02:14  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="first_touch.sh">first_touch.sh</a></td><td align="right">2021-02-22 07:06  </td><td align="right">8.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="spread_jupyter_tmp.sh">spread_jupyter_tmp.sh</a></td><td align="right">2021-02-22 03:04  </td><td align="right">349 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_pei.sh">setup_pei.sh</a></td><td align="right">2021-02-21 22:25  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_crontab.sh">clean_crontab.sh</a></td><td align="right">2021-02-21 20:31  </td><td align="right">1.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_tmp.sh">clean_tmp.sh</a></td><td align="right">2021-02-21 20:30  </td><td align="right">334 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="setup_unhide.sh">setup_unhide.sh</a></td><td align="right">2021-02-21 20:09  </td><td align="right">327 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_docker.sh">clean_docker.sh</a></td><td align="right">2021-02-21 20:02  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_aegis.sh">clean_aegis.sh</a></td><td align="right">2020-10-20 02:13  </td><td align="right">2.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="clean_quartz.sh">clean_quartz.sh</a></td><td align="right">2020-08-26 05:11  </td><td align="right">1.5K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.18 (Ubuntu) Server at 45.9.148.35 Port 80</address>
+</body></html>
