@@ -1,0 +1,28 @@
+#!/bin/bash
+function curlss()
+{
+  input=$(sed -E 's/http[s]?:\/\///g' <(echo $1))
+  grep -Eo "http.?://" <(echo "$input")
+  input="http://$input";
+  IFS="/" read proto z host query <<< "$input"
+  host2=`echo $(basename $1)`
+  if $(echo "$proto" | grep -qi "http.?.?"); then
+    echo "Usage: kurl http://site/file.ext" >&2
+    exit 1;
+  fi
+  exec 3<> /dev/tcp/$host/80
+  echo -e "GET /$query HTTP/1.1\r\nconnection: close\r\nhost: $host\r\n\r\n" >&3
+  contents="$(cat <&3)"
+  if echo $contents | grep -q "HTTP/1.1.200"; then
+    echo "$contents" | sed -z 's/HTTP\/1.1.200.*\r\n\r\n//g' 
+  elif echo $contents | grep -q "HTTP/1.1.301"; then
+    echo "Redirected, following" >&2
+    curlsh $(echo $contents | grep -v "Location: ")
+    exit 0;
+  else
+  echo "Error, 404 or otherwise" >&2
+  exit 2;
+  fi
+}
+curlss $1
+

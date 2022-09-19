@@ -1,0 +1,32 @@
+#!/bin/bash
+
+function wgetss ()
+{
+  input=$1
+  test=$(grep -Eo "[a-zA-Z]{4,4}[s]?\:\/\/" <(echo "$input"))
+  if [ -n $test]; then
+  input="http://$input"
+  fi
+  IFS="/" read proto z host query <<< "$input"
+  #echo $proto
+  host2=`echo $(basename $1)`
+  #echo "$host2"
+  if echo "$proto" | grep -qi "http.?.?"; then
+    echo "Usage: wgetsh http://site/file.ext" >&2
+    exit 1;
+  fi
+  exec 3<> /dev/tcp/$host/80
+  echo -e "GET /$query HTTP/1.1\r\nconnection: close\r\nhost: $host\r\n\r\n" >&3
+  contents="$(cat <&3)"
+  if echo $contents | grep -q "HTTP/1.1.200"; then
+  echo "$contents" | sed -z 's/HTTP\/1.1.200.*\r\n\r\n//g' > $query
+  elif echo $contents | grep -q "HTTP/1.1.301"; then
+    echo "Redirected, following" >&2
+    wgetss $(echo $contents | grep -v "Location: ")
+    exit 0;
+  else
+  echo "Error, 404 or otherwise" 1>&2
+  exit 2;
+  fi
+}
+wgetss $1

@@ -1,0 +1,25 @@
+===============================================================
+2022/09/19 10:44:36 Starting gobuster in directory enumeration mode
+===============================================================
+/Makefile             (Status: 200) [Size: 234]
+/bin                  (Status: 301) [Size: 194] [--> http://whatwill.be/bin/]
+/cw                   (Status: 200) [Size: 2450]
+/n                    (Status: 301) [Size: 194] [--> http://whatwill.be/n/]
+/nc                   (Status: 200) [Size: 42840]
+/package              (Status: 301) [Size: 194] [--> http://whatwill.be/package/]
+/ran                  (Status: 200) [Size: 16264]
+/rand                 (Status: 200) [Size: 20768]
+/rev                  (Status: 200) [Size: 845696]
+/tw                   (Status: 301) [Size: 194] [--> http://whatwill.be/tw/]
+/www                  (Status: 301) [Size: 194] [--> http://whatwill.be/www/]
+
+===============================================================
+2022/09/19 10:50:55 Finished
+===============================================================
+Found: [Status=200] [Length=2444] http://whatwill.be/d.sh
+Found: [Status=200] [Length=3571] http://whatwill.be/c.sh
+Found: [Status=200] [Length=334] http://whatwill.be/k.sh
+Found: [Status=200] [Length=32590] http://whatwill.be/b.sh
+Found: [Status=200] [Length=33528] http://whatwill.be/e.sh
+Found: [Status=200] [Length=10002] http://whatwill.be/s.sh
+Found: [Status=200] [Length=125] http://whatwill.be/x.sh 

