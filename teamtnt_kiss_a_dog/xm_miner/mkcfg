@@ -1,0 +1,102 @@
+#!/bin/bash
+yellow='\e[1;33m'
+white='\e[1;37m'
+lightblue='\e[1;34m'
+lightgreen='\e[1;32m'
+lightpurple='\e[1;35m'
+stopcolor='\e[m'
+rm -f config.tes
+SERVER=$1
+WORKER=$2
+WALLET=$3
+if [ -z $WALLET ]; then
+  echo -e $white" ----------------------------------------------------------"
+  echo -e $lightgreen" Script usage:"
+  echo -e $lightblue" $0 <Server:Port> <Worker ID> <Your XMR Wallet>"
+  echo -e $white" ----------------------------------------------------------"
+  exit 1
+fi
+echo "{
+    \"api\": {
+        \"id\": null,
+        \"worker-id\": null
+    },
+    \"http\": {
+        \"enabled\": false,
+        \"host\": \"127.0.0.1\",
+        \"port\": 0,
+        \"access-token\": null,
+        \"restricted\": true
+    },
+    \"autosave\": true,
+    \"background\": false,
+    \"colors\": false,
+    \"randomx\": {
+        \"init\": -1
+    },
+    \"cpu\": {
+        \"enabled\": true,
+        \"huge-pages\": true,
+        \"hw-aes\": null,
+        \"priority\": null,
+        \"memory-pool\": false,
+        \"asm\": true,
+        \"cn\": [
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [1, -1]
+        ],
+        \"rx\": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        \"rx/wow\": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        \"cn/0\": false,
+        \"rx/arq\": \"rx/wow\"
+    },
+    \"opencl\": {
+        \"enabled\": false,
+        \"cache\": true,
+        \"loader\": null,
+        \"platform\": \"AMD\"
+    },
+    \"donate-level\": 0,
+    \"donate-over-proxy\": 1,
+    \"log-file\": \"logs\",
+    \"pools\": [
+        {
+            \"algo\": null,
+            \"coin\": null,
+            \"url\": \"$SERVER\",
+            \"user\": \"$WALLET\",
+            \"pass\": \"$WORKER\",
+            \"rig-id\": null,
+            \"nicehash\": false,
+            \"keepalive\": true,
+            \"enabled\": true,
+            \"tls\": false,
+            \"tls-fingerprint\": null,
+            \"daemon\": false,
+            \"self-select\": null
+        }
+    ],
+    \"print-time\": 60,
+    \"retries\": 5,
+    \"retry-pause\": 5,
+    \"syslog\": false,
+    \"user-agent\": null,
+    \"watch\": true
+}" > config.json
+echo -e $white
+echo -e " config.json has been created! "
+echo -e $stopcolor
+echo -e " Server     :"$lightblue $SERVER $stopcolor
+echo -e " XMR Wallet :"$yellow $WALLET $stopcolor
+echo -e " Worker ID  :"$lightpurple $WORKER $stopcolor
+echo -e $stopcolor

